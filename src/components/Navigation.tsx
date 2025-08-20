@@ -15,12 +15,12 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'Beauty', href: '#beauty' },
-    { name: 'Travel', href: '#travel' },
-    { name: 'Wellness', href: '#wellness' },
-    { name: 'Lifestyle', href: '#lifestyle' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: '/' },
+    { name: 'Beauty', href: '/beauty' },
+    { name: 'Travel', href: '/travel' },
+    { name: 'Wellness', href: '/wellness' },
+    { name: 'Lifestyle', href: '/lifestyle' },
+    { name: 'Contact', href: '/contact' }
   ];
 
   return (
