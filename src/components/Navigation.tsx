@@ -64,7 +64,7 @@ const Navigation = () => {
 
           {/* Desktop Auth and Admin Links */}
           <div className="hidden md:flex items-center space-x-4">
-            {user ? (
+            {user && (
               <div className="flex items-center space-x-4">
                 {userRole === 'admin' && (
                   <Link 
@@ -79,14 +79,6 @@ const Navigation = () => {
                   {user.email}
                 </span>
               </div>
-            ) : (
-              <Link 
-                to="/auth"
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1"
-              >
-                <LogIn className="w-4 h-4" />
-                <span className="hidden lg:inline">Sign In</span>
-              </Link>
             )}
           </div>
 
@@ -130,7 +122,7 @@ const Navigation = () => {
 
               {/* Mobile Auth Links */}
               <div className="pt-6 border-t border-border/30 mt-6">
-                {user ? (
+                {user && (
                   <div className="space-y-4">
                     {userRole === 'admin' && (
                       <Link 
@@ -146,15 +138,6 @@ const Navigation = () => {
                       Signed in as {user.email}
                     </div>
                   </div>
-                ) : (
-                  <Link 
-                    to="/auth"
-                    onClick={() => setIsOpen(false)}
-                    className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors py-2 px-4 hover:bg-card/50 rounded-lg"
-                  >
-                    <LogIn className="w-4 h-4" />
-                    <span>Sign In</span>
-                  </Link>
                 )}
               </div>
             </SheetContent>
