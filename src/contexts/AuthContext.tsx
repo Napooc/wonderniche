@@ -23,7 +23,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Set up auth state listener
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      (event, session) => {
         setSession(session);
         setUser(session?.user ?? null);
         
@@ -42,16 +42,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
               } else {
                 setUserRole('user'); // Default role
               }
+              setLoading(false);
             } catch (err) {
               console.error('Error fetching user role:', err);
               setUserRole('user'); // Default role
+              setLoading(false);
             }
           }, 0);
         } else {
           setUserRole(null);
+          setLoading(false);
         }
-        
-        setLoading(false);
       }
     );
 
@@ -73,10 +74,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             } else {
               setUserRole('user');
             }
+            setLoading(false);
           });
+      } else {
+        setLoading(false);
       }
-      
-      setLoading(false);
     });
 
     return () => subscription.unsubscribe();
