@@ -52,31 +52,7 @@ export default function AdminDashboard() {
   const [showProductForm, setShowProductForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
-  // useEffect hook must be declared before any conditional returns
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  // Conditional logic after all hooks
-  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
-
-  // Redirect if not authenticated or not admin
-  if (!user && !isLocalAdmin) {
-    return <Navigate to="/auth" replace />;
-  }
-
-  if (user && userRole !== 'admin' && !isLocalAdmin) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card className="glass-card p-8 text-center">
-          <h1 className="text-2xl font-bold text-destructive mb-4">Access Denied</h1>
-          <p className="text-muted-foreground mb-6">You don't have permission to access this area.</p>
-          <Button onClick={() => window.history.back()}>Go Back</Button>
-        </Card>
-      </div>
-    );
-  }
-
+  // Define fetchData function before useEffect
   const fetchData = async () => {
     setIsLoading(true);
     try {
@@ -108,6 +84,32 @@ export default function AdminDashboard() {
       setIsLoading(false);
     }
   };
+
+  // useEffect hook must be declared before any conditional returns
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Conditional logic after all hooks
+  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
+
+  // Redirect if not authenticated or not admin
+  if (!user && !isLocalAdmin) {
+    return <Navigate to="/auth" replace />;
+  }
+
+  if (user && userRole !== 'admin' && !isLocalAdmin) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <Card className="glass-card p-8 text-center">
+          <h1 className="text-2xl font-bold text-destructive mb-4">Access Denied</h1>
+          <p className="text-muted-foreground mb-6">You don't have permission to access this area.</p>
+          <Button onClick={() => window.history.back()}>Go Back</Button>
+        </Card>
+      </div>
+    );
+  }
+
 
 const handleSignOut = async () => {
   try {
