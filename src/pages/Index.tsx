@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ProductCard from '@/components/ProductCard';
@@ -115,9 +116,10 @@ const Index = () => {
             {categories.map((category, index) => {
               const IconComponent = category.icon;
               return (
-                <div
+                <Link
                   key={category.title}
-                  className={`glass-card p-8 text-center group cursor-pointer transition-all duration-500 hover:scale-105 reveal-up stagger-${index + 1}`}
+                  to={`/${category.title.toLowerCase()}`}
+                  className={`glass-card p-8 text-center group cursor-pointer transition-all duration-500 hover:scale-105 reveal-up stagger-${index + 1} block`}
                 >
                   <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${category.color} p-4 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="w-full h-full text-white" />
@@ -128,7 +130,7 @@ const Index = () => {
                   <p className="text-muted-foreground text-sm">
                     {category.description}
                   </p>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -149,16 +151,22 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProducts.map((product, index) => (
-              <div key={product.id} className={`reveal-up stagger-${index + 1}`}>
+              <Link
+                key={product.id}
+                to={`/product/${product.id}`}
+                className={`reveal-up stagger-${index + 1} block`}
+              >
                 <ProductCard {...product} />
-              </div>
+              </Link>
             ))}
           </div>
 
           <div className="text-center mt-12 reveal-up">
-            <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full">
-              View All Products
-            </Button>
+            <Link to="/products">
+              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full">
+                View All Products
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

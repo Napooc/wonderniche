@@ -23,6 +23,7 @@ const location = useLocation();
 
   const navItems = [
     { name: 'Home', href: '/' },
+    { name: 'Products', href: '/products' },
     { name: 'Beauty', href: '/beauty' },
     { name: 'Travel', href: '/travel' },
     { name: 'Wellness', href: '/wellness' },
