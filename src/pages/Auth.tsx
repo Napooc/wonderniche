@@ -9,6 +9,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Auth() {
+  // All hooks must be called before any conditional logic or early returns
   const { signIn, user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ export default function Auth() {
     password: ''
   });
 
+  // Conditional logic after all hooks
   const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
 
   // Redirect if already logged in

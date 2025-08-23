@@ -43,6 +43,7 @@ interface Category {
 }
 
 export default function AdminDashboard() {
+  // All hooks must be called before any conditional logic or early returns
   const { user, signOut, userRole } = useAuth();
   const { toast } = useToast();
   const [products, setProducts] = useState<Product[]>([]);
@@ -51,6 +52,12 @@ export default function AdminDashboard() {
   const [showProductForm, setShowProductForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
 
+  // useEffect hook must be declared before any conditional returns
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  // Conditional logic after all hooks
   const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
 
   // Redirect if not authenticated or not admin
@@ -69,10 +76,6 @@ export default function AdminDashboard() {
       </div>
     );
   }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const fetchData = async () => {
     setIsLoading(true);
