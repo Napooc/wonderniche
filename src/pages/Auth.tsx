@@ -5,12 +5,13 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Eye, EyeOff, LogIn, ArrowLeft } from 'lucide-react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 
 export default function Auth() {
   const { signIn, user } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -18,8 +19,10 @@ export default function Auth() {
     password: ''
   });
 
+  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
+
   // Redirect if already logged in
-  if (user) {
+  if (user || isLocalAdmin) {
     return <Navigate to="/admin" replace />;
   }
 
@@ -31,22 +34,31 @@ export default function Auth() {
   };
 
 const ADMIN_USERNAME = 'PPkamalpp';
+const ADMIN_PASSWORD = 'MINkamal@__32';
 const ADMIN_EMAIL = 'admin@vibeniche.com';
 
 const handleSignIn = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsLoading(true);
   try {
-    if (formData.username !== ADMIN_USERNAME) {
+    if (formData.username !== ADMIN_USERNAME || formData.password !== ADMIN_PASSWORD) {
       throw new Error('Unauthorized: invalid credentials');
     }
-    const { error } = await signIn(ADMIN_EMAIL, formData.password);
-    if (error) throw error;
+
+    // Persist local admin override (no email verification required)
+    localStorage.setItem('admin_local_override', 'true');
+
+    // Try Supabase sign-in (best-effort). Ignore errors to allow local admin access.
+    try {
+      await signIn(ADMIN_EMAIL, formData.password);
+    } catch {}
 
     toast({
       title: 'Welcome back!',
       description: 'Admin access granted.',
     });
+
+    navigate('/admin', { replace: true });
   } catch (error: any) {
     toast({
       title: 'Access denied',

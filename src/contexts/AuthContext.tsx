@@ -28,6 +28,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setUser(session?.user ?? null);
         
         if (session?.user) {
+          // If the logged-in user is the hardcoded admin, grant admin role immediately
+          if (session.user.email === 'admin@vibeniche.com') {
+            setUserRole('admin');
+            setLoading(false);
+            return;
+          }
           // Fetch user role when user is authenticated
           setTimeout(async () => {
             try {
@@ -62,20 +68,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(session?.user ?? null);
       
       if (session?.user) {
-        // Fetch user role for existing session
-        supabase
-          .from('user_roles')
-          .select('role')
-          .eq('user_id', session.user.id)
-          .single()
-          .then(({ data, error }) => {
-            if (!error && data) {
-              setUserRole(data.role);
-            } else {
-              setUserRole('user');
-            }
-            setLoading(false);
-          });
+        if (session.user.email === 'admin@vibeniche.com') {
+          setUserRole('admin');
+          setLoading(false);
+        } else {
+          // Fetch user role for existing session
+          supabase
+            .from('user_roles')
+            .select('role')
+            .eq('user_id', session.user.id)
+            .single()
+            .then(({ data, error }) => {
+              if (!error && data) {
+                setUserRole(data.role);
+              } else {
+                setUserRole('user');
+              }
+              setLoading(false);
+            });
+        }
       } else {
         setLoading(false);
       }

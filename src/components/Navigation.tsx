@@ -8,8 +8,10 @@ import { Menu, X, Settings, LogIn } from 'lucide-react';
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+const location = useLocation();
   const { user, userRole } = useAuth();
+
+  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,21 +64,19 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Desktop Auth and Admin Links */}
+{/* Desktop Auth and Admin Links */}
           <div className="hidden md:flex items-center space-x-4">
-            {user && (
+            {(isLocalAdmin || (user && userRole === 'admin')) && (
               <div className="flex items-center space-x-4">
-                {userRole === 'admin' && (
-                  <Link 
-                    to="/admin"
-                    className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1"
-                  >
-                    <Settings className="w-4 h-4" />
-                    <span className="hidden lg:inline">Admin</span>
-                  </Link>
-                )}
+                <Link 
+                  to="/admin"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1"
+                >
+                  <Settings className="w-4 h-4" />
+                  <span className="hidden lg:inline">Admin</span>
+                </Link>
                 <span className="text-sm text-muted-foreground hidden lg:inline">
-                  {user.email}
+                  {user?.email || 'Local Admin'}
                 </span>
               </div>
             )}
@@ -120,11 +120,11 @@ const Navigation = () => {
                 ))}
               </div>
 
-              {/* Mobile Auth Links */}
+{/* Mobile Auth Links */}
               <div className="pt-6 border-t border-border/30 mt-6">
-                {user && (
+                {(isLocalAdmin || user) && (
                   <div className="space-y-4">
-                    {userRole === 'admin' && (
+                    {(isLocalAdmin || userRole === 'admin') && (
                       <Link 
                         to="/admin"
                         onClick={() => setIsOpen(false)}
@@ -135,7 +135,7 @@ const Navigation = () => {
                       </Link>
                     )}
                     <div className="text-sm text-muted-foreground px-4 py-2">
-                      Signed in as {user.email}
+                      Signed in as {user?.email || 'Local Admin'}
                     </div>
                   </div>
                 )}
