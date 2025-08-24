@@ -1,159 +1,59 @@
 import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
-import ProductDetailModal from '@/components/ProductDetailModal';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List } from 'lucide-react';
 import beautyHero1 from '@/assets/beauty-hero-1.jpg';
 
 const Beauty = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
+  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Beauty products data
-  const beautyProducts = [
-    {
-      id: '1',
-      title: 'Luxury Anti-Aging Serum',
-      description: 'Premium vitamin C serum with hyaluronic acid for radiant, youthful skin.',
-      fullDescription: 'This luxurious anti-aging serum combines powerful vitamin C with hyaluronic acid to deliver intense hydration and brightening effects. Formulated with premium ingredients, it helps reduce fine lines, dark spots, and promotes collagen production for firmer, more youthful-looking skin.',
-      price: '$89',
-      originalPrice: '$120',
-      rating: 5,
-      reviews: 342,
-      images: [
-        'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1596755389378-c31d21fd1273?w=600&h=600&fit=crop'
-      ],
-      category: 'Beauty',
-      affiliateUrl: 'https://example.com/luxury-serum',
-      isNew: true,
-      discount: '25% OFF',
-      features: [
-        'Contains 20% Vitamin C for maximum potency',
-        'Hyaluronic acid for deep hydration',
-        'Reduces fine lines and wrinkles',
-        'Brightens and evens skin tone',
-        'Suitable for all skin types',
-        'Cruelty-free and vegan formula'
-      ],
-      specifications: {
-        'Size': '30ml / 1 fl oz',
-        'Skin Type': 'All skin types',
-        'Key Ingredients': 'Vitamin C, Hyaluronic Acid, Niacinamide',
-        'Application': 'Morning and evening',
-        'Shelf Life': '12 months after opening'
+  // Fetch products from database
+  const fetchProducts = async () => {
+    try {
+      const { data: categoriesData } = await supabase
+        .from('categories')
+        .select('id')
+        .eq('slug', 'beauty')
+        .single();
+
+      if (categoriesData) {
+        const { data: productsData } = await supabase
+          .from('products')
+          .select('*')
+          .eq('category_id', categoriesData.id)
+          .eq('is_active', true);
+
+        if (productsData) {
+          setProducts(productsData);
+          setFilteredProducts(productsData);
+        }
       }
-    },
-    {
-      id: '2',
-      title: 'Professional Makeup Brush Set',
-      description: 'Complete 15-piece professional makeup brush collection with premium synthetic bristles.',
-      fullDescription: 'Elevate your makeup game with this professional-grade brush set. Each brush is crafted with ultra-soft synthetic bristles that blend seamlessly and provide flawless application. Perfect for both beginners and professional makeup artists.',
-      price: '$149',
-      rating: 5,
-      reviews: 198,
-      images: [
-        'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=600&fit=crop'
-      ],
-      category: 'Beauty',
-      affiliateUrl: 'https://example.com/makeup-brushes',
-      features: [
-        '15 professional brushes for complete makeup application',
-        'Premium synthetic bristles - vegan and cruelty-free',
-        'Includes foundation, concealer, eyeshadow, and blending brushes',
-        'Elegant rose gold ferrules',
-        'Comes with luxury travel case',
-        'Easy to clean and maintain'
-      ],
-      specifications: {
-        'Pieces': '15 brushes + travel case',
-        'Bristle Type': 'Premium synthetic',
-        'Handle Material': 'Sustainable bamboo',
-        'Ferrule': 'Rose gold aluminum',
-        'Case': 'Vegan leather travel case'
-      }
-    },
-    {
-      id: '3',
-      title: 'Hydrating Face Mask Collection',
-      description: 'Set of 6 premium sheet masks with different active ingredients for various skin concerns.',
-      fullDescription: 'Transform your skincare routine with this curated collection of hydrating face masks. Each mask targets specific skin concerns with concentrated active ingredients, providing spa-quality treatment at home.',
-      price: '$45',
-      rating: 4,
-      reviews: 156,
-      images: [
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1505944270255-72b8c68c6a70?w=600&h=600&fit=crop'
-      ],
-      category: 'Beauty',
-      affiliateUrl: 'https://example.com/face-masks',
-      features: [
-        '6 different mask formulations',
-        'Hyaluronic acid for deep hydration',
-        'Vitamin E for antioxidant protection',
-        'Collagen boosting peptides',
-        'Suitable for sensitive skin',
-        'Biodegradable sheet material'
-      ],
-      specifications: {
-        'Quantity': '6 masks per pack',
-        'Mask Types': 'Hydrating, Brightening, Anti-aging',
-        'Material': 'Biodegradable bamboo fiber',
-        'Usage': '2-3 times per week',
-        'Treatment Time': '15-20 minutes'
-      }
-    },
-    {
-      id: '4',
-      title: 'Organic Lip Care Set',
-      description: 'Natural lip balm and scrub duo made with organic ingredients for soft, smooth lips.',
-      fullDescription: 'Pamper your lips with this organic lip care set featuring a gentle exfoliating scrub and nourishing balm. Made with natural ingredients like shea butter, coconut oil, and vitamin E for ultimate lip health.',
-      price: '$28',
-      rating: 5,
-      reviews: 89,
-      images: [
-        'https://images.unsplash.com/photo-1583001308067-30854c86d7e0?w=600&h=600&fit=crop'
-      ],
-      category: 'Beauty',
-      affiliateUrl: 'https://example.com/lip-care',
-      isNew: true,
-      features: [
-        '100% organic and natural ingredients',
-        'Gentle sugar scrub for exfoliation',
-        'Nourishing balm with shea butter',
-        'Long-lasting moisture protection',
-        'Cruelty-free and vegan',
-        'Recyclable packaging'
-      ],
-      specifications: {
-        'Set Includes': 'Lip scrub (15g) + Lip balm (4.5g)',
-        'Key Ingredients': 'Shea butter, Coconut oil, Vitamin E',
-        'Scent': 'Natural vanilla',
-        'Shelf Life': '18 months',
-        'Certification': 'USDA Organic'
-      }
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   // Filter products based on search term
   useEffect(() => {
-    const filtered = beautyProducts.filter(product =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = products.filter(product =>
+      product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.short_description?.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
-  }, [searchTerm]);
-
-  // Initialize filtered products
-  useEffect(() => {
-    setFilteredProducts(beautyProducts);
-  }, []);
+  }, [searchTerm, products]);
 
   // Reveal animations on scroll
   useEffect(() => {
@@ -175,7 +75,9 @@ const Beauty = () => {
   }, []);
 
   const handleProductClick = (product) => {
-    setSelectedProduct(product);
+    if (product.affiliate_url) {
+      window.open(product.affiliate_url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -250,22 +152,40 @@ const Beauty = () => {
           </div>
 
           {/* Products Grid */}
-          <div className={`grid gap-8 ${
-            viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'
-          }`}>
-            {filteredProducts.map((product, index) => (
-              <div 
-                key={product.id} 
-                className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
-                onClick={() => handleProductClick(product)}
-              >
-                <ProductCard {...product} />
-              </div>
-            ))}
-          </div>
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Loading products...</p>
+            </div>
+          ) : (
+            <div className={`grid gap-8 ${
+              viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'
+            }`}>
+              {filteredProducts.map((product, index) => (
+                <div 
+                  key={product.id} 
+                  className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
+                  onClick={() => handleProductClick(product)}
+                >
+                  <ProductCard 
+                    id={product.id}
+                    title={product.name}
+                    description={product.short_description || product.description}
+                    price={product.price ? `$${product.price}` : ''}
+                    rating={product.rating || 4.5}
+                    reviews={product.reviews_count || 0}
+                    image={product.image_url || 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=600&h=600&fit=crop'}
+                    category="Beauty"
+                    affiliateUrl={product.affiliate_url}
+                    isNew={product.is_featured}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* No Results */}
-          {filteredProducts.length === 0 && (
+          {!loading && filteredProducts.length === 0 && (
             <div className="text-center py-12 reveal-up">
               <p className="text-xl text-muted-foreground">
                 No products found matching your search.
@@ -275,14 +195,6 @@ const Beauty = () => {
         </div>
       </section>
 
-      {/* Product Detail Modal */}
-      {selectedProduct && (
-        <ProductDetailModal
-          product={selectedProduct}
-          isOpen={!!selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
     </div>
   );
 };

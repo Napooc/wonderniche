@@ -1,192 +1,59 @@
 import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
-import ProductDetailModal from '@/components/ProductDetailModal';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Heart } from 'lucide-react';
 import wellnessHero1 from '@/assets/wellness-hero-1.jpg';
 
 const Wellness = () => {
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
+  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // Wellness products data
-  const wellnessProducts = [
-    {
-      id: '1',
-      title: 'Premium Yoga Mat & Accessories',
-      description: 'Complete yoga set with eco-friendly mat, blocks, strap, and carry bag.',
-      fullDescription: 'Transform your yoga practice with this premium eco-friendly yoga set. Made from natural materials, this complete kit includes everything you need for a comprehensive yoga and meditation practice at home or in the studio.',
-      price: '$129',
-      originalPrice: '$179',
-      rating: 5,
-      reviews: 324,
-      images: [
-        'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop'
-      ],
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/yoga-set',
-      discount: '28% OFF',
-      features: [
-        'Eco-friendly natural rubber mat',
-        'Superior grip and cushioning',
-        'Includes 2 yoga blocks and strap',
-        'Alignment guides printed on mat',
-        'Carrying bag with shoulder strap',
-        'Free online yoga classes included'
-      ],
-      specifications: {
-        'Mat Size': '72" x 24" x 6mm',
-        'Material': 'Natural rubber with microfiber top',
-        'Weight': '4.5 lbs',
-        'Accessories': '2 blocks, 1 strap, carrying bag',
-        'Certification': 'Eco-friendly and biodegradable',
-        'Colors': 'Purple, Teal, Coral'
+  // Fetch products from database
+  const fetchProducts = async () => {
+    try {
+      const { data: categoriesData } = await supabase
+        .from('categories')
+        .select('id')
+        .eq('slug', 'wellness')
+        .single();
+
+      if (categoriesData) {
+        const { data: productsData } = await supabase
+          .from('products')
+          .select('*')
+          .eq('category_id', categoriesData.id)
+          .eq('is_active', true);
+
+        if (productsData) {
+          setProducts(productsData);
+          setFilteredProducts(productsData);
+        }
       }
-    },
-    {
-      id: '2',
-      title: 'Meditation Cushion Set',
-      description: 'Organic meditation pillows with buckwheat hull filling for perfect posture.',
-      fullDescription: 'Enhance your meditation practice with this premium cushion set. Made with organic materials and filled with buckwheat hulls, these cushions provide the perfect support for extended meditation sessions.',
-      price: '$89',
-      rating: 5,
-      reviews: 187,
-      images: [
-        'https://images.unsplash.com/photo-1545389336-cf090694435e?w=600&h=600&fit=crop'
-      ],
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/meditation-cushions',
-      isNew: true,
-      features: [
-        'Organic cotton outer cover',
-        'Buckwheat hull filling for support',
-        'Removable and washable covers',
-        'Traditional zafu and zabuton design',
-        'Carrying handle for portability',
-        'Available in multiple colors'
-      ],
-      specifications: {
-        'Set Includes': 'Zafu cushion + Zabuton mat',
-        'Filling': '100% organic buckwheat hulls',
-        'Cover Material': 'Organic cotton',
-        'Zafu Size': '14" diameter x 6" height',
-        'Zabuton Size': '30" x 28" x 2"',
-        'Weight': '6 lbs total'
-      }
-    },
-    {
-      id: '3',
-      title: 'Essential Oils Starter Kit',
-      description: 'Premium aromatherapy collection with diffuser and 12 pure essential oils.',
-      fullDescription: 'Create a calming atmosphere with this complete aromatherapy starter kit. Features a sleek ultrasonic diffuser and 12 therapeutic-grade essential oils for relaxation, energy, and wellness.',
-      price: '$159',
-      rating: 5,
-      reviews: 298,
-      images: [
-        'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=600&h=600&fit=crop',
-        'https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?w=600&h=600&fit=crop'
-      ],
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/essential-oils',
-      features: [
-        '12 therapeutic-grade essential oils',
-        'Ultrasonic diffuser with LED lights',
-        'Auto shut-off and timer functions',
-        'Whisper-quiet operation',
-        'Includes lavender, eucalyptus, peppermint',
-        'Complete aromatherapy guide included'
-      ],
-      specifications: {
-        'Oil Volume': '10ml per bottle (12 bottles)',
-        'Diffuser Capacity': '300ml water tank',
-        'Runtime': 'Up to 10 hours continuous',
-        'Coverage': 'Up to 1,000 sq ft',
-        'Materials': 'BPA-free plastic and wood grain',
-        'Power': 'AC adapter included'
-      }
-    },
-    {
-      id: '4',
-      title: 'Fitness Resistance Band Set',
-      description: 'Complete resistance training system with multiple bands and door anchor.',
-      fullDescription: 'Get a full-body workout anywhere with this comprehensive resistance band set. Perfect for strength training, rehabilitation, and staying fit while traveling or at home.',
-      price: '$49',
-      rating: 4,
-      reviews: 145,
-      images: [
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop'
-      ],
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/resistance-bands',
-      features: [
-        '5 resistance levels from light to extra heavy',
-        'Door anchor and ankle straps included',
-        'Comfortable foam handles',
-        'Protective sleeves prevent snapping',
-        'Workout guide with 30+ exercises',
-        'Compact travel bag included'
-      ],
-      specifications: {
-        'Resistance Levels': '10, 15, 20, 25, 30 lbs',
-        'Material': 'Natural latex',
-        'Handles': 'Comfortable foam grip',
-        'Accessories': 'Door anchor, ankle straps, carabiners',
-        'Weight': '3 lbs total',
-        'Warranty': '1-year replacement guarantee'
-      }
-    },
-    {
-      id: '5',
-      title: 'Smart Water Bottle',
-      description: 'Intelligent hydration tracker with temperature control and app connectivity.',
-      fullDescription: 'Stay perfectly hydrated with this smart water bottle that tracks your intake, maintains ideal temperature, and syncs with your fitness apps for complete wellness monitoring.',
-      price: '$199',
-      rating: 5,
-      reviews: 89,
-      images: [
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=600&fit=crop'
-      ],
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/smart-bottle',
-      isNew: true,
-      features: [
-        'Tracks daily water intake automatically',
-        'Keeps drinks cold for 24 hours',
-        'LED reminder lights',
-        'Smartphone app connectivity',
-        'UV-C self-cleaning technology',
-        'Leak-proof and dishwasher safe'
-      ],
-      specifications: {
-        'Capacity': '17 oz (500ml)',
-        'Battery Life': '7 days per charge',
-        'Temperature Retention': '24 hours cold, 12 hours hot',
-        'Material': 'Stainless steel with smart lid',
-        'App Compatibility': 'iOS and Android',
-        'Charging': 'USB-C cable included'
-      }
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    } finally {
+      setLoading(false);
     }
-  ];
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   // Filter products based on search term
   useEffect(() => {
-    const filtered = wellnessProducts.filter(product =>
-      product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.description.toLowerCase().includes(searchTerm.toLowerCase())
+    const filtered = products.filter(product =>
+      product.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      product.short_description?.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredProducts(filtered);
-  }, [searchTerm]);
-
-  // Initialize filtered products
-  useEffect(() => {
-    setFilteredProducts(wellnessProducts);
-  }, []);
+  }, [searchTerm, products]);
 
   // Reveal animations on scroll
   useEffect(() => {
@@ -208,7 +75,9 @@ const Wellness = () => {
   }, []);
 
   const handleProductClick = (product) => {
-    setSelectedProduct(product);
+    if (product.affiliate_url) {
+      window.open(product.affiliate_url, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
@@ -329,22 +198,40 @@ const Wellness = () => {
           </div>
 
           {/* Products Grid */}
-          <div className={`grid gap-8 ${
-            viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'
-          }`}>
-            {filteredProducts.map((product, index) => (
-              <div 
-                key={product.id} 
-                className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
-                onClick={() => handleProductClick(product)}
-              >
-                <ProductCard {...product} />
-              </div>
-            ))}
-          </div>
+          {loading ? (
+            <div className="text-center py-12">
+              <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
+              <p className="text-muted-foreground">Loading products...</p>
+            </div>
+          ) : (
+            <div className={`grid gap-8 ${
+              viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'
+            }`}>
+              {filteredProducts.map((product, index) => (
+                <div 
+                  key={product.id} 
+                  className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
+                  onClick={() => handleProductClick(product)}
+                >
+                  <ProductCard 
+                    id={product.id}
+                    title={product.name}
+                    description={product.short_description || product.description}
+                    price={product.price ? `$${product.price}` : ''}
+                    rating={product.rating || 4.5}
+                    reviews={product.reviews_count || 0}
+                    image={product.image_url || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop'}
+                    category="Wellness"
+                    affiliateUrl={product.affiliate_url}
+                    isNew={product.is_featured}
+                  />
+                </div>
+              ))}
+            </div>
+          )}
 
           {/* No Results */}
-          {filteredProducts.length === 0 && (
+          {!loading && filteredProducts.length === 0 && (
             <div className="text-center py-12 reveal-up">
               <p className="text-xl text-muted-foreground">
                 No products found matching your search.
@@ -354,14 +241,6 @@ const Wellness = () => {
         </div>
       </section>
 
-      {/* Product Detail Modal */}
-      {selectedProduct && (
-        <ProductDetailModal
-          product={selectedProduct}
-          isOpen={!!selectedProduct}
-          onClose={() => setSelectedProduct(null)}
-        />
-      )}
     </div>
   );
 };

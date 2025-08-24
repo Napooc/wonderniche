@@ -137,24 +137,13 @@ const ProductCard = ({
           </span>
         </div>
 
-        {/* Price and CTA */}
-        <div className="flex items-center justify-between pt-2">
-          <div className="space-y-1">
-            <p className="text-2xl font-bold gradient-text">
-              {price}
-            </p>
-            {discount && (
-              <p className="text-sm text-muted-foreground line-through">
-                {price.replace(/\d+/, (match) => String(parseInt(match) * 1.3))}
-              </p>
-            )}
-          </div>
-          
+        {/* CTA Button */}
+        <div className="flex justify-center pt-4">
           <Button 
             onClick={handleAffiliateClick}
-            className="btn-premium group"
+            className="btn-premium group w-full"
           >
-            Buy Now
+            Read More
             <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
