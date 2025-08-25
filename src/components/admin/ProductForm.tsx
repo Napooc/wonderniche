@@ -110,6 +110,8 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
     const file = event.target.files?.[0];
     if (!file) return;
 
+    console.log('File selected:', file.name, file.type, file.size);
+
     // Validate file type
     if (!file.type.startsWith('image/')) {
       toast({
@@ -137,15 +139,24 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
       const filePath = `products/${fileName}`;
 
-      const { error: uploadError } = await supabase.storage
+      console.log('Uploading to:', filePath);
+
+      const { data: uploadData, error: uploadError } = await supabase.storage
         .from('product-images')
         .upload(filePath, file);
 
-      if (uploadError) throw uploadError;
+      if (uploadError) {
+        console.error('Upload error:', uploadError);
+        throw uploadError;
+      }
+
+      console.log('Upload successful:', uploadData);
 
       const { data: { publicUrl } } = supabase.storage
         .from('product-images')
         .getPublicUrl(filePath);
+
+      console.log('Public URL:', publicUrl);
 
       setFormData(prev => ({
         ...prev,
@@ -157,6 +168,7 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
         description: "Image uploaded successfully"
       });
     } catch (error: any) {
+      console.error('Image upload error:', error);
       toast({
         title: "Error",
         description: error.message || "Failed to upload image",
@@ -185,30 +197,47 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
       const productData = {
         ...formData,
         features: features.filter(f => f.trim() !== ''),
-        tags: tags
+        tags: tags,
+        // Ensure numeric fields are properly typed
+        price: Number(formData.price) || 0,
+        original_price: formData.original_price ? Number(formData.original_price) : null,
+        rating: Number(formData.rating) || 4.5,
+        reviews_count: Number(formData.reviews_count) || 0
       };
+
+      console.log('Submitting product data:', productData);
 
       if (product) {
         // Update existing product
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('products')
           .update(productData)
-          .eq('id', product.id);
+          .eq('id', product.id)
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Update error:', error);
+          throw error;
+        }
         
+        console.log('Product updated:', data);
         toast({
           title: "Success",
           description: "Product updated successfully"
         });
       } else {
         // Create new product
-        const { error } = await supabase
+        const { data, error } = await supabase
           .from('products')
-          .insert([productData]);
+          .insert([productData])
+          .select();
 
-        if (error) throw error;
+        if (error) {
+          console.error('Insert error:', error);
+          throw error;
+        }
         
+        console.log('Product created:', data);
         toast({
           title: "Success",
           description: "Product created successfully"
@@ -217,6 +246,7 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
 
       onSuccess();
     } catch (error: any) {
+      console.error('Submit error:', error);
       toast({
         title: "Error",
         description: error.message || "Failed to save product",
