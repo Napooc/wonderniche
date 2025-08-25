@@ -1,3 +1,4 @@
+
 import { useState, useRef } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -11,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
 import { X, Plus, Minus, Upload, Link, Image } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface ProductFormData {
   id?: string;
@@ -18,7 +20,7 @@ interface ProductFormData {
   description?: string;
   short_description?: string;
   price: number;
-  original_price?: number;
+  original_price?: number | null;
   category_id: string;
   image_url?: string;
   affiliate_url?: string;
@@ -44,6 +46,7 @@ interface ProductFormProps {
 
 export default function ProductForm({ product, categories, onClose, onSuccess }: ProductFormProps) {
   const { toast } = useToast();
+  const { user, userRole } = useAuth();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
@@ -65,6 +68,20 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
     is_featured: product?.is_featured || false,
     is_active: product?.is_active ?? true
   });
+
+  const ensureAdminSession = (action: 'upload images' | 'save products') => {
+    const isAdmin = !!user && userRole === 'admin';
+    if (!isAdmin) {
+      console.warn(`[ProductForm] Blocked attempt to ${action} without admin session`, { user, userRole });
+      toast({
+        title: 'Sign in required',
+        description: 'Please sign in as admin to perform this action.',
+        variant: 'destructive',
+      });
+      return false;
+    }
+    return true;
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -110,6 +127,8 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
     const file = event.target.files?.[0];
     if (!file) return;
 
+    if (!ensureAdminSession('upload images')) return;
+
     console.log('File selected:', file.name, file.type, file.size);
 
     // Validate file type
@@ -141,9 +160,10 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
 
       console.log('Uploading to:', filePath);
 
+      // Use upsert so admins can replace an image without failing
       const { data: uploadData, error: uploadError } = await supabase.storage
         .from('product-images')
-        .upload(filePath, file);
+        .upload(filePath, file, { upsert: true });
 
       if (uploadError) {
         console.error('Upload error:', uploadError);
@@ -181,6 +201,8 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!ensureAdminSession('save products')) return;
     
     if (!formData.name || !formData.category_id) {
       toast({
