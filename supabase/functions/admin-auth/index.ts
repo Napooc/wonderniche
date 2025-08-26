@@ -72,16 +72,22 @@ async function verifyAdminTokenFromReq(req: Request, body?: any) {
   const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.substring(7) : null;
   const token = bearerToken || body?.token;
   if (!token) throw new Error('Missing token');
-  const key = await crypto.subtle.importKey(
-    'raw',
-    new TextEncoder().encode(jwtSecret),
-    { name: 'HMAC', hash: 'SHA-256' },
-    false,
-    ['sign', 'verify']
-  );
-  const payload = await verify(token, key);
-  if (payload?.role !== 'admin') throw new Error('Not admin');
-  return payload;
+  
+  try {
+    const key = await crypto.subtle.importKey(
+      'raw',
+      new TextEncoder().encode(jwtSecret),
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign', 'verify']
+    );
+    const payload = await verify(token, key);
+    if (payload?.role !== 'admin') throw new Error('Not admin');
+    return payload;
+  } catch (error) {
+    console.error('Token verification error:', error);
+    throw new Error('Invalid token');
+  }
 }
 
 serve(async (req) => {
@@ -301,7 +307,7 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
       }
     } else if (action === 'create_product') {
       try {
-        await verifyAdminTokenFromReq(req, { token });
+        await verifyAdminTokenFromReq(req, body);
       } catch (e) {
         console.error('Unauthorized create_product:', e);
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
@@ -336,7 +342,7 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
       });
     } else if (action === 'update_product') {
       try {
-        await verifyAdminTokenFromReq(req, { token });
+        await verifyAdminTokenFromReq(req, body);
       } catch (e) {
         console.error('Unauthorized update_product:', e);
         return new Response(JSON.stringify({ error: 'Unauthorized' }), {
