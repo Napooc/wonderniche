@@ -75,8 +75,90 @@ serve(async (req) => {
 
   try {
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+    
+    // Handle file upload action
+    if (req.url.includes('upload-image')) {
+      const formData = await req.formData();
+      const file = formData.get('file') as File;
+      const token = formData.get('token') as string;
+      
+      if (!file) {
+        return new Response(JSON.stringify({ error: 'No file provided' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      // Verify admin token
+      try {
+        const key = await crypto.subtle.importKey(
+          "raw",
+          new TextEncoder().encode(jwtSecret),
+          { name: "HMAC", hash: "SHA-256" },
+          false,
+          ["sign", "verify"]
+        );
+        await verify(token, key);
+      } catch (error) {
+        console.error('Token verification failed for upload:', error);
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      // Validate file type and size
+      if (!file.type.startsWith('image/')) {
+        return new Response(JSON.stringify({ error: 'Invalid file type' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      if (file.size > 5 * 1024 * 1024) {
+        return new Response(JSON.stringify({ error: 'File too large' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      // Generate file path
+      const fileExt = file.name.split('.').pop();
+      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
+      const filePath = `products/${fileName}`;
+      
+      console.log(`Uploading file: ${filePath}`);
+      
+      // Upload using service role (bypasses RLS)
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from('product-images')
+        .upload(filePath, file, { upsert: true });
+      
+      if (uploadError) {
+        console.error('Storage upload error:', uploadError);
+        return new Response(JSON.stringify({ error: 'Upload failed' }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      // Get public URL
+      const { data: { publicUrl } } = supabase.storage
+        .from('product-images')
+        .getPublicUrl(filePath);
+      
+      console.log(`Upload successful: ${publicUrl}`);
+      
+      return new Response(JSON.stringify({ 
+        success: true, 
+        url: publicUrl,
+        path: filePath
+      }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+    
     const { action, username, password } = await req.json();
-
     console.log(`Admin auth request: ${action} for user: ${username}`);
 
     if (action === 'login') {

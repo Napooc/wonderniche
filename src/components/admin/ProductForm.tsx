@@ -154,33 +154,38 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
     setIsUploading(true);
 
     try {
-      const fileExt = file.name.split('.').pop();
-      const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
-      const filePath = `products/${fileName}`;
-
-      console.log('Uploading to:', filePath);
-
-      // Use upsert so admins can replace an image without failing
-      const { data: uploadData, error: uploadError } = await supabase.storage
-        .from('product-images')
-        .upload(filePath, file, { upsert: true });
-
-      if (uploadError) {
-        console.error('Upload error:', uploadError);
-        throw uploadError;
+      // Get admin token from localStorage
+      const adminToken = localStorage.getItem('admin_token');
+      if (!adminToken) {
+        throw new Error('Admin session expired');
       }
 
-      console.log('Upload successful:', uploadData);
+      // Create FormData for upload
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('token', adminToken);
 
-      const { data: { publicUrl } } = supabase.storage
-        .from('product-images')
-        .getPublicUrl(filePath);
+      console.log('Uploading via admin-auth function...');
 
-      console.log('Public URL:', publicUrl);
+      // Use the admin-auth edge function for upload
+      const { data, error } = await supabase.functions.invoke('admin-auth/upload-image', {
+        body: formData,
+      });
+
+      if (error) {
+        console.error('Upload error:', error);
+        throw new Error(error.message || 'Upload failed');
+      }
+
+      if (!data.success) {
+        throw new Error(data.error || 'Upload failed');
+      }
+
+      console.log('Upload successful:', data.url);
 
       setFormData(prev => ({
         ...prev,
-        image_url: publicUrl
+        image_url: data.url
       }));
 
       toast({
