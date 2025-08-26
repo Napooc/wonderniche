@@ -67,6 +67,23 @@ async function verifyPasswordPBKDF2(password: string, stored: string): Promise<b
   return diff === 0;
 }
 
+async function verifyAdminTokenFromReq(req: Request, body?: any) {
+  const authHeader = req.headers.get('authorization') || '';
+  const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.substring(7) : null;
+  const token = bearerToken || body?.token;
+  if (!token) throw new Error('Missing token');
+  const key = await crypto.subtle.importKey(
+    'raw',
+    new TextEncoder().encode(jwtSecret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign', 'verify']
+  );
+  const payload = await verify(token, key);
+  if (payload?.role !== 'admin') throw new Error('Not admin');
+  return payload;
+}
+
 serve(async (req) => {
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
@@ -158,8 +175,9 @@ serve(async (req) => {
       });
     }
     
-    const { action, username, password } = await req.json();
-    console.log(`Admin auth request: ${action} for user: ${username}`);
+const body = await req.json();
+const { action, username, password, token, data } = body || {};
+console.log(`Admin auth request: ${action} for user: ${username}`);
 
     if (action === 'login') {
       // Fetch user from admin_users table
@@ -281,6 +299,82 @@ serve(async (req) => {
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+    } else if (action === 'create_product') {
+      try {
+        await verifyAdminTokenFromReq(req, { token });
+      } catch (e) {
+        console.error('Unauthorized create_product:', e);
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const allowed = ['name','description','short_description','category_id','image_url','affiliate_url','features','rating','reviews_count','is_featured','is_active','tags'];
+      const payload: Record<string, any> = {};
+      for (const k of allowed) {
+        if (data && typeof data[k] !== 'undefined') payload[k] = data[k];
+      }
+      // Ensure no pricing fields are passed
+      delete (payload as any).price;
+      delete (payload as any).original_price;
+
+      const { data: inserted, error: insertError } = await supabase
+        .from('products')
+        .insert([payload])
+        .select();
+
+      if (insertError) {
+        console.error('Create product error:', insertError);
+        return new Response(JSON.stringify({ error: insertError.message }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      return new Response(JSON.stringify({ success: true, data: inserted }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    } else if (action === 'update_product') {
+      try {
+        await verifyAdminTokenFromReq(req, { token });
+      } catch (e) {
+        console.error('Unauthorized update_product:', e);
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (!data?.id) {
+        return new Response(JSON.stringify({ error: 'Missing product id' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      const allowed = ['name','description','short_description','category_id','image_url','affiliate_url','features','rating','reviews_count','is_featured','is_active','tags'];
+      const payload: Record<string, any> = {};
+      for (const k of allowed) {
+        if (typeof data[k] !== 'undefined') payload[k] = data[k];
+      }
+      delete (payload as any).price;
+      delete (payload as any).original_price;
+
+      const { data: updated, error: updateError } = await supabase
+        .from('products')
+        .update(payload)
+        .eq('id', data.id)
+        .select();
+
+      if (updateError) {
+        console.error('Update product error:', updateError);
+        return new Response(JSON.stringify({ error: updateError.message }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      return new Response(JSON.stringify({ success: true, data: updated }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     return new Response(JSON.stringify({ error: 'Invalid action' }), {

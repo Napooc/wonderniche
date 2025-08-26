@@ -19,8 +19,6 @@ interface ProductFormData {
   name: string;
   description?: string;
   short_description?: string;
-  price: number;
-  original_price?: number | null;
   category_id: string;
   image_url?: string;
   affiliate_url?: string;
@@ -54,20 +52,18 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
   const [tags, setTags] = useState<string[]>(product?.tags || []);
   const [newTag, setNewTag] = useState('');
   
-  const [formData, setFormData] = useState({
-    name: product?.name || '',
-    description: product?.description || '',
-    short_description: product?.short_description || '',
-    price: product?.price || 0,
-    original_price: product?.original_price || 0,
-    category_id: product?.category_id || '',
-    image_url: product?.image_url || '',
-    affiliate_url: product?.affiliate_url || '',
-    rating: product?.rating || 4.5,
-    reviews_count: product?.reviews_count || 0,
-    is_featured: product?.is_featured || false,
-    is_active: product?.is_active ?? true
-  });
+const [formData, setFormData] = useState({
+  name: product?.name || '',
+  description: product?.description || '',
+  short_description: product?.short_description || '',
+  category_id: product?.category_id || '',
+  image_url: product?.image_url || '',
+  affiliate_url: product?.affiliate_url || '',
+  rating: product?.rating || 4.5,
+  reviews_count: product?.reviews_count || 0,
+  is_featured: product?.is_featured || false,
+  is_active: product?.is_active ?? true
+});
 
   const ensureAdminSession = (action: 'upload images' | 'save products') => {
     const isAdmin = !!user && userRole === 'admin';
@@ -221,55 +217,57 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
     setIsLoading(true);
 
     try {
-      const productData = {
-        ...formData,
-        features: features.filter(f => f.trim() !== ''),
-        tags: tags,
-        // Ensure numeric fields are properly typed
-        price: Number(formData.price) || 0,
-        original_price: formData.original_price ? Number(formData.original_price) : null,
-        rating: Number(formData.rating) || 4.5,
-        reviews_count: Number(formData.reviews_count) || 0
-      };
+const productData: Record<string, any> = {
+  ...formData,
+  features: features.filter(f => f.trim() !== ''),
+  tags: tags,
+  rating: Number(formData.rating) || 4.5,
+  reviews_count: Number(formData.reviews_count) || 0
+};
 
       console.log('Submitting product data:', productData);
 
-      if (product) {
-        // Update existing product
-        const { data, error } = await supabase
-          .from('products')
-          .update(productData)
-          .eq('id', product.id)
-          .select();
+if (product) {
+  // Update existing product via edge function
+  const adminToken = localStorage.getItem('admin_token');
+  if (!adminToken) {
+    throw new Error('Admin session expired');
+  }
+  const { data, error } = await supabase.functions.invoke('admin-auth', {
+    body: {
+      action: 'update_product',
+      token: adminToken,
+      data: { id: product.id, ...productData }
+    },
+  });
 
-        if (error) {
-          console.error('Update error:', error);
-          throw error;
-        }
-        
-        console.log('Product updated:', data);
-        toast({
-          title: "Success",
-          description: "Product updated successfully"
-        });
-      } else {
-        // Create new product
-        const { data, error } = await supabase
-          .from('products')
-          .insert([productData])
-          .select();
+  if (error || data?.error) {
+    console.error('Update error:', error || data?.error);
+    throw new Error(error?.message || data?.error || 'Update failed');
+  }
+  console.log('Product updated:', data);
+  toast({ title: 'Success', description: 'Product updated successfully' });
+} else {
+  // Create new product via edge function
+  const adminToken = localStorage.getItem('admin_token');
+  if (!adminToken) {
+    throw new Error('Admin session expired');
+  }
+  const { data, error } = await supabase.functions.invoke('admin-auth', {
+    body: {
+      action: 'create_product',
+      token: adminToken,
+      data: productData
+    },
+  });
 
-        if (error) {
-          console.error('Insert error:', error);
-          throw error;
-        }
-        
-        console.log('Product created:', data);
-        toast({
-          title: "Success",
-          description: "Product created successfully"
-        });
-      }
+  if (error || data?.error) {
+    console.error('Insert error:', error || data?.error);
+    throw new Error(error?.message || data?.error || 'Insert failed');
+  }
+  console.log('Product created:', data);
+  toast({ title: 'Success', description: 'Product created successfully' });
+}
 
       onSuccess();
     } catch (error: any) {
@@ -359,34 +357,7 @@ export default function ProductForm({ product, categories, onClose, onSuccess }:
               </div>
             </div>
 
-            {/* Pricing */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <Label htmlFor="price">Current Price</Label>
-                <Input
-                  id="price"
-                  name="price"
-                  type="number"
-                  step="0.01"
-                  value={formData.price}
-                  onChange={handleInputChange}
-                  className="bg-input"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="original_price">Original Price (optional)</Label>
-                <Input
-                  id="original_price"
-                  name="original_price"
-                  type="number"
-                  step="0.01"
-                  value={formData.original_price}
-                  onChange={handleInputChange}
-                  className="bg-input"
-                />
-              </div>
-            </div>
+{/* Pricing removed as requested */}
 
             {/* URLs and Media */}
             <div className="space-y-4">
