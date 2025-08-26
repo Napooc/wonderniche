@@ -19,6 +19,8 @@ export default function Auth() {
     username: '',
     password: ''
   });
+  const [failedAttempts, setFailedAttempts] = useState(0);
+  const [lockoutEndTime, setLockoutEndTime] = useState<number | null>(null);
 
   // Redirect if already logged in as admin
   if (user && userRole === 'admin') {
@@ -31,9 +33,6 @@ export default function Auth() {
       [e.target.name]: e.target.value
     }));
   };
-
-  const [failedAttempts, setFailedAttempts] = useState(0);
-  const [lockoutEndTime, setLockoutEndTime] = useState<number | null>(null);
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();
