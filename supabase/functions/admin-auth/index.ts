@@ -70,7 +70,8 @@ async function verifyPasswordPBKDF2(password: string, stored: string): Promise<b
 async function verifyAdminTokenFromReq(req: Request, body?: any) {
   const authHeader = req.headers.get('authorization') || '';
   const bearerToken = authHeader.startsWith('Bearer ') ? authHeader.substring(7) : null;
-  const token = bearerToken || body?.token;
+  // IMPORTANT: Prefer token from request body to avoid picking up Supabase anon/session tokens
+  const token = (body && body.token) ? body.token : bearerToken;
   if (!token) throw new Error('Missing token');
   
   try {
