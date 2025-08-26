@@ -11,7 +11,7 @@ const HeroSection = () => {
   const [isTyping, setIsTyping] = useState(true);
 
   const images = [hero1, hero2, hero3];
-  const fullText = "Welcome to VibeNiche - Your Modern Lifestyle Hub";
+  const fullText = "VibeNiche - Premium Affiliate Lifestyle Marketplace";
 
   // Typing animation
   useEffect(() => {
@@ -87,8 +87,9 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-            Discover premium lifestyle products with stunning visual experiences. 
-            Beauty, Travel, Wellness & more - all curated for your modern life.
+            Your trusted affiliate partner for premium lifestyle products. We connect you with 
+            exclusive brands across Beauty, Travel, Wellness & Lifestyle - earning through 
+            authentic recommendations you'll love.
           </p>
 
           {/* CTA Buttons */}

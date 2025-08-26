@@ -113,6 +113,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Trust & Statistics Section */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 reveal-up">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
+              Trusted by Thousands
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Join our community of satisfied customers who trust our affiliate recommendations
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">50K+</div>
+              <p className="text-sm text-muted-foreground">Happy Customers</p>
+            </div>
+            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-1">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">1,200+</div>
+              <p className="text-sm text-muted-foreground">Premium Products</p>
+            </div>
+            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-2">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">4.9★</div>
+              <p className="text-sm text-muted-foreground">Average Rating</p>
+            </div>
+            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-3">
+              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">98%</div>
+              <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
+            </div>
+          </div>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 reveal-up">
+            <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span className="text-sm">Verified Affiliate Partner</span>
+            </div>
+            <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm">Secure Transactions</span>
+            </div>
+            <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+              <span className="text-sm">Premium Brand Partners</span>
+            </div>
+            <div className="flex items-center space-x-2 text-muted-foreground">
+              <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
+              <span className="text-sm">24/7 Customer Support</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Background decoration */}
+        <div className="absolute -top-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+      </section>
+
       {/* Featured Products */}
       <section className="py-20 px-4 relative">
         <div className="container mx-auto max-w-6xl">
