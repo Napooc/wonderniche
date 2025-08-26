@@ -32,29 +32,44 @@ export default function Auth() {
     }));
   };
 
-const ADMIN_USERNAME = 'PPkamalpp';
-const ADMIN_PASSWORD = 'MINkamal@__32';
+const ADMIN_USERNAME = 'vibeniche_admin';
 const ADMIN_EMAIL = 'admin@vibeniche.com';
+
+const [failedAttempts, setFailedAttempts] = useState(0);
+const [lockoutEndTime, setLockoutEndTime] = useState<number | null>(null);
 
 const handleSignIn = async (e: React.FormEvent) => {
   e.preventDefault();
+  
+  // Check if currently locked out
+  if (lockoutEndTime && Date.now() < lockoutEndTime) {
+    const remainingTime = Math.ceil((lockoutEndTime - Date.now()) / 1000);
+    toast({
+      title: 'Access temporarily restricted',
+      description: `Please wait ${remainingTime} seconds before trying again.`,
+      variant: 'destructive'
+    });
+    return;
+  }
+
   setIsLoading(true);
+  
   try {
-    // Validate credentials
-    if (formData.username !== ADMIN_USERNAME || formData.password !== ADMIN_PASSWORD) {
-      throw new Error('Invalid username or password');
+    // Validate username first (client-side check)
+    if (formData.username !== ADMIN_USERNAME) {
+      throw new Error('Invalid credentials');
     }
 
-    // Attempt Supabase sign-in with admin email
+    // If username is correct, attempt Supabase sign-in with admin email and entered password
     const { error } = await signIn(ADMIN_EMAIL, formData.password);
     
     if (error) {
-      // If user doesn't exist, create them automatically
-      if (error.message.includes('Invalid login credentials') || error.message.includes('Email not confirmed')) {
-        throw new Error('Admin user not found in database. Please ensure admin@vibeniche.com user exists in Supabase.');
-      }
-      throw error;
+      throw new Error('Invalid credentials');
     }
+
+    // Reset failed attempts on successful login
+    setFailedAttempts(0);
+    setLockoutEndTime(null);
 
     toast({
       title: 'Welcome back!',
@@ -63,9 +78,19 @@ const handleSignIn = async (e: React.FormEvent) => {
 
     navigate('/admin', { replace: true });
   } catch (error: any) {
+    // Increment failed attempts
+    const newFailedAttempts = failedAttempts + 1;
+    setFailedAttempts(newFailedAttempts);
+
+    // Implement progressive lockout
+    if (newFailedAttempts >= 5) {
+      const lockoutDuration = Math.min(60000 * Math.pow(2, Math.floor((newFailedAttempts - 5) / 3)), 300000); // Max 5 minutes
+      setLockoutEndTime(Date.now() + lockoutDuration);
+    }
+
     toast({
       title: 'Access denied',
-      description: error.message || 'Failed to sign in',
+      description: 'Invalid credentials',
       variant: 'destructive'
     });
   } finally {
