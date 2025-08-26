@@ -113,61 +113,171 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Trust & Statistics Section */}
-      <section className="py-20 px-4 relative overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 reveal-up">
-            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-              Trusted by Thousands
+      {/* Modern Trust & Impact Section */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        {/* Animated Background Grid */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
+            backgroundSize: '40px 40px',
+            animation: 'float 20s ease-in-out infinite'
+          }}></div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20 reveal-up">
+            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card mb-6">
+              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-muted-foreground">Live Impact Dashboard</span>
+            </div>
+            <h2 className="text-5xl md:text-7xl font-black mb-6">
+              <span className="gradient-text">Trusted by</span>
+              <br />
+              <span className="text-foreground">Thousands</span>
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Join our community of satisfied customers who trust our affiliate recommendations
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Real numbers from real people who've transformed their lifestyle through our 
+              <span className="text-primary font-semibold"> affiliate marketplace</span>
             </p>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">50K+</div>
-              <p className="text-sm text-muted-foreground">Happy Customers</p>
+          {/* Dynamic Stats Grid */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-20">
+            {/* Left Side - Main Stats */}
+            <div className="space-y-8">
+              <div className="relative">
+                <div className="glass-card p-8 hover:scale-[1.02] transition-all duration-500 group">
+                  <div className="flex items-start justify-between mb-6">
+                    <div>
+                      <div className="text-6xl md:text-8xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                        50K+
+                      </div>
+                      <h3 className="text-xl font-semibold text-card-foreground mb-2">Happy Customers</h3>
+                      <p className="text-muted-foreground text-sm">Growing daily across 40+ countries</p>
+                    </div>
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center">
+                      <Heart className="w-8 h-8 text-pink-500 animate-pulse" />
+                    </div>
+                  </div>
+                  <div className="w-full bg-border rounded-full h-2">
+                    <div className="bg-gradient-to-r from-pink-500 to-rose-500 h-2 rounded-full animate-pulse" style={{width: '87%'}}></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="glass-card p-8 hover:scale-[1.02] transition-all duration-500 group">
+                <div className="flex items-start justify-between mb-6">
+                  <div>
+                    <div className="text-6xl md:text-8xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">
+                      4.9★
+                    </div>
+                    <h3 className="text-xl font-semibold text-card-foreground mb-2">Trust Rating</h3>
+                    <p className="text-muted-foreground text-sm">Based on 12,847 verified reviews</p>
+                  </div>
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
+                    <Sparkles className="w-8 h-8 text-amber-500 animate-pulse" />
+                  </div>
+                </div>
+                <div className="flex gap-1">
+                  {[1,2,3,4,5].map((star) => (
+                    <div key={star} className="w-6 h-6 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-bounce" style={{animationDelay: `${star * 0.1}s`}}></div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-1">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">1,200+</div>
-              <p className="text-sm text-muted-foreground">Premium Products</p>
-            </div>
-            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-2">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">4.9★</div>
-              <p className="text-sm text-muted-foreground">Average Rating</p>
-            </div>
-            <div className="glass-card p-6 text-center group hover:scale-105 transition-all duration-300 reveal-up stagger-3">
-              <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">98%</div>
-              <p className="text-sm text-muted-foreground">Satisfaction Rate</p>
+
+            {/* Right Side - Additional Stats */}
+            <div className="space-y-6">
+              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-bold gradient-text">1,200+</div>
+                    <p className="text-card-foreground font-medium">Premium Products</p>
+                  </div>
+                  <div className="text-2xl">🛍️</div>
+                </div>
+              </div>
+
+              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-bold gradient-text">98%</div>
+                    <p className="text-card-foreground font-medium">Satisfaction Rate</p>
+                  </div>
+                  <div className="text-2xl">✨</div>
+                </div>
+              </div>
+
+              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-bold gradient-text">24/7</div>
+                    <p className="text-card-foreground font-medium">Support Available</p>
+                  </div>
+                  <div className="text-2xl">🚀</div>
+                </div>
+              </div>
+
+              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-3xl font-bold gradient-text">$2M+</div>
+                    <p className="text-card-foreground font-medium">Affiliate Commissions</p>
+                  </div>
+                  <div className="text-2xl">💰</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60 reveal-up">
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">Verified Affiliate Partner</span>
+          {/* Trust Indicators */}
+          <div className="glass-card p-8 reveal-up">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold gradient-text mb-2">Why Customers Trust Us</h3>
+              <p className="text-muted-foreground">Verified credentials and partnerships</p>
             </div>
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">Secure Transactions</span>
-            </div>
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">Premium Brand Partners</span>
-            </div>
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <div className="w-2 h-2 bg-pink-500 rounded-full animate-pulse"></div>
-              <span className="text-sm">24/7 Customer Support</span>
+            
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                </div>
+                <h4 className="font-semibold text-card-foreground mb-1">Verified Partner</h4>
+                <p className="text-sm text-muted-foreground">Official affiliate network member</p>
+              </div>
+
+              <div className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                </div>
+                <h4 className="font-semibold text-card-foreground mb-1">Secure Platform</h4>
+                <p className="text-sm text-muted-foreground">SSL encrypted transactions</p>
+              </div>
+
+              <div className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
+                </div>
+                <h4 className="font-semibold text-card-foreground mb-1">Premium Brands</h4>
+                <p className="text-sm text-muted-foreground">Exclusive partnerships</p>
+              </div>
+
+              <div className="text-center group">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-3 h-3 bg-pink-500 rounded-full animate-pulse"></div>
+                </div>
+                <h4 className="font-semibold text-card-foreground mb-1">Real Reviews</h4>
+                <p className="text-sm text-muted-foreground">100% authentic feedback</p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Background decoration */}
-        <div className="absolute -top-40 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent/5 rounded-full blur-3xl"></div>
+        {/* Dynamic Background Elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-xl animate-float" style={{animationDelay: '-3s'}}></div>
       </section>
 
       {/* Featured Products */}
