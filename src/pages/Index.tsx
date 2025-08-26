@@ -6,92 +6,77 @@ import ProductCard from '@/components/ProductCard';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Heart, Globe, Dumbbell, Home, Mail } from 'lucide-react';
-
 const Index = () => {
   // Reveal animations on scroll
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll('.reveal-up');
-      reveals.forEach((element) => {
+      reveals.forEach(element => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add('visible');
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Sample products data
-  const featuredProducts = [
-    {
-      id: '1',
-      title: 'Premium Skincare Set',
-      description: 'Luxurious anti-aging skincare collection with natural ingredients for radiant, youthful skin.',
-      rating: 5,
-      reviews: 234,
-      image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop',
-      category: 'Beauty',
-      affiliateUrl: 'https://example.com/skincare',
-      isNew: true
-    },
-    {
-      id: '2',
-      title: 'Travel Essentials Kit',
-      description: 'Complete travel companion with premium luggage, organizers, and comfort accessories.',
-      rating: 5,
-      reviews: 189,
-      image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
-      category: 'Travel',
-      affiliateUrl: 'https://example.com/travel',
-      discount: '20% OFF'
-    },
-    {
-      id: '3',
-      title: 'Wellness Meditation Bundle',
-      description: 'Complete mindfulness package with meditation cushions, aromatherapy, and guidance.',
-      rating: 5,
-      reviews: 156,
-      image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-      category: 'Wellness',
-      affiliateUrl: 'https://example.com/wellness'
-    }
-  ];
-
-  const categories = [
-    {
-      icon: Sparkles,
-      title: 'Beauty',
-      description: 'Premium skincare, makeup, and beauty tools',
-      color: 'from-pink-500 to-rose-500'
-    },
-    {
-      icon: Globe,
-      title: 'Travel',
-      description: 'Luxury travel gear and experiences',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Dumbbell,
-      title: 'Wellness',
-      description: 'Fitness, nutrition, and mindfulness products',
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: Home,
-      title: 'Lifestyle',
-      description: 'Home decor, gadgets, and living essentials',
-      color: 'from-purple-500 to-indigo-500'
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const featuredProducts = [{
+    id: '1',
+    title: 'Premium Skincare Set',
+    description: 'Luxurious anti-aging skincare collection with natural ingredients for radiant, youthful skin.',
+    rating: 5,
+    reviews: 234,
+    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop',
+    category: 'Beauty',
+    affiliateUrl: 'https://example.com/skincare',
+    isNew: true
+  }, {
+    id: '2',
+    title: 'Travel Essentials Kit',
+    description: 'Complete travel companion with premium luggage, organizers, and comfort accessories.',
+    rating: 5,
+    reviews: 189,
+    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
+    category: 'Travel',
+    affiliateUrl: 'https://example.com/travel',
+    discount: '20% OFF'
+  }, {
+    id: '3',
+    title: 'Wellness Meditation Bundle',
+    description: 'Complete mindfulness package with meditation cushions, aromatherapy, and guidance.',
+    rating: 5,
+    reviews: 156,
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
+    category: 'Wellness',
+    affiliateUrl: 'https://example.com/wellness'
+  }];
+  const categories = [{
+    icon: Sparkles,
+    title: 'Beauty',
+    description: 'Premium skincare, makeup, and beauty tools',
+    color: 'from-pink-500 to-rose-500'
+  }, {
+    icon: Globe,
+    title: 'Travel',
+    description: 'Luxury travel gear and experiences',
+    color: 'from-blue-500 to-cyan-500'
+  }, {
+    icon: Dumbbell,
+    title: 'Wellness',
+    description: 'Fitness, nutrition, and mindfulness products',
+    color: 'from-green-500 to-emerald-500'
+  }, {
+    icon: Home,
+    title: 'Lifestyle',
+    description: 'Home decor, gadgets, and living essentials',
+    color: 'from-purple-500 to-indigo-500'
+  }];
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
@@ -111,13 +96,8 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((category, index) => {
-              const IconComponent = category.icon;
-              return (
-                <Link
-                  key={category.title}
-                  to={`/${category.title.toLowerCase()}`}
-                  className={`glass-card p-8 text-center group cursor-pointer transition-all duration-500 hover:scale-105 reveal-up stagger-${index + 1} block`}
-                >
+            const IconComponent = category.icon;
+            return <Link key={category.title} to={`/${category.title.toLowerCase()}`} className={`glass-card p-8 text-center group cursor-pointer transition-all duration-500 hover:scale-105 reveal-up stagger-${index + 1} block`}>
                   <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${category.color} p-4 group-hover:scale-110 transition-transform duration-300`}>
                     <IconComponent className="w-full h-full text-white" />
                   </div>
@@ -127,9 +107,8 @@ const Index = () => {
                   <p className="text-muted-foreground text-sm">
                     {category.description}
                   </p>
-                </Link>
-              );
-            })}
+                </Link>;
+          })}
           </div>
         </div>
       </section>
@@ -147,22 +126,14 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => (
-              <Link
-                key={product.id}
-                to={`/product/${product.id}`}
-                className={`reveal-up stagger-${index + 1} block`}
-              >
+            {featuredProducts.map((product, index) => <Link key={product.id} to={`/product/${product.id}`} className={`reveal-up stagger-${index + 1} block`}>
                 <ProductCard {...product} />
-              </Link>
-            ))}
+              </Link>)}
           </div>
 
           <div className="text-center mt-12 reveal-up">
             <Link to="/products">
-              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full">
-                View All Products
-              </Button>
+              
             </Link>
           </div>
         </div>
@@ -185,11 +156,7 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary"
-              />
+              <input type="email" placeholder="Enter your email" className="flex-1 px-6 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
               <Button className="btn-premium px-8 py-3 rounded-full">
                 Subscribe
               </Button>
@@ -204,11 +171,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <img 
-                  src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" 
-                  alt="VibeNiche Logo" 
-                  className="h-10 w-auto"
-                />
+                <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeNiche Logo" className="h-10 w-auto" />
                 <span className="text-xl font-bold gradient-text">
                   VibeNiche
                 </span>
@@ -259,8 +222,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
