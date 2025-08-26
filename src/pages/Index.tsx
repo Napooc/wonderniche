@@ -218,7 +218,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-border/30 mt-8 pt-8 text-center text-muted-foreground">
-            <p>&copy; 2024 VibeNiche. All rights reserved.</p>
+            <p>© 2025 VibeNiche. All rights reserved. This site contains affiliate links.</p>
           </div>
         </div>
       </footer>
