@@ -1,134 +1,91 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
-import { User, Session, AuthError } from '@supabase/supabase-js';
 import { supabase } from '@/integrations/supabase/client';
 
+interface CustomUser {
+  id: string;
+  username: string;
+  role: 'admin';
+}
+
 interface AuthContextType {
-  user: User | null;
-  session: Session | null;
-  userRole: 'admin' | 'user' | null;
-  signUp: (email: string, password: string) => Promise<{ error: AuthError | null }>;
-  signIn: (email: string, password: string) => Promise<{ error: AuthError | null }>;
-  signOut: () => Promise<{ error: AuthError | null }>;
+  user: CustomUser | null;
+  userRole: 'admin' | null;
+  signIn: (username: string, password: string) => Promise<{ error: string | null }>;
+  signOut: () => Promise<{ error: string | null }>;
   loading: boolean;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
-  const [userRole, setUserRole] = useState<'admin' | 'user' | null>(null);
+  const [user, setUser] = useState<CustomUser | null>(null);
+  const [userRole, setUserRole] = useState<'admin' | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Set up auth state listener
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        
-        if (session?.user) {
-          // If the logged-in user is the hardcoded admin, grant admin role immediately
-          if (session.user.email === 'admin@vibeniche.com') {
+    // Check for existing session in localStorage
+    const checkExistingSession = async () => {
+      const token = localStorage.getItem('admin_token');
+      if (token) {
+        try {
+          const { data } = await supabase.functions.invoke('admin-auth', {
+            body: { action: 'verify', token }
+          });
+          
+          if (data.valid) {
+            setUser(data.user);
             setUserRole('admin');
-            setLoading(false);
-            return;
+          } else {
+            localStorage.removeItem('admin_token');
           }
-          // Fetch user role when user is authenticated
-          setTimeout(async () => {
-            try {
-              const { data, error } = await supabase
-                .from('user_roles')
-                .select('role')
-                .eq('user_id', session.user.id)
-                .single();
-              
-              if (!error && data) {
-                setUserRole(data.role);
-              } else {
-                setUserRole('user'); // Default role
-              }
-              setLoading(false);
-            } catch (err) {
-              console.error('Error fetching user role:', err);
-              setUserRole('user'); // Default role
-              setLoading(false);
-            }
-          }, 0);
-        } else {
-          setUserRole(null);
-          setLoading(false);
+        } catch (error) {
+          console.error('Token verification failed:', error);
+          localStorage.removeItem('admin_token');
         }
       }
-    );
+      setLoading(false);
+    };
 
-    // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      
-      if (session?.user) {
-        if (session.user.email === 'admin@vibeniche.com') {
-          setUserRole('admin');
-          setLoading(false);
-        } else {
-          // Fetch user role for existing session
-          supabase
-            .from('user_roles')
-            .select('role')
-            .eq('user_id', session.user.id)
-            .single()
-            .then(({ data, error }) => {
-              if (!error && data) {
-                setUserRole(data.role);
-              } else {
-                setUserRole('user');
-              }
-              setLoading(false);
-            });
-        }
-      } else {
-        setLoading(false);
-      }
-    });
-
-    return () => subscription.unsubscribe();
+    checkExistingSession();
   }, []);
 
-  const signUp = async (email: string, password: string) => {
-    const redirectUrl = `${window.location.origin}/`;
-    
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        emailRedirectTo: redirectUrl
+  const signIn = async (username: string, password: string) => {
+    try {
+      const { data, error } = await supabase.functions.invoke('admin-auth', {
+        body: { action: 'login', username, password }
+      });
+      
+      if (error || !data.success) {
+        return { error: data?.error || 'Authentication failed' };
       }
-    });
-    
-    return { error };
-  };
-
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    });
-    
-    return { error };
+      
+      // Store token and user data
+      localStorage.setItem('admin_token', data.token);
+      setUser(data.user);
+      setUserRole('admin');
+      
+      return { error: null };
+    } catch (error) {
+      console.error('Sign in error:', error);
+      return { error: 'Authentication failed' };
+    }
   };
 
   const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    return { error };
+    try {
+      localStorage.removeItem('admin_token');
+      setUser(null);
+      setUserRole(null);
+      return { error: null };
+    } catch (error) {
+      return { error: 'Sign out failed' };
+    }
   };
 
   return (
     <AuthContext.Provider value={{
       user,
-      session,
       userRole,
-      signUp,
       signIn,
       signOut,
       loading

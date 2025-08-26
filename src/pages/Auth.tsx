@@ -32,71 +32,63 @@ export default function Auth() {
     }));
   };
 
-const ADMIN_USERNAME = 'vibeniche_admin';
-const ADMIN_EMAIL = 'admin@vibeniche.com';
+  const [failedAttempts, setFailedAttempts] = useState(0);
+  const [lockoutEndTime, setLockoutEndTime] = useState<number | null>(null);
 
-const [failedAttempts, setFailedAttempts] = useState(0);
-const [lockoutEndTime, setLockoutEndTime] = useState<number | null>(null);
-
-const handleSignIn = async (e: React.FormEvent) => {
-  e.preventDefault();
-  
-  // Check if currently locked out
-  if (lockoutEndTime && Date.now() < lockoutEndTime) {
-    const remainingTime = Math.ceil((lockoutEndTime - Date.now()) / 1000);
-    toast({
-      title: 'Access temporarily restricted',
-      description: `Please wait ${remainingTime} seconds before trying again.`,
-      variant: 'destructive'
-    });
-    return;
-  }
-
-  setIsLoading(true);
-  
-  try {
-    // Validate username first (client-side check)
-    if (formData.username !== ADMIN_USERNAME) {
-      throw new Error('Invalid credentials');
-    }
-
-    // If username is correct, attempt Supabase sign-in with admin email and entered password
-    const { error } = await signIn(ADMIN_EMAIL, formData.password);
+  const handleSignIn = async (e: React.FormEvent) => {
+    e.preventDefault();
     
-    if (error) {
-      throw new Error('Invalid credentials');
+    // Check if currently locked out
+    if (lockoutEndTime && Date.now() < lockoutEndTime) {
+      const remainingTime = Math.ceil((lockoutEndTime - Date.now()) / 1000);
+      toast({
+        title: 'Access temporarily restricted',
+        description: `Please wait ${remainingTime} seconds before trying again.`,
+        variant: 'destructive'
+      });
+      return;
     }
 
-    // Reset failed attempts on successful login
-    setFailedAttempts(0);
-    setLockoutEndTime(null);
+    setIsLoading(true);
+    
+    try {
+      // Call custom authentication
+      const { error } = await signIn(formData.username, formData.password);
+      
+      if (error) {
+        throw new Error(error);
+      }
 
-    toast({
-      title: 'Welcome back!',
-      description: 'Admin access granted.',
-    });
+      // Reset failed attempts on successful login
+      setFailedAttempts(0);
+      setLockoutEndTime(null);
 
-    navigate('/admin', { replace: true });
-  } catch (error: any) {
-    // Increment failed attempts
-    const newFailedAttempts = failedAttempts + 1;
-    setFailedAttempts(newFailedAttempts);
+      toast({
+        title: 'Welcome back!',
+        description: 'You have successfully signed in.'
+      });
 
-    // Implement progressive lockout
-    if (newFailedAttempts >= 5) {
-      const lockoutDuration = Math.min(60000 * Math.pow(2, Math.floor((newFailedAttempts - 5) / 3)), 300000); // Max 5 minutes
-      setLockoutEndTime(Date.now() + lockoutDuration);
+      navigate('/admin', { replace: true });
+    } catch (error: any) {
+      // Increment failed attempts
+      const newFailedAttempts = failedAttempts + 1;
+      setFailedAttempts(newFailedAttempts);
+
+      // Implement progressive lockout
+      if (newFailedAttempts >= 5) {
+        const lockoutDuration = Math.min(60000 * Math.pow(2, Math.floor((newFailedAttempts - 5) / 3)), 300000); // Max 5 minutes
+        setLockoutEndTime(Date.now() + lockoutDuration);
+      }
+
+      toast({
+        title: 'Access denied',
+        description: 'Invalid credentials',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsLoading(false);
     }
-
-    toast({
-      title: 'Access denied',
-      description: 'Invalid credentials',
-      variant: 'destructive'
-    });
-  } finally {
-    setIsLoading(false);
-  }
-};
+  };
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-4 relative overflow-hidden">
