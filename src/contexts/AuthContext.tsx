@@ -28,11 +28,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       const token = localStorage.getItem('admin_token');
       if (token) {
         try {
-          const { data } = await supabase.functions.invoke('admin-auth', {
+          const { data, error } = await supabase.functions.invoke('admin-auth', {
             body: { action: 'verify', token }
           });
           
-          if (data.valid) {
+          if (!error && data?.valid) {
             setUser(data.user);
             setUserRole('admin');
           } else {

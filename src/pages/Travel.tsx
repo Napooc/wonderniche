@@ -191,7 +191,6 @@ const Travel = () => {
                     id={product.id}
                     title={product.name}
                     description={product.short_description || product.description}
-                    price={product.price ? `$${product.price}` : ''}
                     rating={product.rating || 4.5}
                     reviews={product.reviews_count || 0}
                     image={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop'}

@@ -10,8 +10,6 @@ interface ProductDetailModalProps {
     title: string;
     description: string;
     fullDescription: string;
-    price: string;
-    originalPrice?: string;
     rating: number;
     reviews: number;
     images: string[];
@@ -186,17 +184,6 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
                 </span>
               </div>
 
-              {/* Price */}
-              <div className="flex items-center gap-4">
-                <span className="text-4xl font-bold gradient-text">
-                  {product.price}
-                </span>
-                {product.originalPrice && (
-                  <span className="text-xl text-muted-foreground line-through">
-                    {product.originalPrice}
-                  </span>
-                )}
-              </div>
             </div>
 
             {/* Tabs for Details */}

@@ -274,8 +274,13 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
       });
 
     } else if (action === 'verify') {
-      // Verify JWT token
-      const { token } = await req.json();
+      // Verify JWT token - use the token from the body parsed earlier
+      if (!token) {
+        return new Response(JSON.stringify({ valid: false }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
       
       try {
         const key = await crypto.subtle.importKey(

@@ -217,7 +217,6 @@ const Wellness = () => {
                     id={product.id}
                     title={product.name}
                     description={product.short_description || product.description}
-                    price={product.price ? `$${product.price}` : ''}
                     rating={product.rating || 4.5}
                     reviews={product.reviews_count || 0}
                     image={product.image_url || 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop'}
