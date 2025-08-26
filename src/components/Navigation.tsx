@@ -11,7 +11,7 @@ const Navigation = () => {
 const location = useLocation();
   const { user, userRole } = useAuth();
 
-  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -66,7 +66,7 @@ const location = useLocation();
 
 {/* Desktop Auth and Admin Links */}
           <div className="hidden md:flex items-center space-x-4">
-            {(isLocalAdmin || (user && userRole === 'admin')) && (
+            {(user && userRole === 'admin') && (
               <div className="flex items-center space-x-4">
                 <Link 
                   to="/admin"
@@ -76,7 +76,7 @@ const location = useLocation();
                   <span className="hidden lg:inline">Admin</span>
                 </Link>
                 <span className="text-sm text-muted-foreground hidden lg:inline">
-                  {user?.email || 'Local Admin'}
+                  {user?.email}
                 </span>
               </div>
             )}
@@ -122,9 +122,9 @@ const location = useLocation();
 
 {/* Mobile Auth Links */}
               <div className="pt-6 border-t border-border/30 mt-6">
-                {(isLocalAdmin || user) && (
+                {user && (
                   <div className="space-y-4">
-                    {(isLocalAdmin || userRole === 'admin') && (
+                    {userRole === 'admin' && (
                       <Link 
                         to="/admin"
                         onClick={() => setIsOpen(false)}
@@ -135,7 +135,7 @@ const location = useLocation();
                       </Link>
                     )}
                     <div className="text-sm text-muted-foreground px-4 py-2">
-                      Signed in as {user?.email || 'Local Admin'}
+                      Signed in as {user?.email}
                     </div>
                   </div>
                 )}

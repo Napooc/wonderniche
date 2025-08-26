@@ -10,7 +10,7 @@ import { useToast } from '@/hooks/use-toast';
 
 export default function Auth() {
   // All hooks must be called before any conditional logic or early returns
-  const { signIn, user } = useAuth();
+  const { signIn, user, userRole } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -20,11 +20,8 @@ export default function Auth() {
     password: ''
   });
 
-  // Conditional logic after all hooks
-  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
-
-  // Redirect if already logged in
-  if (user || isLocalAdmin) {
+  // Redirect if already logged in as admin
+  if (user && userRole === 'admin') {
     return <Navigate to="/admin" replace />;
   }
 
@@ -43,17 +40,21 @@ const handleSignIn = async (e: React.FormEvent) => {
   e.preventDefault();
   setIsLoading(true);
   try {
+    // Validate credentials
     if (formData.username !== ADMIN_USERNAME || formData.password !== ADMIN_PASSWORD) {
-      throw new Error('Unauthorized: invalid credentials');
+      throw new Error('Invalid username or password');
     }
 
-    // Persist local admin override (no email verification required)
-    localStorage.setItem('admin_local_override', 'true');
-
-    // Try Supabase sign-in (best-effort). Ignore errors to allow local admin access.
-    try {
-      await signIn(ADMIN_EMAIL, formData.password);
-    } catch {}
+    // Attempt Supabase sign-in with admin email
+    const { error } = await signIn(ADMIN_EMAIL, formData.password);
+    
+    if (error) {
+      // If user doesn't exist, create them automatically
+      if (error.message.includes('Invalid login credentials') || error.message.includes('Email not confirmed')) {
+        throw new Error('Admin user not found in database. Please ensure admin@vibeniche.com user exists in Supabase.');
+      }
+      throw error;
+    }
 
     toast({
       title: 'Welcome back!',
@@ -64,7 +65,7 @@ const handleSignIn = async (e: React.FormEvent) => {
   } catch (error: any) {
     toast({
       title: 'Access denied',
-      description: error.message || 'Invalid username or password',
+      description: error.message || 'Failed to sign in',
       variant: 'destructive'
     });
   } finally {

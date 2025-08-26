@@ -90,20 +90,17 @@ export default function AdminDashboard() {
     fetchData();
   }, []);
 
-  // Conditional logic after all hooks
-  const isLocalAdmin = typeof window !== 'undefined' && localStorage.getItem('admin_local_override') === 'true';
-
   // Redirect if not authenticated or not admin
-  if (!user && !isLocalAdmin) {
+  if (!user) {
     return <Navigate to="/auth" replace />;
   }
 
-  if (user && userRole !== 'admin' && !isLocalAdmin) {
+  if (userRole !== 'admin') {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="glass-card p-8 text-center">
           <h1 className="text-2xl font-bold text-destructive mb-4">Access Denied</h1>
-          <p className="text-muted-foreground mb-6">You don't have permission to access this area.</p>
+          <p className="text-muted-foreground mb-6">You don't have admin permissions to access this area.</p>
           <Button onClick={() => window.history.back()}>Go Back</Button>
         </Card>
       </div>
@@ -113,14 +110,7 @@ export default function AdminDashboard() {
 
 const handleSignOut = async () => {
   try {
-    // Clear local admin override
-    localStorage.removeItem('admin_local_override');
-
-    // Sign out from Supabase if logged in
-    if (user) {
-      await signOut();
-    }
-
+    await signOut();
     toast({
       title: "Signed out",
       description: "You have been successfully signed out."
@@ -211,9 +201,9 @@ const handleSignOut = async () => {
               <Badge variant="secondary">Administrator</Badge>
             </div>
             <div className="flex items-center space-x-4">
-<span className="text-sm text-muted-foreground">
-  Welcome, {user?.email || 'Local Admin'}
-</span>
+              <span className="text-sm text-muted-foreground">
+                Welcome, {user?.email}
+              </span>
               <Button
                 variant="outline"
                 size="sm"
