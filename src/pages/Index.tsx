@@ -292,21 +292,54 @@ const Index = () => {
       }}></div>
       </section>
 
-      {/* Featured Products */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 reveal-up">
-            <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-              Featured Products
+      {/* Enhanced Featured Products Section */}
+      <section className="py-32 px-4 relative overflow-hidden">
+        {/* Modern Background Effects */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary/30 to-accent/30 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '-2s' }}></div>
+        </div>
+
+        <div className="container mx-auto max-w-7xl relative z-10">
+          {/* Premium Section Header */}
+          <div className="text-center mb-20 reveal-up">
+            <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-card/50 to-card/30 backdrop-blur-sm border border-white/10 rounded-full mb-8">
+              <div className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-white/80">Hand-picked Premium Selection</span>
+            </div>
+            
+            <h2 className="text-5xl md:text-7xl font-black mb-8">
+              <span className="gradient-text">Featured</span>
+              <br />
+              <span className="text-white">Products</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Hand-picked premium products that define modern lifestyle
+            
+            <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed">
+              Discover exclusive products that define modern lifestyle, curated by our experts and 
+              <span className="text-primary font-semibold"> loved by thousands</span>
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Trust Indicators */}
+          <div className="flex flex-wrap justify-center gap-6 mb-16 reveal-up">
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-white/80">Fast Secure Delivery</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-white/80">SSL 30-Day Protection</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full">
+              <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+              <span className="text-sm text-white/80">Business Policy Days</span>
+            </div>
+          </div>
+
+          {/* Modern Product Grid */}
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
             {featuredProducts.length > 0 ? featuredProducts.map((product, index) => (
-                <div key={product.id} className={`reveal-up stagger-${index + 1}`}>
+                <div key={product.id} className={`reveal-up stagger-${(index % 3) + 1}`}>
                   <ProductCard 
                     id={product.id} 
                     title={product.name} 
@@ -316,21 +349,34 @@ const Index = () => {
                     image={product.image_url} 
                     category={product.categories?.name || 'Product'} 
                     affiliateUrl={product.affiliate_url} 
-                    isNew={false}
+                    isNew={index < 2}
+                    discount={index === 0 ? "25%" : undefined}
                     fullProduct={product}
                   />
                 </div>
               )) : (
-                <div className="col-span-full text-center py-12">
-                  <p className="text-muted-foreground text-lg">
-                    No featured products available at the moment.
-                  </p>
+                <div className="col-span-full text-center py-20">
+                  <div className="max-w-md mx-auto">
+                    <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full flex items-center justify-center">
+                      <span className="text-4xl">🛍️</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4">Coming Soon</h3>
+                    <p className="text-white/60 text-lg">
+                      Our team is carefully curating premium products for you.
+                    </p>
+                  </div>
                 </div>
               )}
           </div>
 
-          <div className="text-center mt-12 reveal-up">
-            {/* View all products link removed as we now use modal */}
+          {/* Premium CTA Section */}
+          <div className="text-center mt-16 reveal-up">
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-card/30 to-card/20 backdrop-blur-sm border border-white/10 rounded-2xl">
+              <span className="text-white/80">Want to see more exclusive products?</span>
+              <button className="px-6 py-2 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-xl font-semibold text-sm hover:scale-105 transition-transform duration-300">
+                Explore All Categories
+              </button>
+            </div>
           </div>
         </div>
       </section>

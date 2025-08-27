@@ -287,4 +287,29 @@
   .stagger-2 { transition-delay: 0.2s; }
   .stagger-3 { transition-delay: 0.3s; }
   .stagger-4 { transition-delay: 0.4s; }
+
+  /* Modern Product Card Enhancements */
+  .bg-size-200 { background-size: 200% 100%; }
+  .bg-pos-0 { background-position: 0% 50%; }
+  .bg-pos-100 { background-position: 100% 50%; }
+
+  /* Enhanced Float Animation */
+  @keyframes animate-float {
+    0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) translateX(5px) rotate(1deg); }
+    66% { transform: translateY(5px) translateX(-5px) rotate(-1deg); }
+  }
+
+  .animate-float {
+    animation: animate-float 6s ease-in-out infinite;
+  }
+
+  /* Premium Card Hover Effects */
+  .group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+  }
+
+  .group:hover .group-hover\:translate-x-1 {
+    transform: translateX(0.25rem);
+  }
 }
