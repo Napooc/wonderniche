@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
-import ProductDetailModal from '@/components/ProductDetailModal';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Sparkles } from 'lucide-react';
 import lifestyleHero1 from '@/assets/lifestyle-hero-1.jpg';
@@ -14,8 +14,6 @@ const Lifestyle = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -76,19 +74,6 @@ const Lifestyle = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct({
-      ...product,
-      category_name: 'Lifestyle'
-    });
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedProduct(null);
-  };
 
   return (
     <div className="min-h-screen">
@@ -228,9 +213,10 @@ const Lifestyle = () => {
               viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'
             }`}>
               {filteredProducts.map((product, index) => (
-                <div 
-                  key={product.id} 
-                  className={`reveal-up stagger-${(index % 4) + 1}`}
+                <Link
+                  key={product.id}
+                  to={`/product/${product.id}`}
+                  className={`reveal-up stagger-${(index % 4) + 1} block transition-transform hover:scale-[1.02]`}
                 >
                   <ProductCard 
                     id={product.id}
@@ -242,9 +228,8 @@ const Lifestyle = () => {
                     category="Lifestyle"
                     affiliateUrl={product.affiliate_url}
                     isNew={product.is_featured}
-                    onClick={() => handleProductClick(product)}
                   />
-                </div>
+                </Link>
               ))}
             </div>
           )}
@@ -259,15 +244,6 @@ const Lifestyle = () => {
           )}
         </div>
       </section>
-
-      {/* Product Detail Modal */}
-      {selectedProduct && (
-        <ProductDetailModal
-          product={selectedProduct}
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-        />
-      )}
     </div>
   );
 };
