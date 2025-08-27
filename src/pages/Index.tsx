@@ -405,16 +405,51 @@ const Index = () => {
 
             <div>
               <h4 className="font-semibold mb-4 text-card-foreground">Connect</h4>
-              <div className="flex space-x-4">
-                <Button size="sm" variant="outline" className="w-10 h-10 p-0 rounded-full">
-                  <Heart className="w-4 h-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="w-10 h-10 p-0 rounded-full">
-                  <Globe className="w-4 h-4" />
-                </Button>
-                <Button size="sm" variant="outline" className="w-10 h-10 p-0 rounded-full">
-                  <Mail className="w-4 h-4" />
-                </Button>
+              <div className="flex space-x-3">
+                {/* Pinterest */}
+                <a 
+                  href="https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center border border-red-500/30 hover:bg-gradient-to-br hover:from-red-500 hover:to-pink-500 hover:border-red-500 transition-all duration-300 group-hover:scale-110">
+                    <svg 
+                      className="w-5 h-5 text-red-500 group-hover:text-white transition-colors duration-300" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M12 0C5.374 0 0 5.374 0 12s5.374 12 12 12 12-5.374 12-12S18.626 0 12 0zm0 19c-.721 0-1.418-.1-2.073-.285.286-.460.713-1.227.713-1.791 0-.524-.344-2.031-.344-2.031s-.676-2.004 1.519-8.376c-.364-.728-.308-2.208.342-2.765.636-.545 2.146.363 1.519 1.664-.568 1.177-1.742 3.281-1.742 3.281s.676.917 2.553.346c2.484-.756 2.553-3.857 2.553-3.857s.182-3.281-2.553-3.281c-3.735 0-5.616 2.693-5.616 4.926 0 1.234.344 1.847.996 1.847.652 0 1.372-.692 1.372-1.664 0-.972-.63-1.645-.996-1.645-.367 0-.524.308-.524.615 0 .308.158.539.158.615 0 .231-.344.462-.682.462-.524 0-.996-.615-.996-1.492 0-1.57 1.372-2.693 3.058-2.693 1.686 0 3.058 1.123 3.058 2.693 0 1.57-.996 2.693-2.371 2.693-.892 0-1.519-.462-1.519-1.108 0-.462.344-.846.682-.846.339 0 .524.231.524.539 0 .231-.158.385-.158.539 0 .154.158.231.344.231.367 0 .682-.385.682-.923 0-.77-.524-1.385-1.208-1.385z"/>
+                    </svg>
+                  </div>
+                </a>
+
+                {/* Telegram */}
+                <a 
+                  href="https://t.me/0701420239" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30 hover:bg-gradient-to-br hover:from-blue-500 hover:to-cyan-500 hover:border-blue-500 transition-all duration-300 group-hover:scale-110">
+                    <svg 
+                      className="w-5 h-5 text-blue-500 group-hover:text-white transition-colors duration-300" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.820 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+              
+              <div className="mt-4 space-y-2">
+                <p className="text-xs text-muted-foreground">
+                  Follow us on Pinterest for inspiration
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  Contact us on Telegram: 0701420239
+                </p>
               </div>
             </div>
           </div>
