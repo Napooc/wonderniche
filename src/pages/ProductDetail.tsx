@@ -156,8 +156,8 @@ const ProductDetail = () => {
             <div className="space-y-6">
               {/* Main Image */}
               <div className="relative group">
-                <div className="aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-2xl">
-                  <img src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop'} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" onError={e => {
+                <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-2xl">
+                  <img src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop'} alt={product.name} className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105" onError={e => {
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop';
                 }} />
                   
