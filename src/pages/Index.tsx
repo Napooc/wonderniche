@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -6,7 +6,50 @@ import ProductCard from '@/components/ProductCard';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Heart, Globe, Dumbbell, Home, Mail } from 'lucide-react';
+import { supabase } from '@/integrations/supabase/client';
 const Index = () => {
+  const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
+  const [categories, setCategories] = useState<any[]>([]);
+
+  // Fetch featured products from Supabase
+  useEffect(() => {
+    const fetchFeaturedProducts = async () => {
+      try {
+        const { data: products, error } = await supabase
+          .from('products')
+          .select(`
+            id,
+            name,
+            description,
+            short_description,
+            rating,
+            reviews_count,
+            image_url,
+            affiliate_url,
+            is_featured,
+            category_id,
+            categories (
+              name
+            )
+          `)
+          .eq('is_featured', true)
+          .eq('is_active', true)
+          .order('created_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching featured products:', error);
+          return;
+        }
+
+        setFeaturedProducts(products || []);
+      } catch (error) {
+        console.error('Error fetching featured products:', error);
+      }
+    };
+
+    fetchFeaturedProducts();
+  }, []);
+
   // Reveal animations on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -23,39 +66,7 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Sample products data
-  const featuredProducts = [{
-    id: '1',
-    title: 'Premium Skincare Set',
-    description: 'Luxurious anti-aging skincare collection with natural ingredients for radiant, youthful skin.',
-    rating: 5,
-    reviews: 234,
-    image: 'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop',
-    category: 'Beauty',
-    affiliateUrl: 'https://example.com/skincare',
-    isNew: true
-  }, {
-    id: '2',
-    title: 'Travel Essentials Kit',
-    description: 'Complete travel companion with premium luggage, organizers, and comfort accessories.',
-    rating: 5,
-    reviews: 189,
-    image: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400&h=300&fit=crop',
-    category: 'Travel',
-    affiliateUrl: 'https://example.com/travel',
-    discount: '20% OFF'
-  }, {
-    id: '3',
-    title: 'Wellness Meditation Bundle',
-    description: 'Complete mindfulness package with meditation cushions, aromatherapy, and guidance.',
-    rating: 5,
-    reviews: 156,
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop',
-    category: 'Wellness',
-    affiliateUrl: 'https://example.com/wellness'
-  }];
-  const categories = [{
+  const staticCategories = [{
     icon: Sparkles,
     title: 'Beauty',
     description: 'Premium skincare, makeup, and beauty tools',
@@ -95,7 +106,7 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {categories.map((category, index) => {
+            {staticCategories.map((category, index) => {
             const IconComponent = category.icon;
             return <Link key={category.title} to={`/${category.title.toLowerCase()}`} className={`glass-card p-8 text-center group cursor-pointer transition-all duration-500 hover:scale-105 reveal-up stagger-${index + 1} block`}>
                   <div className={`w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r ${category.color} p-4 group-hover:scale-110 transition-transform duration-300`}>
@@ -293,9 +304,33 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product, index) => <Link key={product.id} to={`/product/${product.id}`} className={`reveal-up stagger-${index + 1} block`}>
-                <ProductCard {...product} />
-              </Link>)}
+            {featuredProducts.length > 0 ? (
+              featuredProducts.map((product, index) => (
+                <Link 
+                  key={product.id} 
+                  to={`/product/${product.id}`} 
+                  className={`reveal-up stagger-${index + 1} block`}
+                >
+                  <ProductCard 
+                    id={product.id}
+                    title={product.name}
+                    description={product.short_description || product.description}
+                    rating={product.rating || 4.5}
+                    reviews={product.reviews_count || 0}
+                    image={product.image_url}
+                    category={product.categories?.name || 'Product'}
+                    affiliateUrl={product.affiliate_url}
+                    isNew={false}
+                  />
+                </Link>
+              ))
+            ) : (
+              <div className="col-span-full text-center py-12">
+                <p className="text-muted-foreground text-lg">
+                  No featured products available at the moment.
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="text-center mt-12 reveal-up">
