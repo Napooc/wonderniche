@@ -197,7 +197,6 @@ const Travel = () => {
                     category="Travel"
                     affiliateUrl={product.affiliate_url}
                     isNew={product.is_featured}
-                    fullProduct={product}
                   />
                 </div>
               ))}
