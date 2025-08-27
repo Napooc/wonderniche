@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Star, ExternalLink, Heart, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ProductDetailModal from '@/components/ProductDetailModal';
+
 interface ProductCardProps {
   id: string;
   title: string;
@@ -13,8 +15,10 @@ interface ProductCardProps {
   affiliateUrl: string;
   isNew?: boolean;
   discount?: string;
+  fullProduct?: any;
 }
 const ProductCard = ({
+  id,
   title,
   description,
   rating,
@@ -23,19 +27,29 @@ const ProductCard = ({
   category,
   affiliateUrl,
   isNew = false,
-  discount
+  discount,
+  fullProduct
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
-  const handleAffiliateClick = () => {
-    window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const handleCardClick = () => {
+    setIsModalOpen(true);
   };
   const renderStars = (rating: number) => {
     return Array.from({
       length: 5
     }, (_, i) => <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />);
   };
-  return <div className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+  return (
+    <>
+      <div 
+        className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} 
+        onMouseEnter={() => setIsHovered(true)} 
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={handleCardClick}
+      >
       {/* Image Container */}
       <div className="relative overflow-hidden flex-shrink-0">
         <img src={image} alt={title} className={`w-full h-64 object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`} />
@@ -91,17 +105,43 @@ const ProductCard = ({
 
         {/* CTA Button */}
         <div className="flex justify-center pt-4 mt-auto">
-          <Button onClick={handleAffiliateClick} className="btn-premium group w-full">
-            Read More
+          <Button onClick={handleCardClick} className="btn-premium group w-full">
+            View Details
             <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>
       </div>
 
-      {/* Hover Glow Effect */}
-      <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 pointer-events-none ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="absolute inset-0 rounded-2xl animate-glow-pulse" />
+        {/* Hover Glow Effect */}
+        <div className={`absolute inset-0 rounded-2xl transition-opacity duration-300 pointer-events-none ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="absolute inset-0 rounded-2xl animate-glow-pulse" />
+        </div>
       </div>
-    </div>;
+      
+      {fullProduct && (
+        <ProductDetailModal
+          product={{
+            id: fullProduct.id,
+            title: fullProduct.name,
+            description: fullProduct.short_description || fullProduct.description,
+            fullDescription: fullProduct.description,
+            rating: fullProduct.rating || 4.5,
+            reviews: fullProduct.reviews_count || 0,
+            images: fullProduct.image_url ? [fullProduct.image_url] : [],
+            category: category,
+            affiliateUrl: fullProduct.affiliate_url,
+            isNew: isNew,
+            discount: discount,
+            features: fullProduct.features || [],
+            specifications: {},
+            price: fullProduct.price,
+            originalPrice: fullProduct.original_price
+          }}
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
+    </>
+  );
 };
 export default ProductCard;

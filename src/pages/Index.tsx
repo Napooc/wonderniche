@@ -305,19 +305,32 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.length > 0 ? featuredProducts.map((product, index) => <Link key={product.id} to={`/product/${product.id}`} className={`reveal-up stagger-${index + 1} block`}>
-                  <ProductCard id={product.id} title={product.name} description={product.short_description || product.description} rating={product.rating || 4.5} reviews={product.reviews_count || 0} image={product.image_url} category={product.categories?.name || 'Product'} affiliateUrl={product.affiliate_url} isNew={false} />
-                </Link>) : <div className="col-span-full text-center py-12">
-                <p className="text-muted-foreground text-lg">
-                  No featured products available at the moment.
-                </p>
-              </div>}
+            {featuredProducts.length > 0 ? featuredProducts.map((product, index) => (
+                <div key={product.id} className={`reveal-up stagger-${index + 1}`}>
+                  <ProductCard 
+                    id={product.id} 
+                    title={product.name} 
+                    description={product.short_description || product.description} 
+                    rating={product.rating || 4.5} 
+                    reviews={product.reviews_count || 0} 
+                    image={product.image_url} 
+                    category={product.categories?.name || 'Product'} 
+                    affiliateUrl={product.affiliate_url} 
+                    isNew={false}
+                    fullProduct={product}
+                  />
+                </div>
+              )) : (
+                <div className="col-span-full text-center py-12">
+                  <p className="text-muted-foreground text-lg">
+                    No featured products available at the moment.
+                  </p>
+                </div>
+              )}
           </div>
 
           <div className="text-center mt-12 reveal-up">
-            <Link to="/products">
-              
-            </Link>
+            {/* View all products link removed as we now use modal */}
           </div>
         </div>
       </section>
