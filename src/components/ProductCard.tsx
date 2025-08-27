@@ -13,6 +13,7 @@ interface ProductCardProps {
   affiliateUrl: string;
   isNew?: boolean;
   discount?: string;
+  onClick?: () => void;
 }
 const ProductCard = ({
   title,
@@ -23,7 +24,8 @@ const ProductCard = ({
   category,
   affiliateUrl,
   isNew = false,
-  discount
+  discount,
+  onClick
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
@@ -35,7 +37,12 @@ const ProductCard = ({
       length: 5
     }, (_, i) => <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />);
   };
-  return <div className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+  return <div 
+    className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} 
+    onMouseEnter={() => setIsHovered(true)} 
+    onMouseLeave={() => setIsHovered(false)}
+    onClick={onClick}
+  >
       {/* Image Container */}
       <div className="relative overflow-hidden flex-shrink-0">
         <img src={image} alt={title} className={`w-full h-64 object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`} />
@@ -91,8 +98,8 @@ const ProductCard = ({
 
         {/* CTA Button */}
         <div className="flex justify-center pt-4 mt-auto">
-          <Button onClick={handleAffiliateClick} className="btn-premium group w-full">
-            Read More
+          <Button onClick={(e) => { e.stopPropagation(); if (onClick) onClick(); }} className="btn-premium group w-full">
+            View Details
             <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
         </div>

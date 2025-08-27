@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
+import ProductDetailModal from '@/components/ProductDetailModal';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Heart } from 'lucide-react';
 import wellnessHero1 from '@/assets/wellness-hero-1.jpg';
@@ -13,6 +14,8 @@ const Wellness = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -75,9 +78,16 @@ const Wellness = () => {
   }, []);
 
   const handleProductClick = (product) => {
-    if (product.affiliate_url) {
-      window.open(product.affiliate_url, '_blank', 'noopener,noreferrer');
-    }
+    setSelectedProduct({
+      ...product,
+      category_name: 'Wellness'
+    });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -210,8 +220,7 @@ const Wellness = () => {
               {filteredProducts.map((product, index) => (
                 <div 
                   key={product.id} 
-                  className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
-                  onClick={() => handleProductClick(product)}
+                  className={`reveal-up stagger-${(index % 4) + 1}`}
                 >
                   <ProductCard 
                     id={product.id}
@@ -223,6 +232,7 @@ const Wellness = () => {
                     category="Wellness"
                     affiliateUrl={product.affiliate_url}
                     isNew={product.is_featured}
+                    onClick={() => handleProductClick(product)}
                   />
                 </div>
               ))}
@@ -240,6 +250,14 @@ const Wellness = () => {
         </div>
       </section>
 
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <ProductDetailModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };

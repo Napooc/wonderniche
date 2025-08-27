@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
+import ProductDetailModal from '@/components/ProductDetailModal';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, MapPin } from 'lucide-react';
 import travelHero1 from '@/assets/travel-hero-1.jpg';
@@ -13,6 +14,8 @@ const Travel = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -75,9 +78,16 @@ const Travel = () => {
   }, []);
 
   const handleProductClick = (product) => {
-    if (product.affiliate_url) {
-      window.open(product.affiliate_url, '_blank', 'noopener,noreferrer');
-    }
+    setSelectedProduct({
+      ...product,
+      category_name: 'Travel'
+    });
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
   };
 
   return (
@@ -184,8 +194,7 @@ const Travel = () => {
               {filteredProducts.map((product, index) => (
                 <div 
                   key={product.id} 
-                  className={`reveal-up stagger-${(index % 4) + 1} cursor-pointer`}
-                  onClick={() => handleProductClick(product)}
+                  className={`reveal-up stagger-${(index % 4) + 1}`}
                 >
                   <ProductCard 
                     id={product.id}
@@ -197,6 +206,7 @@ const Travel = () => {
                     category="Travel"
                     affiliateUrl={product.affiliate_url}
                     isNew={product.is_featured}
+                    onClick={() => handleProductClick(product)}
                   />
                 </div>
               ))}
@@ -214,6 +224,14 @@ const Travel = () => {
         </div>
       </section>
 
+      {/* Product Detail Modal */}
+      {selectedProduct && (
+        <ProductDetailModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };
