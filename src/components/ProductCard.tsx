@@ -36,13 +36,13 @@ const ProductCard = ({
     }, (_, i) => <Star key={i} className={`w-4 h-4 ${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />);
   };
   return <div 
-    className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} 
+    className={`glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-2xl h-[500px] sm:h-[550px] lg:h-[600px] flex flex-col ${isHovered ? 'transform-gpu' : ''}`} 
     onMouseEnter={() => setIsHovered(true)} 
     onMouseLeave={() => setIsHovered(false)}
   >
       {/* Image Container */}
-      <div className="relative overflow-hidden flex-shrink-0">
-        <img src={image} alt={title} className={`w-full h-64 object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`} />
+      <div className="relative overflow-hidden flex-shrink-0 h-48 sm:h-56 lg:h-64">
+        <img src={image} alt={title} className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`} />
         
         {/* Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
