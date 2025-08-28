@@ -227,35 +227,7 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 px-4 relative">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-20 reveal-up">
-            <h2 className="text-5xl md:text-6xl font-black gradient-text mb-6">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The passionate individuals behind VibeNiche's success
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => <div key={member.name} className={`text-center group reveal-up stagger-${index + 1}`}>
-                <div className="relative mb-6">
-                  <div className="glass-card p-2 rounded-3xl group-hover:scale-105 transition-all duration-500">
-                    <img src={member.image} alt={member.name} className="w-full h-80 object-cover rounded-2xl" />
-                  </div>
-                  <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 glass-card px-6 py-2 rounded-full">
-                    <Award className="w-5 h-5 text-primary mx-auto" />
-                  </div>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-card-foreground mb-2">{member.name}</h3>
-                <p className="text-primary font-semibold mb-4">{member.role}</p>
-                <p className="text-muted-foreground italic">"{member.quote}"</p>
-              </div>)}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Timeline Section */}
       <section className="py-24 px-4 relative overflow-hidden">
