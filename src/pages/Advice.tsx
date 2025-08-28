@@ -6,7 +6,7 @@ import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Brain, Lightbulb, Target, TrendingUp } from 'lucide-react';
-import adviceHero1 from '@/assets/advice-hero-1.jpg';
+import adviceHero2 from '@/assets/advice-hero-2.jpg';
 
 const Advice = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -110,7 +110,7 @@ const Advice = () => {
       <CategoryHero
         title="Expert Advice"
         subtitle="Curated wisdom and actionable insights from industry experts and thought leaders"
-        images={[adviceHero1]}
+        images={[adviceHero2]}
         ctaText="Explore Expert Guidance"
         onCtaClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
       />

@@ -95,7 +95,9 @@ const ProductCard = ({
 
         {/* CTA Button */}
         <div className="flex justify-center pt-4 mt-auto">
-          <Button className="btn-premium group w-full">
+          <Button 
+            className="btn-premium group w-full"
+          >
             View Details
             <ExternalLink className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
           </Button>
