@@ -280,8 +280,8 @@ const ProductDetail = () => {
             {/* Full Description */}
             {product.description && <Card className="p-8 bg-gradient-to-br from-card to-card/50 border-0 shadow-lg">
                 <h3 className="text-2xl font-semibold mb-6 text-center">Description</h3>
-                <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
-                  <p>{product.description}</p>
+                <div className="max-w-none text-muted-foreground leading-relaxed whitespace-pre-wrap break-words">
+                  <p className="text-base leading-7">{product.description}</p>
                 </div>
               </Card>}
 
