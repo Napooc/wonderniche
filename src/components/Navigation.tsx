@@ -42,7 +42,7 @@ const location = useLocation();
             <img 
               src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
               alt="VibeNiche Logo" 
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -96,7 +96,7 @@ const location = useLocation();
                 <img 
                   src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
                   alt="VibeNiche Logo" 
-                  className="h-8 w-auto"
+                  className="h-10 w-auto"
                 />
               </div>
 
