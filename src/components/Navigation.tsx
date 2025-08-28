@@ -40,13 +40,10 @@ const location = useLocation();
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" 
+              src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
               alt="VibeNiche Logo" 
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
             />
-            <span className="text-2xl font-bold gradient-text hidden sm:block">
-              VibeNiche
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -97,13 +94,10 @@ const location = useLocation();
             <SheetContent side="right" className="glass-card w-72">
               <div className="flex items-center space-x-3 mb-8">
                 <img 
-                  src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" 
+                  src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
                   alt="VibeNiche Logo" 
                   className="h-8 w-auto"
                 />
-                <span className="text-xl font-bold gradient-text">
-                  VibeNiche
-                </span>
               </div>
 
               <div className="space-y-4">
