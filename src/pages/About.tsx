@@ -1,19 +1,7 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
-import { 
-  Heart, 
-  Sparkles, 
-  Target, 
-  Users, 
-  Award, 
-  TrendingUp, 
-  Globe,
-  Star,
-  CheckCircle2,
-  Zap
-} from 'lucide-react';
-
+import { Heart, Sparkles, Target, Users, Award, TrendingUp, Globe, Star, CheckCircle2, Zap } from 'lucide-react';
 const About = () => {
   // Reveal animations on scroll
   useEffect(() => {
@@ -31,64 +19,61 @@ const About = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const values = [
-    {
-      icon: Heart,
-      title: "Authentic Connections",
-      description: "We believe in building genuine relationships with brands and customers through honest recommendations.",
-      color: "from-pink-500 to-rose-500"
-    },
-    {
-      icon: Star,
-      title: "Quality First", 
-      description: "Every product we feature meets our rigorous standards for excellence and customer satisfaction.",
-      color: "from-amber-500 to-yellow-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Innovation Driven",
-      description: "We stay ahead of trends to bring you the latest and greatest in lifestyle innovation.",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: Globe,
-      title: "Global Impact",
-      description: "Our platform connects lifestyle enthusiasts worldwide with premium brands they'll love.",
-      color: "from-green-500 to-emerald-500"
-    }
-  ];
-
-  const team = [
-    {
-      name: "Sarah Johnson",
-      role: "Founder & CEO",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      quote: "Building bridges between lifestyle dreamers and premium brands."
-    },
-    {
-      name: "Marcus Chen", 
-      role: "Head of Partnerships",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      quote: "Curating relationships that create authentic value."
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Creative Director", 
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-      quote: "Design is the language that speaks to the soul."
-    }
-  ];
-
-  const milestones = [
-    { year: "2022", event: "VibeNiche Founded", description: "Started with a vision to revolutionize affiliate marketing" },
-    { year: "2023", event: "50K+ Community", description: "Reached our first major milestone of happy customers" },
-    { year: "2024", event: "Premium Partnerships", description: "Established exclusive relationships with top lifestyle brands" },
-    { year: "2025", event: "Global Expansion", description: "Expanding our reach to serve lifestyle enthusiasts worldwide" }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const values = [{
+    icon: Heart,
+    title: "Authentic Connections",
+    description: "We believe in building genuine relationships with brands and customers through honest recommendations.",
+    color: "from-pink-500 to-rose-500"
+  }, {
+    icon: Star,
+    title: "Quality First",
+    description: "Every product we feature meets our rigorous standards for excellence and customer satisfaction.",
+    color: "from-amber-500 to-yellow-500"
+  }, {
+    icon: TrendingUp,
+    title: "Innovation Driven",
+    description: "We stay ahead of trends to bring you the latest and greatest in lifestyle innovation.",
+    color: "from-blue-500 to-cyan-500"
+  }, {
+    icon: Globe,
+    title: "Global Impact",
+    description: "Our platform connects lifestyle enthusiasts worldwide with premium brands they'll love.",
+    color: "from-green-500 to-emerald-500"
+  }];
+  const team = [{
+    name: "Sarah Johnson",
+    role: "Founder & CEO",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+    quote: "Building bridges between lifestyle dreamers and premium brands."
+  }, {
+    name: "Marcus Chen",
+    role: "Head of Partnerships",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    quote: "Curating relationships that create authentic value."
+  }, {
+    name: "Elena Rodriguez",
+    role: "Creative Director",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
+    quote: "Design is the language that speaks to the soul."
+  }];
+  const milestones = [{
+    year: "2022",
+    event: "VibeNiche Founded",
+    description: "Started with a vision to revolutionize affiliate marketing"
+  }, {
+    year: "2023",
+    event: "50K+ Community",
+    description: "Reached our first major milestone of happy customers"
+  }, {
+    year: "2024",
+    event: "Premium Partnerships",
+    description: "Established exclusive relationships with top lifestyle brands"
+  }, {
+    year: "2025",
+    event: "Global Expansion",
+    description: "Expanding our reach to serve lifestyle enthusiasts worldwide"
+  }];
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
@@ -96,8 +81,12 @@ const About = () => {
         {/* Animated background elements */}
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-float" style={{animationDelay: '-3s'}}></div>
-          <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-2xl animate-float" style={{animationDelay: '-6s'}}></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-float" style={{
+          animationDelay: '-3s'
+        }}></div>
+          <div className="absolute top-1/2 left-1/3 w-48 h-48 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-2xl animate-float" style={{
+          animationDelay: '-6s'
+        }}></div>
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -105,11 +94,7 @@ const About = () => {
             {/* Logo Integration */}
             <div className="flex justify-center mb-8">
               <div className="glass-card p-6 rounded-3xl">
-                <img 
-                  src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" 
-                  alt="VibeNiche Logo" 
-                  className="h-20 w-auto mx-auto animate-pulse"
-                />
+                <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeNiche Logo" className="h-20 w-auto mx-auto animate-pulse" />
               </div>
             </div>
             
@@ -125,16 +110,7 @@ const About = () => {
               connecting you with products that transform ordinary moments into extraordinary experiences.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button size="lg" className="btn-premium text-lg px-10 py-4 rounded-full">
-                <Sparkles className="w-5 h-5 mr-2" />
-                Our Story
-              </Button>
-              <Button size="lg" variant="outline" className="btn-glass text-lg px-10 py-4 rounded-full">
-                <Users className="w-5 h-5 mr-2" />
-                Meet The Team
-              </Button>
-            </div>
+            
           </div>
         </div>
       </section>
@@ -188,11 +164,7 @@ const About = () => {
             <div className="reveal-up stagger-1">
               <div className="relative">
                 <div className="glass-card p-8 rounded-3xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" 
-                    alt="Team collaboration" 
-                    className="w-full h-80 object-cover rounded-2xl"
-                  />
+                  <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop" alt="Team collaboration" className="w-full h-80 object-cover rounded-2xl" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-2xl">
                   <div className="flex items-center gap-3">
@@ -216,9 +188,9 @@ const About = () => {
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)`,
-            backgroundSize: '60px 60px'
-          }}></div>
+          backgroundImage: `radial-gradient(circle at 2px 2px, hsl(var(--primary)) 1px, transparent 0)`,
+          backgroundSize: '60px 60px'
+        }}></div>
         </div>
 
         <div className="container mx-auto max-w-6xl relative z-10">
@@ -233,9 +205,8 @@ const About = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {values.map((value, index) => {
-              const IconComponent = value.icon;
-              return (
-                <div key={value.title} className={`glass-card p-8 rounded-3xl group hover:scale-[1.02] transition-all duration-500 reveal-up stagger-${index + 1}`}>
+            const IconComponent = value.icon;
+            return <div key={value.title} className={`glass-card p-8 rounded-3xl group hover:scale-[1.02] transition-all duration-500 reveal-up stagger-${index + 1}`}>
                   <div className="flex items-start gap-6">
                     <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${value.color} p-4 group-hover:scale-110 transition-transform duration-300`}>
                       <IconComponent className="w-full h-full text-white" />
@@ -249,9 +220,8 @@ const About = () => {
                       </p>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </section>
@@ -269,15 +239,10 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={member.name} className={`text-center group reveal-up stagger-${index + 1}`}>
+            {team.map((member, index) => <div key={member.name} className={`text-center group reveal-up stagger-${index + 1}`}>
                 <div className="relative mb-6">
                   <div className="glass-card p-2 rounded-3xl group-hover:scale-105 transition-all duration-500">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-80 object-cover rounded-2xl"
-                    />
+                    <img src={member.image} alt={member.name} className="w-full h-80 object-cover rounded-2xl" />
                   </div>
                   <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 glass-card px-6 py-2 rounded-full">
                     <Award className="w-5 h-5 text-primary mx-auto" />
@@ -287,8 +252,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold text-card-foreground mb-2">{member.name}</h3>
                 <p className="text-primary font-semibold mb-4">{member.role}</p>
                 <p className="text-muted-foreground italic">"{member.quote}"</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -309,8 +273,7 @@ const About = () => {
             {/* Timeline line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-accent to-primary rounded-full"></div>
             
-            {milestones.map((milestone, index) => (
-              <div key={milestone.year} className={`relative mb-16 reveal-up stagger-${index + 1}`}>
+            {milestones.map((milestone, index) => <div key={milestone.year} className={`relative mb-16 reveal-up stagger-${index + 1}`}>
                 <div className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} gap-8`}>
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <div className="glass-card p-6 rounded-2xl">
@@ -324,8 +287,7 @@ const About = () => {
                   
                   <div className="flex-1"></div>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -349,10 +311,7 @@ const About = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="btn-premium text-lg px-10 py-4 rounded-full">
-                <Sparkles className="w-5 h-5 mr-2" />
-                Start Exploring
-              </Button>
+              
               <Button size="lg" variant="outline" className="btn-glass text-lg px-10 py-4 rounded-full">
                 <Heart className="w-5 h-5 mr-2" />
                 Contact Us
@@ -376,8 +335,6 @@ const About = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
