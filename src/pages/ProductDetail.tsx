@@ -283,26 +283,26 @@ const ProductDetail = () => {
 
           {/* Main Description Card */}
           {product.description && (
-            <div className="mb-12">
-              <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-2xl">
-                <div className="p-8 md:p-12 lg:p-16">
-                  <div className="text-center mb-10">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <div className="mb-8">
+              <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="p-6 md:p-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3">
                       Product Description
                     </h3>
-                    <div className="w-20 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
                   </div>
                   
                   {/* Description Content */}
-                  <div className="max-w-none">
-                    <div className="text-foreground leading-relaxed text-base md:text-lg space-y-6">
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-foreground/90 leading-relaxed text-sm md:text-base space-y-4">
                       {product.description.split('\n\n').map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="space-y-4">
+                        <div key={sectionIndex} className="space-y-3">
                           {section.split('\n').map((paragraph, paragraphIndex) => (
                             paragraph.trim() ? (
                               <p 
                                 key={paragraphIndex} 
-                                className="text-justify leading-7 md:leading-8 tracking-wide break-words hyphens-auto"
+                                className="text-justify leading-6 md:leading-7 break-words hyphens-auto"
                                 style={{ 
                                   wordBreak: 'break-word',
                                   overflowWrap: 'break-word',
@@ -314,7 +314,7 @@ const ProductDetail = () => {
                             ) : null
                           ))}
                           {sectionIndex < product.description.split('\n\n').length - 1 && (
-                            <div className="border-t border-border/30 my-6"></div>
+                            <div className="border-t border-border/20 my-4"></div>
                           )}
                         </div>
                       ))}
