@@ -54,6 +54,34 @@ const ProductDetail = () => {
       fetchProduct();
     }
   }, [id, navigate]);
+
+  // SEO: Dynamic title, meta description, and canonical URL
+  useEffect(() => {
+    if (!product) return;
+
+    // Title tag
+    document.title = `${product.name} | Product Details`;
+
+    // Meta description
+    const descriptionText = (product.short_description || product.description || '').slice(0, 155);
+    let meta = document.querySelector('meta[name="description"]') as HTMLMetaElement | null;
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.setAttribute('name', 'description');
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute('content', descriptionText);
+
+    // Canonical link
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', window.location.href);
+  }, [product]);
+
   const handleAffiliateClick = () => {
     if (product?.affiliate_url) {
       window.open(product.affiliate_url, '_blank', 'noopener,noreferrer');
@@ -217,10 +245,10 @@ const ProductDetail = () => {
                   </span>
                 </div>
 
-                {/* Short Description */}
-                <p className="text-xl text-muted-foreground leading-relaxed">
-                  {product.short_description || product.description}
-                </p>
+                {/* Description - full text */}
+                <div className="text-base md:text-lg text-muted-foreground leading-relaxed whitespace-pre-wrap break-words">
+                  {product.description || product.short_description}
+                </div>
               </div>
 
               {/* Features */}
