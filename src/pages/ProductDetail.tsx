@@ -266,7 +266,7 @@ const ProductDetail = () => {
 
       {/* Product Details Section */}
       <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
               Product Details
@@ -278,15 +278,58 @@ const ProductDetail = () => {
 
           <div className="grid gap-8">
             {/* Full Description */}
-            {product.description && <Card className="p-8 bg-gradient-to-br from-card to-card/50 border-0 shadow-lg">
-                <h3 className="text-2xl font-semibold mb-6 text-center">Description</h3>
-                <div className="max-w-none text-muted-foreground leading-relaxed whitespace-pre-wrap break-words">
-                  <p className="text-base leading-7">{product.description}</p>
+            {product.description && (
+              <Card className="p-8 md:p-12 bg-gradient-to-br from-card via-card/95 to-card/80 border-0 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-center bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+                    Full Product Description
+                  </h3>
+                  
+                  <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
+                  
+                  <div className="prose prose-lg max-w-none">
+                    <div className="text-foreground/90 leading-8 text-lg tracking-wide whitespace-pre-wrap break-words overflow-visible">
+                      {product.description.split('\n').map((paragraph, index) => (
+                        paragraph.trim() ? (
+                          <p key={index} className="mb-4 last:mb-0 text-justify">
+                            {paragraph}
+                          </p>
+                        ) : (
+                          <br key={index} />
+                        )
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              </Card>}
+              </Card>
+            )}
 
-            {/* Trust Badges */}
-            
+            {/* Additional Product Info */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="p-6 bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20">
+                <div className="text-center space-y-3">
+                  <Truck className="w-8 h-8 text-primary mx-auto" />
+                  <h4 className="font-semibold text-lg">Free Shipping</h4>
+                  <p className="text-sm text-muted-foreground">Fast & reliable delivery worldwide</p>
+                </div>
+              </Card>
+              
+              <Card className="p-6 bg-gradient-to-br from-green-500/5 to-green-500/10 border border-green-500/20">
+                <div className="text-center space-y-3">
+                  <Shield className="w-8 h-8 text-green-600 mx-auto" />
+                  <h4 className="font-semibold text-lg">Secure Purchase</h4>
+                  <p className="text-sm text-muted-foreground">SSL encrypted checkout process</p>
+                </div>
+              </Card>
+              
+              <Card className="p-6 bg-gradient-to-br from-blue-500/5 to-blue-500/10 border border-blue-500/20">
+                <div className="text-center space-y-3">
+                  <RotateCcw className="w-8 h-8 text-blue-600 mx-auto" />
+                  <h4 className="font-semibold text-lg">Easy Returns</h4>
+                  <p className="text-sm text-muted-foreground">30-day return policy guarantee</p>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
