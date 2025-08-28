@@ -121,175 +121,256 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Modern Trust & Impact Section */}
-      <section className="py-32 px-4 relative overflow-hidden">
-        {/* Animated Background Grid */}
-        <div className="absolute inset-0 opacity-30">
+      {/* Ultra Modern Trust & Impact Section */}
+      <section className="py-32 px-4 relative overflow-hidden bg-gradient-to-br from-background via-background/50 to-background">
+        {/* Advanced Animated Background */}
+        <div className="absolute inset-0 opacity-20">
+          {/* Morphing Grid Pattern */}
           <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-          backgroundSize: '40px 40px',
-          animation: 'float 20s ease-in-out infinite'
-        }}></div>
+            backgroundImage: `
+              radial-gradient(circle at 25% 25%, hsl(var(--primary)) 1px, transparent 1px),
+              radial-gradient(circle at 75% 75%, hsl(var(--accent)) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px, 40px 40px',
+            animation: 'morphGrid 15s ease-in-out infinite alternate'
+          }}></div>
+          
+          {/* Flowing Lines */}
+          <div className="absolute top-0 left-0 w-full h-full">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
+                style={{
+                  top: `${20 + i * 15}%`,
+                  width: '100%',
+                  animation: `flowLine ${8 + i * 2}s linear infinite`,
+                  animationDelay: `${i * 2}s`
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Section Header */}
-          <div className="text-center mb-20 reveal-up">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card mb-6">
-              <div className="w-3 h-3 bg-gradient-to-r from-green-400 to-blue-500 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-muted-foreground">Live Impact Dashboard</span>
+          {/* Revolutionary Header */}
+          <div className="text-center mb-24 reveal-up">
+            {/* Floating Status Badge */}
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full glass-card mb-8 border border-primary/20">
+              <div className="relative">
+                <div className="w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
+              </div>
+              <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                LIVE IMPACT METRICS
+              </span>
+              <div className="w-2 h-2 bg-accent rounded-full animate-bounce"></div>
             </div>
-            <h2 className="text-5xl md:text-7xl font-black mb-6">
-              <span className="gradient-text">Trusted by</span>
-              <br />
-              <span className="text-foreground">Thousands</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Real numbers from real people who've transformed their lifestyle through our 
-              <span className="text-primary font-semibold"> affiliate marketplace</span>
+            
+            {/* Dynamic Title with Morphing Text */}
+            <div className="relative mb-8">
+              <h2 className="text-6xl md:text-8xl font-black mb-4">
+                <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-300%">
+                  Trusted by
+                </span>
+              </h2>
+              <div className="text-6xl md:text-8xl font-black">
+                <span className="relative inline-block">
+                  <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+                    Thousands
+                  </span>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
+                </span>
+              </div>
+            </div>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Real metrics from real customers who've discovered their perfect lifestyle through our 
+              <span className="relative">
+                <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold">
+                  curated marketplace
+                </span>
+                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-accent animate-pulse"></div>
+              </span>
             </p>
           </div>
 
-          {/* Dynamic Stats Grid */}
-          <div className="grid lg:grid-cols-2 gap-12 mb-20">
-            {/* Left Side - Main Stats */}
+          {/* Revolutionary Stats Architecture */}
+          <div className="grid lg:grid-cols-2 gap-16 mb-24">
+            {/* Hero Statistics */}
             <div className="space-y-8">
-              <div className="relative">
-                <div className="glass-card p-8 hover:scale-[1.02] transition-all duration-500 group">
-                  <div className="flex items-start justify-between mb-6">
-                    <div>
-                      <div className="text-6xl md:text-8xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">
+              {/* Primary Stat - Enhanced */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div className="relative glass-card p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex-1">
+                      <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-500 bg-clip-text text-transparent group-hover:animate-pulse">
                         50K+
                       </div>
-                      <h3 className="text-xl font-semibold text-card-foreground mb-2">Happy Customers</h3>
-                      <p className="text-muted-foreground text-sm">Growing daily across 40+ countries</p>
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">Happy Customers</h3>
+                      <p className="text-muted-foreground">Growing daily across 40+ countries</p>
+                      <div className="flex items-center gap-2 mt-4">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-green-500 font-medium">+1,247 this month</span>
+                      </div>
                     </div>
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center">
-                      <Heart className="w-8 h-8 text-pink-500 animate-pulse" />
+                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Heart className="w-10 h-10 text-pink-500 animate-pulse" />
                     </div>
                   </div>
-                  <div className="w-full bg-border rounded-full h-2">
-                    <div className="bg-gradient-to-r from-pink-500 to-rose-500 h-2 rounded-full animate-pulse" style={{
-                    width: '87%'
-                  }}></div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Satisfaction Rate</span>
+                      <span className="text-pink-500 font-semibold">98.7%</span>
+                    </div>
+                    <div className="w-full bg-border/50 rounded-full h-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-pink-500 to-purple-500 h-3 rounded-full animate-pulse relative" style={{ width: '98.7%' }}>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 animate-shimmer"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="glass-card p-8 hover:scale-[1.02] transition-all duration-500 group">
-                <div className="flex items-start justify-between mb-6">
-                  <div>
-                    <div className="text-6xl md:text-8xl font-black gradient-text mb-2 group-hover:scale-110 transition-transform duration-300">
-                      4.9★
+              {/* Secondary Stat - Enhanced */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div className="relative glass-card p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
+                  <div className="flex items-start justify-between mb-8">
+                    <div className="flex-1">
+                      <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500 bg-clip-text text-transparent group-hover:animate-pulse">
+                        4.9★
+                      </div>
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">Trust Rating</h3>
+                      <p className="text-muted-foreground">Based on 12,847 verified reviews</p>
                     </div>
-                    <h3 className="text-xl font-semibold text-card-foreground mb-2">Trust Rating</h3>
-                    <p className="text-muted-foreground text-sm">Based on 12,847 verified reviews</p>
+                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Sparkles className="w-10 h-10 text-amber-500 animate-pulse" />
+                    </div>
                   </div>
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center">
-                    <Sparkles className="w-8 h-8 text-amber-500 animate-pulse" />
+                  <div className="flex gap-2 justify-center">
+                    {[1, 2, 3, 4, 5].map(star => (
+                      <div 
+                        key={star} 
+                        className="w-8 h-8 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-bounce flex items-center justify-center"
+                        style={{ animationDelay: `${star * 0.1}s` }}
+                      >
+                        <div className="w-4 h-4 bg-white rounded-full"></div>
+                      </div>
+                    ))}
                   </div>
-                </div>
-                <div className="flex gap-1">
-                  {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-6 h-6 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-bounce" style={{
-                  animationDelay: `${star * 0.1}s`
-                }}></div>)}
                 </div>
               </div>
             </div>
 
-            {/* Right Side - Additional Stats */}
-            <div className="space-y-6">
-              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold gradient-text">1,200+</div>
-                    <p className="text-card-foreground font-medium">Premium Products</p>
+            {/* Micro Stats Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { icon: '🛍️', value: '1,200+', label: 'Premium Products', color: 'from-blue-500 to-cyan-500' },
+                { icon: '✨', value: '98%', label: 'Satisfaction Rate', color: 'from-purple-500 to-pink-500' },
+                { icon: '🚀', value: '24/7', label: 'Support Available', color: 'from-green-500 to-emerald-500' },
+                { icon: '💰', value: '$2M+', label: 'Affiliate Rewards', color: 'from-orange-500 to-red-500' },
+                { icon: '🌍', value: '40+', label: 'Countries Served', color: 'from-indigo-500 to-purple-500' },
+                { icon: '⚡', value: '99.9%', label: 'Uptime Guarantee', color: 'from-yellow-500 to-orange-500' }
+              ].map((stat, i) => (
+                <div key={i} className="relative group">
+                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300`}></div>
+                  <div className="relative glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/5">
+                    <div className="text-center space-y-3">
+                      <div className="text-3xl animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}>
+                        {stat.icon}
+                      </div>
+                      <div className={`text-2xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                        {stat.value}
+                      </div>
+                      <p className="text-sm text-card-foreground font-medium leading-tight">
+                        {stat.label}
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-2xl">🛍️</div>
                 </div>
-              </div>
-
-              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold gradient-text">98%</div>
-                    <p className="text-card-foreground font-medium">Satisfaction Rate</p>
-                  </div>
-                  <div className="text-2xl">✨</div>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold gradient-text">24/7</div>
-                    <p className="text-card-foreground font-medium">Support Available</p>
-                  </div>
-                  <div className="text-2xl">🚀</div>
-                </div>
-              </div>
-
-              <div className="glass-card p-6 group hover:bg-primary/5 transition-all duration-300">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-3xl font-bold gradient-text">$2M+</div>
-                    <p className="text-card-foreground font-medium">Affiliate Commissions</p>
-                  </div>
-                  <div className="text-2xl">💰</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="glass-card p-8 reveal-up">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold gradient-text mb-2">Why Customers Trust Us</h3>
-              <p className="text-muted-foreground">Verified credentials and partnerships</p>
-            </div>
-            
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+          {/* Revolutionary Trust Indicators */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
+            <div className="relative glass-card p-12 rounded-3xl border border-white/10 reveal-up">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 mb-6">
+                  <Sparkles className="w-4 h-4 text-primary animate-spin" />
+                  <span className="text-sm font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                    VERIFIED EXCELLENCE
+                  </span>
                 </div>
-                <h4 className="font-semibold text-card-foreground mb-1">Verified Partner</h4>
-                <p className="text-sm text-muted-foreground">Official affiliate network member</p>
+                <h3 className="text-3xl md:text-4xl font-black gradient-text mb-4">Why Customers Trust Us</h3>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                  Certified partnerships and proven security standards that protect your experience
+                </p>
               </div>
-
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                </div>
-                <h4 className="font-semibold text-card-foreground mb-1">Secure Platform</h4>
-                <p className="text-sm text-muted-foreground">SSL encrypted transactions</p>
-              </div>
-
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-purple-500/20 to-indigo-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                </div>
-                <h4 className="font-semibold text-card-foreground mb-1">Premium Brands</h4>
-                <p className="text-sm text-muted-foreground">Exclusive partnerships</p>
-              </div>
-
-              <div className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="w-3 h-3 bg-pink-500 rounded-full animate-pulse"></div>
-                </div>
-                <h4 className="font-semibold text-card-foreground mb-1">Real Reviews</h4>
-                <p className="text-sm text-muted-foreground">100% authentic feedback</p>
+              
+              <div className="grid md:grid-cols-4 gap-8">
+                {[
+                  { 
+                    icon: '🛡️', 
+                    title: 'Verified Partner', 
+                    desc: 'Official network member', 
+                    color: 'from-green-500 to-emerald-500',
+                    badge: 'CERTIFIED'
+                  },
+                  { 
+                    icon: '🔒', 
+                    title: 'Secure Platform', 
+                    desc: 'SSL encrypted transactions', 
+                    color: 'from-blue-500 to-cyan-500',
+                    badge: 'SECURE'
+                  },
+                  { 
+                    icon: '👑', 
+                    title: 'Premium Brands', 
+                    desc: 'Exclusive partnerships', 
+                    color: 'from-purple-500 to-pink-500',
+                    badge: 'PREMIUM'
+                  },
+                  { 
+                    icon: '📊', 
+                    title: 'Real Reviews', 
+                    desc: '100% authentic feedback', 
+                    color: 'from-orange-500 to-red-500',
+                    badge: 'VERIFIED'
+                  }
+                ].map((trust, i) => (
+                  <div key={i} className="text-center group relative">
+                    <div className="relative mb-6">
+                      <div className={`w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br ${trust.color}/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10`}>
+                        <div className="text-3xl animate-bounce" style={{ animationDelay: `${i * 0.3}s` }}>
+                          {trust.icon}
+                        </div>
+                      </div>
+                      <div className={`absolute -top-2 -right-2 px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${trust.color} text-white opacity-90`}>
+                        {trust.badge}
+                      </div>
+                    </div>
+                    <h4 className="text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                      {trust.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {trust.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Dynamic Background Elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-2xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-r from-blue-500/15 to-cyan-500/15 rounded-full blur-xl animate-float" style={{
-        animationDelay: '-3s'
-      }}></div>
+        {/* Enhanced Dynamic Background Elements */}
+        <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-primary/15 to-accent/15 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '-5s' }}></div>
+        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '-2s' }}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-gradient-to-r from-green-500/15 to-emerald-500/15 rounded-full blur-xl animate-pulse"></div>
       </section>
 
       {/* Featured Products */}
