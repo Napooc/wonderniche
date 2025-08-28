@@ -282,8 +282,7 @@ const ProductDetail = () => {
           </div>
 
           {/* Main Description Card */}
-          {product.description && (
-            <div className="mb-8">
+          {product.description && <div className="mb-8">
               <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="p-6 md:p-8">
                   <div className="text-center mb-6">
@@ -296,109 +295,43 @@ const ProductDetail = () => {
                   {/* Description Content */}
                   <div className="max-w-4xl mx-auto">
                     <div className="text-foreground/90 leading-relaxed text-sm md:text-base space-y-4">
-                      {product.description.split('\n\n').map((section, sectionIndex) => (
-                        <div key={sectionIndex} className="space-y-3">
-                          {section.split('\n').map((paragraph, paragraphIndex) => (
-                            paragraph.trim() ? (
-                              <p 
-                                key={paragraphIndex} 
-                                className="text-justify leading-6 md:leading-7 break-words hyphens-auto"
-                                style={{ 
-                                  wordBreak: 'break-word',
-                                  overflowWrap: 'break-word',
-                                  whiteSpace: 'pre-wrap'
-                                }}
-                              >
+                      {product.description.split('\n\n').map((section, sectionIndex) => <div key={sectionIndex} className="space-y-3">
+                          {section.split('\n').map((paragraph, paragraphIndex) => paragraph.trim() ? <p key={paragraphIndex} className="text-justify leading-6 md:leading-7 break-words hyphens-auto" style={{
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      whiteSpace: 'pre-wrap'
+                    }}>
                                 {paragraph.trim()}
-                              </p>
-                            ) : null
-                          ))}
-                          {sectionIndex < product.description.split('\n\n').length - 1 && (
-                            <div className="border-t border-border/20 my-4"></div>
-                          )}
-                        </div>
-                      ))}
+                              </p> : null)}
+                          {sectionIndex < product.description.split('\n\n').length - 1 && <div className="border-t border-border/20 my-4"></div>}
+                        </div>)}
                     </div>
                   </div>
                 </div>
               </Card>
-            </div>
-          )}
+            </div>}
 
           {/* Features & Benefits Grid */}
           <div className="grid lg:grid-cols-2 gap-8 mb-12">
             {/* Features */}
-            {product.features && product.features.length > 0 && (
-              <Card className="p-8 bg-gradient-to-br from-primary/5 via-primary/3 to-transparent border border-primary/20">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Key Features</h3>
-                  <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
-                </div>
-                <ul className="space-y-4">
-                  {product.features.map((feature, index) => (
-                    <li key={index} className="flex items-start gap-3 p-3 rounded-lg hover:bg-primary/5 transition-colors">
-                      <div className="w-2 h-2 rounded-full bg-primary mt-3 flex-shrink-0"></div>
-                      <span className="text-foreground/90 leading-6">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
-            )}
+            {product.features && product.features.length > 0}
 
             {/* Tags */}
-            {product.tags && product.tags.length > 0 && (
-              <Card className="p-8 bg-gradient-to-br from-secondary/5 via-secondary/3 to-transparent border border-secondary/20">
+            {product.tags && product.tags.length > 0 && <Card className="p-8 bg-gradient-to-br from-secondary/5 via-secondary/3 to-transparent border border-secondary/20">
                 <div className="text-center mb-6">
                   <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">Product Tags</h3>
                   <div className="w-16 h-1 bg-gradient-to-r from-secondary to-secondary/50 mx-auto rounded-full"></div>
                 </div>
                 <div className="flex flex-wrap gap-3 justify-center">
-                  {product.tags.map((tag, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="secondary" 
-                      className="px-4 py-2 text-sm bg-secondary/20 hover:bg-secondary/30 transition-colors border border-secondary/30"
-                    >
+                  {product.tags.map((tag, index) => <Badge key={index} variant="secondary" className="px-4 py-2 text-sm bg-secondary/20 hover:bg-secondary/30 transition-colors border border-secondary/30">
                       #{tag}
-                    </Badge>
-                  ))}
+                    </Badge>)}
                 </div>
-              </Card>
-            )}
+              </Card>}
           </div>
 
           {/* Trust & Security Section */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="p-6 bg-gradient-to-br from-green-500/5 to-green-500/10 border border-green-500/20 hover:shadow-lg transition-all duration-300">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto">
-                  <Truck className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-bold text-lg text-foreground">Free Shipping</h4>
-                <p className="text-muted-foreground leading-6">Fast & reliable delivery worldwide with tracking information</p>
-              </div>
-            </Card>
-            
-            <Card className="p-6 bg-gradient-to-br from-blue-500/5 to-blue-500/10 border border-blue-500/20 hover:shadow-lg transition-all duration-300">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-bold text-lg text-foreground">Secure Purchase</h4>
-                <p className="text-muted-foreground leading-6">SSL encrypted checkout with buyer protection guarantee</p>
-              </div>
-            </Card>
-            
-            <Card className="p-6 bg-gradient-to-br from-orange-500/5 to-orange-500/10 border border-orange-500/20 hover:shadow-lg transition-all duration-300">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto">
-                  <RotateCcw className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="font-bold text-lg text-foreground">Easy Returns</h4>
-                <p className="text-muted-foreground leading-6">30-day hassle-free return policy with full refund</p>
-              </div>
-            </Card>
-          </div>
+          
         </div>
       </section>
     </div>;
