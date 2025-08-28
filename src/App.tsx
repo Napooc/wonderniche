@@ -11,6 +11,7 @@ import Beauty from "./pages/Beauty";
 import Travel from "./pages/Travel";
 import Wellness from "./pages/Wellness";
 import Lifestyle from "./pages/Lifestyle";
+import Advice from "./pages/Advice";
 import Contact from "./pages/Contact";
 import Auth from "./pages/Auth";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -34,6 +35,7 @@ const App = () => (
             <Route path="/travel" element={<Travel />} />
             <Route path="/wellness" element={<Wellness />} />
             <Route path="/lifestyle" element={<Lifestyle />} />
+            <Route path="/advice" element={<Advice />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/admin" element={<AdminDashboard />} />
