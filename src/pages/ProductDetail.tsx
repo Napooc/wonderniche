@@ -157,11 +157,11 @@ const ProductDetail = () => {
               {/* Main Image */}
               <div className="relative group">
                 <div className="rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-xl sm:shadow-2xl">
-                  <div className="aspect-square w-full">
+                  <div className="w-full min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] flex items-center justify-center bg-muted/10">
                     <img 
                       src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop'} 
                       alt={product.name} 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      className="w-full h-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105" 
                       onError={e => {
                         e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop';
                       }} 
