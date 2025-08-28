@@ -33,7 +33,7 @@ const location = useLocation();
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled ? 'glass py-2' : 'py-4'
+      scrolled ? 'glass py-3' : 'py-6'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -42,7 +42,7 @@ const location = useLocation();
             <img 
               src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
               alt="VibeNiche Logo" 
-              className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-24 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
@@ -96,7 +96,7 @@ const location = useLocation();
                 <img 
                   src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
                   alt="VibeNiche Logo" 
-                  className="h-10 w-auto"
+                  className="h-16 w-auto"
                 />
               </div>
 
