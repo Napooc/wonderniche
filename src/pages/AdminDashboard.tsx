@@ -12,7 +12,6 @@ import {
   Users,
   BarChart3,
   Plus,
-  Settings,
   LogOut,
   ShoppingCart,
   TrendingUp,
@@ -264,10 +263,9 @@ const handleSignOut = async () => {
 
         {/* Main Content */}
         <Tabs defaultValue="products" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-96">
+          <TabsList className="grid w-full grid-cols-2 lg:w-96">
             <TabsTrigger value="products">Products</TabsTrigger>
             <TabsTrigger value="categories">Categories</TabsTrigger>
-            <TabsTrigger value="settings">Settings</TabsTrigger>
           </TabsList>
 
           <TabsContent value="products" className="space-y-6">
@@ -357,12 +355,6 @@ const handleSignOut = async () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="settings">
-            <Card className="glass-card p-6">
-              <h2 className="text-xl font-semibold mb-4">Settings</h2>
-              <p className="text-muted-foreground">Settings panel coming soon...</p>
-            </Card>
-          </TabsContent>
         </Tabs>
       </div>
 
