@@ -25,7 +25,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Check for existing session in localStorage
     const checkExistingSession = async () => {
-      const token = localStorage.getItem('admin_token');
+      const token = localStorage.getItem('adminToken');
       if (token) {
         try {
           const { data, error } = await supabase.functions.invoke('admin-auth', {
@@ -36,11 +36,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUser(data.user);
             setUserRole('admin');
           } else {
-            localStorage.removeItem('admin_token');
+            localStorage.removeItem('adminToken');
           }
         } catch (error) {
           console.error('Token verification failed:', error);
-          localStorage.removeItem('admin_token');
+          localStorage.removeItem('adminToken');
         }
       }
       setLoading(false);
@@ -60,7 +60,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
       
       // Store token and user data
-      localStorage.setItem('admin_token', data.token);
+      localStorage.setItem('adminToken', data.token);
       setUser(data.user);
       setUserRole('admin');
       
@@ -73,7 +73,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = async () => {
     try {
-      localStorage.removeItem('admin_token');
+      localStorage.removeItem('adminToken');
       setUser(null);
       setUserRole(null);
       return { error: null };

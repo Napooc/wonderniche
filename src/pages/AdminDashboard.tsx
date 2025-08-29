@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useToast } from '@/hooks/use-toast';
 import {
   Package,
@@ -46,6 +46,7 @@ export default function AdminDashboard() {
   // All hooks must be called before any conditional logic or early returns
   const { user, signOut, userRole } = useAuth();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -138,10 +139,16 @@ const handleSignOut = async () => {
     }
 
     try {
-      // Get admin token from localStorage
-      const adminToken = localStorage.getItem('adminToken');
+      // Get admin token from localStorage with fallback
+      const adminToken = localStorage.getItem('adminToken') || localStorage.getItem('admin_token');
       if (!adminToken) {
-        throw new Error('Admin authentication required');
+        toast({
+          title: "Authentication Error",
+          description: "Please sign in again to continue",
+          variant: "destructive"
+        });
+        navigate('/auth');
+        return;
       }
 
       console.log(`Attempting to delete product: ${productId}`);
@@ -166,8 +173,8 @@ const handleSignOut = async () => {
 
       console.log('Product deleted successfully via edge function');
 
-      // Remove from UI state only after successful deletion
-      setProducts(products.filter(p => p.id !== productId));
+      // Refetch data to ensure UI and database are in sync
+      await fetchData();
 
       toast({
         title: "Success",
