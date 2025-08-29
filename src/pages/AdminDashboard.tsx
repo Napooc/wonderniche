@@ -30,6 +30,7 @@ interface Product {
   price: number;
   category_id: string;
   affiliate_url?: string;
+  image_url?: string;
   is_active: boolean;
   is_featured: boolean;
   created_at: string;
@@ -124,22 +125,55 @@ const handleSignOut = async () => {
 };
 
   const handleDeleteProduct = async (productId: string) => {
-    if (!confirm('Are you sure you want to delete this product?')) return;
+    if (!confirm('Are you sure you want to delete this product permanently? This action cannot be undone.')) return;
 
     try {
+      // Find the product to get image info
+      const productToDelete = products.find(p => p.id === productId);
+      
+      // Immediately update UI state for better UX
+      const updatedProducts = products.filter(p => p.id !== productId);
+      setProducts(updatedProducts);
+
+      // Delete associated images from storage if they exist
+      if (productToDelete?.image_url) {
+        try {
+          // Extract file path from URL
+          const urlParts = productToDelete.image_url.split('/');
+          const fileName = urlParts[urlParts.length - 1];
+          
+          const { error: storageError } = await supabase.storage
+            .from('product-images')
+            .remove([fileName]);
+          
+          if (storageError) {
+            console.warn('Failed to delete image from storage:', storageError);
+          }
+        } catch (imageError) {
+          console.warn('Error deleting product image:', imageError);
+        }
+      }
+
+      // Delete product from database
       const { error } = await supabase
         .from('products')
         .delete()
         .eq('id', productId);
 
-      if (error) throw error;
+      if (error) {
+        // Revert UI state if database deletion fails
+        setProducts(products);
+        throw error;
+      }
 
       toast({
         title: "Success",
-        description: "Product deleted successfully."
+        description: "Product and all associated data deleted successfully."
       });
-      fetchData();
+      
     } catch (error: any) {
+      // Revert UI changes if deletion failed
+      setProducts(products);
       toast({
         title: "Error",
         description: "Failed to delete product: " + error.message,
