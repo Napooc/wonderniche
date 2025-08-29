@@ -387,6 +387,92 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
       return new Response(JSON.stringify({ success: true, data: updated }), {
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
+    } else if (action === 'delete_product') {
+      try {
+        await verifyAdminTokenFromReq(req, body);
+      } catch (e) {
+        console.error('Unauthorized delete_product:', e);
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      
+      if (!data?.id) {
+        return new Response(JSON.stringify({ error: 'Missing product id' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      console.log(`Deleting product: ${data.id}`);
+
+      // First, get the product to check for images
+      const { data: productToDelete, error: fetchError } = await supabase
+        .from('products')
+        .select('image_url')
+        .eq('id', data.id)
+        .single();
+
+      if (fetchError && fetchError.code !== 'PGRST116') { // PGRST116 = not found
+        console.error('Error fetching product for deletion:', fetchError);
+        return new Response(JSON.stringify({ error: 'Failed to fetch product' }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      // Delete associated image from storage if it exists
+      if (productToDelete?.image_url) {
+        try {
+          const supabaseStorageUrl = `${supabaseUrl}/storage/v1/object/public/product-images/`;
+          if (productToDelete.image_url.startsWith(supabaseStorageUrl)) {
+            const fileName = productToDelete.image_url.replace(supabaseStorageUrl, '');
+            console.log(`Deleting image: ${fileName}`);
+            
+            const { error: storageError } = await supabase.storage
+              .from('product-images')
+              .remove([fileName]);
+            
+            if (storageError) {
+              console.warn('Failed to delete image from storage:', storageError);
+            } else {
+              console.log('Image deleted successfully');
+            }
+          }
+        } catch (imageError) {
+          console.warn('Error deleting product image:', imageError);
+        }
+      }
+
+      // Delete product from database using service role (bypasses RLS)
+      const { error: deleteError, count } = await supabase
+        .from('products')
+        .delete({ count: 'exact' })
+        .eq('id', data.id);
+
+      if (deleteError) {
+        console.error('Database deletion error:', deleteError);
+        return new Response(JSON.stringify({ error: deleteError.message }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      // Verify deletion was successful
+      if (count === 0) {
+        console.warn('Product not found or not deleted');
+        return new Response(JSON.stringify({ error: 'Product not found or could not be deleted' }), {
+          status: 404,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      console.log(`Product deleted successfully: ${data.id}`);
+
+      return new Response(JSON.stringify({ success: true, deleted_count: count }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
     return new Response(JSON.stringify({ error: 'Invalid action' }), {

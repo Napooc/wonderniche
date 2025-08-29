@@ -138,42 +138,33 @@ const handleSignOut = async () => {
     }
 
     try {
-      // Delete associated images from storage if they exist and are from Supabase
-      if (productToDelete.image_url) {
-        try {
-          // Check if image is from Supabase storage
-          const supabaseUrl = "https://hofzwvtumizrnmsnysbx.supabase.co/storage/v1/object/public/product-images/";
-          if (productToDelete.image_url.startsWith(supabaseUrl)) {
-            const fileName = productToDelete.image_url.replace(supabaseUrl, '');
-            
-            const { error: storageError } = await supabase.storage
-              .from('product-images')
-              .remove([fileName]);
-            
-            if (storageError) {
-              console.warn('Failed to delete image from storage:', storageError);
-            }
-          }
-        } catch (imageError) {
-          console.warn('Error deleting product image:', imageError);
-        }
+      // Get admin token from localStorage
+      const adminToken = localStorage.getItem('adminToken');
+      if (!adminToken) {
+        throw new Error('Admin authentication required');
       }
 
-      // Delete product from database
-      const { error, count } = await supabase
-        .from('products')
-        .delete({ count: 'exact' })
-        .eq('id', productId);
+      console.log(`Attempting to delete product: ${productId}`);
+
+      // Call the admin-auth edge function to delete the product
+      const { data, error } = await supabase.functions.invoke('admin-auth', {
+        body: {
+          action: 'delete_product',
+          token: adminToken,
+          data: { id: productId }
+        }
+      });
 
       if (error) {
-        console.error('Database deletion error:', error);
-        throw error;
+        console.error('Edge function error:', error);
+        throw new Error(error.message || 'Failed to call deletion service');
       }
 
-      // Verify deletion was successful
-      if (count === 0) {
-        throw new Error('Product was not deleted. You may not have permission to delete this product.');
+      if (!data?.success) {
+        throw new Error(data?.error || 'Deletion failed');
       }
+
+      console.log('Product deleted successfully via edge function');
 
       // Remove from UI state only after successful deletion
       setProducts(products.filter(p => p.id !== productId));
