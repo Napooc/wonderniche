@@ -127,27 +127,32 @@ const handleSignOut = async () => {
   const handleDeleteProduct = async (productId: string) => {
     if (!confirm('Are you sure you want to delete this product permanently? This action cannot be undone.')) return;
 
-    try {
-      // Find the product to get image info
-      const productToDelete = products.find(p => p.id === productId);
-      
-      // Immediately update UI state for better UX
-      const updatedProducts = products.filter(p => p.id !== productId);
-      setProducts(updatedProducts);
+    const productToDelete = products.find(p => p.id === productId);
+    if (!productToDelete) {
+      toast({
+        title: "Error",
+        description: "Product not found",
+        variant: "destructive"
+      });
+      return;
+    }
 
-      // Delete associated images from storage if they exist
-      if (productToDelete?.image_url) {
+    try {
+      // Delete associated images from storage if they exist and are from Supabase
+      if (productToDelete.image_url) {
         try {
-          // Extract file path from URL
-          const urlParts = productToDelete.image_url.split('/');
-          const fileName = urlParts[urlParts.length - 1];
-          
-          const { error: storageError } = await supabase.storage
-            .from('product-images')
-            .remove([fileName]);
-          
-          if (storageError) {
-            console.warn('Failed to delete image from storage:', storageError);
+          // Check if image is from Supabase storage
+          const supabaseUrl = "https://hofzwvtumizrnmsnysbx.supabase.co/storage/v1/object/public/product-images/";
+          if (productToDelete.image_url.startsWith(supabaseUrl)) {
+            const fileName = productToDelete.image_url.replace(supabaseUrl, '');
+            
+            const { error: storageError } = await supabase.storage
+              .from('product-images')
+              .remove([fileName]);
+            
+            if (storageError) {
+              console.warn('Failed to delete image from storage:', storageError);
+            }
           }
         } catch (imageError) {
           console.warn('Error deleting product image:', imageError);
@@ -155,16 +160,23 @@ const handleSignOut = async () => {
       }
 
       // Delete product from database
-      const { error } = await supabase
+      const { error, count } = await supabase
         .from('products')
-        .delete()
+        .delete({ count: 'exact' })
         .eq('id', productId);
 
       if (error) {
-        // Revert UI state if database deletion fails
-        setProducts(products);
+        console.error('Database deletion error:', error);
         throw error;
       }
+
+      // Verify deletion was successful
+      if (count === 0) {
+        throw new Error('Product was not deleted. You may not have permission to delete this product.');
+      }
+
+      // Remove from UI state only after successful deletion
+      setProducts(products.filter(p => p.id !== productId));
 
       toast({
         title: "Success",
@@ -172,11 +184,10 @@ const handleSignOut = async () => {
       });
       
     } catch (error: any) {
-      // Revert UI changes if deletion failed
-      setProducts(products);
+      console.error('Delete product error:', error);
       toast({
         title: "Error",
-        description: "Failed to delete product: " + error.message,
+        description: "Failed to delete product: " + (error.message || 'Unknown error occurred'),
         variant: "destructive"
       });
     }
