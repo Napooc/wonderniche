@@ -27,7 +27,6 @@ const location = useLocation();
     { name: 'Beauty', href: '/beauty' },
     { name: 'Travel', href: '/travel' },
     { name: 'Wellness', href: '/wellness' },
-    { name: 'Lifestyle', href: '/lifestyle' },
     { name: 'Advice', href: '/advice' },
     { name: 'Contact', href: '/contact' }
   ];
