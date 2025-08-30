@@ -1,0 +1,199 @@
+export default {
+  // Navigation
+  nav: {
+    home: 'Startseite',
+    about: 'Über uns',
+    beauty: 'Schönheit',
+    travel: 'Reisen',
+    wellness: 'Wellness',
+    advice: 'Beratung',
+    contact: 'Kontakt',
+    admin: 'Admin',
+    signedInAs: 'Angemeldet als'
+  },
+
+  // Hero Section
+  hero: {
+    title: 'Entdecke Deine Perfekte Atmosphäre',
+    subtitle: 'Kuratierte Erlebnisse und Produkte, die zu Deinem einzigartigen Lebensstil passen',
+    exploreButton: 'Kategorien erkunden',
+    learnMoreButton: 'Mehr erfahren'
+  },
+
+  // Categories
+  categories: {
+    beauty: {
+      title: 'Schönheit & Hautpflege',
+      description: 'Premium-Schönheitsprodukte und Hautpflege-Essentials für Ihre tägliche Routine',
+      subtitle: 'Betonen Sie Ihre natürliche Schönheit'
+    },
+    travel: {
+      title: 'Reisen & Abenteuer',
+      description: 'Unverzichtbare Ausrüstung und Zubehör für Ihr nächstes Abenteuer',
+      subtitle: 'Erkunden Sie die Welt stilvoll'
+    },
+    wellness: {
+      title: 'Wellness & Gesundheit',
+      description: 'Produkte und Tools zur Unterstützung Ihrer Wellness-Reise',
+      subtitle: 'Pflegen Sie Ihr Wohlbefinden'
+    },
+    advice: {
+      title: 'Expertenberatung',
+      description: 'Professionelle Einblicke und Empfehlungen von Branchenexperten',
+      subtitle: 'Lernen Sie von den Besten'
+    }
+  },
+
+  // Product Card
+  product: {
+    viewDetails: 'Details anzeigen',
+    buyNow: 'Jetzt kaufen',
+    rating: 'Bewertung',
+    reviews: 'Bewertungen',
+    features: 'Eigenschaften',
+    originalPrice: 'Originalpreis',
+    currentPrice: 'Aktueller Preis',
+    addToCart: 'In den Warenkorb',
+    outOfStock: 'Nicht vorrätig'
+  },
+
+  // About Page
+  about: {
+    title: 'Über VibeNiche',
+    subtitle: 'Ihr vertrauensvoller Begleiter für außergewöhnliche Produkte und Erlebnisse',
+    mission: {
+      title: 'Unsere Mission',
+      description: 'Wir glauben, dass jeder Produkte verdient, die wirklich zu seinem Lebensstil passen. Unsere Mission ist es, die beste Auswahl an Schönheits-, Reise-, Wellness- und Lifestyle-Produkten zu kuratieren und gleichzeitig Expertenberatung zu bieten.'
+    },
+    story: {
+      title: 'Unsere Geschichte',
+      description: 'Gegründet mit einer Leidenschaft für Qualität und Authentizität, entstand VibeNiche aus dem Wunsch, eine Plattform zu schaffen, auf der anspruchsvolle Menschen Produkte entdecken können, die ihren Werten entsprechen.'
+    },
+    team: {
+      title: 'Unser Team',
+      description: 'Unser Team besteht aus Branchenexperten, Produktkuratoren und Lifestyle-Enthusiasten, die sich dafür einsetzen, Ihnen die besten Empfehlungen zu bringen.'
+    }
+  },
+
+  // Contact Page
+  contact: {
+    title: 'Kontaktieren Sie uns',
+    subtitle: 'Nehmen Sie Kontakt mit unserem Team auf',
+    form: {
+      name: 'Ihr Name',
+      email: 'Ihre E-Mail',
+      subject: 'Betreff',
+      message: 'Ihre Nachricht',
+      send: 'Nachricht senden',
+      sending: 'Wird gesendet...',
+      success: 'Nachricht erfolgreich gesendet!',
+      error: 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.'
+    },
+    info: {
+      email: 'E-Mail an uns',
+      phone: 'Rufen Sie uns an',
+      address: 'Besuchen Sie uns',
+      hours: 'Geschäftszeiten'
+    }
+  },
+
+  // Auth
+  auth: {
+    signIn: 'Anmelden',
+    signUp: 'Registrieren',
+    signOut: 'Abmelden',
+    email: 'E-Mail',
+    password: 'Passwort',
+    confirmPassword: 'Passwort bestätigen',
+    forgotPassword: 'Passwort vergessen?',
+    noAccount: 'Noch kein Konto?',
+    hasAccount: 'Bereits ein Konto?',
+    signInSuccess: 'Erfolgreich angemeldet!',
+    signUpSuccess: 'Konto erfolgreich erstellt!',
+    signOutSuccess: 'Erfolgreich abgemeldet!',
+    invalidCredentials: 'Ungültige E-Mail oder Passwort',
+    weakPassword: 'Passwort sollte mindestens 6 Zeichen haben',
+    emailInUse: 'E-Mail bereits in Verwendung',
+    adminLogin: 'Admin-Anmeldung',
+    username: 'Benutzername'
+  },
+
+  // Admin Dashboard
+  admin: {
+    dashboard: 'Admin-Dashboard',
+    products: 'Produkte',
+    addProduct: 'Neues Produkt hinzufügen',
+    editProduct: 'Produkt bearbeiten',
+    deleteProduct: 'Produkt löschen',
+    confirmDelete: 'Sind Sie sicher, dass Sie dieses Produkt löschen möchten?',
+    productDeleted: 'Produkt erfolgreich gelöscht',
+    productUpdated: 'Produkt erfolgreich aktualisiert',
+    productCreated: 'Produkt erfolgreich erstellt',
+    form: {
+      name: 'Produktname',
+      description: 'Beschreibung',
+      shortDescription: 'Kurzbeschreibung',
+      price: 'Preis',
+      originalPrice: 'Originalpreis',
+      category: 'Kategorie',
+      imageUrl: 'Bild-URL',
+      affiliateUrl: 'Affiliate-URL',
+      tags: 'Tags (kommagetrennt)',
+      features: 'Eigenschaften (kommagetrennt)',
+      rating: 'Bewertung',
+      reviewsCount: 'Anzahl Bewertungen',
+      isActive: 'Aktiv',
+      isFeatured: 'Empfohlen',
+      save: 'Produkt speichern',
+      cancel: 'Abbrechen'
+    }
+  },
+
+  // Common
+  common: {
+    loading: 'Lädt...',
+    error: 'Fehler',
+    success: 'Erfolg',
+    cancel: 'Abbrechen',
+    confirm: 'Bestätigen',
+    delete: 'Löschen',
+    edit: 'Bearbeiten',
+    save: 'Speichern',
+    back: 'Zurück',
+    next: 'Weiter',
+    previous: 'Vorherige',
+    close: 'Schließen',
+    search: 'Suchen',
+    filter: 'Filter',
+    sort: 'Sortieren',
+    clear: 'Löschen',
+    apply: 'Anwenden',
+    reset: 'Zurücksetzen',
+    selectLanguage: 'Sprache auswählen'
+  },
+
+  // Footer
+  footer: {
+    description: 'Entdecken Sie Produkte, die zu Ihrem einzigartigen Lebensstil passen.',
+    quickLinks: 'Schnelllinks',
+    categories: 'Kategorien',
+    support: 'Support',
+    privacy: 'Datenschutz',
+    terms: 'Nutzungsbedingungen',
+    copyright: '© 2024 VibeNiche. Alle Rechte vorbehalten.'
+  },
+
+  // Testimonials
+  testimonials: {
+    title: 'Was unsere Kunden sagen',
+    subtitle: 'Entdecken Sie, warum Tausende von Kunden VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen'
+  },
+
+  // 404 Page
+  notFound: {
+    title: '404',
+    subtitle: 'Hoppla! Seite nicht gefunden',
+    description: 'Die Seite, die Sie suchen, wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.',
+    goHome: 'Zur Startseite'
+  }
+};

@@ -3,13 +3,16 @@ import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTranslation } from '@/contexts/TranslationContext';
+import LanguagePicker from '@/components/LanguagePicker';
 import { Menu, X, Settings, LogIn } from 'lucide-react';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-const location = useLocation();
+  const location = useLocation();
   const { user, userRole } = useAuth();
+  const { t } = useTranslation();
 
   
 
@@ -22,13 +25,13 @@ const location = useLocation();
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Beauty', href: '/beauty' },
-    { name: 'Travel', href: '/travel' },
-    { name: 'Wellness', href: '/wellness' },
-    { name: 'Advice', href: '/advice' },
-    { name: 'Contact', href: '/contact' }
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.beauty'), href: '/beauty' },
+    { name: t('nav.travel'), href: '/travel' },
+    { name: t('nav.wellness'), href: '/wellness' },
+    { name: t('nav.advice'), href: '/advice' },
+    { name: t('nav.contact'), href: '/contact' }
   ];
 
   return (
@@ -62,8 +65,9 @@ const location = useLocation();
             ))}
           </div>
 
-{/* Desktop Auth and Admin Links */}
+          {/* Desktop Auth and Admin Links */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguagePicker />
             {(user && userRole === 'admin') && (
               <div className="flex items-center space-x-4">
                 <Link 
