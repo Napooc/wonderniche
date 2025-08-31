@@ -2,7 +2,7 @@ export default {
   // Navigation
   nav: {
     home: 'Home',
-    about: 'About Us',
+    about: 'About',
     beauty: 'Beauty',
     travel: 'Travel',
     wellness: 'Wellness',
@@ -14,33 +14,238 @@ export default {
 
   // Hero Section
   hero: {
-    title: 'Discover Your Perfect Vibe',
-    subtitle: 'Curated experiences and products that match your unique lifestyle',
-    exploreButton: 'Explore Categories',
-    learnMoreButton: 'Learn More'
+    title: 'VibeNiche - Premium Affiliate Lifestyle Marketplace',
+    subtitle: 'Your trusted affiliate partner for premium lifestyle products. We connect you with exclusive brands across Beauty, Travel, Wellness & Lifestyle - earning through authentic recommendations you\'ll love.',
+    exploreButton: 'Explore Now',
+    learnMoreButton: 'Watch Story'
+  },
+
+  // Home Page Content
+  home: {
+    exploreCategories: 'Explore Categories',
+    discoverCurated: 'Discover curated collections across lifestyle categories',
+    beauty: {
+      title: 'Beauty',
+      description: 'Premium skincare, makeup, and beauty tools'
+    },
+    travel: {
+      title: 'Travel',
+      description: 'Luxury travel gear and experiences'
+    },
+    wellness: {
+      title: 'Wellness',
+      description: 'Fitness, nutrition, and mindfulness products'
+    },
+    lifestyle: {
+      title: 'Lifestyle',
+      description: 'Home decor, gadgets, and living essentials'
+    },
+    liveMetrics: 'LIVE IMPACT METRICS',
+    trustedBy: 'Trusted by',
+    thousands: 'Thousands',
+    realMetrics: 'Real metrics from real customers who\'ve discovered their perfect lifestyle through our curated marketplace',
+    happyCustomers: 'Happy Customers',
+    growingDaily: 'Growing daily across 40+ countries',
+    thisMonth: '+1,247 this month',
+    satisfactionRate: 'Satisfaction Rate',
+    trustRating: 'Trust Rating',
+    basedOnReviews: 'Based on 12,847 verified reviews',
+    premiumProducts: 'Premium Products',
+    supportAvailable: 'Support Available',
+    affiliateRewards: 'Affiliate Rewards',
+    countriesServed: 'Countries Served',
+    uptimeGuarantee: 'Uptime Guarantee',
+    verifiedExcellence: 'VERIFIED EXCELLENCE',
+    whyTrustUs: 'Why Customers Trust Us',
+    certifiedPartnerships: 'Certified partnerships and proven security standards that protect your experience',
+    verifiedPartner: 'Verified Partner',
+    officialMember: 'Official network member',
+    securePlatform: 'Secure Platform',
+    sslEncrypted: 'SSL encrypted transactions',
+    premiumBrands: 'Premium Brands',
+    exclusivePartnerships: 'Exclusive partnerships',
+    realReviews: 'Real Reviews',
+    authenticFeedback: '100% authentic feedback',
+    certified: 'CERTIFIED',
+    secure: 'SECURE',
+    premium: 'PREMIUM',
+    verified: 'VERIFIED',
+    featuredProducts: 'Featured Products',
+    handPicked: 'Hand-picked premium products that define modern lifestyle',
+    whatUsersSay: 'What Our Users Say',
+    joinThousands: 'Join thousands of satisfied users who have transformed their lifestyle with VibeNiche',
+    travelerTestimonial: 'As a frequent traveler, I need products that work. VibeNiche\'s travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!',
+    beautyTestimonial: 'VibeNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I\'ve discovered so many amazing brands!',
+    wellnessTestimonial: 'The wellness section is my go-to for discovering new products. The modern design and smooth user experience make it feel like browsing through a luxury magazine.',
+    techTestimonial: 'Impressed by the attention to detail and modern design. The site loads fast, looks beautiful, and the product recommendations are always relevant. Great work!',
+    stayInLoop: 'Stay in the Loop',
+    exclusiveAccess: 'Get exclusive access to new products, deals, and lifestyle tips',
+    enterEmail: 'Enter your email',
+    subscribe: 'Subscribe',
+    modernHub: 'Your modern lifestyle hub for premium products and experiences.',
+    categories: 'Categories',
+    company: 'Company',
+    connect: 'Connect',
+    allRights: '© 2025 VibeNiche. All rights reserved. This site contains affiliate links.'
+  },
+
+  // About Page
+  about: {
+    title: 'About VibeNiche',
+    subtitle: 'We\'re not just another affiliate marketplace. We\'re lifestyle curators, trend discoverers, and dream enablers connecting you with products that transform ordinary moments into extraordinary experiences.',
+    originStory: 'Our Origin Story',
+    bornFromPassion: 'Born from Passion',
+    simpleFrustration: 'It started with a simple frustration: endless hours scrolling through countless products, never knowing what truly delivered on its promises. We believed there had to be a better way.',
+    vibeNicheBorn: 'VibeNiche was born from the vision of creating an authentic space where lifestyle enthusiasts could discover genuinely amazing products through transparent, honest affiliate partnerships.',
+    todayProud: 'Today, we\'re proud to be the bridge between dreamers and premium brands, creating value for both our community and our partners through meaningful connections.',
+    founded: 'Founded',
+    customers: 'Customers',
+    brandPartners: 'Brand Partners',
+    verifiedQuality: 'Verified Quality',
+    everyProductTested: 'Every product tested',
+    ourValues: 'Our Values',
+    principlesGuide: 'The principles that guide every decision we make and every partnership we forge',
+    authenticConnections: 'Authentic Connections',
+    genuineRelationships: 'We believe in building genuine relationships with brands and customers through honest recommendations.',
+    qualityFirst: 'Quality First',
+    rigorousStandards: 'Every product we feature meets our rigorous standards for excellence and customer satisfaction.',
+    innovationDriven: 'Innovation Driven',
+    stayAhead: 'We stay ahead of trends to bring you the latest and greatest in lifestyle innovation.',
+    globalImpact: 'Global Impact',
+    connectsWorldwide: 'Our platform connects lifestyle enthusiasts worldwide with premium brands they\'ll love.',
+    ourJourney: 'Our Journey',
+    keyMilestones: 'Key milestones in our mission to revolutionize affiliate marketing',
+    vibeNicheFounded: 'VibeNiche Founded',
+    startedVision: 'Started with a vision to revolutionize affiliate marketing',
+    communityMilestone: '50K+ Community',
+    firstMajor: 'Reached our first major milestone of happy customers',
+    premiumPartnerships: 'Premium Partnerships',
+    exclusiveRelationships: 'Established exclusive relationships with top lifestyle brands',
+    globalExpansion: 'Global Expansion',
+    expandingReach: 'Expanding our reach to serve lifestyle enthusiasts worldwide',
+    joinMission: 'Join Our Mission',
+    bePartCommunity: 'Be part of a community that values authenticity, quality, and meaningful connections. Discover your next favorite product today.',
+    contactUs: 'Contact Us',
+    curatingPremium: 'Curating premium lifestyle experiences through authentic affiliate partnerships.'
   },
 
   // Categories
   categories: {
     beauty: {
-      title: 'Beauty & Skincare',
-      description: 'Premium beauty products and skincare essentials for your daily routine',
-      subtitle: 'Enhance Your Natural Beauty'
+      title: 'Beauty Essentials',
+      description: 'Discover premium skincare, makeup, and beauty tools curated for the modern lifestyle',
+      subtitle: 'Premium Beauty Products',
+      shopBeauty: 'Shop Beauty',
+      curatedCollection: 'Curated collection of high-quality beauty essentials',
+      searchPlaceholder: 'Search beauty products...'
     },
     travel: {
-      title: 'Travel & Adventure',
-      description: 'Essential gear and accessories for your next adventure',
-      subtitle: 'Explore the World in Style'
+      title: 'Travel Essentials',
+      description: 'Premium travel gear and accessories for the modern explorer and digital nomad',
+      subtitle: 'Premium Travel Gear',
+      exploreGear: 'Explore Travel Gear',
+      everythingNeed: 'Everything you need for your next adventure',
+      searchPlaceholder: 'Search travel products...'
     },
     wellness: {
-      title: 'Wellness & Health',
-      description: 'Products and tools to support your wellness journey',
-      subtitle: 'Nurture Your Well-being'
+      title: 'Wellness & Fitness',
+      description: 'Transform your health and wellbeing with premium wellness products and mindful living essentials',
+      subtitle: 'Start Your Wellness Journey',
+      whyChoose: 'Why Choose Wellness?',
+      investHealth: 'Invest in your health and happiness with scientifically-backed wellness products',
+      mentalClarity: 'Mental Clarity',
+      mentalDescription: 'Improve focus, reduce stress, and enhance cognitive performance through mindful practices.',
+      physicalStrength: 'Physical Strength',
+      physicalDescription: 'Build muscle, increase flexibility, and boost energy levels with the right fitness tools.',
+      innerPeace: 'Inner Peace',
+      innerDescription: 'Find balance and tranquility through meditation, aromatherapy, and mindful living.',
+      wellnessEssentials: 'Wellness Essentials',
+      mindBodySoul: 'Curated products for your mind, body, and soul',
+      searchPlaceholder: 'Search wellness products...'
     },
     advice: {
       title: 'Expert Advice',
-      description: 'Professional insights and recommendations from industry experts',
-      subtitle: 'Learn from the Best'
+      description: 'Curated wisdom and actionable insights from industry experts and thought leaders',
+      subtitle: 'Explore Expert Guidance',
+      areasExpertise: 'Areas of Expertise',
+      professionalGuidance: 'Professional guidance across multiple domains',
+      decisionMaking: 'Decision Making',
+      decisionDescription: 'Expert guidance for life\'s important choices',
+      problemSolving: 'Problem Solving',
+      problemDescription: 'Creative solutions to everyday challenges',
+      goalAchievement: 'Goal Achievement',
+      goalDescription: 'Strategic planning for personal success',
+      growthMindset: 'Growth Mindset',
+      growthDescription: 'Personal development and continuous improvement',
+      expertRecommendations: 'Expert Recommendations',
+      carefullySelected: 'Carefully curated advice and resources from trusted experts',
+      searchPlaceholder: 'Search advice and resources...'
+    }
+  },
+
+  // Contact Page
+  contact: {
+    title: 'Connect With VibeNiche',
+    subtitle: 'Your trusted partner in discovering the finest lifestyle products. We\'re here to help you live your best life with curated excellence.',
+    emailUs: 'Email Us',
+    callNow: 'Call Now',
+    happyCustomersCount: '50,000+',
+    happyCustomers: 'Happy Customers',
+    productsCurated: '2,500+',
+    productsLabel: 'Products Curated',
+    yearsOfTrust: '8+',
+    yearsLabel: 'Years of Trust',
+    customerSatisfaction: '98%',
+    satisfactionLabel: 'Customer Satisfaction',
+    getInTouch: 'Get in Touch',
+    chooseBestMethod: 'Choose the method that works best for you. We\'re here to help with any questions about our products or services.',
+    emailAddress: 'hello@vibeniche.com',
+    emailReply: 'We reply within 24 hours',
+    phoneNumber: '+1 (555) 123-4567',
+    phoneHours: 'Mon-Fri 9AM-6PM EST',
+    visitAddress: '123 Lifestyle Avenue',
+    cityState: 'New York, NY 10001',
+    businessHours: 'Business Hours',
+    mondayFriday: 'Monday - Friday',
+    workingHours: '9:00 AM - 6:00 PM EST',
+    aboutVibeNiche: 'About VibeNiche',
+    foundedDescription: 'Founded in 2016, VibeNiche has been your trusted curator of lifestyle excellence. We specialize in discovering and sharing the finest products across beauty, travel, wellness, and lifestyle categories.',
+    teamExperts: 'Our team of experts carefully selects each product to ensure it meets our high standards for quality, innovation, and value. We believe everyone deserves access to products that enhance their daily life.',
+    customerSupport: 'Customer Support',
+    dedicatedSupport: 'Our dedicated support team is here to help you with any questions, concerns, or feedback you may have. We pride ourselves on providing exceptional customer service and quick response times.',
+    averageResponse: 'Average response time: Under 2 hours',
+    positiveRatings: 'Customer satisfaction: 98% positive ratings',
+    multiLanguage: 'Multi-language support available',
+    followJourney: 'Follow Our Journey',
+    stayConnected: 'Stay connected and discover the latest products, tips, and lifestyle inspiration',
+    instagram: 'Instagram',
+    twitter: 'Twitter',
+    facebook: 'Facebook',
+    linkedin: 'LinkedIn',
+    youtube: 'YouTube',
+    faq: 'Frequently Asked Questions',
+    quickAnswers: 'Quick answers to common questions about our products and services',
+    trackOrder: 'How do I track my order?',
+    trackAnswer: 'Once your order is processed, you\'ll receive a tracking number via email. You can use this to monitor your package\'s progress on the carrier\'s website.',
+    returnPolicy: 'What\'s your return policy?',
+    returnAnswer: 'We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some restrictions apply to personal care items.',
+    international: 'Do you ship internationally?',
+    internationalAnswer: 'Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties.',
+    affiliate: 'How can I become an affiliate partner?',
+    affiliateAnswer: 'We\'re always looking for passionate partners! Email us at hello@vibeniche.com with \'Affiliate Partnership\' in the subject line, and we\'ll send you our partnership details.',
+    readyStart: 'Ready to Start Your Journey?',
+    joinThousands: 'Join thousands of satisfied customers who trust VibeNiche for their lifestyle needs. Discover products that will transform your daily routine.',
+    exploreProducts: 'Explore Products',
+    partnerWithUs: 'Partner With Us',
+    form: {
+      name: 'Your Name',
+      email: 'Your Email',
+      subject: 'Subject',
+      message: 'Your Message',
+      send: 'Send Message',
+      sending: 'Sending...',
+      success: 'Message sent successfully!',
+      error: 'Failed to send message. Please try again.'
     }
   },
 
@@ -55,46 +260,6 @@ export default {
     currentPrice: 'Current Price',
     addToCart: 'Add to Cart',
     outOfStock: 'Out of Stock'
-  },
-
-  // About Page
-  about: {
-    title: 'About VibeNiche',
-    subtitle: 'Your trusted companion for discovering exceptional products and experiences',
-    mission: {
-      title: 'Our Mission',
-      description: 'We believe everyone deserves to find products that truly resonate with their lifestyle. Our mission is to curate the finest selection of beauty, travel, wellness, and lifestyle products while providing expert advice to help you make informed decisions.'
-    },
-    story: {
-      title: 'Our Story',
-      description: 'Founded with a passion for quality and authenticity, VibeNiche emerged from the desire to create a platform where discerning individuals could discover products that align with their values and aspirations.'
-    },
-    team: {
-      title: 'Our Team',
-      description: 'Our team consists of industry experts, product curators, and lifestyle enthusiasts who are dedicated to bringing you the best recommendations and insights.'
-    }
-  },
-
-  // Contact Page
-  contact: {
-    title: 'Contact Us',
-    subtitle: 'Get in touch with our team',
-    form: {
-      name: 'Your Name',
-      email: 'Your Email',
-      subject: 'Subject',
-      message: 'Your Message',
-      send: 'Send Message',
-      sending: 'Sending...',
-      success: 'Message sent successfully!',
-      error: 'Failed to send message. Please try again.'
-    },
-    info: {
-      email: 'Email Us',
-      phone: 'Call Us',
-      address: 'Visit Us',
-      hours: 'Business Hours'
-    }
   },
 
   // Auth
@@ -152,6 +317,7 @@ export default {
   // Common
   common: {
     loading: 'Loading...',
+    loadingProducts: 'Loading products...',
     error: 'Error',
     success: 'Success',
     cancel: 'Cancel',
@@ -169,12 +335,13 @@ export default {
     clear: 'Clear',
     apply: 'Apply',
     reset: 'Reset',
-    selectLanguage: 'Select Language'
+    selectLanguage: 'Select Language',
+    noResults: 'No products found matching your search.'
   },
 
   // Footer
   footer: {
-    description: 'Discover products that match your unique lifestyle and vibe.',
+    description: 'Discover products that match your unique lifestyle.',
     quickLinks: 'Quick Links',
     categories: 'Categories',
     support: 'Support',

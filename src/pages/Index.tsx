@@ -7,7 +7,9 @@ import TestimonialsSection from '@/components/TestimonialsSection';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Heart, Globe, Dumbbell, Home, Mail } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
+import { useTranslation } from '@/contexts/TranslationContext';
 const Index = () => {
+  const { t } = useTranslation();
   const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
 
@@ -65,24 +67,28 @@ const Index = () => {
   }, []);
   const staticCategories = [{
     icon: Sparkles,
-    title: 'Beauty',
-    description: 'Premium skincare, makeup, and beauty tools',
-    color: 'from-pink-500 to-rose-500'
+    title: t('home.beauty.title'),
+    description: t('home.beauty.description'),
+    color: 'from-pink-500 to-rose-500',
+    href: '/beauty'
   }, {
     icon: Globe,
-    title: 'Travel',
-    description: 'Luxury travel gear and experiences',
-    color: 'from-blue-500 to-cyan-500'
+    title: t('home.travel.title'),
+    description: t('home.travel.description'),
+    color: 'from-blue-500 to-cyan-500',
+    href: '/travel'
   }, {
     icon: Dumbbell,
-    title: 'Wellness',
-    description: 'Fitness, nutrition, and mindfulness products',
-    color: 'from-green-500 to-emerald-500'
+    title: t('home.wellness.title'),
+    description: t('home.wellness.description'),
+    color: 'from-green-500 to-emerald-500',
+    href: '/wellness'
   }, {
     icon: Home,
-    title: 'Lifestyle',
-    description: 'Home decor, gadgets, and living essentials',
-    color: 'from-purple-500 to-indigo-500'
+    title: t('home.lifestyle.title'),
+    description: t('home.lifestyle.description'),
+    color: 'from-purple-500 to-indigo-500',
+    href: '/lifestyle'
   }];
   return <div className="min-h-screen">
       <Navigation />
@@ -95,10 +101,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 reveal-up">
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-              Explore Categories
+              {t('home.exploreCategories')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Discover curated collections across lifestyle categories
+              {t('home.discoverCurated')}
             </p>
           </div>
 
@@ -162,7 +168,7 @@ const Index = () => {
                 <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
               </div>
               <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                LIVE IMPACT METRICS
+                {t('home.liveMetrics')}
               </span>
               <div className="w-2 h-2 bg-accent rounded-full animate-bounce"></div>
             </div>
@@ -171,13 +177,13 @@ const Index = () => {
             <div className="relative mb-8">
               <h2 className="text-6xl md:text-8xl font-black mb-4">
                 <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-300%">
-                  Trusted by
+                  {t('home.trustedBy')}
                 </span>
               </h2>
               <div className="text-6xl md:text-8xl font-black">
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
-                    Thousands
+                    {t('home.thousands')}
                   </span>
                   <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
                 </span>
@@ -185,7 +191,7 @@ const Index = () => {
             </div>
             
             <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              Real metrics from real customers who've discovered their perfect lifestyle through our 
+              {t('home.realMetrics')}
               <span className="relative">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold">
                   curated marketplace
@@ -208,11 +214,11 @@ const Index = () => {
                       <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-500 bg-clip-text text-transparent group-hover:animate-pulse">
                         50K+
                       </div>
-                      <h3 className="text-2xl font-bold text-card-foreground mb-3">Happy Customers</h3>
-                      <p className="text-muted-foreground">Growing daily across 40+ countries</p>
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">{t('home.happyCustomers')}</h3>
+                      <p className="text-muted-foreground">{t('home.growingDaily')}</p>
                       <div className="flex items-center gap-2 mt-4">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm text-green-500 font-medium">+1,247 this month</span>
+                        <span className="text-sm text-green-500 font-medium">{t('home.thisMonth')}</span>
                       </div>
                     </div>
                     <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
@@ -221,7 +227,7 @@ const Index = () => {
                   </div>
                   <div className="space-y-3">
                     <div className="flex justify-between text-sm">
-                      <span className="text-muted-foreground">Satisfaction Rate</span>
+                      <span className="text-muted-foreground">{t('home.satisfactionRate')}</span>
                       <span className="text-pink-500 font-semibold">98.7%</span>
                     </div>
                     <div className="w-full bg-border/50 rounded-full h-3 overflow-hidden">
@@ -242,8 +248,8 @@ const Index = () => {
                       <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500 bg-clip-text text-transparent group-hover:animate-pulse">
                         4.9★
                       </div>
-                      <h3 className="text-2xl font-bold text-card-foreground mb-3">Trust Rating</h3>
-                      <p className="text-muted-foreground">Based on 12,847 verified reviews</p>
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">{t('home.trustRating')}</h3>
+                      <p className="text-muted-foreground">{t('home.basedOnReviews')}</p>
                     </div>
                     <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
                       <Sparkles className="w-10 h-10 text-amber-500 animate-pulse" />
@@ -267,12 +273,12 @@ const Index = () => {
             {/* Micro Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               {[
-                { icon: '🛍️', value: '1,200+', label: 'Premium Products', color: 'from-blue-500 to-cyan-500' },
-                { icon: '✨', value: '98%', label: 'Satisfaction Rate', color: 'from-purple-500 to-pink-500' },
-                { icon: '🚀', value: '24/7', label: 'Support Available', color: 'from-green-500 to-emerald-500' },
-                { icon: '💰', value: '$2M+', label: 'Affiliate Rewards', color: 'from-orange-500 to-red-500' },
-                { icon: '🌍', value: '40+', label: 'Countries Served', color: 'from-indigo-500 to-purple-500' },
-                { icon: '⚡', value: '99.9%', label: 'Uptime Guarantee', color: 'from-yellow-500 to-orange-500' }
+                { icon: '🛍️', value: '1,200+', label: t('home.premiumProducts'), color: 'from-blue-500 to-cyan-500' },
+                { icon: '✨', value: '98%', label: t('home.satisfactionRate'), color: 'from-purple-500 to-pink-500' },
+                { icon: '🚀', value: '24/7', label: t('home.supportAvailable'), color: 'from-green-500 to-emerald-500' },
+                { icon: '💰', value: '$2M+', label: t('home.affiliateRewards'), color: 'from-orange-500 to-red-500' },
+                { icon: '🌍', value: '40+', label: t('home.countriesServed'), color: 'from-indigo-500 to-purple-500' },
+                { icon: '⚡', value: '99.9%', label: t('home.uptimeGuarantee'), color: 'from-yellow-500 to-orange-500' }
               ].map((stat, i) => (
                 <div key={i} className="relative group">
                   <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300`}></div>
@@ -302,12 +308,12 @@ const Index = () => {
                 <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 mb-6">
                   <Sparkles className="w-4 h-4 text-primary animate-spin" />
                   <span className="text-sm font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                    VERIFIED EXCELLENCE
+                    {t('home.verifiedExcellence')}
                   </span>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-black gradient-text mb-4">Why Customers Trust Us</h3>
+                <h3 className="text-3xl md:text-4xl font-black gradient-text mb-4">{t('home.whyTrustUs')}</h3>
                 <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Certified partnerships and proven security standards that protect your experience
+                  {t('home.certifiedPartnerships')}
                 </p>
               </div>
               
@@ -315,31 +321,31 @@ const Index = () => {
                 {[
                   { 
                     icon: '🛡️', 
-                    title: 'Verified Partner', 
-                    desc: 'Official network member', 
+                    title: t('home.verifiedPartner'), 
+                    desc: t('home.officialMember'), 
                     color: 'from-green-500 to-emerald-500',
-                    badge: 'CERTIFIED'
+                    badge: t('home.certified')
                   },
                   { 
                     icon: '🔒', 
-                    title: 'Secure Platform', 
-                    desc: 'SSL encrypted transactions', 
+                    title: t('home.securePlatform'), 
+                    desc: t('home.sslEncrypted'), 
                     color: 'from-blue-500 to-cyan-500',
-                    badge: 'SECURE'
+                    badge: t('home.secure')
                   },
                   { 
                     icon: '👑', 
-                    title: 'Premium Brands', 
-                    desc: 'Exclusive partnerships', 
+                    title: t('home.premiumBrands'), 
+                    desc: t('home.exclusivePartnerships'), 
                     color: 'from-purple-500 to-pink-500',
-                    badge: 'PREMIUM'
+                    badge: t('home.premium')
                   },
                   { 
                     icon: '📊', 
-                    title: 'Real Reviews', 
-                    desc: '100% authentic feedback', 
+                    title: t('home.realReviews'), 
+                    desc: t('home.authenticFeedback'), 
                     color: 'from-orange-500 to-red-500',
-                    badge: 'VERIFIED'
+                    badge: t('home.verified')
                   }
                 ].map((trust, i) => (
                   <div key={i} className="text-center group relative">
@@ -378,10 +384,10 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 reveal-up">
             <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-              Featured Products
+              {t('home.featuredProducts')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Hand-picked premium products that define modern lifestyle
+              {t('home.handPicked')}
             </p>
           </div>
 
@@ -412,17 +418,17 @@ const Index = () => {
           <div className="glass-card p-12 text-center space-y-8 reveal-up">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold gradient-text">
-                Stay in the Loop
+                {t('home.stayInLoop')}
               </h2>
               <p className="text-lg text-muted-foreground">
-                Get exclusive access to new products, deals, and lifestyle tips
+                {t('home.exclusiveAccess')}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input type="email" placeholder="Enter your email" className="flex-1 px-6 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+              <input type="email" placeholder={t('home.enterEmail')} className="flex-1 px-6 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
               <Button className="btn-premium px-8 py-3 rounded-full">
-                Subscribe
+                {t('home.subscribe')}
               </Button>
             </div>
           </div>
@@ -441,32 +447,32 @@ const Index = () => {
                 </span>
               </div>
               <p className="text-muted-foreground">
-                Your modern lifestyle hub for premium products and experiences.
+                {t('home.modernHub')}
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-card-foreground">Categories</h4>
+              <h4 className="font-semibold mb-4 text-card-foreground">{t('home.categories')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#beauty" className="hover:text-primary transition-colors">Beauty</a></li>
-                <li><a href="#travel" className="hover:text-primary transition-colors">Travel</a></li>
-                <li><a href="#wellness" className="hover:text-primary transition-colors">Wellness</a></li>
+                <li><a href="#beauty" className="hover:text-primary transition-colors">{t('nav.beauty')}</a></li>
+                <li><a href="#travel" className="hover:text-primary transition-colors">{t('nav.travel')}</a></li>
+                <li><a href="#wellness" className="hover:text-primary transition-colors">{t('nav.wellness')}</a></li>
                 <li><a href="#lifestyle" className="hover:text-primary transition-colors">Lifestyle</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-card-foreground">Company</h4>
+              <h4 className="font-semibold mb-4 text-card-foreground">{t('home.company')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-                <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
+                <li><a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
+                <li><a href="#contact" className="hover:text-primary transition-colors">{t('nav.contact')}</a></li>
                 <li><a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
                 <li><a href="#terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4 text-card-foreground">Connect</h4>
+              <h4 className="font-semibold mb-4 text-card-foreground">{t('home.connect')}</h4>
               <div className="flex space-x-3">
                 {/* Pinterest */}
                 <a href="https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714" target="_blank" rel="noopener noreferrer" className="group">
@@ -501,7 +507,7 @@ const Index = () => {
           </div>
 
           <div className="border-t border-border/30 mt-8 pt-8 text-center text-muted-foreground">
-            <p>© 2025 VibeNiche. All rights reserved. This site contains affiliate links.</p>
+            <p>{t('home.allRights')}</p>
           </div>
         </div>
       </footer>
