@@ -14,10 +14,75 @@ export default {
 
   // Hero Section
   hero: {
-    title: 'Entdecke Deine Perfekte Atmosphäre',
-    subtitle: 'Kuratierte Erlebnisse und Produkte, die zu Deinem einzigartigen Lebensstil passen',
-    exploreButton: 'Kategorien erkunden',
-    learnMoreButton: 'Mehr erfahren'
+    title: 'VibeNiche - Premium Affiliate Lifestyle Marktplatz',
+    subtitle: 'Ihr vertrauenswürdiger Affiliate-Partner für Premium-Lifestyle-Produkte. Wir verbinden Sie mit exklusiven Marken aus den Bereichen Beauty, Travel, Wellness & Lifestyle - durch authentische Empfehlungen, die Sie lieben werden.',
+    exploreButton: 'Jetzt erkunden',
+    learnMoreButton: 'Story ansehen'
+  },
+
+  // Home Page Content
+  home: {
+    exploreCategories: 'Kategorien erkunden',
+    discoverCurated: 'Entdecken Sie kuratierte Sammlungen verschiedener Lifestyle-Kategorien',
+    beauty: {
+      title: 'Schönheit',
+      description: 'Premium-Hautpflege, Make-up und Beauty-Tools'
+    },
+    travel: {
+      title: 'Reisen',
+      description: 'Luxus-Reiseausrüstung und Erlebnisse'
+    },
+    wellness: {
+      title: 'Wellness',
+      description: 'Fitness-, Ernährungs- und Achtsamkeitsprodukte'
+    },
+    lifestyle: {
+      title: 'Lifestyle',
+      description: 'Wohnaccessoires, Gadgets und Wohn-Essentials'
+    },
+    liveMetrics: 'LIVE IMPACT METRIKEN',
+    trustedBy: 'Vertraut von',
+    thousands: 'Tausenden',
+    realMetrics: 'Echte Metriken von echten Kunden, die ihren perfekten Lifestyle durch unseren kuratierten Marktplatz entdeckt haben',
+    happyCustomers: 'Zufriedene Kunden',
+    growingDaily: 'Täglich wachsend in über 40 Ländern',
+    thisMonth: '+1.247 diesen Monat',
+    satisfactionRate: 'Zufriedenheitsrate',
+    trustRating: 'Vertrauensbewertung',
+    basedOnReviews: 'Basierend auf 12.847 verifizierten Bewertungen',
+    premiumProducts: 'Premium-Produkte',
+    supportAvailable: 'Support verfügbar',
+    affiliateRewards: 'Affiliate-Belohnungen',
+    countriesServed: 'Länder bedient',
+    uptimeGuarantee: 'Verfügbarkeitsgarantie',
+    verifiedExcellence: 'VERIFIZIERTE EXZELLENZ',
+    whyTrustUs: 'Warum Kunden uns vertrauen',
+    certifiedPartnerships: 'Zertifizierte Partnerschaften und bewährte Sicherheitsstandards, die Ihr Erlebnis schützen',
+    verifiedPartner: 'Verifizierter Partner',
+    officialMember: 'Offizielles Netzwerkmitglied',
+    securePlatform: 'Sichere Plattform',
+    sslEncrypted: 'SSL-verschlüsselte Transaktionen',
+    premiumBrands: 'Premium-Marken',
+    exclusivePartnerships: 'Exklusive Partnerschaften',
+    realReviews: 'Echte Bewertungen',
+    authenticFeedback: '100% authentisches Feedback',
+    certified: 'ZERTIFIZIERT',
+    secure: 'SICHER',
+    premium: 'PREMIUM',
+    verified: 'VERIFIZIERT',
+    featuredProducts: 'Empfohlene Produkte',
+    handPicked: 'Handverlesene Premium-Produkte, die den modernen Lifestyle definieren',
+    whatUsersSay: 'Was unsere Nutzer sagen',
+    joinThousands: 'Schließen Sie sich Tausenden zufriedener Nutzer an, die ihren Lifestyle mit VibeNiche transformiert haben',
+    stayInLoop: 'Bleiben Sie auf dem Laufenden',
+    exclusiveAccess: 'Erhalten Sie exklusiven Zugang zu neuen Produkten, Angeboten und Lifestyle-Tipps',
+    enterEmail: 'Geben Sie Ihre E-Mail ein',
+    subscribe: 'Abonnieren',
+    modernHub: 'Ihr moderner Lifestyle-Hub für Premium-Produkte und Erlebnisse.',
+    categories: 'Kategorien',
+    company: 'Unternehmen',
+    connect: 'Verbinden',
+    allRights: '© 2025 VibeNiche. Alle Rechte vorbehalten. Diese Seite enthält Affiliate-Links.'
   },
 
   // Categories
@@ -63,7 +128,7 @@ export default {
     subtitle: 'Ihr vertrauensvoller Begleiter für außergewöhnliche Produkte und Erlebnisse',
     mission: {
       title: 'Unsere Mission',
-      description: 'Wir glauben, dass jeder Produkte verdient, die wirklich zu seinem Lebensstil passen. Unsere Mission ist es, die beste Auswahl an Schönheits-, Reise-, Wellness- und Lifestyle-Produkten zu kuratieren und gleichzeitig Expertenberatung zu bieten.'
+      description: 'Wir glauben, dass jeder Produkte verdient, die wirklich zu seinem Lebensstil passen. Unsere Mission ist es, die beste Auswahl an Schönheits-, Reise-, Wellness- und Lifestyle-Produkten zu kuratieren.'
     },
     story: {
       title: 'Unsere Geschichte',

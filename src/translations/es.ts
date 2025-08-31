@@ -14,10 +14,75 @@ export default {
 
   // Hero Section
   hero: {
-    title: 'Descubre Tu Ambiente Perfecto',
-    subtitle: 'Experiencias y productos curados que combinan con tu estilo de vida único',
-    exploreButton: 'Explorar Categorías',
-    learnMoreButton: 'Saber Más'
+    title: 'VibeNiche - Mercado Premium de Estilo de Vida Afiliado',
+    subtitle: 'Su socio afiliado de confianza para productos premium de estilo de vida. Lo conectamos con marcas exclusivas en Belleza, Viajes, Bienestar y Estilo de Vida - ganando a través de recomendaciones auténticas que le encantarán.',
+    exploreButton: 'Explorar Ahora',
+    learnMoreButton: 'Ver Historia'
+  },
+
+  // Home Page Content
+  home: {
+    exploreCategories: 'Explorar Categorías',
+    discoverCurated: 'Descubra colecciones curadas en todas las categorías de estilo de vida',
+    beauty: {
+      title: 'Belleza',
+      description: 'Cuidado de la piel premium, maquillaje y herramientas de belleza'
+    },
+    travel: {
+      title: 'Viajes',
+      description: 'Equipos de viaje de lujo y experiencias'
+    },
+    wellness: {
+      title: 'Bienestar',
+      description: 'Productos de fitness, nutrición y mindfulness'
+    },
+    lifestyle: {
+      title: 'Estilo de Vida',
+      description: 'Decoración del hogar, gadgets y elementos esenciales para vivir'
+    },
+    liveMetrics: 'MÉTRICAS DE IMPACTO EN VIVO',
+    trustedBy: 'De confianza para',
+    thousands: 'Miles',
+    realMetrics: 'Métricas reales de clientes reales que han descubierto su estilo de vida perfecto a través de nuestro mercado curado',
+    happyCustomers: 'Clientes Felices',
+    growingDaily: 'Creciendo diariamente en más de 40 países',
+    thisMonth: '+1,247 este mes',
+    satisfactionRate: 'Tasa de Satisfacción',
+    trustRating: 'Calificación de Confianza',
+    basedOnReviews: 'Basado en 12,847 reseñas verificadas',
+    premiumProducts: 'Productos Premium',
+    supportAvailable: 'Soporte Disponible',
+    affiliateRewards: 'Recompensas de Afiliados',
+    countriesServed: 'Países Atendidos',
+    uptimeGuarantee: 'Garantía de Tiempo de Actividad',
+    verifiedExcellence: 'EXCELENCIA VERIFICADA',
+    whyTrustUs: 'Por qué los clientes confían en nosotros',
+    certifiedPartnerships: 'Asociaciones certificadas y estándares de seguridad probados que protegen su experiencia',
+    verifiedPartner: 'Socio Verificado',
+    officialMember: 'Miembro oficial de la red',
+    securePlatform: 'Plataforma Segura',
+    sslEncrypted: 'Transacciones encriptadas SSL',
+    premiumBrands: 'Marcas Premium',
+    exclusivePartnerships: 'Asociaciones exclusivas',
+    realReviews: 'Reseñas Reales',
+    authenticFeedback: '100% comentarios auténticos',
+    certified: 'CERTIFICADO',
+    secure: 'SEGURO',
+    premium: 'PREMIUM',
+    verified: 'VERIFICADO',
+    featuredProducts: 'Productos Destacados',
+    handPicked: 'Productos premium seleccionados a mano que definen el estilo de vida moderno',
+    whatUsersSay: 'Lo que dicen nuestros usuarios',
+    joinThousands: 'Únase a miles de usuarios satisfechos que han transformado su estilo de vida con VibeNiche',
+    stayInLoop: 'Manténgase al día',
+    exclusiveAccess: 'Obtenga acceso exclusivo a nuevos productos, ofertas y consejos de estilo de vida',
+    enterEmail: 'Ingrese su correo electrónico',
+    subscribe: 'Suscribirse',
+    modernHub: 'Su centro moderno de estilo de vida para productos y experiencias premium.',
+    categories: 'Categorías',
+    company: 'Empresa',
+    connect: 'Conectar',
+    allRights: '© 2025 VibeNiche. Todos los derechos reservados. Este sitio contiene enlaces de afiliados.'
   },
 
   // Categories

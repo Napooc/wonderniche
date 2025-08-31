@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 import hero1 from '@/assets/hero-1.jpg';
 import hero2 from '@/assets/hero-2.jpg';
 import hero3 from '@/assets/hero-3.jpg';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
 
   const images = [hero1, hero2, hero3];
-  const fullText = "VibeNiche - Premium Affiliate Lifestyle Marketplace";
+  const fullText = t('hero.title');
 
   // Typing animation
   useEffect(() => {
@@ -87,18 +89,16 @@ const HeroSection = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-            Your trusted affiliate partner for premium lifestyle products. We connect you with 
-            exclusive brands across Beauty, Travel, Wellness & Lifestyle - earning through 
-            authentic recommendations you'll love.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
             <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full">
-              Explore Now
+              {t('hero.exploreButton')}
             </Button>
             <Button size="lg" variant="outline" className="btn-glass text-lg px-8 py-4 rounded-full">
-              Watch Story
+              {t('hero.learnMoreButton')}
             </Button>
           </div>
         </div>
