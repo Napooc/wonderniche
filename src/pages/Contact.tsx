@@ -49,20 +49,6 @@ const Contact = () => {
       action: 'mailto:hello@vibeniche.com'
     },
     {
-      icon: Phone,
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      subtitle: 'Mon-Fri 9AM-6PM EST',
-      action: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Visit Us',
-      details: '123 Lifestyle Avenue',
-      subtitle: 'New York, NY 10001',
-      action: 'https://maps.google.com'
-    },
-    {
       icon: Clock,
       title: 'Business Hours',
       details: 'Monday - Friday',
