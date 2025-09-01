@@ -130,10 +130,7 @@ const About = () => {
               </h2>
               
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>
-                  It started with a simple frustration: endless hours scrolling through countless products, 
-                  never knowing what truly delivered on its promises. We believed there had to be a better way.
-                </p>
+                <p>It all started with one simple frustration: endless scrolling through countless products, uncertain about what truly works. We knew there had to be a better way to find premium lifestyle essentials that actually deliver on their promises.</p>
                 <p>
                   <span className="text-primary font-semibold">VibeNiche</span> was born from the vision of creating 
                   an authentic space where lifestyle enthusiasts could discover genuinely amazing products through 
