@@ -267,7 +267,7 @@ const Contact = () => {
                     {social.name}
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    {social.followers}
+                    Follow us
                   </p>
                 </Card>;
           })}

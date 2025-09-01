@@ -17,10 +17,12 @@ import {
   TrendingUp,
   Eye,
   Edit,
-  Trash2
+  Trash2,
+  Search
 } from 'lucide-react';
 import ProductForm from '@/components/admin/ProductForm';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Input } from '@/components/ui/input';
 
 interface Product {
   id: string;
@@ -52,6 +54,7 @@ export default function AdminDashboard() {
   const [isLoading, setIsLoading] = useState(true);
   const [showProductForm, setShowProductForm] = useState(false);
   const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   // Define fetchData function before useEffect
   const fetchData = async () => {
@@ -218,6 +221,13 @@ const handleSignOut = async () => {
     return categories.find(cat => cat.id === categoryId)?.name || 'Unknown';
   };
 
+  // Filter products based on search term
+  const filteredProducts = products.filter(product => 
+    product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    product.description?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    getCategoryName(product.category_id).toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const stats = {
     totalProducts: products.length,
     activeProducts: products.filter(p => p.is_active).length,
@@ -323,6 +333,17 @@ const handleSignOut = async () => {
               </Button>
             </div>
 
+            {/* Search Bar */}
+            <div className="relative max-w-md">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+              <Input
+                placeholder="Search products by name, description, or category..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10"
+              />
+            </div>
+
             <Card className="glass-card">
               <Table>
                 <TableHeader>
@@ -336,7 +357,14 @@ const handleSignOut = async () => {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {products.map((product) => (
+                  {filteredProducts.length === 0 ? (
+                    <TableRow>
+                      <TableCell colSpan={6} className="text-center py-8 text-muted-foreground">
+                        {searchTerm ? `No products found matching "${searchTerm}"` : 'No products found'}
+                      </TableCell>
+                    </TableRow>
+                  ) : (
+                    filteredProducts.map((product) => (
                     <TableRow key={product.id}>
                       <TableCell className="font-medium">{product.name}</TableCell>
                       <TableCell>{getCategoryName(product.category_id)}</TableCell>
@@ -378,7 +406,8 @@ const handleSignOut = async () => {
                         </div>
                       </TableCell>
                     </TableRow>
-                  ))}
+                    ))
+                  )}
                 </TableBody>
               </Table>
             </Card>
