@@ -41,8 +41,12 @@ const ProductCard = ({
     onMouseLeave={() => setIsHovered(false)}
   >
       {/* Image Container */}
-      <div className="relative overflow-hidden flex-shrink-0 h-48 sm:h-56 lg:h-64">
-        <img src={image} alt={title} className={`w-full h-full object-cover transition-all duration-700 ${isHovered ? 'scale-110' : 'scale-100'}`} />
+      <div className="relative overflow-hidden flex-shrink-0 h-48 sm:h-56 lg:h-64 bg-gradient-to-br from-background to-muted/20 rounded-t-2xl">
+        <img 
+          src={image} 
+          alt={title} 
+          className={`w-full h-full object-contain p-4 transition-all duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`} 
+        />
         
         {/* Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
