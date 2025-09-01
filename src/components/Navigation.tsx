@@ -119,8 +119,13 @@ const Navigation = () => {
                 ))}
               </div>
 
-{/* Mobile Auth Links */}
-              <div className="pt-6 border-t border-border/30 mt-6">
+              {/* Mobile Language Picker and Auth Links */}
+              <div className="pt-6 border-t border-border/30 mt-6 space-y-4">
+                <div className="flex items-center justify-between px-4">
+                  <span className="text-sm font-medium text-muted-foreground">Language</span>
+                  <LanguagePicker />
+                </div>
+                
                 {user && (
                   <div className="space-y-4">
                     {userRole === 'admin' && (
