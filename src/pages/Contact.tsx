@@ -77,17 +77,23 @@ const Contact = () => {
     value: '98%'
   }];
   const faqs = [{
-    question: "How do I track my order?",
-    answer: "Once your order is processed, you'll receive a tracking number via email. You can use this to monitor your package's progress on the carrier's website."
+    question: "What is affiliate marketing and how does VibeNiche work?",
+    answer: "VibeNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you."
   }, {
-    question: "What's your return policy?",
-    answer: "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some restrictions apply to personal care items."
+    question: "What beauty products and brands do you recommend?",
+    answer: "Our beauty category features premium skincare, makeup, and beauty tools from top-rated brands. We focus on products with proven results, clean ingredients, and excellent customer reviews across anti-aging, skincare routines, makeup essentials, and beauty devices."
   }, {
-    question: "Do you ship internationally?",
-    answer: "Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties."
+    question: "How do you curate travel gear and experiences?",
+    answer: "Our travel experts test and review luggage, travel accessories, booking platforms, and travel experiences. We partner with trusted travel brands to bring you exclusive deals on everything from luxury accommodations to essential travel gear for modern explorers."
   }, {
-    question: "How can I become an affiliate partner?",
-    answer: "We're always looking for passionate partners! Email us at hello@vibeniche.com with 'Affiliate Partnership' in the subject line, and we'll send you our partnership details."
+    question: "What wellness and lifestyle products do you feature?",
+    answer: "We specialize in fitness equipment, nutrition supplements, mindfulness products, home decor, and smart gadgets. Our wellness category focuses on scientifically-backed products that enhance mental clarity, physical strength, and overall wellbeing for a balanced lifestyle."
+  }, {
+    question: "How do I know if a product recommendation is genuine?",
+    answer: "Every product we feature goes through rigorous testing by our expert team. We only recommend products we genuinely believe in and would use ourselves. Our affiliate partnerships never influence our honest reviews and ratings."
+  }, {
+    question: "Do you offer exclusive deals through your affiliate partnerships?",
+    answer: "Yes! We negotiate exclusive discounts, early access to sales, and special bundles with our brand partners. Subscribers get first access to these premium deals across all our lifestyle categories."
   }];
   return <div className="min-h-screen">
       <Navigation />
