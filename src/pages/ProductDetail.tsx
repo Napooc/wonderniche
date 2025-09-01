@@ -289,81 +289,29 @@ const ProductDetail = () => {
           </div>
 
           {/* Main Description Card */}
-          {product.description && <div className="mb-8 sm:mb-12">
-              <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-xl hover:shadow-2xl transition-all duration-500 group">
-                {/* Header with animated gradient */}
-                <div className="relative overflow-hidden bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 p-6 sm:p-8 border-b border-border/10">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 animate-pulse"></div>
-                  <div className="relative text-center">
-                    <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-secondary rounded-2xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <Info className="w-7 h-7 sm:w-8 sm:h-8 text-primary-foreground" />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent mb-3 sm:mb-4">
+          {product.description && <div className="mb-6 sm:mb-8">
+              <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                <div className="p-4 sm:p-6 lg:p-8">
+                  <div className="text-center mb-4 sm:mb-6">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3">
                       Product Description
                     </h3>
-                    <div className="flex items-center justify-center gap-2 mb-2">
-                      <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-gradient-to-r from-transparent to-primary/70 rounded-full"></div>
-                      <div className="w-4 h-4 bg-primary rounded-full animate-pulse"></div>
-                      <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-gradient-to-l from-transparent to-primary/70 rounded-full"></div>
-                    </div>
-                    <p className="text-sm sm:text-base text-muted-foreground/80 max-w-2xl mx-auto">
-                      Detailed information about this product's features, benefits, and specifications
-                    </p>
+                    <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
                   </div>
-                </div>
-                
-                <div className="p-6 sm:p-8 lg:p-12">
-                  {/* Description Content with Creative Layout */}
-                  <div className="max-w-none">
-                    <div className="prose prose-lg max-w-none text-foreground/90">
-                      <div className="space-y-6 sm:space-y-8">
-                        {product.description.split('\n\n').map((section, sectionIndex) => (
-                          <div key={sectionIndex} className="relative">
-                            {/* Section with creative styling */}
-                            <div className="space-y-4 sm:space-y-6">
-                              {section.split('\n').map((paragraph, paragraphIndex) => 
-                                paragraph.trim() ? (
-                                  <div key={paragraphIndex} className="relative group/para">
-                                    {/* Creative paragraph with subtle hover effects */}
-                                    <div className="relative p-4 sm:p-6 rounded-xl bg-gradient-to-r from-muted/30 via-transparent to-muted/30 border border-border/20 hover:border-primary/30 transition-all duration-300 group-hover/para:shadow-lg">
-                                      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 rounded-xl opacity-0 group-hover/para:opacity-100 transition-opacity duration-300"></div>
-                                      <p className="relative text-sm sm:text-base md:text-lg leading-relaxed text-foreground/90 font-light tracking-wide" 
-                                         style={{
-                                           wordBreak: 'break-word',
-                                           overflowWrap: 'break-word',
-                                           whiteSpace: 'pre-wrap',
-                                           lineHeight: '1.8'
-                                         }}>
-                                        {paragraph.trim()}
-                                      </p>
-                                    </div>
-                                  </div>
-                                ) : null
-                              )}
-                            </div>
-                            
-                            {/* Creative section divider */}
-                            {sectionIndex < product.description.split('\n\n').length - 1 && (
-                              <div className="my-8 sm:my-12 flex items-center justify-center">
-                                <div className="flex items-center gap-3 sm:gap-4">
-                                  <div className="w-12 sm:w-16 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
-                                  <div className="w-2 h-2 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse"></div>
-                                  <div className="w-12 sm:w-16 h-px bg-gradient-to-l from-transparent via-primary/40 to-transparent"></div>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    {/* Creative bottom accent */}
-                    <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gradient-to-r from-transparent via-border/30 to-transparent">
-                      <div className="flex items-center justify-center gap-2">
-                        <div className="w-1 h-1 bg-primary rounded-full animate-ping"></div>
-                        <div className="w-1 h-1 bg-secondary rounded-full animate-ping" style={{animationDelay: '0.2s'}}></div>
-                        <div className="w-1 h-1 bg-accent rounded-full animate-ping" style={{animationDelay: '0.4s'}}></div>
-                      </div>
+                  
+                  {/* Description Content */}
+                  <div className="max-w-4xl mx-auto">
+                    <div className="text-foreground/90 leading-relaxed text-sm sm:text-base space-y-3 sm:space-y-4">
+                      {product.description.split('\n\n').map((section, sectionIndex) => <div key={sectionIndex} className="space-y-2 sm:space-y-3">
+                          {section.split('\n').map((paragraph, paragraphIndex) => paragraph.trim() ? <p key={paragraphIndex} className="text-justify leading-5 sm:leading-6 md:leading-7 break-words hyphens-auto" style={{
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      whiteSpace: 'pre-wrap'
+                    }}>
+                                {paragraph.trim()}
+                              </p> : null)}
+                          {sectionIndex < product.description.split('\n\n').length - 1 && <div className="border-t border-border/20 my-3 sm:my-4"></div>}
+                        </div>)}
                     </div>
                   </div>
                 </div>
