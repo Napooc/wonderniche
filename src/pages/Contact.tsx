@@ -28,9 +28,9 @@ const Contact = () => {
     action: 'mailto:hello@vibeniche.com'
   }, {
     icon: Clock,
-    title: 'Business Hours',
-    details: 'Monday - Friday',
-    subtitle: '9:00 AM - 6:00 PM EST',
+    title: '24/7 Support',
+    details: 'Always Available',
+    subtitle: 'Round-the-clock assistance',
     action: null
   }];
   const socialLinks = [{
