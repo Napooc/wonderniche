@@ -142,11 +142,23 @@ const handleSignOut = async () => {
     }
 
     try {
-      // Get admin token from localStorage with fallback
-      const adminToken = localStorage.getItem('adminToken') || localStorage.getItem('admin_token');
-      if (!adminToken) {
+      // Get admin token from sessionStorage
+      const tokenData = sessionStorage.getItem('adminToken');
+      if (!tokenData) {
         toast({
           title: "Authentication Error",
+          description: "Please sign in again to continue",
+          variant: "destructive"
+        });
+        navigate('/auth');
+        return;
+      }
+      
+      const { token: adminToken, expiry } = JSON.parse(tokenData);
+      if (Date.now() > expiry) {
+        sessionStorage.removeItem('adminToken');
+        toast({
+          title: "Session Expired",
           description: "Please sign in again to continue",
           variant: "destructive"
         });

@@ -150,9 +150,15 @@ const [formData, setFormData] = useState({
     setIsUploading(true);
 
     try {
-      // Get admin token from localStorage
-      const adminToken = localStorage.getItem('admin_token');
-      if (!adminToken) {
+      // Get admin token from sessionStorage
+      const tokenData = sessionStorage.getItem('adminToken');
+      if (!tokenData) {
+        throw new Error('Admin session expired');
+      }
+      
+      const { token: adminToken, expiry } = JSON.parse(tokenData);
+      if (Date.now() > expiry) {
+        sessionStorage.removeItem('adminToken');
         throw new Error('Admin session expired');
       }
 
@@ -229,8 +235,14 @@ const productData: Record<string, any> = {
 
 if (product) {
   // Update existing product via edge function
-  const adminToken = localStorage.getItem('admin_token');
-  if (!adminToken) {
+  const tokenData = sessionStorage.getItem('adminToken');
+  if (!tokenData) {
+    throw new Error('Admin session expired');
+  }
+  
+  const { token: adminToken, expiry } = JSON.parse(tokenData);
+  if (Date.now() > expiry) {
+    sessionStorage.removeItem('adminToken');
     throw new Error('Admin session expired');
   }
   const { data, error } = await supabase.functions.invoke('admin-auth', {
@@ -249,8 +261,14 @@ if (product) {
   toast({ title: 'Success', description: 'Product updated successfully' });
 } else {
   // Create new product via edge function
-  const adminToken = localStorage.getItem('admin_token');
-  if (!adminToken) {
+  const tokenData = sessionStorage.getItem('adminToken');
+  if (!tokenData) {
+    throw new Error('Admin session expired');
+  }
+  
+  const { token: adminToken, expiry } = JSON.parse(tokenData);
+  if (Date.now() > expiry) {
+    sessionStorage.removeItem('adminToken');
     throw new Error('Admin session expired');
   }
   const { data, error } = await supabase.functions.invoke('admin-auth', {

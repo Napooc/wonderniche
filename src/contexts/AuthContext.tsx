@@ -23,11 +23,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Check for existing session in localStorage
+    // Check for existing session with validation and expiry
     const checkExistingSession = async () => {
-      const token = localStorage.getItem('adminToken');
-      if (token) {
+      // Clear any legacy token keys
+      localStorage.removeItem('admin_token');
+      
+      const tokenData = sessionStorage.getItem('adminToken');
+      if (tokenData) {
         try {
+          const { token, expiry } = JSON.parse(tokenData);
+          
+          // Check if token is expired
+          if (Date.now() > expiry) {
+            sessionStorage.removeItem('adminToken');
+            setLoading(false);
+            return;
+          }
+
           const { data, error } = await supabase.functions.invoke('admin-auth', {
             body: { action: 'verify', token }
           });
@@ -36,11 +48,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             setUser(data.user);
             setUserRole('admin');
           } else {
-            localStorage.removeItem('adminToken');
+            sessionStorage.removeItem('adminToken');
           }
         } catch (error) {
           console.error('Token verification failed:', error);
-          localStorage.removeItem('adminToken');
+          sessionStorage.removeItem('adminToken');
         }
       }
       setLoading(false);
@@ -59,8 +71,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return { error: data?.error || 'Authentication failed' };
       }
       
-      // Store token and user data
-      localStorage.setItem('adminToken', data.token);
+      // Store token with expiry in sessionStorage
+      const tokenData = {
+        token: data.token,
+        expiry: Date.now() + (24 * 60 * 60 * 1000) // 24 hours
+      };
+      sessionStorage.setItem('adminToken', JSON.stringify(tokenData));
       setUser(data.user);
       setUserRole('admin');
       
@@ -73,7 +89,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = async () => {
     try {
+      // Clear all possible token storage locations
+      sessionStorage.removeItem('adminToken');
       localStorage.removeItem('adminToken');
+      localStorage.removeItem('admin_token');
       setUser(null);
       setUserRole(null);
       return { error: null };

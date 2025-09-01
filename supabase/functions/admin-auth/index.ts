@@ -11,7 +11,19 @@ const corsHeaders = {
 
 const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
 const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
-const jwtSecret = Deno.env.get('JWT_SECRET') || 'your-jwt-secret-key';
+const jwtSecret = Deno.env.get('JWT_SECRET') || crypto.randomUUID();
+
+// Rate limiting for failed login attempts
+const failedAttempts = new Map<string, { count: number; lastAttempt: number }>();
+const MAX_ATTEMPTS = 5;
+const LOCKOUT_DURATION = 15 * 60 * 1000; // 15 minutes
+
+// Allowed origins for CORS validation
+const ALLOWED_ORIGINS = [
+  'https://hofzwvtumizrnmsnysbx.supabase.co',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+];
 
 // Password hashing using Web Crypto PBKDF2 (Edge-compatible)
 const textEncoder = new TextEncoder();
@@ -92,6 +104,17 @@ async function verifyAdminTokenFromReq(req: Request, body?: any) {
 }
 
 serve(async (req) => {
+  // Origin validation
+  const origin = req.headers.get('origin');
+  const isValidOrigin = !origin || ALLOWED_ORIGINS.includes(origin);
+  
+  if (!isValidOrigin) {
+    return new Response(JSON.stringify({ error: 'Invalid origin' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
   // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -187,6 +210,21 @@ const { action, username, password, token, data } = body || {};
 console.log(`Admin auth request: ${action} for user: ${username}`);
 
     if (action === 'login') {
+      // Rate limiting check
+      const clientIP = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'unknown';
+      const attempts = failedAttempts.get(clientIP);
+      const now = Date.now();
+      
+      if (attempts && attempts.count >= MAX_ATTEMPTS && (now - attempts.lastAttempt) < LOCKOUT_DURATION) {
+        const remainingTime = Math.ceil((LOCKOUT_DURATION - (now - attempts.lastAttempt)) / 60000);
+        return new Response(JSON.stringify({ 
+          error: `Too many failed attempts. Try again in ${remainingTime} minutes.` 
+        }), {
+          status: 429,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
       // Fetch user from admin_users table
       const { data: adminUser, error } = await supabase
         .from('admin_users')
@@ -235,6 +273,14 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
 
         if (!passwordMatch) {
           console.log('Invalid password for user:', username);
+          
+          // Track failed attempt
+          const currentAttempts = failedAttempts.get(clientIP) || { count: 0, lastAttempt: 0 };
+          failedAttempts.set(clientIP, { 
+            count: currentAttempts.count + 1, 
+            lastAttempt: now 
+          });
+          
           return new Response(JSON.stringify({ error: 'Invalid credentials' }), {
             status: 401,
             headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -260,6 +306,9 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
 
       const token = await create({ alg: "HS256", typ: "JWT" }, payload, key);
 
+      // Clear failed attempts on successful login
+      failedAttempts.delete(clientIP);
+      
       console.log('Login successful for user:', username);
 
       return new Response(JSON.stringify({ 
