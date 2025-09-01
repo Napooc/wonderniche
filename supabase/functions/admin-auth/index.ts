@@ -18,12 +18,26 @@ const failedAttempts = new Map<string, { count: number; lastAttempt: number }>()
 const MAX_ATTEMPTS = 5;
 const LOCKOUT_DURATION = 15 * 60 * 1000; // 15 minutes
 
-// Allowed origins for CORS validation
+// Allowed origins and patterns for CORS validation
+const SUPABASE_ORIGIN = new URL(supabaseUrl).origin;
 const ALLOWED_ORIGINS = [
-  'https://hofzwvtumizrnmsnysbx.supabase.co',
+  SUPABASE_ORIGIN,
   'http://localhost:3000',
   'http://127.0.0.1:3000'
 ];
+
+const ORIGIN_PATTERNS = [
+  /^https?:\/\/localhost(?::\d+)?$/i,
+  /^https?:\/\/127\.0\.0\.1(?::\d+)?$/i,
+  /^https?:\/\/.*\.lovable\.dev$/i,
+  /^https?:\/\/.*\.lovable\.app$/i,
+];
+
+function isOriginAllowed(origin: string | null): boolean {
+  if (!origin) return true;
+  if (ALLOWED_ORIGINS.includes(origin)) return true;
+  return ORIGIN_PATTERNS.some((re) => re.test(origin));
+}
 
 // Password hashing using Web Crypto PBKDF2 (Edge-compatible)
 const textEncoder = new TextEncoder();
@@ -106,12 +120,12 @@ async function verifyAdminTokenFromReq(req: Request, body?: any) {
 serve(async (req) => {
   // Origin validation
   const origin = req.headers.get('origin');
-  const isValidOrigin = !origin || ALLOWED_ORIGINS.includes(origin);
+  const isValidOrigin = isOriginAllowed(origin);
   
   if (!isValidOrigin) {
     return new Response(JSON.stringify({ error: 'Invalid origin' }), {
       status: 403,
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   }
 
