@@ -45,7 +45,7 @@ const ProductCard = ({
         <img 
           src={image} 
           alt={title} 
-          className={`w-full h-full object-contain p-4 transition-all duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`} 
+          className={`w-full h-full object-contain p-2 transition-all duration-700 ${isHovered ? 'scale-105' : 'scale-100'}`} 
         />
         
         {/* Overlay */}
