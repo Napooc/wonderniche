@@ -228,9 +228,7 @@ const Contact = () => {
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Our dedicated support team is here to help you with any questions, concerns, 
-                  or feedback you may have. We pride ourselves on providing exceptional customer 
-                  service and quick response times.
+                  Need help? We’ve got you. Our support team is always available via email, making sure you get quick, clear, and caring assistance every time — because your experience matters.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center">
