@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Send, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Instagram, Twitter, Facebook, Linkedin, Youtube } from 'lucide-react';
 const Contact = () => {
   // Reveal animations on scroll
   useEffect(() => {
@@ -34,15 +34,30 @@ const Contact = () => {
     action: null
   }];
   const socialLinks = [{
-    icon: Send,
-    name: 'Telegram',
-    url: 'https://t.me/+212701420239',
-    followers: '25K'
+    icon: Instagram,
+    name: 'Instagram',
+    url: '#',
+    followers: '125K'
   }, {
-    icon: 'pinterest',
-    name: 'Pinterest',
-    url: 'https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714',
+    icon: Twitter,
+    name: 'Twitter',
+    url: '#',
+    followers: '89K'
+  }, {
+    icon: Facebook,
+    name: 'Facebook',
+    url: '#',
+    followers: '156K'
+  }, {
+    icon: Linkedin,
+    name: 'LinkedIn',
+    url: '#',
     followers: '45K'
+  }, {
+    icon: Youtube,
+    name: 'YouTube',
+    url: '#',
+    followers: '78K'
   }];
   const companyStats = [{
     icon: Users,
@@ -62,23 +77,17 @@ const Contact = () => {
     value: '98%'
   }];
   const faqs = [{
-    question: "What is affiliate marketing and how does VibeNiche work?",
-    answer: "VibeNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you."
+    question: "How do I track my order?",
+    answer: "Once your order is processed, you'll receive a tracking number via email. You can use this to monitor your package's progress on the carrier's website."
   }, {
-    question: "What beauty products and brands do you recommend?",
-    answer: "Our beauty category features premium skincare, makeup, and beauty tools from top-rated brands. We focus on products with proven results, clean ingredients, and excellent customer reviews across anti-aging, skincare routines, makeup essentials, and beauty devices."
+    question: "What's your return policy?",
+    answer: "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some restrictions apply to personal care items."
   }, {
-    question: "How do you curate travel gear and experiences?",
-    answer: "Our travel experts test and review luggage, travel accessories, booking platforms, and travel experiences. We partner with trusted travel brands to bring you exclusive deals on everything from luxury accommodations to essential travel gear for modern explorers."
+    question: "Do you ship internationally?",
+    answer: "Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties."
   }, {
-    question: "What wellness and lifestyle products do you feature?",
-    answer: "We specialize in fitness equipment, nutrition supplements, mindfulness products, home decor, and smart gadgets. Our wellness category focuses on scientifically-backed products that enhance mental clarity, physical strength, and overall wellbeing for a balanced lifestyle."
-  }, {
-    question: "How do I know if a product recommendation is genuine?",
-    answer: "Every product we feature goes through rigorous testing by our expert team. We only recommend products we genuinely believe in and would use ourselves. Our affiliate partnerships never influence our honest reviews and ratings."
-  }, {
-    question: "Do you offer exclusive deals through your affiliate partnerships?",
-    answer: "Yes! We negotiate exclusive discounts, early access to sales, and special bundles with our brand partners. Subscribers get first access to these premium deals across all our lifestyle categories."
+    question: "How can I become an affiliate partner?",
+    answer: "We're always looking for passionate partners! Email us at hello@vibeniche.com with 'Affiliate Partnership' in the subject line, and we'll send you our partnership details."
   }];
   return <div className="min-h-screen">
       <Navigation />
@@ -219,7 +228,9 @@ const Contact = () => {
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Need help? We’ve got you. Our support team is always available via email, making sure you get quick, clear, and caring assistance every time — because your experience matters.
+                  Our dedicated support team is here to help you with any questions, concerns, 
+                  or feedback you may have. We pride ourselves on providing exceptional customer 
+                  service and quick response times.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center">
@@ -253,18 +264,11 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {socialLinks.map((social, index) => {
+            const IconComponent = social.icon;
             return <Card key={index} className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`} onClick={() => window.open(social.url, '_blank')}>
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-primary to-primary-glow p-3 group-hover:scale-110 transition-transform duration-300">
-                    {social.icon === 'pinterest' ? (
-                      <svg className="w-full h-full text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.541.1.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
-                      </svg>
-                    ) : (
-                      <social.icon className="w-full h-full text-primary-foreground" />
-                    )}
-                  </div>
+                  
                   <h4 className="font-semibold mb-1 group-hover:text-primary transition-colors">
                     {social.name}
                   </h4>
