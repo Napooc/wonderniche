@@ -230,6 +230,66 @@ const ProductDetail = () => {
                 </p>
               </div>
 
+              {/* Product Description - Modern & Creative */}
+              {product.description && (
+                <div className="relative group">
+                  <Card className="overflow-hidden border-0 bg-gradient-to-br from-card/95 via-card to-card/90 shadow-lg hover:shadow-2xl transition-all duration-500 backdrop-blur-sm border border-border/20">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative p-6 sm:p-8 lg:p-10">
+                      {/* Header with animated underline */}
+                      <div className="text-center mb-6 sm:mb-8">
+                        <div className="inline-flex items-center gap-3 mb-4">
+                          <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-primary to-primary/50 rounded-full"></div>
+                          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-foreground via-foreground/90 to-foreground/70 bg-clip-text text-transparent">
+                            Product Description
+                          </h3>
+                          <div className="w-1 h-8 sm:h-10 bg-gradient-to-b from-primary/50 to-primary rounded-full"></div>
+                        </div>
+                        <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent mx-auto rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      
+                      {/* Description Content */}
+                      <div className="max-w-none mx-auto">
+                        <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed space-y-4 sm:space-y-6">
+                          {product.description.split('\n\n').map((section, sectionIndex) => (
+                            <div key={sectionIndex} className="space-y-3 sm:space-y-4">
+                              {section.split('\n').map((paragraph, paragraphIndex) => 
+                                paragraph.trim() ? (
+                                  <p 
+                                    key={paragraphIndex} 
+                                    className="text-sm sm:text-base md:text-lg leading-relaxed text-foreground/85 transition-colors duration-300 group-hover:text-foreground/95"
+                                    style={{
+                                      wordBreak: 'break-word',
+                                      overflowWrap: 'break-word',
+                                      whiteSpace: 'pre-wrap',
+                                      lineHeight: '1.8',
+                                      textAlign: 'justify',
+                                      hyphens: 'auto'
+                                    }}
+                                  >
+                                    {paragraph.trim()}
+                                  </p>
+                                ) : null
+                              )}
+                              {sectionIndex < product.description.split('\n\n').length - 1 && (
+                                <div className="flex items-center gap-4 my-6 sm:my-8">
+                                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                                  <div className="w-2 h-2 rounded-full bg-primary/60"></div>
+                                  <div className="flex-1 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Subtle animated border */}
+                    <div className="absolute inset-0 rounded-lg border border-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  </Card>
+                </div>
+              )}
+
               {/* Features */}
               {product.features && product.features.length > 0 && <Card className="p-4 sm:p-6 bg-gradient-to-br from-card to-card/50 border-0 shadow-lg">
                   <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center gap-2">
@@ -271,70 +331,6 @@ const ProductDetail = () => {
         </div>
       </section>
 
-      {/* Product Details Section */}
-      <section className="py-8 sm:py-12 lg:py-16 px-4 sm:px-6 bg-gradient-to-br from-background via-muted/5 to-background">
-        <div className="container mx-auto max-w-7xl">
-          {/* Section Header */}
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary to-primary/70 rounded-full mb-4 sm:mb-6">
-              <Info className="w-6 h-6 sm:w-8 sm:h-8 text-primary-foreground" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary via-primary to-primary/70 bg-clip-text text-transparent mb-3 sm:mb-4">
-              Product Details
-            </h2>
-            <div className="w-20 sm:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full mb-3 sm:mb-4"></div>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto px-4">
-              Complete information and specifications for this product
-            </p>
-          </div>
-
-          {/* Main Description Card */}
-          {product.description && <div className="mb-6 sm:mb-8">
-              <Card className="overflow-hidden border-0 bg-gradient-to-br from-card via-card/98 to-card/95 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="p-4 sm:p-6 lg:p-8">
-                  <div className="text-center mb-4 sm:mb-6">
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2 sm:mb-3">
-                      Product Description
-                    </h3>
-                    <div className="w-12 sm:w-16 h-0.5 bg-gradient-to-r from-primary to-primary/50 mx-auto rounded-full"></div>
-                  </div>
-                  
-                  {/* Description Content */}
-                  <div className="max-w-4xl mx-auto">
-                    <div className="text-foreground/90 leading-relaxed text-sm sm:text-base space-y-3 sm:space-y-4">
-                      {product.description.split('\n\n').map((section, sectionIndex) => <div key={sectionIndex} className="space-y-2 sm:space-y-3">
-                          {section.split('\n').map((paragraph, paragraphIndex) => paragraph.trim() ? <p key={paragraphIndex} className="text-justify leading-5 sm:leading-6 md:leading-7 break-words hyphens-auto" style={{
-                      wordBreak: 'break-word',
-                      overflowWrap: 'break-word',
-                      whiteSpace: 'pre-wrap'
-                    }}>
-                                {paragraph.trim()}
-                              </p> : null)}
-                          {sectionIndex < product.description.split('\n\n').length - 1 && <div className="border-t border-border/20 my-3 sm:my-4"></div>}
-                        </div>)}
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>}
-
-          {/* Features & Benefits Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
-            {/* Tags */}
-            {product.tags && product.tags.length > 0 && <Card className="p-4 sm:p-6 lg:p-8 bg-gradient-to-br from-secondary/5 via-secondary/3 to-transparent border border-secondary/20">
-                <div className="text-center mb-4 sm:mb-6">
-                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-foreground mb-2">Product Tags</h3>
-                  <div className="w-12 sm:w-16 h-0.5 sm:h-1 bg-gradient-to-r from-secondary to-secondary/50 mx-auto rounded-full"></div>
-                </div>
-                <div className="flex flex-wrap gap-2 sm:gap-3 justify-center">
-                  {product.tags.map((tag, index) => <Badge key={index} variant="secondary" className="px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm bg-secondary/20 hover:bg-secondary/30 transition-colors border border-secondary/30">
-                      #{tag}
-                    </Badge>)}
-                </div>
-              </Card>}
-          </div>
-        </div>
-      </section>
     </div>;
 };
 export default ProductDetail;
