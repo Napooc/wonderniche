@@ -253,7 +253,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
             {socialLinks.map((social, index) => {
             const IconComponent = social.icon;
             return <Card key={index} className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`} onClick={() => window.open(social.url, '_blank')}>
