@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Instagram, Twitter, Facebook, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Send, Hash } from 'lucide-react';
 const Contact = () => {
   // Reveal animations on scroll
   useEffect(() => {
@@ -34,30 +34,15 @@ const Contact = () => {
     action: null
   }];
   const socialLinks = [{
-    icon: Instagram,
-    name: 'Instagram',
-    url: '#',
-    followers: '125K'
+    icon: Send,
+    name: 'Telegram',
+    url: 'https://t.me/vibeniche',
+    followers: '25K'
   }, {
-    icon: Twitter,
-    name: 'Twitter',
-    url: '#',
-    followers: '89K'
-  }, {
-    icon: Facebook,
-    name: 'Facebook',
-    url: '#',
-    followers: '156K'
-  }, {
-    icon: Linkedin,
-    name: 'LinkedIn',
-    url: '#',
+    icon: Hash,
+    name: 'Pinterest',
+    url: 'https://pinterest.com/vibeniche',
     followers: '45K'
-  }, {
-    icon: Youtube,
-    name: 'YouTube',
-    url: '#',
-    followers: '78K'
   }];
   const companyStats = [{
     icon: Users,
