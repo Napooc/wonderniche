@@ -36,13 +36,11 @@ const Contact = () => {
   const socialLinks = [{
     icon: Send,
     name: 'Telegram',
-    url: 'https://t.me/+212701420239',
-    followers: '25K'
+    url: 'https://t.me/+212701420239'
   }, {
     icon: 'pinterest',
     name: 'Pinterest',
-    url: 'https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714',
-    followers: '45K'
+    url: 'https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714'
   }];
   const companyStats = [{
     icon: Users,
