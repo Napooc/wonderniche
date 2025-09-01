@@ -132,12 +132,15 @@ const About = () => {
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>It all started with one simple frustration: endless scrolling through countless products, uncertain about what truly works. We knew there had to be a better way to find premium lifestyle essentials that actually deliver on their promises.</p>
                 <p>
-                  <span className="text-primary font-semibold">VibeNiche</span> That’s why VibeNiche was born — a trusted destination where beauty lovers, wellness seekers, 
+                  <span className="text-primary font-semibold">That’s why VibeNiche</span>  was born — a trusted destination where beauty lovers, wellness seekers, 
                   and travel enthusiasts can discover hand-picked, high-quality products through transparent, honest affiliate recommendations.
                 </p>
                 <p>
-                  Today, we're proud to be the bridge between dreamers and premium brands, creating value for 
-                  both our community and our partners through meaningful connections.
+                 We’re more than just a marketplace — we’re a curated lifestyle hub. Our mission is to connect passionate individuals with the brands that inspire them, helping you make confident, informed choices in skincare, self-care, wellness, and travel gear.
+
+Whether you’re planning your next adventure, perfecting your daily beauty routine, or investing in your well-being, VibeNiche is here to guide you with expert insights, top-rated products, and authentic reviews.
+
+Today, we’re proud to be the bridge between dreamers and premium brands, creating genuine value for our growing community and trusted partners through meaningful connections and affiliate marketing done right.
                 </p>
               </div>
 
