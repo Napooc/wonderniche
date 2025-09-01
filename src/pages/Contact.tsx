@@ -2,97 +2,94 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  Globe, 
-  MessageCircle,
-  Users,
-  Award,
-  Shield,
-  Heart,
-  Instagram,
-  Twitter,
-  Facebook,
-  Linkedin,
-  Youtube
-} from 'lucide-react';
-
+import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Instagram, Twitter, Facebook, Linkedin, Youtube } from 'lucide-react';
 const Contact = () => {
   // Reveal animations on scroll
   useEffect(() => {
     const handleScroll = () => {
       const reveals = document.querySelectorAll('.reveal-up');
-      reveals.forEach((element) => {
+      reveals.forEach(element => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
         const elementVisible = 150;
-
         if (elementTop < windowHeight - elementVisible) {
           element.classList.add('visible');
         }
       });
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email Us',
-      details: 'hello@vibeniche.com',
-      subtitle: 'We reply within 24 hours',
-      action: 'mailto:hello@vibeniche.com'
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: 'Monday - Friday',
-      subtitle: '9:00 AM - 6:00 PM EST',
-      action: null
-    }
-  ];
-
-  const socialLinks = [
-    { icon: Instagram, name: 'Instagram', url: '#', followers: '125K' },
-    { icon: Twitter, name: 'Twitter', url: '#', followers: '89K' },
-    { icon: Facebook, name: 'Facebook', url: '#', followers: '156K' },
-    { icon: Linkedin, name: 'LinkedIn', url: '#', followers: '45K' },
-    { icon: Youtube, name: 'YouTube', url: '#', followers: '78K' }
-  ];
-
-  const companyStats = [
-    { icon: Users, label: 'Happy Customers', value: '50,000+' },
-    { icon: Award, label: 'Products Curated', value: '2,500+' },
-    { icon: Shield, label: 'Years of Trust', value: '8+' },
-    { icon: Heart, label: 'Customer Satisfaction', value: '98%' }
-  ];
-
-  const faqs = [
-    {
-      question: "How do I track my order?",
-      answer: "Once your order is processed, you'll receive a tracking number via email. You can use this to monitor your package's progress on the carrier's website."
-    },
-    {
-      question: "What's your return policy?",
-      answer: "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some restrictions apply to personal care items."
-    },
-    {
-      question: "Do you ship internationally?",
-      answer: "Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties."
-    },
-    {
-      question: "How can I become an affiliate partner?",
-      answer: "We're always looking for passionate partners! Email us at hello@vibeniche.com with 'Affiliate Partnership' in the subject line, and we'll send you our partnership details."
-    }
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const contactInfo = [{
+    icon: Mail,
+    title: 'Email Us',
+    details: 'hello@vibeniche.com',
+    subtitle: 'We reply within 24 hours',
+    action: 'mailto:hello@vibeniche.com'
+  }, {
+    icon: Clock,
+    title: 'Business Hours',
+    details: 'Monday - Friday',
+    subtitle: '9:00 AM - 6:00 PM EST',
+    action: null
+  }];
+  const socialLinks = [{
+    icon: Instagram,
+    name: 'Instagram',
+    url: '#',
+    followers: '125K'
+  }, {
+    icon: Twitter,
+    name: 'Twitter',
+    url: '#',
+    followers: '89K'
+  }, {
+    icon: Facebook,
+    name: 'Facebook',
+    url: '#',
+    followers: '156K'
+  }, {
+    icon: Linkedin,
+    name: 'LinkedIn',
+    url: '#',
+    followers: '45K'
+  }, {
+    icon: Youtube,
+    name: 'YouTube',
+    url: '#',
+    followers: '78K'
+  }];
+  const companyStats = [{
+    icon: Users,
+    label: 'Happy Customers',
+    value: '50,000+'
+  }, {
+    icon: Award,
+    label: 'Products Curated',
+    value: '2,500+'
+  }, {
+    icon: Shield,
+    label: 'Years of Trust',
+    value: '8+'
+  }, {
+    icon: Heart,
+    label: 'Customer Satisfaction',
+    value: '98%'
+  }];
+  const faqs = [{
+    question: "How do I track my order?",
+    answer: "Once your order is processed, you'll receive a tracking number via email. You can use this to monitor your package's progress on the carrier's website."
+  }, {
+    question: "What's your return policy?",
+    answer: "We offer a 30-day return policy for most items. Products must be in original condition with tags attached. Some restrictions apply to personal care items."
+  }, {
+    question: "Do you ship internationally?",
+    answer: "Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties."
+  }, {
+    question: "How can I become an affiliate partner?",
+    answer: "We're always looking for passionate partners! Email us at hello@vibeniche.com with 'Affiliate Partnership' in the subject line, and we'll send you our partnership details."
+  }];
+  return <div className="min-h-screen">
       <Navigation />
       
       {/* Hero Section */}
@@ -102,19 +99,15 @@ const Contact = () => {
         
         {/* Floating Particles */}
         <div className="particles">
-          {Array.from({ length: 20 }, (_, i) => (
-            <div
-              key={i}
-              className="particle"
-              style={{
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 4 + 2}px`,
-                height: `${Math.random() * 4 + 2}px`,
-                animationDelay: `${Math.random() * 8}s`,
-                animationDuration: `${8 + Math.random() * 4}s`
-              }}
-            />
-          ))}
+          {Array.from({
+          length: 20
+        }, (_, i) => <div key={i} className="particle" style={{
+          left: `${Math.random() * 100}%`,
+          width: `${Math.random() * 4 + 2}px`,
+          height: `${Math.random() * 4 + 2}px`,
+          animationDelay: `${Math.random() * 8}s`,
+          animationDuration: `${8 + Math.random() * 4}s`
+        }} />)}
         </div>
 
         {/* Hero Content */}
@@ -128,20 +121,11 @@ const Contact = () => {
               We're here to help you live your best life with curated excellence.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button
-                size="lg"
-                className="btn-premium text-lg px-8 py-4 rounded-full"
-                onClick={() => window.location.href = 'mailto:hello@vibeniche.com'}
-              >
+              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:hello@vibeniche.com'}>
                 <Mail className="w-5 h-5 mr-2" />
                 Email Us
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40"
-                onClick={() => window.location.href = 'tel:+15551234567'}
-              >
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'tel:+15551234567'}>
                 <Phone className="w-5 h-5 mr-2" />
                 Call Now
               </Button>
@@ -151,7 +135,9 @@ const Contact = () => {
 
         {/* Decorative Elements */}
         <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/20 blur-xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/20 blur-xl animate-float" style={{ animationDelay: '-2s' }} />
+        <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/20 blur-xl animate-float" style={{
+        animationDelay: '-2s'
+      }} />
       </section>
 
       {/* Company Stats */}
@@ -159,12 +145,8 @@ const Contact = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {companyStats.map((stat, index) => {
-              const IconComponent = stat.icon;
-              return (
-                <div 
-                  key={index}
-                  className={`text-center group reveal-up stagger-${index + 1}`}
-                >
+            const IconComponent = stat.icon;
+            return <div key={index} className={`text-center group reveal-up stagger-${index + 1}`}>
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-primary to-primary-glow p-3 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-full h-full text-primary-foreground" />
                   </div>
@@ -174,9 +156,8 @@ const Contact = () => {
                   <div className="text-sm text-muted-foreground">
                     {stat.label}
                   </div>
-                </div>
-              );
-            })}
+                </div>;
+          })}
           </div>
         </div>
       </section>
@@ -195,13 +176,8 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {contactInfo.map((info, index) => {
-              const IconComponent = info.icon;
-              return (
-                <Card 
-                  key={index}
-                  className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`}
-                  onClick={() => info.action && window.open(info.action, '_blank')}
-                >
+            const IconComponent = info.icon;
+            return <Card key={index} className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`} onClick={() => info.action && window.open(info.action, '_blank')}>
                   <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow p-4 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-full h-full text-primary-foreground" />
                   </div>
@@ -214,9 +190,8 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground">
                     {info.subtitle}
                   </p>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           {/* Company Information */}
@@ -291,13 +266,8 @@ const Contact = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {socialLinks.map((social, index) => {
-              const IconComponent = social.icon;
-              return (
-                <Card 
-                  key={index}
-                  className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`}
-                  onClick={() => window.open(social.url, '_blank')}
-                >
+            const IconComponent = social.icon;
+            return <Card key={index} className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`} onClick={() => window.open(social.url, '_blank')}>
                   <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-primary to-primary-glow p-3 group-hover:scale-110 transition-transform duration-300">
                     <IconComponent className="w-full h-full text-primary-foreground" />
                   </div>
@@ -307,9 +277,8 @@ const Contact = () => {
                   <p className="text-sm text-muted-foreground">
                     {social.followers}
                   </p>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
         </div>
       </section>
@@ -327,16 +296,14 @@ const Contact = () => {
           </div>
 
           <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className={`glass-card p-6 reveal-up stagger-${index + 1}`}>
+            {faqs.map((faq, index) => <Card key={index} className={`glass-card p-6 reveal-up stagger-${index + 1}`}>
                 <h3 className="text-lg font-semibold mb-3 text-foreground">
                   {faq.question}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
                   {faq.answer}
                 </p>
-              </Card>
-            ))}
+              </Card>)}
           </div>
         </div>
       </section>
@@ -353,27 +320,14 @@ const Contact = () => {
               Discover products that will transform your daily routine.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                className="btn-premium text-lg px-8 py-4 rounded-full"
-                onClick={() => window.location.href = '/'}
-              >
-                Explore Products
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40"
-                onClick={() => window.location.href = 'mailto:hello@vibeniche.com?subject=Partnership Inquiry'}
-              >
+              
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:hello@vibeniche.com?subject=Partnership Inquiry'}>
                 Partner With Us
               </Button>
             </div>
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
