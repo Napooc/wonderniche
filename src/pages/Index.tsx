@@ -9,7 +9,9 @@ import { Sparkles, Heart, Globe, Dumbbell, Home, Mail } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useTranslation } from '@/contexts/TranslationContext';
 const Index = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
 
@@ -127,70 +129,64 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Ultra Modern Trust & Impact Section - Fully Responsive */}
-      <section className="py-16 md:py-32 px-4 relative overflow-hidden bg-gradient-to-br from-background via-background/50 to-background">
+      {/* Ultra Modern Trust & Impact Section */}
+      <section className="py-32 px-4 relative overflow-hidden bg-gradient-to-br from-background via-background/50 to-background">
         {/* Advanced Animated Background */}
         <div className="absolute inset-0 opacity-20">
           {/* Morphing Grid Pattern */}
           <div className="absolute inset-0" style={{
-            backgroundImage: `
+          backgroundImage: `
               radial-gradient(circle at 25% 25%, hsl(var(--primary)) 1px, transparent 1px),
               radial-gradient(circle at 75% 75%, hsl(var(--accent)) 1px, transparent 1px)
             `,
-            backgroundSize: '40px 40px, 30px 30px',
-            animation: 'morphGrid 15s ease-in-out infinite alternate'
-          }}></div>
+          backgroundSize: '60px 60px, 40px 40px',
+          animation: 'morphGrid 15s ease-in-out infinite alternate'
+        }}></div>
           
           {/* Flowing Lines */}
           <div className="absolute top-0 left-0 w-full h-full">
-            {[...Array(3)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"
-                style={{
-                  top: `${20 + i * 25}%`,
-                  width: '100%',
-                  animation: `flowLine ${8 + i * 2}s linear infinite`,
-                  animationDelay: `${i * 2}s`
-                }}
-              />
-            ))}
+            {[...Array(5)].map((_, i) => <div key={i} className="absolute h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" style={{
+            top: `${20 + i * 15}%`,
+            width: '100%',
+            animation: `flowLine ${8 + i * 2}s linear infinite`,
+            animationDelay: `${i * 2}s`
+          }} />)}
           </div>
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          {/* Revolutionary Header - Mobile Optimized */}
-          <div className="text-center mb-12 md:mb-24 reveal-up">
+          {/* Revolutionary Header */}
+          <div className="text-center mb-24 reveal-up">
             {/* Floating Status Badge */}
-            <div className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-8 py-2 md:py-4 rounded-full glass-card mb-6 md:mb-8 border border-primary/20">
+            <div className="inline-flex items-center gap-3 px-8 py-4 rounded-full glass-card mb-8 border border-primary/20">
               <div className="relative">
-                <div className="w-3 h-3 md:w-4 md:h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
-                <div className="absolute inset-0 w-3 h-3 md:w-4 md:h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
+                <div className="w-4 h-4 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full animate-pulse"></div>
+                <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping opacity-30"></div>
               </div>
-              <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                 {t('home.liveMetrics')}
               </span>
-              <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-accent rounded-full animate-bounce"></div>
+              <div className="w-2 h-2 bg-accent rounded-full animate-bounce"></div>
             </div>
             
-            {/* Dynamic Title with Morphing Text - Mobile Responsive */}
-            <div className="relative mb-6 md:mb-8">
-              <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black mb-2 md:mb-4">
+            {/* Dynamic Title with Morphing Text */}
+            <div className="relative mb-8">
+              <h2 className="text-6xl md:text-8xl font-black mb-4">
                 <span className="inline-block bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient-x bg-300%">
                   {t('home.trustedBy')}
                 </span>
               </h2>
-              <div className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black">
+              <div className="text-6xl md:text-8xl font-black">
                 <span className="relative inline-block">
                   <span className="bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
                     {t('home.thousands')}
                   </span>
-                  <div className="absolute -bottom-1 md:-bottom-2 left-0 w-full h-0.5 md:h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
+                  <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-accent rounded-full animate-pulse"></div>
                 </span>
               </div>
             </div>
             
-            <p className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               {t('home.realMetrics')}
               <span className="relative">
                 <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-bold">
@@ -201,28 +197,28 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Revolutionary Stats Architecture - Mobile First */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 mb-16 md:mb-24">
+          {/* Revolutionary Stats Architecture */}
+          <div className="grid lg:grid-cols-2 gap-16 mb-24">
             {/* Hero Statistics */}
-            <div className="space-y-6 md:space-y-8">
-              {/* Primary Stat - Enhanced Mobile */}
+            <div className="space-y-8">
+              {/* Primary Stat - Enhanced */}
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl md:rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                <div className="relative glass-card p-6 md:p-10 rounded-2xl md:rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
-                  <div className="flex flex-col sm:flex-row items-start justify-between mb-6 md:mb-8 gap-4">
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div className="relative glass-card p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
+                  <div className="flex items-start justify-between mb-8">
                     <div className="flex-1">
-                      <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-black mb-3 md:mb-4 bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-500 bg-clip-text text-transparent group-hover:animate-pulse">
+                      <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-pink-400 via-purple-500 to-cyan-500 bg-clip-text text-transparent group-hover:animate-pulse">
                         50K+
                       </div>
-                      <h3 className="text-lg md:text-2xl font-bold text-card-foreground mb-2 md:mb-3">{t('home.happyCustomers')}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{t('home.growingDaily')}</p>
-                      <div className="flex items-center gap-2 mt-3 md:mt-4">
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">{t('home.happyCustomers')}</h3>
+                      <p className="text-muted-foreground">{t('home.growingDaily')}</p>
+                      <div className="flex items-center gap-2 mt-4">
                         <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-xs md:text-sm text-green-500 font-medium">{t('home.thisMonth')}</span>
+                        <span className="text-sm text-green-500 font-medium">{t('home.thisMonth')}</span>
                       </div>
                     </div>
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                      <Heart className="w-8 h-8 md:w-10 md:h-10 text-pink-500 animate-pulse" />
+                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-pink-500/20 to-purple-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Heart className="w-10 h-10 text-pink-500 animate-pulse" />
                     </div>
                   </div>
                   <div className="space-y-3">
@@ -230,8 +226,10 @@ const Index = () => {
                       <span className="text-muted-foreground">{t('home.satisfactionRate')}</span>
                       <span className="text-pink-500 font-semibold">98.7%</span>
                     </div>
-                    <div className="w-full bg-border/50 rounded-full h-2 md:h-3 overflow-hidden">
-                      <div className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 md:h-3 rounded-full animate-pulse relative" style={{ width: '98.7%' }}>
+                    <div className="w-full bg-border/50 rounded-full h-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-pink-500 to-purple-500 h-3 rounded-full animate-pulse relative" style={{
+                      width: '98.7%'
+                    }}>
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 animate-shimmer"></div>
                       </div>
                     </div>
@@ -239,134 +237,148 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Secondary Stat - Enhanced Mobile */}
+              {/* Secondary Stat - Enhanced */}
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-2xl md:rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
-                <div className="relative glass-card p-6 md:p-10 rounded-2xl md:rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
-                  <div className="flex flex-col sm:flex-row items-start justify-between mb-6 md:mb-8 gap-4">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-orange-500 to-yellow-500 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                <div className="relative glass-card p-10 rounded-3xl hover:scale-[1.02] transition-all duration-500 border border-white/10">
+                  <div className="flex items-start justify-between mb-8">
                     <div className="flex-1">
-                      <div className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-black mb-3 md:mb-4 bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500 bg-clip-text text-transparent group-hover:animate-pulse">
+                      <div className="text-7xl md:text-9xl font-black mb-4 bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500 bg-clip-text text-transparent group-hover:animate-pulse">
                         4.9★
                       </div>
-                      <h3 className="text-lg md:text-2xl font-bold text-card-foreground mb-2 md:mb-3">{t('home.trustRating')}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{t('home.basedOnReviews')}</p>
+                      <h3 className="text-2xl font-bold text-card-foreground mb-3">{t('home.trustRating')}</h3>
+                      <p className="text-muted-foreground">{t('home.basedOnReviews')}</p>
                     </div>
-                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl md:rounded-3xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-                      <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-amber-500 animate-pulse" />
+                    <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-amber-500/20 to-yellow-500/20 flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+                      <Sparkles className="w-10 h-10 text-amber-500 animate-pulse" />
                     </div>
                   </div>
-                  <div className="flex gap-1 md:gap-2 justify-center">
-                    {[1, 2, 3, 4, 5].map(star => (
-                      <div 
-                        key={star} 
-                        className="w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-bounce flex items-center justify-center"
-                        style={{ animationDelay: `${star * 0.1}s` }}
-                      >
-                        <div className="w-3 h-3 md:w-4 md:h-4 bg-white rounded-full"></div>
-                      </div>
-                    ))}
+                  <div className="flex gap-2 justify-center">
+                    {[1, 2, 3, 4, 5].map(star => <div key={star} className="w-8 h-8 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full animate-bounce flex items-center justify-center" style={{
+                    animationDelay: `${star * 0.1}s`
+                  }}>
+                        <div className="w-4 h-4 bg-white rounded-full"></div>
+                      </div>)}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Micro Stats Grid - Mobile Optimized */}
-            <div className="grid grid-cols-2 gap-3 md:gap-6">
-              {[
-                { icon: '🛍️', value: '1,200+', label: t('home.premiumProducts'), color: 'from-blue-500 to-cyan-500' },
-                { icon: '✨', value: '98%', label: t('home.satisfactionRate'), color: 'from-purple-500 to-pink-500' },
-                { icon: '🚀', value: '24/7', label: t('home.supportAvailable'), color: 'from-green-500 to-emerald-500' },
-                { icon: '💰', value: '$2M+', label: t('home.affiliateRewards'), color: 'from-orange-500 to-red-500' },
-                { icon: '🌍', value: '40+', label: t('home.countriesServed'), color: 'from-indigo-500 to-purple-500' },
-                { icon: '⚡', value: '99.9%', label: t('home.uptimeGuarantee'), color: 'from-yellow-500 to-orange-500' }
-              ].map((stat, i) => (
-                <div key={i} className="relative group">
-                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-xl md:rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300`}></div>
-                  <div className="relative glass-card p-4 md:p-6 rounded-xl md:rounded-2xl hover:scale-105 transition-all duration-300 border border-white/5">
-                    <div className="text-center space-y-2 md:space-y-3">
-                      <div className="text-2xl md:text-3xl animate-bounce" style={{ animationDelay: `${i * 0.2}s` }}>
+            {/* Micro Stats Grid */}
+            <div className="grid grid-cols-2 gap-6">
+              {[{
+              icon: '🛍️',
+              value: '1,200+',
+              label: t('home.premiumProducts'),
+              color: 'from-blue-500 to-cyan-500'
+            }, {
+              icon: '✨',
+              value: '98%',
+              label: t('home.satisfactionRate'),
+              color: 'from-purple-500 to-pink-500'
+            }, {
+              icon: '🚀',
+              value: '24/7',
+              label: t('home.supportAvailable'),
+              color: 'from-green-500 to-emerald-500'
+            }, {
+              icon: '💰',
+              value: '$2M+',
+              label: t('home.affiliateRewards'),
+              color: 'from-orange-500 to-red-500'
+            }, {
+              icon: '🌍',
+              value: '40+',
+              label: t('home.countriesServed'),
+              color: 'from-indigo-500 to-purple-500'
+            }, {
+              icon: '⚡',
+              value: '99.9%',
+              label: t('home.uptimeGuarantee'),
+              color: 'from-yellow-500 to-orange-500'
+            }].map((stat, i) => <div key={i} className="relative group">
+                  <div className={`absolute -inset-0.5 bg-gradient-to-r ${stat.color} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300`}></div>
+                  <div className="relative glass-card p-6 rounded-2xl hover:scale-105 transition-all duration-300 border border-white/5">
+                    <div className="text-center space-y-3">
+                      <div className="text-3xl animate-bounce" style={{
+                    animationDelay: `${i * 0.2}s`
+                  }}>
                         {stat.icon}
                       </div>
-                      <div className={`text-lg md:text-2xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                      <div className={`text-2xl font-black bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                         {stat.value}
                       </div>
-                      <p className="text-xs md:text-sm text-card-foreground font-medium leading-tight">
+                      <p className="text-sm text-card-foreground font-medium leading-tight">
                         {stat.label}
                       </p>
                     </div>
                   </div>
-                </div>
-               ))}
+                </div>)}
             </div>
           </div>
 
-          {/* Revolutionary Trust Indicators - Mobile Enhanced */}
+          {/* Revolutionary Trust Indicators */}
           <div className="relative">
-            <div className="absolute -inset-2 md:-inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl md:rounded-3xl blur-xl"></div>
-            <div className="relative glass-card p-6 md:p-12 rounded-2xl md:rounded-3xl border border-white/10 reveal-up">
-              <div className="text-center mb-8 md:mb-12">
-                <div className="inline-flex items-center gap-2 px-4 md:px-6 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 mb-4 md:mb-6">
-                  <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-primary animate-spin" />
-                  <span className="text-xs md:text-sm font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
+            <div className="relative glass-card p-12 rounded-3xl border border-white/10 reveal-up">
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 border border-primary/30 mb-6">
+                  <Sparkles className="w-4 h-4 text-primary animate-spin" />
+                  <span className="text-sm font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                     {t('home.verifiedExcellence')}
                   </span>
                 </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-black gradient-text mb-3 md:mb-4">{t('home.whyTrustUs')}</h3>
-                <p className="text-sm md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+                <h3 className="text-3xl md:text-4xl font-black gradient-text mb-4">{t('home.whyTrustUs')}</h3>
+                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                   {t('home.certifiedPartnerships')}
                 </p>
               </div>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                {[
-                  { 
-                    icon: '🛡️', 
-                    title: t('home.verifiedPartner'), 
-                    desc: t('home.officialMember'), 
-                    color: 'from-green-500 to-emerald-500',
-                    badge: t('home.certified')
-                  },
-                  { 
-                    icon: '🔒', 
-                    title: t('home.securePlatform'), 
-                    desc: t('home.sslEncrypted'), 
-                    color: 'from-blue-500 to-cyan-500',
-                    badge: t('home.secure')
-                  },
-                  { 
-                    icon: '👑', 
-                    title: t('home.premiumBrands'), 
-                    desc: t('home.exclusivePartnerships'), 
-                    color: 'from-purple-500 to-pink-500',
-                    badge: t('home.premium')
-                  },
-                  { 
-                    icon: '📊', 
-                    title: t('home.realReviews'), 
-                    desc: t('home.authenticFeedback'), 
-                    color: 'from-orange-500 to-red-500',
-                    badge: t('home.verified')
-                  }
-                ].map((trust, i) => (
-                  <div key={i} className="text-center group relative">
-                    <div className="relative mb-4 md:mb-6">
-                      <div className={`w-16 h-16 md:w-20 md:h-20 mx-auto rounded-2xl md:rounded-3xl bg-gradient-to-br ${trust.color}/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10`}>
-                        <div className="text-2xl md:text-3xl animate-bounce" style={{ animationDelay: `${i * 0.3}s` }}>
+              <div className="grid md:grid-cols-4 gap-8">
+                {[{
+                icon: '🛡️',
+                title: t('home.verifiedPartner'),
+                desc: t('home.officialMember'),
+                color: 'from-green-500 to-emerald-500',
+                badge: t('home.certified')
+              }, {
+                icon: '🔒',
+                title: t('home.securePlatform'),
+                desc: t('home.sslEncrypted'),
+                color: 'from-blue-500 to-cyan-500',
+                badge: t('home.secure')
+              }, {
+                icon: '👑',
+                title: t('home.premiumBrands'),
+                desc: t('home.exclusivePartnerships'),
+                color: 'from-purple-500 to-pink-500',
+                badge: t('home.premium')
+              }, {
+                icon: '📊',
+                title: t('home.realReviews'),
+                desc: t('home.authenticFeedback'),
+                color: 'from-orange-500 to-red-500',
+                badge: t('home.verified')
+              }].map((trust, i) => <div key={i} className="text-center group relative">
+                    <div className="relative mb-6">
+                      <div className={`w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br ${trust.color}/20 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border border-white/10`}>
+                        <div className="text-3xl animate-bounce" style={{
+                      animationDelay: `${i * 0.3}s`
+                    }}>
                           {trust.icon}
                         </div>
                       </div>
-                      <div className={`absolute -top-1 md:-top-2 -right-1 md:-right-2 px-1.5 md:px-2 py-0.5 md:py-1 rounded-full text-xs font-bold bg-gradient-to-r ${trust.color} text-white opacity-90`}>
+                      <div className={`absolute -top-2 -right-2 px-2 py-1 rounded-full text-xs font-bold bg-gradient-to-r ${trust.color} text-white opacity-90`}>
                         {trust.badge}
                       </div>
                     </div>
-                    <h4 className="text-sm md:text-lg font-bold text-card-foreground mb-1 md:mb-2 group-hover:text-primary transition-colors">
+                    <h4 className="text-lg font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
                       {trust.title}
                     </h4>
-                    <p className="text-xs md:text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground">
                       {trust.desc}
                     </p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -374,8 +386,12 @@ const Index = () => {
 
         {/* Enhanced Dynamic Background Elements */}
         <div className="absolute top-10 left-10 w-40 h-40 bg-gradient-to-r from-primary/15 to-accent/15 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '-5s' }}></div>
-        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl animate-float" style={{ animationDelay: '-2s' }}></div>
+        <div className="absolute bottom-10 right-10 w-56 h-56 bg-gradient-to-r from-pink-500/10 to-purple-500/10 rounded-full blur-3xl animate-float" style={{
+        animationDelay: '-5s'
+      }}></div>
+        <div className="absolute top-1/3 left-1/3 w-32 h-32 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-2xl animate-float" style={{
+        animationDelay: '-2s'
+      }}></div>
         <div className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-gradient-to-r from-green-500/15 to-emerald-500/15 rounded-full blur-xl animate-pulse"></div>
       </section>
 
@@ -413,27 +429,7 @@ const Index = () => {
       <TestimonialsSection />
 
       {/* Newsletter Section */}
-      <section className="py-20 px-4 relative">
-        <div className="container mx-auto max-w-4xl">
-          <div className="glass-card p-12 text-center space-y-8 reveal-up">
-            <div className="space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold gradient-text">
-                {t('home.stayInLoop')}
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                {t('home.exclusiveAccess')}
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input type="email" placeholder={t('home.enterEmail')} className="flex-1 px-6 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
-              <Button className="btn-premium px-8 py-3 rounded-full">
-                {t('home.subscribe')}
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="py-12 px-4 border-t border-border/30">
@@ -478,22 +474,16 @@ const Index = () => {
                 <a href="https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714" target="_blank" rel="noopener noreferrer" className="group">
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center border border-red-500/30 hover:bg-gradient-to-br hover:from-red-500 hover:to-pink-500 hover:border-red-500 transition-all duration-300 group-hover:scale-110">
                     <svg className="w-6 h-6 text-red-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.541.1.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                      <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.541.1.12.112.225.085.347-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.748-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z" />
                     </svg>
                   </div>
                 </a>
 
                 {/* Telegram */}
-                <a 
-                  href="https://t.me/+212701420239" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="group transition-all duration-300 hover:scale-110"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open('https://t.me/+212701420239', '_blank', 'noopener,noreferrer');
-                  }}
-                >
+                <a href="https://t.me/+212701420239" target="_blank" rel="noopener noreferrer" className="group transition-all duration-300 hover:scale-110" onClick={e => {
+                e.preventDefault();
+                window.open('https://t.me/+212701420239', '_blank', 'noopener,noreferrer');
+              }}>
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center border border-blue-500/30 hover:bg-gradient-to-br hover:from-blue-500 hover:to-cyan-500 hover:border-blue-500 transition-all duration-300 group-hover:scale-110">
                     <svg className="w-5 h-5 text-blue-500 group-hover:text-white transition-colors duration-300" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.820 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
