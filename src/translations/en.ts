@@ -89,7 +89,86 @@ export default {
     allRights: '© 2025 VibeNiche. All rights reserved. This site contains affiliate links.'
   },
 
-  // About Page
+  // Cookie Consent
+  cookies: {
+    banner: {
+      title: 'We Respect Your Privacy',
+      description: 'We use cookies to improve your experience, analyze traffic, and personalize content. You can choose to accept all cookies or customize your preferences.',
+      acceptAll: 'Accept All',
+      rejectAll: 'Reject All',
+      customize: 'Customize Preferences',
+      privacyPolicy: 'Privacy Policy'
+    },
+    modal: {
+      title: 'Cookie Settings',
+      description: 'You can control the types of cookies we use below. Choose the categories you consent to.',
+      essential: {
+        title: 'Essential Cookies',
+        description: 'These cookies are necessary for the website to function properly and cannot be disabled.',
+        alwaysOn: 'Always On'
+      },
+      analytics: {
+        title: 'Analytics Cookies',
+        description: 'Help us understand how you use the site to improve performance and content.',
+        cookies: 'Google Analytics, Adobe Analytics'
+      },
+      marketing: {
+        title: 'Marketing Cookies',
+        description: 'Used to track visitors across websites to display relevant and engaging ads.',
+        cookies: 'Facebook Pixel, Google Ads, Twitter Analytics'
+      },
+      preferences: {
+        title: 'Preference Cookies',
+        description: 'Remember your choices like language and theme to enhance your experience.',
+        cookies: 'Language Settings, Theme Preferences'
+      },
+      savePreferences: 'Save Preferences',
+      acceptSelected: 'Accept Selected',
+      close: 'Close'
+    },
+    manage: 'Manage Cookies',
+    lastUpdated: 'Last consent update: {{date}}'
+  },
+
+  // Privacy Policy
+  privacy: {
+    title: 'Privacy & Cookie Policy',
+    lastUpdated: 'Last updated: {{date}}',
+    introduction: {
+      title: 'Introduction',
+      content: 'This policy explains how we collect, use, and protect your personal information when using the VibeNiche website, in compliance with data protection regulations and best practices.'
+    },
+    cookies: {
+      title: 'Cookies',
+      whatAre: {
+        title: 'What are Cookies?',
+        content: 'Cookies are small text files placed on your device when you visit our website. They help us provide a better and more personalized experience.'
+      },
+      types: {
+        title: 'Types of Cookies We Use',
+        essential: 'Essential: Required for website functionality',
+        analytics: 'Analytics: To understand website usage',
+        marketing: 'Marketing: For personalized advertising',
+        preferences: 'Preferences: To remember your choices'
+      },
+      manage: {
+        title: 'Managing Cookies',
+        content: 'You can manage your cookie preferences at any time by clicking the "Manage Cookies" button at the bottom of the page.'
+      }
+    },
+    rights: {
+      title: 'Your Rights',
+      content: 'You have the right to access, correct, and delete your personal data. You can also withdraw your consent at any time.',
+      contact: 'For data inquiries, contact us at: privacy@vibeniche.com'
+    },
+    contact: {
+      title: 'Contact Us',
+      dpo: 'Data Protection Officer',
+      email: 'privacy@vibeniche.com',
+      address: 'Casablanca, Morocco'
+    }
+  },
+
   about: {
     title: 'About VibeNiche',
     subtitle: 'We\'re not just another affiliate marketplace. We\'re lifestyle curators, trend discoverers, and dream enablers connecting you with products that transform ordinary moments into extraordinary experiences.',

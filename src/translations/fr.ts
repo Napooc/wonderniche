@@ -12,253 +12,95 @@ export default {
     signedInAs: 'Connecté en tant que'
   },
 
-  // Hero Section
-  hero: {
-    title: 'VibeNiche - Marché Premium de Style de Vie Affilié',
-    subtitle: 'Votre partenaire affilié de confiance pour les produits de style de vie premium. Nous vous connectons avec des marques exclusives dans la Beauté, le Voyage, le Bien-être et le Style de Vie - en gagnant grâce à des recommandations authentiques que vous allez adorer.',
-    exploreButton: 'Explorer Maintenant',
-    learnMoreButton: 'Voir l\'Histoire'
+  // Cookie Consent
+  cookies: {
+    banner: {
+      title: 'Nous respectons votre vie privée',
+      description: 'Nous utilisons des cookies pour améliorer votre expérience, analyser le trafic et personnaliser le contenu. Vous pouvez choisir d\'accepter tous les cookies ou personnaliser vos préférences.',
+      acceptAll: 'Tout accepter',
+      rejectAll: 'Tout refuser',
+      customize: 'Personnaliser les préférences',
+      privacyPolicy: 'Politique de confidentialité'
+    },
+    modal: {
+      title: 'Paramètres des cookies',
+      description: 'Vous pouvez contrôler les types de cookies que nous utilisons ci-dessous. Choisissez les catégories auxquelles vous consentez.',
+      essential: {
+        title: 'Cookies essentiels',
+        description: 'Ces cookies sont nécessaires au bon fonctionnement du site web et ne peuvent pas être désactivés.',
+        alwaysOn: 'Toujours activé'
+      },
+      analytics: {
+        title: 'Cookies d\'analyse',
+        description: 'Nous aident à comprendre comment vous utilisez le site pour améliorer les performances et le contenu.',
+        cookies: 'Google Analytics, Adobe Analytics'
+      },
+      marketing: {
+        title: 'Cookies marketing',
+        description: 'Utilisés pour suivre les visiteurs sur les sites web afin d\'afficher des publicités pertinentes et engageantes.',
+        cookies: 'Facebook Pixel, Google Ads, Twitter Analytics'
+      },
+      preferences: {
+        title: 'Cookies de préférences',
+        description: 'Se souviennent de vos choix comme la langue et le thème pour améliorer votre expérience.',
+        cookies: 'Paramètres de langue, Préférences de thème'
+      },
+      savePreferences: 'Enregistrer les préférences',
+      acceptSelected: 'Accepter la sélection',
+      close: 'Fermer'
+    },
+    manage: 'Gérer les cookies',
+    lastUpdated: 'Dernière mise à jour du consentement : {{date}}'
   },
 
-  // Home Page Content
-  home: {
-    exploreCategories: 'Explorer les Catégories',
-    discoverCurated: 'Découvrez des collections curées dans toutes les catégories de style de vie',
-    beauty: {
-      title: 'Beauté',
-      description: 'Soins de la peau premium, maquillage et outils de beauté'
+  // Privacy Policy
+  privacy: {
+    title: 'Politique de confidentialité et cookies',
+    lastUpdated: 'Dernière mise à jour : {{date}}',
+    introduction: {
+      title: 'Introduction',
+      content: 'Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles lors de l\'utilisation du site web VibeNiche, en conformité avec les réglementations de protection des données et les meilleures pratiques.'
     },
-    travel: {
-      title: 'Voyage',
-      description: 'Équipement de voyage de luxe et expériences'
+    cookies: {
+      title: 'Cookies',
+      whatAre: {
+        title: 'Que sont les cookies ?',
+        content: 'Les cookies sont de petits fichiers texte placés sur votre appareil lorsque vous visitez notre site web. Ils nous aident à fournir une expérience meilleure et plus personnalisée.'
+      },
+      types: {
+        title: 'Types de cookies que nous utilisons',
+        essential: 'Essentiels : Requis pour le fonctionnement du site web',
+        analytics: 'Analyse : Pour comprendre l\'utilisation du site web',
+        marketing: 'Marketing : Pour la publicité personnalisée',
+        preferences: 'Préférences : Pour se souvenir de vos choix'
+      },
+      manage: {
+        title: 'Gestion des cookies',
+        content: 'Vous pouvez gérer vos préférences de cookies à tout moment en cliquant sur le bouton "Gérer les cookies" en bas de la page.'
+      }
     },
-    wellness: {
-      title: 'Bien-être',
-      description: 'Produits de fitness, nutrition et pleine conscience'
+    rights: {
+      title: 'Vos droits',
+      content: 'Vous avez le droit d\'accéder, de corriger et de supprimer vos données personnelles. Vous pouvez également retirer votre consentement à tout moment.',
+      contact: 'Pour les demandes relatives aux données, contactez-nous à : privacy@vibeniche.com'
     },
-    lifestyle: {
-      title: 'Style de Vie',
-      description: 'Décoration maison, gadgets et essentiels de vie'
-    },
-    liveMetrics: 'MÉTRIQUES D\'IMPACT EN DIRECT',
-    trustedBy: 'Approuvé par',
-    thousands: 'Milliers',
-    realMetrics: 'Métriques réelles de vrais clients qui ont découvert leur style de vie parfait grâce à notre marché curé',
-    happyCustomers: 'Clients Satisfaits',
-    growingDaily: 'Croissance quotidienne dans plus de 40 pays',
-    thisMonth: '+1,247 ce mois',
-    satisfactionRate: 'Taux de Satisfaction',
-    trustRating: 'Note de Confiance',
-    basedOnReviews: 'Basé sur 12,847 avis vérifiés',
-    premiumProducts: 'Produits Premium',
-    supportAvailable: 'Support Disponible',
-    affiliateRewards: 'Récompenses d\'Affiliation',
-    countriesServed: 'Pays Desservis',
-    uptimeGuarantee: 'Garantie de Disponibilité',
-    verifiedExcellence: 'EXCELLENCE VÉRIFIÉE',
-    whyTrustUs: 'Pourquoi les clients nous font confiance',
-    certifiedPartnerships: 'Partenariats certifiés et normes de sécurité éprouvées qui protègent votre expérience',
-    verifiedPartner: 'Partenaire Vérifié',
-    officialMember: 'Membre officiel du réseau',
-    securePlatform: 'Plateforme Sécurisée',
-    sslEncrypted: 'Transactions cryptées SSL',
-    premiumBrands: 'Marques Premium',
-    exclusivePartnerships: 'Partenariats exclusifs',
-    realReviews: 'Avis Réels',
-    authenticFeedback: '100% de commentaires authentiques',
-    certified: 'CERTIFIÉ',
-    secure: 'SÉCURISÉ',
-    premium: 'PREMIUM',
-    verified: 'VÉRIFIÉ',
-    featuredProducts: 'Produits Vedettes',
-    handPicked: 'Produits premium sélectionnés à la main qui définissent le style de vie moderne',
-    whatUsersSay: 'Ce que disent nos utilisateurs',
-    joinThousands: 'Rejoignez des milliers d\'utilisateurs satisfaits qui ont transformé leur style de vie avec VibeNiche',
-    stayInLoop: 'Restez dans la Boucle',
-    exclusiveAccess: 'Obtenez un accès exclusif aux nouveaux produits, offres et conseils de style de vie',
-    enterEmail: 'Entrez votre email',
-    subscribe: 'S\'abonner',
-    modernHub: 'Votre hub moderne de style de vie pour des produits et expériences premium.',
-    categories: 'Catégories',
-    company: 'Entreprise',
-    connect: 'Se Connecter',
-    allRights: '© 2025 VibeNiche. Tous droits réservés. Ce site contient des liens d\'affiliation.'
-  },
-
-  // Categories
-  categories: {
-    beauty: {
-      title: 'Beauté et Soins de la Peau',
-      description: 'Produits de beauté premium et essentiels de soins pour votre routine quotidienne',
-      subtitle: 'Sublimez Votre Beauté Naturelle'
-    },
-    travel: {
-      title: 'Voyage et Aventure',
-      description: 'Équipement essentiel et accessoires pour votre prochaine aventure',
-      subtitle: 'Explorez le Monde avec Style'
-    },
-    wellness: {
-      title: 'Bien-être et Santé',
-      description: 'Produits et outils pour soutenir votre parcours de bien-être',
-      subtitle: 'Nourrissez Votre Bien-être'
-    },
-    advice: {
-      title: 'Conseils d\'Experts',
-      description: 'Perspectives professionnelles et recommandations d\'experts de l\'industrie',
-      subtitle: 'Apprenez des Meilleurs'
+    contact: {
+      title: 'Nous contacter',
+      dpo: 'Délégué à la protection des données',
+      email: 'privacy@vibeniche.com',
+      address: 'Casablanca, Maroc'
     }
   },
 
-  // Product Card
-  product: {
-    viewDetails: 'Voir les Détails',
-    buyNow: 'Acheter Maintenant',
-    rating: 'Note',
-    reviews: 'avis',
-    features: 'Caractéristiques',
-    originalPrice: 'Prix Original',
-    currentPrice: 'Prix Actuel',
-    addToCart: 'Ajouter au Panier',
-    outOfStock: 'Rupture de Stock'
-  },
-
-  // About Page
-  about: {
-    title: 'À propos de VibeNiche',
-    subtitle: 'Votre compagnon de confiance pour découvrir des produits et expériences exceptionnels',
-    mission: {
-      title: 'Notre Mission',
-      description: 'Nous croyons que chacun mérite de trouver des produits qui résonnent vraiment avec son style de vie. Notre mission est de sélectionner les meilleurs produits de beauté, voyage, bien-être et lifestyle.'
-    },
-    story: {
-      title: 'Notre Histoire',
-      description: 'Fondé avec une passion pour la qualité et l\'authenticité, VibeNiche est né du désir de créer une plateforme où les individus exigeants peuvent découvrir des produits alignés avec leurs valeurs.'
-    },
-    team: {
-      title: 'Notre Équipe',
-      description: 'Notre équipe est composée d\'experts de l\'industrie, de curateurs de produits et d\'enthousiastes du lifestyle dédiés à vous apporter les meilleures recommandations.'
-    }
-  },
-
-  // Contact Page
-  contact: {
-    title: 'Contactez-nous',
-    subtitle: 'Prenez contact avec notre équipe',
-    form: {
-      name: 'Votre Nom',
-      email: 'Votre Email',
-      subject: 'Sujet',
-      message: 'Votre Message',
-      send: 'Envoyer le Message',
-      sending: 'Envoi en cours...',
-      success: 'Message envoyé avec succès!',
-      error: 'Échec de l\'envoi du message. Veuillez réessayer.'
-    },
-    info: {
-      email: 'Écrivez-nous',
-      phone: 'Appelez-nous',
-      address: 'Visitez-nous',
-      hours: 'Heures d\'Ouverture'
-    }
-  },
-
-  // Auth
-  auth: {
-    signIn: 'Se Connecter',
-    signUp: 'S\'Inscrire',
-    signOut: 'Se Déconnecter',
-    email: 'Email',
-    password: 'Mot de Passe',
-    confirmPassword: 'Confirmer le Mot de Passe',
-    forgotPassword: 'Mot de passe oublié?',
-    noAccount: 'Pas de compte?',
-    hasAccount: 'Déjà un compte?',
-    signInSuccess: 'Connexion réussie!',
-    signUpSuccess: 'Compte créé avec succès!',
-    signOutSuccess: 'Déconnexion réussie!',
-    invalidCredentials: 'Email ou mot de passe invalide',
-    weakPassword: 'Le mot de passe doit contenir au moins 6 caractères',
-    emailInUse: 'Email déjà utilisé',
-    adminLogin: 'Connexion Admin',
-    username: 'Nom d\'utilisateur'
-  },
-
-  // Admin Dashboard
-  admin: {
-    dashboard: 'Tableau de Bord Admin',
-    products: 'Produits',
-    addProduct: 'Ajouter un Nouveau Produit',
-    editProduct: 'Modifier le Produit',
-    deleteProduct: 'Supprimer le Produit',
-    confirmDelete: 'Êtes-vous sûr de vouloir supprimer ce produit?',
-    productDeleted: 'Produit supprimé avec succès',
-    productUpdated: 'Produit mis à jour avec succès',
-    productCreated: 'Produit créé avec succès',
-    form: {
-      name: 'Nom du Produit',
-      description: 'Description',
-      shortDescription: 'Description Courte',
-      price: 'Prix',
-      originalPrice: 'Prix Original',
-      category: 'Catégorie',
-      imageUrl: 'URL de l\'Image',
-      affiliateUrl: 'URL d\'Affiliation',
-      tags: 'Tags (séparés par des virgules)',
-      features: 'Caractéristiques (séparées par des virgules)',
-      rating: 'Note',
-      reviewsCount: 'Nombre d\'Avis',
-      isActive: 'Actif',
-      isFeatured: 'Mis en Avant',
-      save: 'Sauvegarder le Produit',
-      cancel: 'Annuler'
-    }
-  },
-
-  // Common
+  // Common elements
   common: {
     loading: 'Chargement...',
     error: 'Erreur',
     success: 'Succès',
     cancel: 'Annuler',
     confirm: 'Confirmer',
-    delete: 'Supprimer',
-    edit: 'Modifier',
-    save: 'Sauvegarder',
-    back: 'Retour',
-    next: 'Suivant',
-    previous: 'Précédent',
     close: 'Fermer',
-    search: 'Rechercher',
-    filter: 'Filtre',
-    sort: 'Trier',
-    clear: 'Effacer',
-    apply: 'Appliquer',
-    reset: 'Réinitialiser',
-    selectLanguage: 'Sélectionner la Langue'
-  },
-
-  // Footer
-  footer: {
-    description: 'Découvrez des produits qui correspondent à votre style de vie unique.',
-    quickLinks: 'Liens Rapides',
-    categories: 'Catégories',
-    support: 'Support',
-    privacy: 'Politique de Confidentialité',
-    terms: 'Conditions de Service',
-    copyright: '© 2024 VibeNiche. Tous droits réservés.'
-  },
-
-  // Testimonials
-  testimonials: {
-    title: 'Ce Que Disent Nos Clients',
-    subtitle: 'Découvrez pourquoi des milliers de clients font confiance à VibeNiche pour leurs besoins de style de vie'
-  },
-
-  // 404 Page
-  notFound: {
-    title: '404',
-    subtitle: 'Oops! Page non trouvée',
-    description: 'La page que vous recherchez a peut-être été supprimée, renommée ou est temporairement indisponible.',
-    goHome: 'Aller à l\'Accueil'
+    save: 'Enregistrer',
+    back: 'Retour'
   }
 };
