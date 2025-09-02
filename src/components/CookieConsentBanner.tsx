@@ -77,12 +77,7 @@ export const CookieConsentBanner: React.FC = () => {
         <div className="mt-4 pt-4 border-t border-border/50">
           <p className="text-xs text-muted-foreground">
             {t('cookies.banner.privacyPolicy')}: {' '}
-            <Link 
-              to="/privacy" 
-              className="text-primary hover:underline font-medium"
-            >
-              سياسة الخصوصية وملفات تعريف الارتباط
-            </Link>
+        
           </p>
         </div>
       </Card>
