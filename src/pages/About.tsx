@@ -57,7 +57,7 @@ const About = () => {
     quote: "Design is the language that speaks to the soul."
   }];
   const milestones = [{
-    year: "2022",
+    year: "2016",
     event: "VibeNiche Founded",
     description: "Started with a vision to revolutionize affiliate marketing"
   }, {
@@ -146,7 +146,7 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
 
               <div className="flex items-center gap-8 mt-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold gradient-text">2022</div>
+                  <div className="text-3xl font-bold gradient-text">2016</div>
                   <p className="text-sm text-muted-foreground">Founded</p>
                 </div>
                 <div className="text-center">

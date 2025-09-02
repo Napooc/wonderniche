@@ -12,12 +12,81 @@ export default {
     signedInAs: 'Signed in as'
   },
 
-  // Hero Section  
+  // Hero Section
   hero: {
     title: 'VibeNiche - Premium Affiliate Lifestyle Marketplace',
     subtitle: 'Your trusted affiliate partner for premium lifestyle products. We connect you with exclusive brands across Beauty, Travel, Wellness & Lifestyle - earning through authentic recommendations you\'ll love.',
     exploreButton: 'Explore Now',
     learnMoreButton: 'Watch Story'
+  },
+
+  // Home Page Content
+  home: {
+    exploreCategories: 'Explore Categories',
+    discoverCurated: 'Discover curated collections across lifestyle categories',
+    beauty: {
+      title: 'Beauty',
+      description: 'Premium skincare, makeup, and beauty tools'
+    },
+    travel: {
+      title: 'Travel',
+      description: 'Luxury travel gear and experiences'
+    },
+    wellness: {
+      title: 'Wellness',
+      description: 'Fitness, nutrition, and mindfulness products'
+    },
+    lifestyle: {
+      title: 'Lifestyle',
+      description: 'Home decor, gadgets, and living essentials'
+    },
+    liveMetrics: 'LIVE IMPACT METRICS',
+    trustedBy: 'Trusted by',
+    thousands: 'Thousands',
+    realMetrics: 'Real metrics from real customers who\'ve discovered their perfect lifestyle through our curated marketplace',
+    happyCustomers: 'Happy Customers',
+    growingDaily: 'Growing daily across 40+ countries',
+    thisMonth: '+1,247 this month',
+    satisfactionRate: 'Satisfaction Rate',
+    trustRating: 'Trust Rating',
+    basedOnReviews: 'Based on 12,847 verified reviews',
+    premiumProducts: 'Premium Products',
+    supportAvailable: 'Support Available',
+    affiliateRewards: 'Affiliate Rewards',
+    countriesServed: 'Countries Served',
+    uptimeGuarantee: 'Uptime Guarantee',
+    verifiedExcellence: 'VERIFIED EXCELLENCE',
+    whyTrustUs: 'Why Customers Trust Us',
+    certifiedPartnerships: 'Certified partnerships and proven security standards that protect your experience',
+    verifiedPartner: 'Verified Partner',
+    officialMember: 'Official network member',
+    securePlatform: 'Secure Platform',
+    sslEncrypted: 'SSL encrypted transactions',
+    premiumBrands: 'Premium Brands',
+    exclusivePartnerships: 'Exclusive partnerships',
+    realReviews: 'Real Reviews',
+    authenticFeedback: '100% authentic feedback',
+    certified: 'CERTIFIED',
+    secure: 'SECURE',
+    premium: 'PREMIUM',
+    verified: 'VERIFIED',
+    featuredProducts: 'Featured Products',
+    handPicked: 'Hand-picked premium products that define modern lifestyle',
+    whatUsersSay: 'What Our Users Say',
+    joinThousands: 'Join thousands of satisfied users who have transformed their lifestyle with VibeNiche',
+    travelerTestimonial: 'As a frequent traveler, I need products that work. VibeNiche\'s travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!',
+    beautyTestimonial: 'VibeNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I\'ve discovered so many amazing brands!',
+    wellnessTestimonial: 'The wellness section is my go-to for discovering new products. The modern design and smooth user experience make it feel like browsing through a luxury magazine.',
+    techTestimonial: 'Impressed by the attention to detail and modern design. The site loads fast, looks beautiful, and the product recommendations are always relevant. Great work!',
+    stayInLoop: 'Stay in the Loop',
+    exclusiveAccess: 'Get exclusive access to new products, deals, and lifestyle tips',
+    enterEmail: 'Enter your email',
+    subscribe: 'Subscribe',
+    modernHub: 'Your modern lifestyle hub for premium products and experiences.',
+    categories: 'Categories',
+    company: 'Company',
+    connect: 'Connect',
+    allRights: '© 2025 VibeNiche. All rights reserved. This site contains affiliate links.'
   },
 
   // Cookie Consent
@@ -100,76 +169,6 @@ export default {
     }
   },
 
-  // Home Page Content
-  home: {
-    exploreCategories: 'Explore Categories',
-    discoverCurated: 'Discover curated collections across lifestyle categories',
-    beauty: {
-      title: 'Beauty',
-      description: 'Premium skincare, makeup, and beauty tools'
-    },
-    travel: {
-      title: 'Travel',
-      description: 'Luxury travel gear and experiences'
-    },
-    wellness: {
-      title: 'Wellness',
-      description: 'Fitness, nutrition, and mindfulness products'
-    },
-    lifestyle: {
-      title: 'Lifestyle',
-      description: 'Home decor, gadgets, and living essentials'
-    },
-    liveMetrics: 'LIVE IMPACT METRICS',
-    trustedBy: 'Trusted by',
-    thousands: 'Thousands',
-    realMetrics: 'Real metrics from real customers who\'ve discovered their perfect lifestyle through our curated marketplace',
-    happyCustomers: 'Happy Customers',
-    growingDaily: 'Growing daily across 40+ countries',
-    thisMonth: '+1,247 this month',
-    satisfactionRate: 'Satisfaction Rate',
-    trustRating: 'Trust Rating',
-    basedOnReviews: 'Based on 12,847 verified reviews',
-    premiumProducts: 'Premium Products',
-    supportAvailable: 'Support Available',
-    affiliateRewards: 'Affiliate Rewards',
-    countriesServed: 'Countries Served',
-    uptimeGuarantee: 'Uptime Guarantee',
-    verifiedExcellence: 'VERIFIED EXCELLENCE',
-    whyTrustUs: 'Why Customers Trust Us',
-    certifiedPartnerships: 'Certified partnerships and proven security standards that protect your experience',
-    verifiedPartner: 'Verified Partner',
-    officialMember: 'Official network member',
-    securePlatform: 'Secure Platform',
-    sslEncrypted: 'SSL encrypted transactions',
-    premiumBrands: 'Premium Brands',
-    exclusivePartnerships: 'Exclusive partnerships',
-    realReviews: 'Real Reviews',
-    authenticFeedback: '100% authentic feedback',
-    certified: 'CERTIFIED',
-    secure: 'SECURE',
-    premium: 'PREMIUM',
-    verified: 'VERIFIED',
-    featuredProducts: 'Featured Products',
-    handPicked: 'Hand-picked premium products that define modern lifestyle',
-    whatUsersSay: 'What Our Users Say',
-    joinThousands: 'Join thousands of satisfied users who have transformed their lifestyle with VibeNiche',
-    travelerTestimonial: 'As a frequent traveler, I need products that work. VibeNiche\'s travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!',
-    beautyTestimonial: 'VibeNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I\'ve discovered so many amazing brands!',
-    wellnessTestimonial: 'The wellness section is my go-to for discovering new products. The modern design and smooth user experience make it feel like browsing through a luxury magazine.',
-    techTestimonial: 'Impressed by the attention to detail and modern design. The site loads fast, looks beautiful, and the product recommendations are always relevant. Great work!',
-    stayInLoop: 'Stay in the Loop',
-    exclusiveAccess: 'Get exclusive access to new products, deals, and lifestyle tips',
-    enterEmail: 'Enter your email',
-    subscribe: 'Subscribe',
-    modernHub: 'Your modern lifestyle hub for premium products and experiences.',
-    categories: 'Categories',
-    company: 'Company',
-    connect: 'Connect',
-    allRights: '© 2025 VibeNiche. All rights reserved. This site contains affiliate links.'
-  },
-
-  // About Page
   about: {
     title: 'About VibeNiche',
     subtitle: 'We\'re not just another affiliate marketplace. We\'re lifestyle curators, trend discoverers, and dream enablers connecting you with products that transform ordinary moments into extraordinary experiences.',
@@ -273,7 +272,7 @@ export default {
     happyCustomers: 'Happy Customers',
     productsCurated: '2,500+',
     productsLabel: 'Products Curated',
-    yearsOfTrust: '8+',
+    yearsOfTrust: '9+',
     yearsLabel: 'Years of Trust',
     customerSatisfaction: '98%',
     satisfactionLabel: 'Customer Satisfaction',
