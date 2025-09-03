@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export type Language = 'en' | 'de' | 'es' | 'fr' | 'ja' | 'ko' | 'zh-cn' | 'zh-tw' | 'pt' | 'ru' | 'ar';
+export type Language = 'en' | 'de' | 'es' | 'fr' | 'ja' | 'ko' | 'zh-cn' | 'zh-tw' | 'pt' | 'ru';
 
 interface TranslationContextType {
   currentLanguage: Language;
@@ -21,7 +21,6 @@ export const useTranslation = () => {
 // Language data
 export const languages = {
   en: { code: 'en', name: 'English', flag: '🇺🇸' },
-  ar: { code: 'ar', name: 'العربية', flag: '🇲🇦' },
   fr: { code: 'fr', name: 'Français', flag: '🇫🇷' },
   de: { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
   es: { code: 'es', name: 'Español', flag: '🇪🇸' },
