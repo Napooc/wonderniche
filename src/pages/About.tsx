@@ -125,7 +125,7 @@ const About = () => {
                 <span className="text-sm font-medium text-muted-foreground">Our Origin Story</span>
               </div>
               
-              <h2 className="text-5xl md:text-6xl font-black gradient-text mb-8">
+              <h2 id="born-from-passion" className="text-5xl md:text-6xl font-black gradient-text mb-8">
                 Born from Passion
               </h2>
               
@@ -283,7 +283,12 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               
-              <Button size="lg" variant="outline" className="btn-glass text-lg px-10 py-4 rounded-full">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="btn-glass text-lg px-10 py-4 rounded-full"
+                onClick={() => window.location.href = '/contact'}
+              >
                 <Heart className="w-5 h-5 mr-2" />
                 Contact Us
               </Button>

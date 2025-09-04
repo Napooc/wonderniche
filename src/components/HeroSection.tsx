@@ -94,11 +94,14 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full">
-              {t('hero.exploreButton')}
-            </Button>
-            <Button size="lg" variant="outline" className="btn-glass text-lg px-8 py-4 rounded-full">
-              {t('hero.learnMoreButton')}
+            <Button 
+              size="lg" 
+              className="btn-premium text-lg px-8 py-4 rounded-full"
+              onClick={() => {
+                window.location.href = '/about#born-from-passion';
+              }}
+            >
+              {t('hero.ourStoryButton')}
             </Button>
           </div>
         </div>

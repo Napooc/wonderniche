@@ -17,7 +17,8 @@ export default {
     title: 'VibeNiche - Marketplace Premium d\'Affiliation de Style de Vie',
     subtitle: 'Votre partenaire d\'affiliation de confiance pour des produits de style de vie premium. Nous vous connectons avec des marques exclusives dans la Beauté, le Voyage, le Bien-être et le Style de vie - gagnant grâce à des recommandations authentiques que vous adorerez.',
     exploreButton: 'Explorer Maintenant',
-    learnMoreButton: 'Voir l\'Histoire'
+    learnMoreButton: 'Voir l\'Histoire',
+    ourStoryButton: 'Notre Histoire'
   },
 
   // Home Page Content

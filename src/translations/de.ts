@@ -17,7 +17,8 @@ export default {
     title: 'VibeNiche - Premium Affiliate Lifestyle Marktplatz',
     subtitle: 'Ihr vertrauenswürdiger Affiliate-Partner für Premium-Lifestyle-Produkte. Wir verbinden Sie mit exklusiven Marken aus den Bereichen Beauty, Travel, Wellness & Lifestyle - durch authentische Empfehlungen, die Sie lieben werden.',
     exploreButton: 'Jetzt erkunden',
-    learnMoreButton: 'Story ansehen'
+    learnMoreButton: 'Story ansehen',
+    ourStoryButton: 'Unsere Geschichte'
   },
 
   // Home Page Content
