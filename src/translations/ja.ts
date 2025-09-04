@@ -17,7 +17,64 @@ export default {
     title: 'あなたの完璧な雰囲気を発見',
     subtitle: 'あなたのユニークなライフスタイルにマッチする厳選された体験と製品',
     exploreButton: 'カテゴリーを探索',
-    learnMoreButton: '詳細を見る'
+    learnMoreButton: '詳細を見る',
+    ourStoryButton: '私たちの物語'
+  },
+
+  // Home Page
+  home: {
+    exploreCategories: 'カテゴリーを探索',
+    discoverCurated: '厳選されたマーケットプレイスで、あなたの理想的なライフスタイル製品を発見してください',
+    
+    beauty: {
+      title: '美容・スキンケア',
+      description: '日常のルーティンのためのプレミアム美容製品とスキンケアエッセンシャル'
+    },
+    travel: {
+      title: '旅行・アドベンチャー',
+      description: '次の冒険のための必須ギアとアクセサリー'
+    },
+    wellness: {
+      title: 'ウェルネス・健康',
+      description: 'あなたのウェルネスジャーニーをサポートする製品とツール'
+    },
+    lifestyle: {
+      title: 'ライフスタイル',
+      description: 'あなたの日常を向上させるプレミアムライフスタイル製品'
+    },
+
+    liveMetrics: 'ライブ統計',
+    trustedBy: '信頼されています',
+    thousands: '何千人もの人々に',
+    realMetrics: '私たちの実際の統計で証明された',
+    happyCustomers: '満足したお客様',
+    growingDaily: '毎日増加中',
+    thisMonth: '今月',
+    satisfactionRate: '満足度',
+    trustRating: '信頼評価',
+    basedOnReviews: 'レビューに基づく',
+    premiumProducts: 'プレミアム製品',
+    supportAvailable: 'サポート利用可能',
+    affiliateRewards: 'アフィリエイト報酬',
+    countriesServed: 'サービス提供国',
+    uptimeGuarantee: 'アップタイム保証',
+    verifiedExcellence: '検証済みの優秀性',
+    whyTrustUs: '私たちを信頼する理由',
+    certifiedPartnerships: '認定されたパートナーシップと検証済みの品質保証',
+    certified: '認定済み',
+    verifiedPartner: '検証済みパートナー',
+    officialMember: '公式メンバー',
+    secure: 'セキュア',
+    securePlatform: 'セキュアプラットフォーム',
+    sslEncrypted: 'SSL暗号化',
+    premium: 'プレミアム',
+    premiumBrands: 'プレミアムブランド',
+    exclusivePartnerships: '独占パートナーシップ',
+    verified: '検証済み',
+    realReviews: '実際のレビュー',
+    authenticFeedback: '本物のフィードバック',
+    featuredProducts: '注目の製品',
+    handPicked: '厳選された製品で、あなたの生活を変革してください'
   },
 
   // Categories

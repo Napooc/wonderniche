@@ -17,7 +17,8 @@ export default {
     title: 'VibeNiche - Mercado Premium de Estilo de Vida Afiliado',
     subtitle: 'Su socio afiliado de confianza para productos premium de estilo de vida. Lo conectamos con marcas exclusivas en Belleza, Viajes, Bienestar y Estilo de Vida - ganando a través de recomendaciones auténticas que le encantarán.',
     exploreButton: 'Explorar Ahora',
-    learnMoreButton: 'Ver Historia'
+    learnMoreButton: 'Ver Historia',
+    ourStoryButton: 'Nuestra Historia'
   },
 
   // Home Page Content

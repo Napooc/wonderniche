@@ -17,7 +17,64 @@ export default {
     title: '發現您的完美氛圍',
     subtitle: '精選的體驗和產品，匹配您獨特的生活方式',
     exploreButton: '探索分類',
-    learnMoreButton: '了解更多'
+    learnMoreButton: '了解更多',
+    ourStoryButton: '我們的故事'
+  },
+
+  // Home Page
+  home: {
+    exploreCategories: '探索分類',
+    discoverCurated: '在我們精心策劃的市場中發現您理想的生活方式產品',
+    
+    beauty: {
+      title: '美容護膚',
+      description: '為您的日常護理提供優質美容產品和護膚必需品'
+    },
+    travel: {
+      title: '旅行冒險',
+      description: '為您的下一次冒險提供必需裝備和配件'
+    },
+    wellness: {
+      title: '健康養生',
+      description: '支持您健康之旅的產品和工具'
+    },
+    lifestyle: {
+      title: '生活方式',
+      description: '提升您日常生活的優質生活方式產品'
+    },
+
+    liveMetrics: '即時指標',
+    trustedBy: '深受信賴',
+    thousands: '成千上萬的人',
+    realMetrics: '用我們的真實指標證明',
+    happyCustomers: '滿意客戶',
+    growingDaily: '每日增長',
+    thisMonth: '本月',
+    satisfactionRate: '滿意度',
+    trustRating: '信任評分',
+    basedOnReviews: '基於評價',
+    premiumProducts: '優質產品',
+    supportAvailable: '支援可用',
+    affiliateRewards: '聯盟獎勵',
+    countriesServed: '服務國家',
+    uptimeGuarantee: '正常運行時間保證',
+    verifiedExcellence: '驗證的卓越性',
+    whyTrustUs: '為什麼信任我們',
+    certifiedPartnerships: '認證的合作夥伴關係和驗證的品質保證',
+    certified: '已認證',
+    verifiedPartner: '驗證合作夥伴',
+    officialMember: '官方會員',
+    secure: '安全',
+    securePlatform: '安全平台',
+    sslEncrypted: 'SSL加密',
+    premium: '高級',
+    premiumBrands: '高級品牌',
+    exclusivePartnerships: '獨家合作夥伴關係',
+    verified: '已驗證',
+    realReviews: '真實評價',
+    authenticFeedback: '真實反饋',
+    featuredProducts: '精選產品',
+    handPicked: '精選產品，改變您的生活'
   },
 
   // Categories

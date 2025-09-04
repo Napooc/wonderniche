@@ -17,7 +17,64 @@ export default {
     title: 'Descubra Sua Vibe Perfeita',
     subtitle: 'Experiências e produtos selecionados que combinam com seu estilo de vida único',
     exploreButton: 'Explorar Categorias',
-    learnMoreButton: 'Saiba Mais'
+    learnMoreButton: 'Saiba Mais',
+    ourStoryButton: 'Nossa História'
+  },
+
+  // Home Page
+  home: {
+    exploreCategories: 'Explorar Categorias',
+    discoverCurated: 'Descubra seus produtos ideais de estilo de vida em nosso marketplace selecionado',
+    
+    beauty: {
+      title: 'Beleza e Cuidados com a Pele',
+      description: 'Produtos de beleza premium e essenciais de cuidados para sua rotina diária'
+    },
+    travel: {
+      title: 'Viagem e Aventura',
+      description: 'Equipamentos essenciais e acessórios para sua próxima aventura'
+    },
+    wellness: {
+      title: 'Bem-estar e Saúde',
+      description: 'Produtos e ferramentas para apoiar sua jornada de bem-estar'
+    },
+    lifestyle: {
+      title: 'Estilo de Vida',
+      description: 'Produtos premium de estilo de vida para melhorar seu dia a dia'
+    },
+
+    liveMetrics: 'Métricas Ao Vivo',
+    trustedBy: 'Confiado por',
+    thousands: 'Milhares de Pessoas',
+    realMetrics: 'Comprovado por nossas métricas reais',
+    happyCustomers: 'Clientes Satisfeitos',
+    growingDaily: 'Crescendo Diariamente',
+    thisMonth: 'Este Mês',
+    satisfactionRate: 'Taxa de Satisfação',
+    trustRating: 'Avaliação de Confiança',
+    basedOnReviews: 'Baseado em Avaliações',
+    premiumProducts: 'Produtos Premium',
+    supportAvailable: 'Suporte Disponível',
+    affiliateRewards: 'Recompensas de Afiliado',
+    countriesServed: 'Países Atendidos',
+    uptimeGuarantee: 'Garantia de Tempo de Atividade',
+    verifiedExcellence: 'Excelência Verificada',
+    whyTrustUs: 'Por Que Confiar em Nós',
+    certifiedPartnerships: 'Parcerias certificadas e garantia de qualidade verificada',
+    certified: 'Certificado',
+    verifiedPartner: 'Parceiro Verificado',
+    officialMember: 'Membro Oficial',
+    secure: 'Seguro',
+    securePlatform: 'Plataforma Segura',
+    sslEncrypted: 'Criptografia SSL',
+    premium: 'Premium',
+    premiumBrands: 'Marcas Premium',
+    exclusivePartnerships: 'Parcerias Exclusivas',
+    verified: 'Verificado',
+    realReviews: 'Avaliações Reais',
+    authenticFeedback: 'Feedback Autêntico',
+    featuredProducts: 'Produtos em Destaque',
+    handPicked: 'Produtos selecionados à mão que transformarão sua vida'
   },
 
   // Categories

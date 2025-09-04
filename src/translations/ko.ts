@@ -17,7 +17,64 @@ export default {
     title: '당신의 완벽한 바이브를 발견하세요',
     subtitle: '당신만의 독특한 라이프스타일에 맞는 엄선된 경험과 제품',
     exploreButton: '카테고리 탐색',
-    learnMoreButton: '더 알아보기'
+    learnMoreButton: '더 알아보기',
+    ourStoryButton: '우리의 이야기'
+  },
+
+  // Home Page
+  home: {
+    exploreCategories: '카테고리 탐색',
+    discoverCurated: '엄선된 마켓플레이스에서 당신의 이상적인 라이프스타일 제품을 발견하세요',
+    
+    beauty: {
+      title: '뷰티 & 스킨케어',
+      description: '일상 루틴을 위한 프리미엄 뷰티 제품과 스킨케어 필수품'
+    },
+    travel: {
+      title: '여행 & 모험',
+      description: '다음 모험을 위한 필수 장비와 액세서리'
+    },
+    wellness: {
+      title: '웰니스 & 건강',
+      description: '당신의 웰니스 여정을 지원하는 제품과 도구'
+    },
+    lifestyle: {
+      title: '라이프스타일',
+      description: '당신의 일상을 향상시키는 프리미엄 라이프스타일 제품'
+    },
+
+    liveMetrics: '실시간 지표',
+    trustedBy: '신뢰받고 있습니다',
+    thousands: '수천 명에게',
+    realMetrics: '우리의 실제 지표로 증명된',
+    happyCustomers: '만족한 고객',
+    growingDaily: '매일 증가',
+    thisMonth: '이번 달',
+    satisfactionRate: '만족도',
+    trustRating: '신뢰도',
+    basedOnReviews: '리뷰 기반',
+    premiumProducts: '프리미엄 제품',
+    supportAvailable: '지원 가능',
+    affiliateRewards: '제휴 보상',
+    countriesServed: '서비스 제공 국가',
+    uptimeGuarantee: '가동 시간 보장',
+    verifiedExcellence: '검증된 우수성',
+    whyTrustUs: '우리를 신뢰하는 이유',
+    certifiedPartnerships: '인증된 파트너십과 검증된 품질 보장',
+    certified: '인증됨',
+    verifiedPartner: '검증된 파트너',
+    officialMember: '공식 회원',
+    secure: '보안',
+    securePlatform: '보안 플랫폼',
+    sslEncrypted: 'SSL 암호화',
+    premium: '프리미엄',
+    premiumBrands: '프리미엄 브랜드',
+    exclusivePartnerships: '독점 파트너십',
+    verified: '검증됨',
+    realReviews: '실제 리뷰',
+    authenticFeedback: '진정한 피드백',
+    featuredProducts: '추천 제품',
+    handPicked: '엄선된 제품으로 당신의 삶을 변화시키세요'
   },
 
   // Categories
