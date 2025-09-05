@@ -4,14 +4,15 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import ProductCard from '@/components/ProductCard';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import SEOComponent from '@/components/SEOComponent';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Heart, Globe, Dumbbell, Home, Mail } from 'lucide-react';
 import { supabase } from '@/integrations/supabase/client';
 import { useTranslation } from '@/contexts/TranslationContext';
+import { generateHomeSEO } from '@/utils/seo';
 const Index = () => {
-  const {
-    t
-  } = useTranslation();
+  const { t, currentLanguage } = useTranslation();
+  const seoData = generateHomeSEO(currentLanguage);
   const [featuredProducts, setFeaturedProducts] = useState<any[]>([]);
   const [categories, setCategories] = useState<any[]>([]);
 
@@ -93,6 +94,15 @@ const Index = () => {
     href: '/lifestyle'
   }];
   return <div className="min-h-screen">
+      <SEOComponent 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl={seoData.canonicalUrl}
+        structuredData={seoData.structuredData}
+        alternateUrls={seoData.alternateUrls}
+        locale={currentLanguage}
+      />
       <Navigation />
       
       {/* Hero Section */}

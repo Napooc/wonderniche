@@ -4,15 +4,20 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
+import SEOComponent from '@/components/SEOComponent';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Brain, Lightbulb, Target, TrendingUp } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { generateAdviceSEO } from '@/utils/seo';
 import adviceHero2 from '@/assets/advice-hero-2.jpg';
 const Advice = () => {
+  const { currentLanguage } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const seoData = generateAdviceSEO(currentLanguage);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -83,6 +88,15 @@ const Advice = () => {
     color: "text-purple-400"
   }];
   return <div className="min-h-screen">
+      <SEOComponent 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl={seoData.canonicalUrl}
+        structuredData={seoData.structuredData}
+        alternateUrls={seoData.alternateUrls}
+        locale={currentLanguage}
+      />
       <Navigation />
       
       {/* Hero Section */}

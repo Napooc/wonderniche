@@ -4,16 +4,21 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
+import SEOComponent from '@/components/SEOComponent';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, Heart } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { generateWellnessSEO } from '@/utils/seo';
 import wellnessHero1 from '@/assets/wellness-hero-1.jpg';
 
 const Wellness = () => {
+  const { currentLanguage } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const seoData = generateWellnessSEO(currentLanguage);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -77,6 +82,15 @@ const Wellness = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOComponent 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl={seoData.canonicalUrl}
+        structuredData={seoData.structuredData}
+        alternateUrls={seoData.alternateUrls}
+        locale={currentLanguage}
+      />
       <Navigation />
       
       {/* Hero Section */}

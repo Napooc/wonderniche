@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://vibeniche.com/</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hrefLang="en" href="https://vibeniche.com/" />
+    <xhtml:link rel="alternate" hrefLang="fr" href="https://vibeniche.com/fr" />
+    <xhtml:link rel="alternate" hrefLang="de" href="https://vibeniche.com/de" />
+    <xhtml:link rel="alternate" hrefLang="es" href="https://vibeniche.com/es" />
+    <xhtml:link rel="alternate" hrefLang="pt" href="https://vibeniche.com/pt" />
+    <xhtml:link rel="alternate" hrefLang="ja" href="https://vibeniche.com/ja" />
+    <xhtml:link rel="alternate" hrefLang="ko" href="https://vibeniche.com/ko" />
+    <xhtml:link rel="alternate" hrefLang="zh-CN" href="https://vibeniche.com/zh-cn" />
+    <xhtml:link rel="alternate" hrefLang="zh-TW" href="https://vibeniche.com/zh-tw" />
+    <xhtml:link rel="alternate" hrefLang="ru" href="https://vibeniche.com/ru" />
+  </url>
+
+  <!-- Travel Category -->
+  <url>
+    <loc>https://vibeniche.com/travel</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="en" href="https://vibeniche.com/travel" />
+    <xhtml:link rel="alternate" hrefLang="fr" href="https://vibeniche.com/fr/travel" />
+    <xhtml:link rel="alternate" hrefLang="de" href="https://vibeniche.com/de/travel" />
+    <xhtml:link rel="alternate" hrefLang="es" href="https://vibeniche.com/es/travel" />
+    <xhtml:link rel="alternate" hrefLang="pt" href="https://vibeniche.com/pt/travel" />
+    <xhtml:link rel="alternate" hrefLang="ja" href="https://vibeniche.com/ja/travel" />
+    <xhtml:link rel="alternate" hrefLang="ko" href="https://vibeniche.com/ko/travel" />
+    <xhtml:link rel="alternate" hrefLang="zh-CN" href="https://vibeniche.com/zh-cn/travel" />
+    <xhtml:link rel="alternate" hrefLang="zh-TW" href="https://vibeniche.com/zh-tw/travel" />
+    <xhtml:link rel="alternate" hrefLang="ru" href="https://vibeniche.com/ru/travel" />
+  </url>
+
+  <!-- Beauty Category -->
+  <url>
+    <loc>https://vibeniche.com/beauty</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="en" href="https://vibeniche.com/beauty" />
+    <xhtml:link rel="alternate" hrefLang="fr" href="https://vibeniche.com/fr/beauty" />
+    <xhtml:link rel="alternate" hrefLang="de" href="https://vibeniche.com/de/beauty" />
+    <xhtml:link rel="alternate" hrefLang="es" href="https://vibeniche.com/es/beauty" />
+    <xhtml:link rel="alternate" hrefLang="pt" href="https://vibeniche.com/pt/beauty" />
+    <xhtml:link rel="alternate" hrefLang="ja" href="https://vibeniche.com/ja/beauty" />
+    <xhtml:link rel="alternate" hrefLang="ko" href="https://vibeniche.com/ko/beauty" />
+    <xhtml:link rel="alternate" hrefLang="zh-CN" href="https://vibeniche.com/zh-cn/beauty" />
+    <xhtml:link rel="alternate" hrefLang="zh-TW" href="https://vibeniche.com/zh-tw/beauty" />
+    <xhtml:link rel="alternate" hrefLang="ru" href="https://vibeniche.com/ru/beauty" />
+  </url>
+
+  <!-- Wellness Category -->
+  <url>
+    <loc>https://vibeniche.com/wellness</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="en" href="https://vibeniche.com/wellness" />
+    <xhtml:link rel="alternate" hrefLang="fr" href="https://vibeniche.com/fr/wellness" />
+    <xhtml:link rel="alternate" hrefLang="de" href="https://vibeniche.com/de/wellness" />
+    <xhtml:link rel="alternate" hrefLang="es" href="https://vibeniche.com/es/wellness" />
+    <xhtml:link rel="alternate" hrefLang="pt" href="https://vibeniche.com/pt/wellness" />
+    <xhtml:link rel="alternate" hrefLang="ja" href="https://vibeniche.com/ja/wellness" />
+    <xhtml:link rel="alternate" hrefLang="ko" href="https://vibeniche.com/ko/wellness" />
+    <xhtml:link rel="alternate" hrefLang="zh-CN" href="https://vibeniche.com/zh-cn/wellness" />
+    <xhtml:link rel="alternate" hrefLang="zh-TW" href="https://vibeniche.com/zh-tw/wellness" />
+    <xhtml:link rel="alternate" hrefLang="ru" href="https://vibeniche.com/ru/wellness" />
+  </url>
+
+  <!-- Advice Category -->
+  <url>
+    <loc>https://vibeniche.com/advice</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="en" href="https://vibeniche.com/advice" />
+    <xhtml:link rel="alternate" hrefLang="fr" href="https://vibeniche.com/fr/advice" />
+    <xhtml:link rel="alternate" hrefLang="de" href="https://vibeniche.com/de/advice" />
+    <xhtml:link rel="alternate" hrefLang="es" href="https://vibeniche.com/es/advice" />
+    <xhtml:link rel="alternate" hrefLang="pt" href="https://vibeniche.com/pt/advice" />
+    <xhtml:link rel="alternate" hrefLang="ja" href="https://vibeniche.com/ja/advice" />
+    <xhtml:link rel="alternate" hrefLang="ko" href="https://vibeniche.com/ko/advice" />
+    <xhtml:link rel="alternate" hrefLang="zh-CN" href="https://vibeniche.com/zh-cn/advice" />
+    <xhtml:link rel="alternate" hrefLang="zh-TW" href="https://vibeniche.com/zh-tw/advice" />
+    <xhtml:link rel="alternate" hrefLang="ru" href="https://vibeniche.com/ru/advice" />
+  </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://vibeniche.com/about</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://vibeniche.com/contact</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Privacy Page -->
+  <url>
+    <loc>https://vibeniche.com/privacy</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

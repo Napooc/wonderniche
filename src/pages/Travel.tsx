@@ -4,15 +4,20 @@ import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
+import SEOComponent from '@/components/SEOComponent';
 import { Button } from '@/components/ui/button';
 import { Search, Filter, Grid, List, MapPin } from 'lucide-react';
+import { useTranslation } from '@/contexts/TranslationContext';
+import { generateTravelSEO } from '@/utils/seo';
 import travelHero1 from '@/assets/travel-hero-1.jpg';
 const Travel = () => {
+  const { currentLanguage } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const seoData = generateTravelSEO(currentLanguage);
 
   // Fetch products from database
   const fetchProducts = async () => {
@@ -62,6 +67,15 @@ const Travel = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return <div className="min-h-screen">
+      <SEOComponent 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        canonicalUrl={seoData.canonicalUrl}
+        structuredData={seoData.structuredData}
+        alternateUrls={seoData.alternateUrls}
+        locale={currentLanguage}
+      />
       <Navigation />
       
       {/* Hero Section */}
