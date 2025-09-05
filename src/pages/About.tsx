@@ -1,8 +1,11 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { Heart, Sparkles, Target, Users, Award, TrendingUp, Globe, Star, CheckCircle2, Zap } from 'lucide-react';
 const About = () => {
+  const { t } = useTranslation();
+  
   // Reveal animations on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -21,57 +24,57 @@ const About = () => {
   }, []);
   const values = [{
     icon: Heart,
-    title: "Authentic Connections",
-    description: "We believe in building genuine relationships with brands and customers through honest recommendations.",
+    title: t('about.authenticConnections'),
+    description: t('about.genuineRelationships'),
     color: "from-pink-500 to-rose-500"
   }, {
     icon: Star,
-    title: "Quality First",
-    description: "Every product we feature meets our rigorous standards for excellence and customer satisfaction.",
+    title: t('about.qualityFirst'),
+    description: t('about.rigorousStandards'),
     color: "from-amber-500 to-yellow-500"
   }, {
     icon: TrendingUp,
-    title: "Innovation Driven",
-    description: "We stay ahead of trends to bring you the latest and greatest in lifestyle innovation.",
+    title: t('about.innovationDriven'),
+    description: t('about.stayAhead'),
     color: "from-blue-500 to-cyan-500"
   }, {
     icon: Globe,
-    title: "Global Impact",
-    description: "Our platform connects lifestyle enthusiasts worldwide with premium brands they'll love.",
+    title: t('about.globalImpact'),
+    description: t('about.connectsWorldwide'),
     color: "from-green-500 to-emerald-500"
   }];
   const team = [{
-    name: "Sarah Johnson",
-    role: "Founder & CEO",
+    name: t('about.team.sarah.name'),
+    role: t('about.team.sarah.role'),
     image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-    quote: "Building bridges between lifestyle dreamers and premium brands."
+    quote: t('about.team.sarah.quote')
   }, {
-    name: "Marcus Chen",
-    role: "Head of Partnerships",
+    name: t('about.team.marcus.name'),
+    role: t('about.team.marcus.role'),
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-    quote: "Curating relationships that create authentic value."
+    quote: t('about.team.marcus.quote')
   }, {
-    name: "Elena Rodriguez",
-    role: "Creative Director",
+    name: t('about.team.elena.name'),
+    role: t('about.team.elena.role'),
     image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face",
-    quote: "Design is the language that speaks to the soul."
+    quote: t('about.team.elena.quote')
   }];
   const milestones = [{
     year: "2016",
-    event: "VibeNiche Founded",
-    description: "Started with a vision to revolutionize affiliate marketing"
+    event: t('about.vibeNicheFounded'),
+    description: t('about.startedVision')
   }, {
     year: "2023",
-    event: "50K+ Community",
-    description: "Reached our first major milestone of happy customers"
+    event: t('about.communityMilestone'),
+    description: t('about.firstMajor')
   }, {
     year: "2024",
-    event: "Premium Partnerships",
-    description: "Established exclusive relationships with top lifestyle brands"
+    event: t('about.premiumPartnerships'),
+    description: t('about.exclusiveRelationships')
   }, {
     year: "2025",
-    event: "Global Expansion",
-    description: "Expanding our reach to serve lifestyle enthusiasts worldwide"
+    event: t('about.globalExpansion'),
+    description: t('about.expandingReach')
   }];
   return <div className="min-h-screen">
       <Navigation />
@@ -99,15 +102,11 @@ const About = () => {
             </div>
             
             <h1 className="text-6xl md:text-8xl font-black mb-8">
-              <span className="gradient-text">About</span>
-              <br />
-              <span className="text-foreground">VibeNiche</span>
+              <span className="gradient-text">{t('about.title')}</span>
             </h1>
             
             <p className="text-2xl md:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-12">
-              We're not just another affiliate marketplace. We're <span className="text-primary font-semibold">lifestyle curators</span>, 
-              <span className="text-primary font-semibold"> trend discoverers</span>, and <span className="text-primary font-semibold">dream enablers</span> 
-              connecting you with products that transform ordinary moments into extraordinary experiences.
+              {t('about.subtitle')}
             </p>
 
             
@@ -122,40 +121,35 @@ const About = () => {
             <div className="reveal-up">
               <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass-card mb-8">
                 <Zap className="w-4 h-4 text-primary animate-pulse" />
-                <span className="text-sm font-medium text-muted-foreground">Our Origin Story</span>
+                <span className="text-sm font-medium text-muted-foreground">{t('about.originStory')}</span>
               </div>
               
               <h2 id="born-from-passion" className="text-5xl md:text-6xl font-black gradient-text mb-8">
-                Born from Passion
+                {t('about.bornFromPassion')}
               </h2>
               
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
-                <p>It all started with one simple frustration: endless scrolling through countless products, uncertain about what truly works. We knew there had to be a better way to find premium lifestyle essentials that actually deliver on their promises.</p>
+                <p>{t('about.simpleFrustration')}</p>
                 <p>
-                  <span className="text-primary font-semibold">That’s why VibeNiche</span>  was born — a trusted destination where beauty lovers, wellness seekers, 
-                  and travel enthusiasts can discover hand-picked, high-quality products through transparent, honest affiliate recommendations.
+                  {t('about.vibeNicheBorn')}
                 </p>
                 <p>
-                 We’re more than just a marketplace — we’re a curated lifestyle hub. Our mission is to connect passionate individuals with the brands that inspire them, helping you make confident, informed choices in skincare, self-care, wellness, and travel gear.
-
-Whether you’re planning your next adventure, perfecting your daily beauty routine, or investing in your well-being, VibeNiche is here to guide you with expert insights, top-rated products, and authentic reviews.
-
-Today, we’re proud to be the bridge between dreamers and premium brands, creating genuine value for our growing community and trusted partners through meaningful connections and affiliate marketing done right.
+                  {t('about.todayProud')}
                 </p>
               </div>
 
               <div className="flex items-center gap-8 mt-12">
                 <div className="text-center">
                   <div className="text-3xl font-bold gradient-text">2016</div>
-                  <p className="text-sm text-muted-foreground">Founded</p>
+                  <p className="text-sm text-muted-foreground">{t('about.founded')}</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold gradient-text">50K+</div>
-                  <p className="text-sm text-muted-foreground">Customers</p>
+                  <p className="text-sm text-muted-foreground">{t('about.customers')}</p>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold gradient-text">200+</div>
-                  <p className="text-sm text-muted-foreground">Brand Partners</p>
+                  <p className="text-sm text-muted-foreground">{t('about.brandPartners')}</p>
                 </div>
               </div>
             </div>
@@ -171,8 +165,8 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
                       <CheckCircle2 className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <div className="text-lg font-bold gradient-text">Verified Quality</div>
-                      <p className="text-sm text-muted-foreground">Every product tested</p>
+                      <div className="text-lg font-bold gradient-text">{t('about.verifiedQuality')}</div>
+                      <p className="text-sm text-muted-foreground">{t('about.everyProductTested')}</p>
                     </div>
                   </div>
                 </div>
@@ -195,10 +189,10 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="text-center mb-20 reveal-up">
             <h2 className="text-5xl md:text-6xl font-black gradient-text mb-6">
-              Our Values
+              {t('about.ourValues')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              The principles that guide every decision we make and every partnership we forge
+              {t('about.principlesGuide')}
             </p>
           </div>
 
@@ -233,10 +227,10 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-20 reveal-up">
             <h2 className="text-5xl md:text-6xl font-black gradient-text mb-6">
-              Our Journey
+              {t('about.ourJourney')}
             </h2>
             <p className="text-xl text-muted-foreground">
-              Key milestones in our mission to revolutionize affiliate marketing
+              {t('about.keyMilestones')}
             </p>
           </div>
 
@@ -273,11 +267,10 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
             
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold gradient-text">
-                Join Our Mission
+                {t('about.joinMission')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Be part of a community that values authenticity, quality, and meaningful connections. 
-                Discover your next favorite product today.
+                {t('about.bePartCommunity')}
               </p>
             </div>
 
@@ -290,7 +283,7 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
                 onClick={() => window.location.href = '/contact'}
               >
                 <Heart className="w-5 h-5 mr-2" />
-                Contact Us
+                {t('about.contactUs')}
               </Button>
             </div>
           </div>
@@ -306,7 +299,7 @@ Today, we’re proud to be the bridge between dreamers and premium brands, creat
               <span className="text-xl font-bold gradient-text">VibeNiche</span>
             </div>
             <p className="text-muted-foreground">
-              Curating premium lifestyle experiences through authentic affiliate partnerships.
+              {t('about.curatingPremium')}
             </p>
           </div>
         </div>

@@ -26,12 +26,12 @@ const LanguagePicker = () => {
           <span className="hidden lg:inline text-sm">{languages[currentLanguage].name}</span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-56 p-0 bg-card/95 backdrop-blur-md border border-border/50 shadow-xl z-[60]" align="end" sideOffset={8}>
+      <PopoverContent className="w-64 p-0 bg-card/95 backdrop-blur-md border border-border/50 shadow-xl z-[60] max-h-[80vh]" align="end" sideOffset={8} side="bottom">
         <div className="p-3 bg-card/95 backdrop-blur-md rounded-lg">
           <div className="px-3 py-2 text-sm font-medium text-muted-foreground border-b border-border/30 mb-2">
             {t('common.selectLanguage')}
           </div>
-          <div className="space-y-1 max-h-64 overflow-y-auto">
+          <div className="space-y-1 max-h-[60vh] overflow-y-auto">
             {Object.entries(languages).map(([key, language]) => (
               <button
                 key={key}

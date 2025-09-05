@@ -12,7 +12,7 @@ import { generateWellnessSEO } from '@/utils/seo';
 import wellnessHero1 from '@/assets/wellness-hero-1.jpg';
 
 const Wellness = () => {
-  const { currentLanguage } = useTranslation();
+  const { currentLanguage, t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
@@ -95,10 +95,10 @@ const Wellness = () => {
       
       {/* Hero Section */}
       <CategoryHero
-        title="Wellness & Fitness"
-        subtitle="Transform your health and wellbeing with premium wellness products and mindful living essentials"
+        title={t('wellness.title')}
+        subtitle={t('wellness.subtitle')}
         images={[wellnessHero1]}
-        ctaText="Start Your Wellness Journey"
+        ctaText={t('wellness.startJourney')}
         onCtaClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
       />
 
@@ -107,10 +107,10 @@ const Wellness = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-              Why Choose Wellness?
+              {t('wellness.whyChoose')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Invest in your health and happiness with scientifically-backed wellness products
+              {t('wellness.investInHealth')}
             </p>
           </div>
 
@@ -119,9 +119,9 @@ const Wellness = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-green-500 to-emerald-500 p-4">
                 <Heart className="w-full h-full text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Mental Clarity</h3>
+              <h3 className="text-xl font-semibold">{t('wellness.mentalClarity')}</h3>
               <p className="text-muted-foreground">
-                Improve focus, reduce stress, and enhance cognitive performance through mindful practices.
+                {t('wellness.mentalClarityDesc')}
               </p>
             </div>
 
@@ -129,9 +129,9 @@ const Wellness = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-4">
                 <Heart className="w-full h-full text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Physical Strength</h3>
+              <h3 className="text-xl font-semibold">{t('wellness.physicalStrength')}</h3>
               <p className="text-muted-foreground">
-                Build muscle, increase flexibility, and boost energy levels with the right fitness tools.
+                {t('wellness.physicalStrengthDesc')}
               </p>
             </div>
 
@@ -139,9 +139,9 @@ const Wellness = () => {
               <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 p-4">
                 <Heart className="w-full h-full text-white" />
               </div>
-              <h3 className="text-xl font-semibold">Inner Peace</h3>
+              <h3 className="text-xl font-semibold">{t('wellness.innerPeace')}</h3>
               <p className="text-muted-foreground">
-                Find balance and tranquility through meditation, aromatherapy, and mindful living.
+                {t('wellness.innerPeaceDesc')}
               </p>
             </div>
           </div>
@@ -155,10 +155,10 @@ const Wellness = () => {
           <div className="mb-12 space-y-6 reveal-up">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-                Wellness Essentials
+                {t('wellness.essentials')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Curated products for your mind, body, and soul
+                {t('wellness.curatedProducts')}
               </p>
             </div>
 
@@ -168,7 +168,7 @@ const Wellness = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Search wellness products..."
+                  placeholder={t('wellness.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary"
@@ -182,7 +182,7 @@ const Wellness = () => {
                   className="flex items-center gap-2"
                 >
                   <Filter className="w-4 h-4" />
-                  Filter
+                  {t('common.filter')}
                 </Button>
                 <div className="flex rounded-lg border border-border overflow-hidden">
                   <Button
@@ -210,7 +210,7 @@ const Wellness = () => {
           {loading ? (
             <div className="text-center py-12">
               <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading products...</p>
+              <p className="text-muted-foreground">{t('common.loadingProducts')}</p>
             </div>
           ) : (
             <div className={`grid gap-8 ${
@@ -242,7 +242,7 @@ const Wellness = () => {
           {!loading && filteredProducts.length === 0 && (
             <div className="text-center py-12 reveal-up">
               <p className="text-xl text-muted-foreground">
-                No products found matching your search.
+                {t('common.noProductsFound')}
               </p>
             </div>
           )}

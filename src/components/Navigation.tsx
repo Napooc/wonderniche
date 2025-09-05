@@ -5,6 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useAuth } from '@/contexts/AuthContext';
 import { useTranslation } from '@/contexts/TranslationContext';
 import LanguagePicker from '@/components/LanguagePicker';
+import MobileLanguagePicker from '@/components/MobileLanguagePicker';
 import { Menu, X, Settings, LogIn } from 'lucide-react';
 
 const Navigation = () => {
@@ -95,7 +96,7 @@ const Navigation = () => {
                 <Menu size={24} />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="glass-card w-72">
+            <SheetContent side="right" className="glass-card w-80 max-w-[90vw]">
               <div className="flex items-center space-x-3 mb-8">
                 <img 
                   src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
@@ -121,9 +122,9 @@ const Navigation = () => {
 
               {/* Mobile Language Picker and Auth Links */}
               <div className="pt-6 border-t border-border/30 mt-6 space-y-4">
-                <div className="flex items-center justify-between px-4">
-                  <span className="text-sm font-medium text-muted-foreground">Language</span>
-                  <LanguagePicker />
+                <div className="px-4">
+                  <span className="text-sm font-medium text-muted-foreground mb-3 block">Language</span>
+                  <MobileLanguagePicker onLanguageChange={() => setIsOpen(false)} />
                 </div>
                 
                 {user && (

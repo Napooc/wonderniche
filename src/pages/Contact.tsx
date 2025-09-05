@@ -2,8 +2,11 @@ import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { useTranslation } from '@/contexts/TranslationContext';
 import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Send, Hash } from 'lucide-react';
 const Contact = () => {
+  const { t } = useTranslation();
+  
   // Reveal animations on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -22,61 +25,61 @@ const Contact = () => {
   }, []);
   const contactInfo = [{
     icon: Mail,
-    title: 'Email Us',
-    details: 'hello@vibeniche.com',
-    subtitle: 'We reply within 24 hours',
+    title: t('contact.emailUs'),
+    details: t('contact.emailAddress'),
+    subtitle: t('contact.emailReply'),
     action: 'mailto:hello@vibeniche.com'
   }, {
     icon: Clock,
-    title: '24/7 Support',
-    details: 'Always Available',
-    subtitle: 'Round-the-clock assistance',
+    title: t('contact.support247'),
+    details: t('contact.alwaysAvailable'),
+    subtitle: t('contact.roundTheClock'),
     action: null
   }];
   const socialLinks = [{
     icon: Send,
-    name: 'Telegram',
+    name: t('contact.telegram'),
     url: 'https://t.me/+212701420239'
   }, {
     icon: 'pinterest',
-    name: 'Pinterest',
+    name: t('contact.pinterest'),
     url: 'https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714'
   }];
   const companyStats = [{
     icon: Users,
-    label: 'Happy Customers',
-    value: '50,000+'
+    label: t('contact.happyCustomers'),
+    value: t('contact.happyCustomersCount')
   }, {
     icon: Award,
-    label: 'Products Curated',
-    value: '2,500+'
+    label: t('contact.productsLabel'),
+    value: t('contact.productsCurated')
   }, {
     icon: Shield,
-    label: 'Years of Trust',
-    value: '9+'
+    label: t('contact.yearsLabel'),
+    value: t('contact.yearsOfTrust')
   }, {
     icon: Heart,
-    label: 'Customer Satisfaction',
-    value: '98%'
+    label: t('contact.satisfactionLabel'),
+    value: t('contact.customerSatisfaction')
   }];
   const faqs = [{
-    question: "What is affiliate marketing and how does VibeNiche work?",
-    answer: "VibeNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you."
+    question: t('contact.faq1.question'),
+    answer: t('contact.faq1.answer')
   }, {
-    question: "What beauty products and brands do you recommend?",
-    answer: "Our beauty category features premium skincare, makeup, and beauty tools from top-rated brands. We focus on products with proven results, clean ingredients, and excellent customer reviews across anti-aging, skincare routines, makeup essentials, and beauty devices."
+    question: t('contact.faq2.question'),
+    answer: t('contact.faq2.answer')
   }, {
-    question: "How do you curate travel gear and experiences?",
-    answer: "Our travel experts test and review luggage, travel accessories, booking platforms, and travel experiences. We partner with trusted travel brands to bring you exclusive deals on everything from luxury accommodations to essential travel gear for modern explorers."
+    question: t('contact.faq3.question'),
+    answer: t('contact.faq3.answer')
   }, {
-    question: "What wellness and lifestyle products do you feature?",
-    answer: "We specialize in fitness equipment, nutrition supplements, mindfulness products, home decor, and smart gadgets. Our wellness category focuses on scientifically-backed products that enhance mental clarity, physical strength, and overall wellbeing for a balanced lifestyle."
+    question: t('contact.faq4.question'),
+    answer: t('contact.faq4.answer')
   }, {
-    question: "How do I know if a product recommendation is genuine?",
-    answer: "Every product we feature goes through rigorous testing by our expert team. We only recommend products we genuinely believe in and would use ourselves. Our affiliate partnerships never influence our honest reviews and ratings."
+    question: t('contact.faq5.question'),
+    answer: t('contact.faq5.answer')
   }, {
-    question: "Do you offer exclusive deals through your affiliate partnerships?",
-    answer: "Yes! We negotiate exclusive discounts, early access to sales, and special bundles with our brand partners. Subscribers get first access to these premium deals across all our lifestyle categories."
+    question: t('contact.faq6.question'),
+    answer: t('contact.faq6.answer')
   }];
   return <div className="min-h-screen">
       <Navigation />
@@ -103,16 +106,15 @@ const Contact = () => {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <div className="space-y-6 animate-fade-in">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight gradient-text">
-              Connect With VibeNiche
+              {t('contact.title')}
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Your trusted partner in discovering the finest lifestyle products. 
-              We're here to help you live your best life with curated excellence.
+              {t('contact.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
               <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:hello@vibeniche.com'}>
                 <Mail className="w-5 h-5 mr-2" />
-                Email Us
+                {t('contact.emailUs')}
               </Button>
               
             </div>
@@ -153,10 +155,10 @@ const Contact = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16 reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
-              Get in Touch
+              {t('contact.getInTouch')}
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Choose the method that works best for you. We're here to help with any questions about our products or services.
+              {t('contact.chooseBestMethod')}
             </p>
           </div>
 
@@ -185,24 +187,20 @@ const Contact = () => {
             <Card className="glass-card p-8 reveal-up">
               <div className="flex items-center mb-6">
                 <Globe className="w-8 h-8 text-primary mr-3" />
-                <h3 className="text-2xl font-bold">About VibeNiche</h3>
+                <h3 className="text-2xl font-bold">{t('contact.aboutVibeNiche')}</h3>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Founded in 2016, VibeNiche has been your trusted curator of lifestyle excellence. 
-                  We specialize in discovering and sharing the finest products across beauty, travel, 
-                  wellness, and lifestyle categories.
+                  {t('contact.foundedDescription')}
                 </p>
                 <p>
-                  Our team of experts carefully selects each product to ensure it meets our high 
-                  standards for quality, innovation, and value. We believe everyone deserves access 
-                  to products that enhance their daily life.
+                  {t('contact.teamExperts')}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-6">
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Beauty</span>
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Travel</span>
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Wellness</span>
-                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Lifestyle</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">{t('nav.beauty')}</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">{t('nav.travel')}</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">{t('nav.wellness')}</span>
+                  <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">{t('contact.lifestyle')}</span>
                 </div>
               </div>
             </Card>
@@ -210,24 +208,24 @@ const Contact = () => {
             <Card className="glass-card p-8 reveal-up">
               <div className="flex items-center mb-6">
                 <MessageCircle className="w-8 h-8 text-primary mr-3" />
-                <h3 className="text-2xl font-bold">Customer Support</h3>
+                <h3 className="text-2xl font-bold">{t('contact.customerSupport')}</h3>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Need help? We’ve got you. Our support team is always available via email, making sure you get quick, clear, and caring assistance every time — because your experience matters.
+                  {t('contact.dedicatedSupport')}
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                    <span>Average response time: Under 2 hours</span>
+                    <span>{t('contact.averageResponse')}</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-                    <span>Customer satisfaction: 98% positive ratings</span>
+                    <span>{t('contact.positiveRatings')}</span>
                   </div>
                   <div className="flex items-center">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
-                    <span>Multi-language support available</span>
+                    <span>{t('contact.multiLanguage')}</span>
                   </div>
                 </div>
               </div>
@@ -241,10 +239,10 @@ const Contact = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
-              Follow Our Journey
+              {t('contact.followJourney')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Stay connected and discover the latest products, tips, and lifestyle inspiration
+              {t('contact.stayConnected')}
             </p>
           </div>
 
@@ -260,7 +258,7 @@ const Contact = () => {
                     {social.name}
                   </h4>
                   <p className="text-sm text-muted-foreground">
-                    Follow us
+                    {t('contact.followUs')}
                   </p>
                 </Card>;
           })}
@@ -273,10 +271,10 @@ const Contact = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
-              Frequently Asked Questions
+              {t('contact.faq')}
             </h2>
             <p className="text-lg text-muted-foreground">
-              Quick answers to common questions about our products and services
+              {t('contact.quickAnswers')}
             </p>
           </div>
 
@@ -298,16 +296,15 @@ const Contact = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <div className="reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-6">
-              Ready to Start Your Journey?
+              {t('contact.readyStart')}
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust VibeNiche for their lifestyle needs. 
-              Discover products that will transform your daily routine.
+              {t('contact.joinThousands')}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:hello@vibeniche.com?subject=Partnership Inquiry'}>
-                Partner With Us
+                {t('contact.partnerWithUs')}
               </Button>
             </div>
           </div>

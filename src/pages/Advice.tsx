@@ -11,7 +11,7 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import { generateAdviceSEO } from '@/utils/seo';
 import adviceHero2 from '@/assets/advice-hero-2.jpg';
 const Advice = () => {
-  const { currentLanguage } = useTranslation();
+  const { currentLanguage, t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
@@ -68,23 +68,23 @@ const Advice = () => {
   }, []);
   const adviceCategories = [{
     icon: Brain,
-    title: "Decision Making",
-    description: "Expert guidance for life's important choices",
+    title: t('advice.decisionMaking'),
+    description: t('advice.decisionMakingDesc'),
     color: "text-blue-400"
   }, {
     icon: Lightbulb,
-    title: "Problem Solving",
-    description: "Creative solutions to everyday challenges",
+    title: t('advice.problemSolving'),
+    description: t('advice.problemSolvingDesc'),
     color: "text-yellow-400"
   }, {
     icon: Target,
-    title: "Goal Achievement",
-    description: "Strategic planning for personal success",
+    title: t('advice.goalAchievement'),
+    description: t('advice.goalAchievementDesc'),
     color: "text-green-400"
   }, {
     icon: TrendingUp,
-    title: "Growth Mindset",
-    description: "Personal development and continuous improvement",
+    title: t('advice.growthMindset'),
+    description: t('advice.growthMindsetDesc'),
     color: "text-purple-400"
   }];
   return <div className="min-h-screen">
@@ -100,7 +100,7 @@ const Advice = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <CategoryHero title="Expert Advice" subtitle="Curated wisdom and actionable insights from industry experts and thought leaders" images={[adviceHero2]} ctaText="Explore Expert Guidance" onCtaClick={() => document.getElementById('products')?.scrollIntoView({
+      <CategoryHero title={t('advice.title')} subtitle={t('advice.subtitle')} images={[adviceHero2]} ctaText={t('advice.exploreGuidance')} onCtaClick={() => document.getElementById('products')?.scrollIntoView({
       behavior: 'smooth'
     })} />
 
@@ -109,10 +109,10 @@ const Advice = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 reveal-up">
             <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
-              Areas of Expertise
+              {t('advice.areasOfExpertise')}
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Professional guidance across multiple domains
+              {t('advice.professionalGuidance')}
             </p>
           </div>
 
@@ -145,10 +145,10 @@ const Advice = () => {
           <div className="mb-12 space-y-6 reveal-up">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-                Expert Recommendations
+                {t('advice.expertRecommendations')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Carefully curated advice and resources from trusted experts
+                {t('advice.curatedAdvice')}
               </p>
             </div>
 
@@ -156,13 +156,13 @@ const Advice = () => {
             <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                <input type="text" placeholder="Search advice and resources..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
+                <input type="text" placeholder={t('advice.searchPlaceholder')} value={searchTerm} onChange={e => setSearchTerm(e.target.value)} className="w-full pl-10 pr-4 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary" />
               </div>
 
               <div className="flex items-center gap-2">
                 <Button variant="outline" size="sm" className="flex items-center gap-2">
                   <Filter className="w-4 h-4" />
-                  Filter
+                  {t('common.filter')}
                 </Button>
                 <div className="flex rounded-lg border border-border overflow-hidden">
                   <Button variant={viewMode === 'grid' ? 'default' : 'ghost'} size="sm" onClick={() => setViewMode('grid')} className="rounded-none">
@@ -179,7 +179,7 @@ const Advice = () => {
           {/* Products Grid */}
           {loading ? <div className="text-center py-12">
               <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading advice resources...</p>
+              <p className="text-muted-foreground">{t('advice.loadingResources')}</p>
             </div> : <div className={`grid gap-8 ${viewMode === 'grid' ? 'md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 max-w-4xl mx-auto'}`}>
               {filteredProducts.map((product, index) => <Link key={product.id} to={`/product/${product.id}`} className={`reveal-up stagger-${index % 4 + 1} block transition-transform hover:scale-[1.02]`}>
                   <ProductCard id={product.id} title={product.name} description={product.short_description || product.description} rating={product.rating || 4.5} reviews={product.reviews_count || 0} image={product.image_url || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop'} category="Advice" affiliateUrl={product.affiliate_url} isNew={product.is_featured} />
@@ -190,10 +190,10 @@ const Advice = () => {
           {!loading && filteredProducts.length === 0 && <div className="text-center py-12 reveal-up">
               <Brain className="w-16 h-16 mx-auto text-muted-foreground mb-4" />
               <p className="text-xl text-muted-foreground mb-2">
-                No advice resources found matching your search.
+                {t('advice.noResourcesFound')}
               </p>
               <p className="text-muted-foreground">
-                Try adjusting your search terms or explore our expert categories above.
+                {t('advice.tryAdjustingSearch')}
               </p>
             </div>}
         </div>

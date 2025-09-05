@@ -1,256 +1,404 @@
 export default {
-  // Navigation
-  nav: {
-    home: '首页',
-    about: '关于我们',
-    beauty: '美容',
-    travel: '旅行',
-    wellness: '健康',
-    advice: '建议',
-    contact: '联系',
-    admin: '管理员',
-    signedInAs: '已登录为'
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "beauty": "美容",
+    "travel": "旅行",
+    "wellness": "健康",
+    "advice": "建议",
+    "contact": "联系",
+    "admin": "管理员",
+    "signedInAs": "已登录为"
   },
-
-  // Hero Section
-  hero: {
-    title: '发现您的完美氛围',
-    subtitle: '精选的体验和产品，匹配您独特的生活方式',
-    exploreButton: '探索分类',
-    learnMoreButton: '了解更多',
-    ourStoryButton: '我们的故事'
+  "hero": {
+    "title": "发现您的完美氛围",
+    "subtitle": "精选的体验和产品，匹配您独特的生活方式",
+    "exploreButton": "探索分类",
+    "learnMoreButton": "了解更多",
+    "ourStoryButton": "我们的故事"
   },
-
-  // Home Page
-  home: {
-    exploreCategories: '探索分类',
-    discoverCurated: '在我们精心策划的市场中发现您理想的生活方式产品',
-    
-    beauty: {
-      title: '美容护肤',
-      description: '为您的日常护理提供优质美容产品和护肤必需品'
+  "home": {
+    "exploreCategories": "探索分类",
+    "discoverCurated": "在我们精心策划的市场中发现您理想的生活方式产品",
+    "beauty": {
+      "title": "美容护肤",
+      "description": "为您的日常护理提供优质美容产品和护肤必需品"
     },
-    travel: {
-      title: '旅行冒险',
-      description: '为您的下一次冒险提供必需装备和配件'
+    "travel": {
+      "title": "旅行冒险",
+      "description": "为您的下一次冒险提供必需装备和配件"
     },
-    wellness: {
-      title: '健康养生',
-      description: '支持您健康之旅的产品和工具'
+    "wellness": {
+      "title": "健康养生",
+      "description": "支持您健康之旅的产品和工具"
     },
-    lifestyle: {
-      title: '生活方式',
-      description: '提升您日常生活的优质生活方式产品'
+    "lifestyle": {
+      "title": "生活方式",
+      "description": "提升您日常生活的优质生活方式产品"
     },
-
-    liveMetrics: '实时指标',
-    trustedBy: '深受信赖',
-    thousands: '成千上万的人',
-    realMetrics: '用我们的真实指标证明',
-    happyCustomers: '满意客户',
-    growingDaily: '每日增长',
-    thisMonth: '本月',
-    satisfactionRate: '满意度',
-    trustRating: '信任评分',
-    basedOnReviews: '基于评价',
-    premiumProducts: '优质产品',
-    supportAvailable: '支援可用',
-    affiliateRewards: '联盟奖励',
-    countriesServed: '服务国家',
-    uptimeGuarantee: '正常运行时间保证',
-    verifiedExcellence: '验证的卓越性',
-    whyTrustUs: '为什么信任我们',
-    certifiedPartnerships: '认证的合作伙伴关系和验证的品质保证',
-    certified: '已认证',
-    verifiedPartner: '验证合作伙伴',
-    officialMember: '官方会员',
-    secure: '安全',
-    securePlatform: '安全平台',
-    sslEncrypted: 'SSL加密',
-    premium: '高级',
-    premiumBrands: '高级品牌',
-    exclusivePartnerships: '独家合作伙伴关系',
-    verified: '已验证',
-    realReviews: '真实评价',
-    authenticFeedback: '真实反馈',
-    featuredProducts: '精选产品',
-    handPicked: '精选产品，改变您的生活'
+    "liveMetrics": "实时指标",
+    "trustedBy": "深受信赖",
+    "thousands": "成千上万的人",
+    "realMetrics": "用我们的真实指标证明",
+    "happyCustomers": "满意客户",
+    "growingDaily": "每日增长",
+    "thisMonth": "本月",
+    "satisfactionRate": "满意度",
+    "trustRating": "信任评分",
+    "basedOnReviews": "基于评价",
+    "premiumProducts": "优质产品",
+    "supportAvailable": "支援可用",
+    "affiliateRewards": "联盟奖励",
+    "countriesServed": "服务国家",
+    "uptimeGuarantee": "正常运行时间保证",
+    "verifiedExcellence": "验证的卓越性",
+    "whyTrustUs": "为什么信任我们",
+    "certifiedPartnerships": "认证的合作伙伴关系和验证的品质保证",
+    "certified": "已认证",
+    "verifiedPartner": "验证合作伙伴",
+    "officialMember": "官方会员",
+    "secure": "安全",
+    "securePlatform": "安全平台",
+    "sslEncrypted": "SSL加密",
+    "premium": "高级",
+    "premiumBrands": "高级品牌",
+    "exclusivePartnerships": "独家合作伙伴关系",
+    "verified": "已验证",
+    "realReviews": "真实评价",
+    "authenticFeedback": "真实反馈",
+    "featuredProducts": "精选产品",
+    "handPicked": "精选产品，改变您的生活"
   },
-
-  // Categories
-  categories: {
-    beauty: {
-      title: '美容护肤',
-      description: '为您的日常护理提供优质美容产品和护肤必需品',
-      subtitle: '增强您的自然美丽'
+  "categories": {
+    "beauty": {
+      "title": "美容护肤",
+      "description": "为您的日常护理提供优质美容产品和护肤必需品",
+      "subtitle": "增强您的自然美丽"
     },
-    travel: {
-      title: '旅行冒险',
-      description: '为您的下一次冒险提供必需装备和配件',
-      subtitle: '时尚地探索世界'
+    "travel": {
+      "title": "旅行冒险",
+      "description": "为您的下一次冒险提供必需装备和配件",
+      "subtitle": "时尚地探索世界"
     },
-    wellness: {
-      title: '健康养生',
-      description: '支持您健康之旅的产品和工具',
-      subtitle: '呵护您的健康'
+    "wellness": {
+      "title": "健康养生",
+      "description": "支持您健康之旅的产品和工具",
+      "subtitle": "呵护您的健康"
     },
-    advice: {
-      title: '专家建议',
-      description: '来自行业专家的专业见解和推荐',
-      subtitle: '向最好的专家学习'
+    "advice": {
+      "title": "专家建议",
+      "description": "来自行业专家的专业见解和推荐",
+      "subtitle": "向最好的专家学习"
     }
   },
-
-  // Product Card
-  product: {
-    viewDetails: '查看详情',
-    buyNow: '立即购买',
-    rating: '评分',
-    reviews: '评价',
-    features: '特点',
-    originalPrice: '原价',
-    currentPrice: '现价',
-    addToCart: '加入购物车',
-    outOfStock: '缺货'
+  "product": {
+    "viewDetails": "查看详情",
+    "buyNow": "立即购买",
+    "rating": "评分",
+    "reviews": "评价",
+    "features": "特点",
+    "originalPrice": "原价",
+    "currentPrice": "现价",
+    "addToCart": "加入购物车",
+    "outOfStock": "缺货"
   },
-
-  // About Page
-  about: {
-    title: '关于VibeNiche',
-    subtitle: '您发现卓越产品和体验的可信伙伴',
-    mission: {
-      title: '我们的使命',
-      description: '我们相信每个人都应该找到真正与他们的生活方式产生共鸣的产品。我们的使命是精选最优质的美容、旅行、健康和生活方式产品。'
-    },
-    story: {
-      title: '我们的故事',
-      description: 'VibeNiche凭借对质量和真实性的热情而成立，源于创建一个平台的愿望，让挑剔的个人能够发现与他们价值观一致的产品。'
-    },
-    team: {
-      title: '我们的团队',
-      description: '我们的团队由行业专家、产品策展人和生活方式爱好者组成，致力于为您带来最佳推荐和见解。'
+  "auth": {
+    "signIn": "登录",
+    "signUp": "注册",
+    "signOut": "退出",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "没有账户？",
+    "hasAccount": "已有账户？",
+    "signInSuccess": "登录成功！",
+    "signUpSuccess": "账户创建成功！",
+    "signOutSuccess": "退出成功！",
+    "invalidCredentials": "无效的邮箱或密码",
+    "weakPassword": "密码至少需要6个字符",
+    "emailInUse": "邮箱已被使用",
+    "adminLogin": "管理员登录",
+    "username": "用户名"
+  },
+  "admin": {
+    "dashboard": "管理员仪表板",
+    "products": "产品",
+    "addProduct": "添加新产品",
+    "editProduct": "编辑产品",
+    "deleteProduct": "删除产品",
+    "confirmDelete": "您确定要删除此产品吗？",
+    "productDeleted": "产品删除成功",
+    "productUpdated": "产品更新成功",
+    "productCreated": "产品创建成功",
+    "form": {
+      "name": "产品名称",
+      "description": "描述",
+      "shortDescription": "简短描述",
+      "price": "价格",
+      "originalPrice": "原价",
+      "category": "类别",
+      "imageUrl": "图片URL",
+      "affiliateUrl": "联盟URL",
+      "tags": "标签（逗号分隔）",
+      "features": "特点（逗号分隔）",
+      "rating": "评分",
+      "reviewsCount": "评价数",
+      "isActive": "激活",
+      "isFeatured": "推荐",
+      "save": "保存产品",
+      "cancel": "取消"
     }
   },
-
-  // Contact Page
-  contact: {
-    title: '联系我们',
-    subtitle: '与我们的团队取得联系',
-    form: {
-      name: '您的姓名',
-      email: '您的邮箱',
-      subject: '主题',
-      message: '您的留言',
-      send: '发送消息',
-      sending: '发送中...',
-      success: '消息发送成功！',
-      error: '发送消息失败。请重试。'
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "save": "保存",
+    "back": "返回",
+    "next": "下一个",
+    "previous": "上一个",
+    "close": "关闭",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "clear": "清除",
+    "apply": "应用",
+    "reset": "重置",
+    "selectLanguage": "选择语言"
+  },
+  "footer": {
+    "description": "发现匹配您独特生活方式的产品。",
+    "quickLinks": "快速链接",
+    "categories": "分类",
+    "support": "支持",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "copyright": "© 2024 VibeNiche. 保留所有权利。"
+  },
+  "about": {
+    "title": "关于VibeNiche",
+    "subtitle": "我们不仅仅是另一个联盟营销市场。我们是生活方式策展人、趋势发现者和梦想实现者，将您与将平凡时刻转化为非凡体验的产品连接起来。",
+    "originStory": "我们的起源故事",
+    "bornFromPassion": "源于激情",
+    "simpleFrustration": "一切都始于一个简单的挫折：无休止地滚动浏览无数产品，不确定什么真正有效。我们知道一定有更好的方法来找到真正兑现承诺的优质生活方式必需品。",
+    "vibeNicheBorn": "这就是VibeNiche诞生的原因 — 一个值得信赖的目的地，美容爱好者、健康追求者和旅行爱好者可以通过透明、诚实的联盟推荐发现精心挑选的高品质产品。",
+    "todayProud": "今天，我们很自豪成为梦想家与优质品牌之间的桥梁，通过有意义的联系和正确执行的联盟营销为我们的成长社区和值得信赖的合作伙伴创造真正的价值。",
+    "founded": "成立",
+    "customers": "客户",
+    "brandPartners": "品牌合作伙伴",
+    "verifiedQuality": "验证质量",
+    "everyProductTested": "每个产品都经过测试",
+    "ourValues": "我们的价值观",
+    "principlesGuide": "指导我们做出的每个决定和建立的每个合作伙伴关系的原则",
+    "authenticConnections": "真实连接",
+    "genuineRelationships": "我们相信通过诚实的推荐与品牌和客户建立真正的关系。",
+    "qualityFirst": "质量第一",
+    "rigorousStandards": "我们展示的每个产品都符合我们对卓越和客户满意度的严格标准。",
+    "innovationDriven": "创新驱动",
+    "stayAhead": "我们保持领先趋势，为您带来生活方式创新的最新和最好的产品。",
+    "globalImpact": "全球影响",
+    "connectsWorldwide": "我们的平台将全球的生活方式爱好者与他们喜爱的优质品牌连接起来。",
+    "ourJourney": "我们的旅程",
+    "keyMilestones": "我们革命化联盟营销使命中的关键里程碑",
+    "vibeNicheFounded": "VibeNiche成立",
+    "startedVision": "以革命化联盟营销的愿景开始",
+    "communityMilestone": "50K+社区",
+    "firstMajor": "达到满意客户的第一个重要里程碑",
+    "premiumPartnerships": "优质合作伙伴关系",
+    "exclusiveRelationships": "与顶级生活方式品牌建立独家关系",
+    "globalExpansion": "全球扩张",
+    "expandingReach": "扩大我们的覆盖范围，为全球生活方式爱好者提供服务",
+    "joinMission": "加入我们的使命",
+    "bePartCommunity": "成为重视真实性、质量和有意义联系的社区的一部分。今天发现您的下一个喜爱产品。",
+    "contactUs": "联系我们",
+    "curatingPremium": "通过真实的联盟合作伙伴关系策划优质生活方式体验。",
+    "team": {
+      "sarah": {
+        "name": "Sarah Johnson",
+        "role": "创始人兼CEO",
+        "quote": "在生活方式梦想家和优质品牌之间建立桥梁。"
+      },
+      "marcus": {
+        "name": "Marcus Chen",
+        "role": "合作伙伴关系负责人",
+        "quote": "策划创造真实价值的关系。"
+      },
+      "elena": {
+        "name": "Elena Rodriguez",
+        "role": "创意总监",
+        "quote": "设计是与灵魂对话的语言。"
+      }
+    }
+  },
+  "contact": {
+    "title": "与VibeNiche联系",
+    "subtitle": "您发现最佳生活方式产品的值得信赖的合作伙伴。我们在这里帮助您以策划的卓越性过上最好的生活。",
+    "emailUs": "发送邮件",
+    "support247": "24/7支持",
+    "alwaysAvailable": "始终可用",
+    "roundTheClock": "全天候协助",
+    "telegram": "Telegram",
+    "pinterest": "Pinterest",
+    "callNow": "立即致电",
+    "happyCustomersCount": "50,000+",
+    "happyCustomers": "满意客户",
+    "productsCurated": "2,500+",
+    "productsLabel": "策划产品",
+    "yearsOfTrust": "9+",
+    "yearsLabel": "信任年数",
+    "customerSatisfaction": "98%",
+    "satisfactionLabel": "客户满意度",
+    "getInTouch": "取得联系",
+    "chooseBestMethod": "选择最适合您的方法。我们在这里帮助您解决有关我们产品或服务的任何问题。",
+    "emailAddress": "hello@vibeniche.com",
+    "emailReply": "我们在24小时内回复",
+    "phoneNumber": "+1 (555) 123-4567",
+    "phoneHours": "周一至周五 9AM-6PM EST",
+    "visitAddress": "123 Lifestyle Avenue",
+    "cityState": "New York, NY 10001",
+    "businessHours": "营业时间",
+    "mondayFriday": "周一 - 周五",
+    "workingHours": "9:00 AM - 6:00 PM EST",
+    "aboutVibeNiche": "关于VibeNiche",
+    "foundedDescription": "成立于2016年，VibeNiche一直是您值得信赖的生活方式卓越策展人。我们专注于发现和分享美容、旅行、健康和生活方式类别中的最佳产品。",
+    "teamExperts": "我们的专家团队精心选择每个产品，确保它符合我们对质量、创新和价值的严格标准。我们相信每个人都应该获得能够改善日常生活的产品。",
+    "lifestyle": "生活方式",
+    "customerSupport": "客户支持",
+    "dedicatedSupport": "需要帮助吗？我们为您服务。我们的支持团队始终通过邮件提供帮助，确保您每次都能获得快速、清晰和关怀的协助 — 因为您的体验很重要。",
+    "averageResponse": "平均响应时间：2小时内",
+    "positiveRatings": "客户满意度：98%正面评价",
+    "multiLanguage": "多语言支持可用",
+    "followJourney": "关注我们的旅程",
+    "stayConnected": "保持联系，发现最新产品、技巧和生活方式灵感",
+    "followUs": "关注我们",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "faq": "常见问题",
+    "quickAnswers": "关于我们产品和服务的常见问题的快速答案",
+    "faq1": {
+      "question": "什么是联盟营销，VibeNiche如何运作？",
+      "answer": "VibeNiche是一个优质的联盟营销平台，将您与最佳生活方式产品连接起来。当您通过我们的策划推荐购买时，我们获得佣金，使我们能够提供诚实的评论并免费为您维护我们的平台。"
     },
-    info: {
-      email: '邮件联系',
-      phone: '电话联系',
-      address: '地址访问',
-      hours: '营业时间'
+    "faq2": {
+      "question": "您推荐哪些美容产品和品牌？",
+      "answer": "我们的美容类别展示来自顶级品牌的高级护肤、化妆和美容工具。我们专注于具有经过验证的结果、清洁成分和优秀客户评价的产品，涵盖抗衰老、护肤程序、化妆必需品和美容设备。"
+    },
+    "faq3": {
+      "question": "您如何策划旅行装备和体验？",
+      "answer": "我们的旅行专家测试和评论行李、旅行配件、预订平台和旅行体验。我们与值得信赖的旅行品牌合作，为您提供从豪华住宿到现代探险家必备旅行装备的一切独家优惠。"
+    },
+    "faq4": {
+      "question": "您提供哪些健康和生活方式产品？",
+      "answer": "我们专注于健身设备、营养补充剂、正念产品、家居装饰和智能小工具。我们的健康类别专注于科学支持的产品，这些产品可以增强心理清晰度、身体力量和整体健康，实现平衡的生活方式。"
+    },
+    "faq5": {
+      "question": "我怎么知道产品推荐是真实的？",
+      "answer": "我们展示的每个产品都经过我们专家团队的严格测试。我们只推荐我们真正相信并会自己使用的产品。我们的联盟合作伙伴关系永远不会影响我们诚实的评论和评级。"
+    },
+    "faq6": {
+      "question": "您通过联盟合作伙伴关系提供独家优惠吗？",
+      "answer": "是的！我们与品牌合作伙伴协商独家折扣、销售早期访问和特别套装。订阅者可以优先访问我们所有生活方式类别的这些优质优惠。"
+    },
+    "readyStart": "准备开始您的旅程了吗？",
+    "joinThousands": "加入数千名满意客户，他们信任VibeNiche满足他们的生活方式需求。发现将改变您日常生活的产品。",
+    "exploreProducts": "探索产品",
+    "partnerWithUs": "与我们合作",
+    "form": {
+      "name": "您的姓名",
+      "email": "您的邮箱",
+      "subject": "主题",
+      "message": "您的消息",
+      "send": "发送消息",
+      "sending": "发送中...",
+      "success": "消息发送成功！",
+      "error": "消息发送失败。请重试。"
     }
   },
-
-  // Auth
-  auth: {
-    signIn: '登录',
-    signUp: '注册',
-    signOut: '退出',
-    email: '邮箱',
-    password: '密码',
-    confirmPassword: '确认密码',
-    forgotPassword: '忘记密码？',
-    noAccount: '没有账户？',
-    hasAccount: '已有账户？',
-    signInSuccess: '登录成功！',
-    signUpSuccess: '账户创建成功！',
-    signOutSuccess: '退出成功！',
-    invalidCredentials: '无效的邮箱或密码',
-    weakPassword: '密码至少需要6个字符',
-    emailInUse: '邮箱已被使用',
-    adminLogin: '管理员登录',
-    username: '用户名'
+  "testimonials": {
+    "title": "客户评价",
+    "subtitle": "了解为什么成千上万的客户信任VibeNiche满足他们的生活方式需求"
   },
-
-  // Admin Dashboard
-  admin: {
-    dashboard: '管理员仪表板',
-    products: '产品',
-    addProduct: '添加新产品',
-    editProduct: '编辑产品',
-    deleteProduct: '删除产品',
-    confirmDelete: '您确定要删除此产品吗？',
-    productDeleted: '产品删除成功',
-    productUpdated: '产品更新成功',
-    productCreated: '产品创建成功',
-    form: {
-      name: '产品名称',
-      description: '描述',
-      shortDescription: '简短描述',
-      price: '价格',
-      originalPrice: '原价',
-      category: '类别',
-      imageUrl: '图片URL',
-      affiliateUrl: '联盟URL',
-      tags: '标签（逗号分隔）',
-      features: '特点（逗号分隔）',
-      rating: '评分',
-      reviewsCount: '评价数',
-      isActive: '激活',
-      isFeatured: '推荐',
-      save: '保存产品',
-      cancel: '取消'
-    }
+  "notFound": {
+    "title": "404",
+    "subtitle": "哎呀！页面未找到",
+    "description": "您寻找的页面可能已被删除、重命名或暂时不可用。",
+    "goHome": "返回首页"
   },
-
-  // Common
-  common: {
-    loading: '加载中...',
-    error: '错误',
-    success: '成功',
-    cancel: '取消',
-    confirm: '确认',
-    delete: '删除',
-    edit: '编辑',
-    save: '保存',
-    back: '返回',
-    next: '下一个',
-    previous: '上一个',
-    close: '关闭',
-    search: '搜索',
-    filter: '筛选',
-    sort: '排序',
-    clear: '清除',
-    apply: '应用',
-    reset: '重置',
-    selectLanguage: '选择语言'
+  "travel": {
+    "title": "旅行必需品",
+    "subtitle": "为现代探险家和数字游民提供的高端旅行装备和配件",
+    "exploreGear": "探索旅行装备",
+    "premiumGear": "高端旅行装备",
+    "everythingNeeded": "您下一次冒险所需的一切",
+    "searchPlaceholder": "搜索旅行产品...",
+    "whyChoose": "为什么选择我们的旅行系列？",
+    "investInAdventure": "用为现代旅行者设计的耐用、创新装备投资您的冒险",
+    "luggageEssentials": "行李和包包",
+    "luggageDesc": "优质行李、背包和旅行包，经得起任何旅程的考验。",
+    "techGear": "科技和配件",
+    "techGearDesc": "在路上保持连接和有序的必备科技配件和小工具。",
+    "comfortItems": "舒适和健康",
+    "comfortDesc": "旅行舒适必需品，让每次旅程都更加愉快和放松。"
   },
-
-  // Footer
-  footer: {
-    description: '发现匹配您独特生活方式的产品。',
-    quickLinks: '快速链接',
-    categories: '分类',
-    support: '支持',
-    privacy: '隐私政策',
-    terms: '服务条款',
-    copyright: '© 2024 VibeNiche. 保留所有权利。'
+  "beauty": {
+    "title": "美容必需品",
+    "subtitle": "发现为现代生活方式精心策划的高端护肤、彩妆和美容工具",
+    "shopBeauty": "购买美容产品",
+    "premiumProducts": "高端美容产品",
+    "curatedCollection": "精心策划的高品质美容必需品系列",
+    "searchPlaceholder": "搜索美容产品...",
+    "whyChoose": "为什么选择我们的美容系列？",
+    "investInBeauty": "用科学支持的产品和专家推荐投资您的美容日常",
+    "skincareEssentials": "护肤必需品",
+    "skincareDesc": "为健康、容光焕发的肌肤提供持久一整天的优质护肤产品。",
+    "makeupMustHaves": "化妆必备品",
+    "makeupDesc": "专业级化妆工具和化妆品，实现完美妆容。",
+    "beautyTools": "美容工具",
+    "beautyToolsDesc": "高品质的刷子、设备和配件，在家也能获得专业效果。"
   },
-
-  // Testimonials
-  testimonials: {
-    title: '客户评价',
-    subtitle: '了解为什么成千上万的客户信任VibeNiche满足他们的生活方式需求'
+  "wellness": {
+    "title": "健康与健身",
+    "subtitle": "用高端健康产品和正念生活必需品改变您的健康和福祉",
+    "startJourney": "开始您的健康之旅",
+    "whyChoose": "为什么选择我们的旅行系列？",
+    "investInHealth": "用科学支持的健康产品投资您的健康和幸福",
+    "mentalClarity": "心理清晰度",
+    "mentalClarityDesc": "通过正念练习提高专注力，减少压力，增强认知表现。",
+    "physicalStrength": "身体力量",
+    "physicalStrengthDesc": "用正确的健身工具增强肌肉，提高柔韧性，提升能量水平。",
+    "innerPeace": "内心平静",
+    "innerPeaceDesc": "通过冥想、芳香疗法和正念生活找到平衡与宁静。",
+    "essentials": "健康必需品",
+    "curatedProducts": "为您的身心灵魂精心策划的产品",
+    "searchPlaceholder": "搜索健康产品..."
   },
-
-  // 404 Page
-  notFound: {
-    title: '404',
-    subtitle: '哎呀！页面未找到',
-    description: '您寻找的页面可能已被删除、重命名或暂时不可用。',
-    goHome: '返回首页'
+  "advice": {
+    "title": "专家建议",
+    "subtitle": "来自行业专家和思想领袖的精心策划的智慧和可操作的见解",
+    "exploreGuidance": "探索专家指导",
+    "areasOfExpertise": "专业领域",
+    "professionalGuidance": "跨多个领域的专业指导",
+    "decisionMaking": "决策制定",
+    "decisionMakingDesc": "人生重要选择的专家指导",
+    "problemSolving": "问题解决",
+    "problemSolvingDesc": "日常挑战的创意解决方案",
+    "goalAchievement": "目标实现",
+    "goalAchievementDesc": "个人成功的战略规划",
+    "growthMindset": "成长心态",
+    "growthMindsetDesc": "个人发展和持续改进",
+    "expertRecommendations": "专家推荐",
+    "curatedAdvice": "来自可信专家的精心策划的建议和资源",
+    "searchPlaceholder": "搜索建议和资源...",
+    "loadingResources": "正在加载建议资源...",
+    "noResourcesFound": "未找到与您的搜索匹配的建议资源。",
+    "tryAdjustingSearch": "尝试调整您的搜索词或探索上面的专家类别。"
   }
 };

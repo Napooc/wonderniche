@@ -6,13 +6,13 @@ import CategoryHero from '@/components/CategoryHero';
 import ProductCard from '@/components/ProductCard';
 import SEOComponent from '@/components/SEOComponent';
 import { Button } from '@/components/ui/button';
-import { Search, Filter, Grid, List } from 'lucide-react';
+import { Search, Filter, Grid, List, Sparkles, Palette, Scissors } from 'lucide-react';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { generateBeautySEO } from '@/utils/seo';
 import beautyHero1 from '@/assets/beauty-hero-1.jpg';
 
 const Beauty = () => {
-  const { currentLanguage } = useTranslation();
+  const { currentLanguage, t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState('grid');
   const [products, setProducts] = useState([]);
@@ -95,12 +95,58 @@ const Beauty = () => {
       
       {/* Hero Section */}
       <CategoryHero
-        title="Beauty Essentials"
-        subtitle="Discover premium skincare, makeup, and beauty tools curated for the modern lifestyle"
+        title={t('beauty.title')}
+        subtitle={t('beauty.subtitle')}
         images={[beautyHero1]}
-        ctaText="Shop Beauty"
+        ctaText={t('beauty.shopBeauty')}
         onCtaClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
       />
+
+      {/* Beauty Benefits Section */}
+      <section className="py-16 px-4 bg-card/30">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12 reveal-up">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text mb-4">
+              {t('beauty.whyChoose')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('beauty.investInBeauty')}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center space-y-4 reveal-up stagger-1">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-pink-500 to-rose-500 p-4">
+                <Sparkles className="w-full h-full text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">{t('beauty.skincareEssentials')}</h3>
+              <p className="text-muted-foreground">
+                {t('beauty.skincareDesc')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 reveal-up stagger-2">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 p-4">
+                <Palette className="w-full h-full text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">{t('beauty.makeupMustHaves')}</h3>
+              <p className="text-muted-foreground">
+                {t('beauty.makeupDesc')}
+              </p>
+            </div>
+
+            <div className="text-center space-y-4 reveal-up stagger-3">
+              <div className="w-16 h-16 mx-auto rounded-full bg-gradient-to-r from-amber-500 to-orange-500 p-4">
+                <Scissors className="w-full h-full text-white" />
+              </div>
+              <h3 className="text-xl font-semibold">{t('beauty.beautyTools')}</h3>
+              <p className="text-muted-foreground">
+                {t('beauty.beautyToolsDesc')}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Products Section */}
       <section id="products" className="py-20 px-4">
@@ -109,10 +155,10 @@ const Beauty = () => {
           <div className="mb-12 space-y-6 reveal-up">
             <div className="text-center">
               <h2 className="text-4xl md:text-5xl font-bold gradient-text mb-6">
-                Premium Beauty Products
+                {t('beauty.premiumProducts')}
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Curated collection of high-quality beauty essentials
+                {t('beauty.curatedCollection')}
               </p>
             </div>
 
@@ -122,7 +168,7 @@ const Beauty = () => {
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
                   type="text"
-                  placeholder="Search beauty products..."
+                  placeholder={t('beauty.searchPlaceholder')}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   className="w-full pl-10 pr-4 py-3 bg-input rounded-full text-foreground placeholder:text-muted-foreground border border-border focus:outline-none focus:ring-2 focus:ring-primary"
@@ -136,7 +182,7 @@ const Beauty = () => {
                   className="flex items-center gap-2"
                 >
                   <Filter className="w-4 h-4" />
-                  Filter
+                  {t('common.filter')}
                 </Button>
                 <div className="flex rounded-lg border border-border overflow-hidden">
                   <Button
@@ -164,7 +210,7 @@ const Beauty = () => {
           {loading ? (
             <div className="text-center py-12">
               <div className="animate-spin w-8 h-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Loading products...</p>
+              <p className="text-muted-foreground">{t('common.loadingProducts')}</p>
             </div>
           ) : (
             <div className={`grid gap-8 ${
@@ -196,7 +242,7 @@ const Beauty = () => {
           {!loading && filteredProducts.length === 0 && (
             <div className="text-center py-12 reveal-up">
               <p className="text-xl text-muted-foreground">
-                No products found matching your search.
+                {t('common.noProductsFound')}
               </p>
             </div>
           )}

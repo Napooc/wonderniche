@@ -1,265 +1,415 @@
 export default {
-  // Navigation
-  nav: {
-    home: 'Startseite',
-    about: 'Über uns',
-    beauty: 'Schönheit',
-    travel: 'Reisen',
-    wellness: 'Wellness',
-    advice: 'Beratung',
-    contact: 'Kontakt',
-    admin: 'Admin',
-    signedInAs: 'Angemeldet als'
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "beauty": "Schönheit",
+    "travel": "Reisen",
+    "wellness": "Wellness",
+    "advice": "Beratung",
+    "contact": "Kontakt",
+    "admin": "Admin",
+    "signedInAs": "Angemeldet als"
   },
-
-  // Hero Section
-  hero: {
-    title: 'VibeNiche - Premium Affiliate Lifestyle Marktplatz',
-    subtitle: 'Ihr vertrauenswürdiger Affiliate-Partner für Premium-Lifestyle-Produkte. Wir verbinden Sie mit exklusiven Marken aus den Bereichen Beauty, Travel, Wellness & Lifestyle - durch authentische Empfehlungen, die Sie lieben werden.',
-    exploreButton: 'Jetzt erkunden',
-    learnMoreButton: 'Story ansehen',
-    ourStoryButton: 'Unsere Geschichte'
+  "hero": {
+    "title": "VibeNiche - Premium Affiliate Lifestyle Marktplatz",
+    "subtitle": "Ihr vertrauenswürdiger Affiliate-Partner für Premium-Lifestyle-Produkte. Wir verbinden Sie mit exklusiven Marken aus den Bereichen Beauty, Travel, Wellness & Lifestyle - durch authentische Empfehlungen, die Sie lieben werden.",
+    "exploreButton": "Jetzt erkunden",
+    "learnMoreButton": "Story ansehen",
+    "ourStoryButton": "Unsere Geschichte"
   },
-
-  // Home Page Content
-  home: {
-    exploreCategories: 'Kategorien erkunden',
-    discoverCurated: 'Entdecken Sie kuratierte Sammlungen verschiedener Lifestyle-Kategorien',
-    beauty: {
-      title: 'Schönheit',
-      description: 'Premium-Hautpflege, Make-up und Beauty-Tools'
+  "home": {
+    "exploreCategories": "Kategorien erkunden",
+    "discoverCurated": "Entdecken Sie kuratierte Sammlungen verschiedener Lifestyle-Kategorien",
+    "beauty": {
+      "title": "Schönheit",
+      "description": "Premium-Hautpflege, Make-up und Beauty-Tools"
     },
-    travel: {
-      title: 'Reisen',
-      description: 'Luxus-Reiseausrüstung und Erlebnisse'
+    "travel": {
+      "title": "Reisen",
+      "description": "Luxus-Reiseausrüstung und Erlebnisse"
     },
-    wellness: {
-      title: 'Wellness',
-      description: 'Fitness-, Ernährungs- und Achtsamkeitsprodukte'
+    "wellness": {
+      "title": "Wellness",
+      "description": "Fitness-, Ernährungs- und Achtsamkeitsprodukte"
     },
-    lifestyle: {
-      title: 'Lifestyle',
-      description: 'Wohnaccessoires, Gadgets und Wohn-Essentials'
+    "lifestyle": {
+      "title": "Lifestyle",
+      "description": "Wohnaccessoires, Gadgets und Wohn-Essentials"
     },
-    liveMetrics: 'LIVE IMPACT METRIKEN',
-    trustedBy: 'Vertraut von',
-    thousands: 'Tausenden',
-    realMetrics: 'Echte Metriken von echten Kunden, die ihren perfekten Lifestyle durch unseren kuratierten Marktplatz entdeckt haben',
-    happyCustomers: 'Zufriedene Kunden',
-    growingDaily: 'Täglich wachsend in über 40 Ländern',
-    thisMonth: '+1.247 diesen Monat',
-    satisfactionRate: 'Zufriedenheitsrate',
-    trustRating: 'Vertrauensbewertung',
-    basedOnReviews: 'Basierend auf 12.847 verifizierten Bewertungen',
-    premiumProducts: 'Premium-Produkte',
-    supportAvailable: 'Support verfügbar',
-    affiliateRewards: 'Affiliate-Belohnungen',
-    countriesServed: 'Länder bedient',
-    uptimeGuarantee: 'Verfügbarkeitsgarantie',
-    verifiedExcellence: 'VERIFIZIERTE EXZELLENZ',
-    whyTrustUs: 'Warum Kunden uns vertrauen',
-    certifiedPartnerships: 'Zertifizierte Partnerschaften und bewährte Sicherheitsstandards, die Ihr Erlebnis schützen',
-    verifiedPartner: 'Verifizierter Partner',
-    officialMember: 'Offizielles Netzwerkmitglied',
-    securePlatform: 'Sichere Plattform',
-    sslEncrypted: 'SSL-verschlüsselte Transaktionen',
-    premiumBrands: 'Premium-Marken',
-    exclusivePartnerships: 'Exklusive Partnerschaften',
-    realReviews: 'Echte Bewertungen',
-    authenticFeedback: '100% authentisches Feedback',
-    certified: 'ZERTIFIZIERT',
-    secure: 'SICHER',
-    premium: 'PREMIUM',
-    verified: 'VERIFIZIERT',
-    featuredProducts: 'Empfohlene Produkte',
-    handPicked: 'Handverlesene Premium-Produkte, die den modernen Lifestyle definieren',
-    whatUsersSay: 'Was unsere Nutzer sagen',
-    joinThousands: 'Schließen Sie sich Tausenden zufriedener Nutzer an, die ihren Lifestyle mit VibeNiche transformiert haben',
-    stayInLoop: 'Bleiben Sie auf dem Laufenden',
-    exclusiveAccess: 'Erhalten Sie exklusiven Zugang zu neuen Produkten, Angeboten und Lifestyle-Tipps',
-    enterEmail: 'Geben Sie Ihre E-Mail ein',
-    subscribe: 'Abonnieren',
-    modernHub: 'Ihr moderner Lifestyle-Hub für Premium-Produkte und Erlebnisse.',
-    categories: 'Kategorien',
-    company: 'Unternehmen',
-    connect: 'Verbinden',
-    allRights: '© 2025 VibeNiche. Alle Rechte vorbehalten. Diese Seite enthält Affiliate-Links.'
+    "liveMetrics": "LIVE IMPACT METRIKEN",
+    "trustedBy": "Vertraut von",
+    "thousands": "Tausenden",
+    "realMetrics": "Echte Metriken von echten Kunden, die ihren perfekten Lifestyle durch unseren kuratierten Marktplatz entdeckt haben",
+    "happyCustomers": "Zufriedene Kunden",
+    "growingDaily": "Täglich wachsend in über 40 Ländern",
+    "thisMonth": "+1.247 diesen Monat",
+    "satisfactionRate": "Zufriedenheitsrate",
+    "trustRating": "Vertrauensbewertung",
+    "basedOnReviews": "Basierend auf 12.847 verifizierten Bewertungen",
+    "premiumProducts": "Premium-Produkte",
+    "supportAvailable": "Support verfügbar",
+    "affiliateRewards": "Affiliate-Belohnungen",
+    "countriesServed": "Länder bedient",
+    "uptimeGuarantee": "Verfügbarkeitsgarantie",
+    "verifiedExcellence": "VERIFIZIERTE EXZELLENZ",
+    "whyTrustUs": "Warum Kunden uns vertrauen",
+    "certifiedPartnerships": "Zertifizierte Partnerschaften und bewährte Sicherheitsstandards, die Ihr Erlebnis schützen",
+    "verifiedPartner": "Verifizierter Partner",
+    "officialMember": "Offizielles Netzwerkmitglied",
+    "securePlatform": "Sichere Plattform",
+    "sslEncrypted": "SSL-verschlüsselte Transaktionen",
+    "premiumBrands": "Premium-Marken",
+    "exclusivePartnerships": "Exklusive Partnerschaften",
+    "realReviews": "Echte Bewertungen",
+    "authenticFeedback": "100% authentisches Feedback",
+    "certified": "ZERTIFIZIERT",
+    "secure": "SICHER",
+    "premium": "PREMIUM",
+    "verified": "VERIFIZIERT",
+    "featuredProducts": "Empfohlene Produkte",
+    "handPicked": "Handverlesene Premium-Produkte, die den modernen Lifestyle definieren",
+    "whatUsersSay": "Was unsere Nutzer sagen",
+    "joinThousands": "Schließen Sie sich Tausenden zufriedener Nutzer an, die ihren Lifestyle mit VibeNiche transformiert haben",
+    "stayInLoop": "Bleiben Sie auf dem Laufenden",
+    "exclusiveAccess": "Erhalten Sie exklusiven Zugang zu neuen Produkten, Angeboten und Lifestyle-Tipps",
+    "enterEmail": "Geben Sie Ihre E-Mail ein",
+    "subscribe": "Abonnieren",
+    "modernHub": "Ihr moderner Lifestyle-Hub für Premium-Produkte und Erlebnisse.",
+    "categories": "Kategorien",
+    "company": "Unternehmen",
+    "connect": "Verbinden",
+    "allRights": "© 2025 VibeNiche. Alle Rechte vorbehalten. Diese Seite enthält Affiliate-Links."
   },
-
-  // Categories
-  categories: {
-    beauty: {
-      title: 'Schönheit & Hautpflege',
-      description: 'Premium-Schönheitsprodukte und Hautpflege-Essentials für Ihre tägliche Routine',
-      subtitle: 'Betonen Sie Ihre natürliche Schönheit'
+  "categories": {
+    "beauty": {
+      "title": "Schönheit & Hautpflege",
+      "description": "Premium-Schönheitsprodukte und Hautpflege-Essentials für Ihre tägliche Routine",
+      "subtitle": "Betonen Sie Ihre natürliche Schönheit"
     },
-    travel: {
-      title: 'Reisen & Abenteuer',
-      description: 'Unverzichtbare Ausrüstung und Zubehör für Ihr nächstes Abenteuer',
-      subtitle: 'Erkunden Sie die Welt stilvoll'
+    "travel": {
+      "title": "Reisen & Abenteuer",
+      "description": "Unverzichtbare Ausrüstung und Zubehör für Ihr nächstes Abenteuer",
+      "subtitle": "Erkunden Sie die Welt stilvoll"
     },
-    wellness: {
-      title: 'Wellness & Gesundheit',
-      description: 'Produkte und Tools zur Unterstützung Ihrer Wellness-Reise',
-      subtitle: 'Pflegen Sie Ihr Wohlbefinden'
+    "wellness": {
+      "title": "Wellness & Gesundheit",
+      "description": "Produkte und Tools zur Unterstützung Ihrer Wellness-Reise",
+      "subtitle": "Pflegen Sie Ihr Wohlbefinden"
     },
-    advice: {
-      title: 'Expertenberatung',
-      description: 'Professionelle Einblicke und Empfehlungen von Branchenexperten',
-      subtitle: 'Lernen Sie von den Besten'
+    "advice": {
+      "title": "Expertenberatung",
+      "description": "Professionelle Einblicke und Empfehlungen von Branchenexperten",
+      "subtitle": "Lernen Sie von den Besten"
     }
   },
-
-  // Product Card
-  product: {
-    viewDetails: 'Details anzeigen',
-    buyNow: 'Jetzt kaufen',
-    rating: 'Bewertung',
-    reviews: 'Bewertungen',
-    features: 'Eigenschaften',
-    originalPrice: 'Originalpreis',
-    currentPrice: 'Aktueller Preis',
-    addToCart: 'In den Warenkorb',
-    outOfStock: 'Nicht vorrätig'
+  "product": {
+    "viewDetails": "Details anzeigen",
+    "buyNow": "Jetzt kaufen",
+    "rating": "Bewertung",
+    "reviews": "Bewertungen",
+    "features": "Eigenschaften",
+    "originalPrice": "Originalpreis",
+    "currentPrice": "Aktueller Preis",
+    "addToCart": "In den Warenkorb",
+    "outOfStock": "Nicht vorrätig"
   },
-
-  // About Page
-  about: {
-    title: 'Über VibeNiche',
-    subtitle: 'Ihr vertrauensvoller Begleiter für außergewöhnliche Produkte und Erlebnisse',
-    mission: {
-      title: 'Unsere Mission',
-      description: 'Wir glauben, dass jeder Produkte verdient, die wirklich zu seinem Lebensstil passen. Unsere Mission ist es, die beste Auswahl an Schönheits-, Reise-, Wellness- und Lifestyle-Produkten zu kuratieren.'
-    },
-    story: {
-      title: 'Unsere Geschichte',
-      description: 'Gegründet mit einer Leidenschaft für Qualität und Authentizität, entstand VibeNiche aus dem Wunsch, eine Plattform zu schaffen, auf der anspruchsvolle Menschen Produkte entdecken können, die ihren Werten entsprechen.'
-    },
-    team: {
-      title: 'Unser Team',
-      description: 'Unser Team besteht aus Branchenexperten, Produktkuratoren und Lifestyle-Enthusiasten, die sich dafür einsetzen, Ihnen die besten Empfehlungen zu bringen.'
+  "auth": {
+    "signIn": "Anmelden",
+    "signUp": "Registrieren",
+    "signOut": "Abmelden",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "signInSuccess": "Erfolgreich angemeldet!",
+    "signUpSuccess": "Konto erfolgreich erstellt!",
+    "signOutSuccess": "Erfolgreich abgemeldet!",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort",
+    "weakPassword": "Passwort sollte mindestens 6 Zeichen haben",
+    "emailInUse": "E-Mail bereits in Verwendung",
+    "adminLogin": "Admin-Anmeldung",
+    "username": "Benutzername"
+  },
+  "admin": {
+    "dashboard": "Admin-Dashboard",
+    "products": "Produkte",
+    "addProduct": "Neues Produkt hinzufügen",
+    "editProduct": "Produkt bearbeiten",
+    "deleteProduct": "Produkt löschen",
+    "confirmDelete": "Sind Sie sicher, dass Sie dieses Produkt löschen möchten?",
+    "productDeleted": "Produkt erfolgreich gelöscht",
+    "productUpdated": "Produkt erfolgreich aktualisiert",
+    "productCreated": "Produkt erfolgreich erstellt",
+    "form": {
+      "name": "Produktname",
+      "description": "Beschreibung",
+      "shortDescription": "Kurzbeschreibung",
+      "price": "Preis",
+      "originalPrice": "Originalpreis",
+      "category": "Kategorie",
+      "imageUrl": "Bild-URL",
+      "affiliateUrl": "Affiliate-URL",
+      "tags": "Tags (kommagetrennt)",
+      "features": "Eigenschaften (kommagetrennt)",
+      "rating": "Bewertung",
+      "reviewsCount": "Anzahl Bewertungen",
+      "isActive": "Aktiv",
+      "isFeatured": "Empfohlen",
+      "save": "Produkt speichern",
+      "cancel": "Abbrechen"
     }
   },
-
-  // Contact Page
-  contact: {
-    title: 'Kontaktieren Sie uns',
-    subtitle: 'Nehmen Sie Kontakt mit unserem Team auf',
-    form: {
-      name: 'Ihr Name',
-      email: 'Ihre E-Mail',
-      subject: 'Betreff',
-      message: 'Ihre Nachricht',
-      send: 'Nachricht senden',
-      sending: 'Wird gesendet...',
-      success: 'Nachricht erfolgreich gesendet!',
-      error: 'Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut.'
+  "about": {
+    "title": "Über VibeNiche",
+    "subtitle": "Wir sind nicht nur ein weiterer Affiliate-Marktplatz. Wir sind Lifestyle-Kuratoren, Trend-Entdecker und Traum-Enabler, die Sie mit Produkten verbinden, die gewöhnliche Momente in außergewöhnliche Erfahrungen verwandeln.",
+    "originStory": "Unsere Ursprungsgeschichte",
+    "bornFromPassion": "Aus Leidenschaft geboren",
+    "simpleFrustration": "Es begann mit einer einfachen Frustration: endloses Scrollen durch unzählige Produkte, unsicher, was wirklich funktioniert. Wir wussten, dass es einen besseren Weg geben musste, Premium-Lifestyle-Essentials zu finden, die ihre Versprechen wirklich einhalten.",
+    "vibeNicheBorn": "Deshalb wurde VibeNiche geboren — ein vertrauenswürdiges Ziel, wo Beauty-Liebhaber, Wellness-Suchende und Reise-Enthusiasten handverlesene, hochwertige Produkte durch transparente, ehrliche Affiliate-Empfehlungen entdecken können.",
+    "todayProud": "Heute sind wir stolz darauf, die Brücke zwischen Träumern und Premium-Marken zu sein und echten Wert für unsere wachsende Community und vertrauenswürdige Partner durch bedeutungsvolle Verbindungen und richtig gemachtes Affiliate-Marketing zu schaffen.",
+    "founded": "Gegründet",
+    "customers": "Kunden",
+    "brandPartners": "Markenpartner",
+    "verifiedQuality": "Verifizierte Qualität",
+    "everyProductTested": "Jedes Produkt getestet",
+    "ourValues": "Unsere Werte",
+    "principlesGuide": "Die Prinzipien, die jede Entscheidung leiten, die wir treffen, und jede Partnerschaft, die wir eingehen",
+    "authenticConnections": "Authentische Verbindungen",
+    "genuineRelationships": "Wir glauben daran, echte Beziehungen zu Marken und Kunden durch ehrliche Empfehlungen aufzubauen.",
+    "qualityFirst": "Qualität zuerst",
+    "rigorousStandards": "Jedes Produkt, das wir präsentieren, erfüllt unsere strengen Standards für Exzellenz und Kundenzufriedenheit.",
+    "innovationDriven": "Innovationsgetrieben",
+    "stayAhead": "Wir bleiben den Trends voraus, um Ihnen das Neueste und Beste in Lifestyle-Innovation zu bringen.",
+    "globalImpact": "Globaler Einfluss",
+    "connectsWorldwide": "Unsere Plattform verbindet Lifestyle-Enthusiasten weltweit mit Premium-Marken, die sie lieben werden.",
+    "ourJourney": "Unsere Reise",
+    "keyMilestones": "Wichtige Meilensteine in unserer Mission, das Affiliate-Marketing zu revolutionieren",
+    "vibeNicheFounded": "VibeNiche gegründet",
+    "startedVision": "Begonnen mit einer Vision, das Affiliate-Marketing zu revolutionieren",
+    "communityMilestone": "50K+ Community",
+    "firstMajor": "Unseren ersten großen Meilenstein zufriedener Kunden erreicht",
+    "premiumPartnerships": "Premium-Partnerschaften",
+    "exclusiveRelationships": "Exklusive Beziehungen zu Top-Lifestyle-Marken etabliert",
+    "globalExpansion": "Globale Expansion",
+    "expandingReach": "Erweiterung unserer Reichweite, um Lifestyle-Enthusiasten weltweit zu dienen",
+    "joinMission": "Treten Sie unserer Mission bei",
+    "bePartCommunity": "Werden Sie Teil einer Community, die Authentizität, Qualität und bedeutungsvolle Verbindungen schätzt. Entdecken Sie heute Ihr nächstes Lieblingsprodukt.",
+    "contactUs": "Kontaktieren Sie uns",
+    "curatingPremium": "Kuration von Premium-Lifestyle-Erfahrungen durch authentische Affiliate-Partnerschaften.",
+    "team": {
+      "sarah": {
+        "name": "Sarah Johnson",
+        "role": "Gründerin & CEO",
+        "quote": "Brücken zwischen Lifestyle-Träumern und Premium-Marken bauen."
+      },
+      "marcus": {
+        "name": "Marcus Chen",
+        "role": "Leiter Partnerschaften",
+        "quote": "Kuration von Beziehungen, die authentischen Wert schaffen."
+      },
+      "elena": {
+        "name": "Elena Rodriguez",
+        "role": "Kreativdirektorin",
+        "quote": "Design ist die Sprache, die zur Seele spricht."
+      }
+    }
+  },
+  "contact": {
+    "title": "Verbinden Sie sich mit VibeNiche",
+    "subtitle": "Ihr vertrauenswürdiger Partner bei der Entdeckung der besten Lifestyle-Produkte. Wir sind hier, um Ihnen zu helfen, Ihr bestes Leben mit kuratierter Exzellenz zu leben.",
+    "emailUs": "E-Mail senden",
+    "support247": "24/7 Support",
+    "alwaysAvailable": "Immer verfügbar",
+    "roundTheClock": "Rund-um-die-Uhr-Unterstützung",
+    "telegram": "Telegram",
+    "pinterest": "Pinterest",
+    "callNow": "Jetzt anrufen",
+    "happyCustomersCount": "50.000+",
+    "happyCustomers": "Zufriedene Kunden",
+    "productsCurated": "2.500+",
+    "productsLabel": "Kuratierte Produkte",
+    "yearsOfTrust": "9+",
+    "yearsLabel": "Jahre Vertrauen",
+    "customerSatisfaction": "98%",
+    "satisfactionLabel": "Kundenzufriedenheit",
+    "getInTouch": "Kontakt aufnehmen",
+    "chooseBestMethod": "Wählen Sie die Methode, die für Sie am besten funktioniert. Wir sind hier, um bei Fragen zu unseren Produkten oder Dienstleistungen zu helfen.",
+    "emailAddress": "hello@vibeniche.com",
+    "emailReply": "Wir antworten innerhalb von 24 Stunden",
+    "phoneNumber": "+1 (555) 123-4567",
+    "phoneHours": "Mo-Fr 9-18 Uhr EST",
+    "visitAddress": "123 Lifestyle Avenue",
+    "cityState": "New York, NY 10001",
+    "businessHours": "Geschäftszeiten",
+    "mondayFriday": "Montag - Freitag",
+    "workingHours": "9:00 - 18:00 EST",
+    "aboutVibeNiche": "Über VibeNiche",
+    "foundedDescription": "Gegründet im Jahr 2016, ist VibeNiche Ihr vertrauenswürdiger Kurator für Lifestyle-Exzellenz. Wir spezialisieren uns darauf, die besten Produkte in den Kategorien Beauty, Reisen, Wellness und Lifestyle zu entdecken und zu teilen.",
+    "teamExperts": "Unser Expertenteam wählt sorgfältig jedes Produkt aus, um sicherzustellen, dass es unseren hohen Standards für Qualität, Innovation und Wert entspricht. Wir glauben, dass jeder Zugang zu Produkten verdient, die sein tägliches Leben verbessern.",
+    "lifestyle": "Lifestyle",
+    "customerSupport": "Kundensupport",
+    "dedicatedSupport": "Brauchen Sie Hilfe? Wir sind für Sie da. Unser Support-Team ist immer per E-Mail verfügbar und sorgt dafür, dass Sie jedes Mal schnelle, klare und fürsorgliche Unterstützung erhalten — weil Ihre Erfahrung wichtig ist.",
+    "averageResponse": "Durchschnittliche Antwortzeit: Unter 2 Stunden",
+    "positiveRatings": "Kundenzufriedenheit: 98% positive Bewertungen",
+    "multiLanguage": "Mehrsprachiger Support verfügbar",
+    "followJourney": "Folgen Sie unserer Reise",
+    "stayConnected": "Bleiben Sie verbunden und entdecken Sie die neuesten Produkte, Tipps und Lifestyle-Inspiration",
+    "followUs": "Folgen Sie uns",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "faq": "Häufig gestellte Fragen",
+    "quickAnswers": "Schnelle Antworten auf häufige Fragen zu unseren Produkten und Dienstleistungen",
+    "faq1": {
+      "question": "Was ist Affiliate-Marketing und wie funktioniert VibeNiche?",
+      "answer": "VibeNiche ist eine Premium-Affiliate-Marketing-Plattform, die Sie mit den besten Lifestyle-Produkten verbindet. Wir verdienen Provisionen, wenn Sie über unsere kuratierten Empfehlungen kaufen, was es uns ermöglicht, ehrliche Bewertungen zu liefern und unsere Plattform ohne Kosten für Sie zu betreiben."
     },
-    info: {
-      email: 'E-Mail an uns',
-      phone: 'Rufen Sie uns an',
-      address: 'Besuchen Sie uns',
-      hours: 'Geschäftszeiten'
+    "faq2": {
+      "question": "Welche Beauty-Produkte und Marken empfehlen Sie?",
+      "answer": "Unsere Beauty-Kategorie bietet Premium-Hautpflege, Make-up und Beauty-Tools von Top-bewerteten Marken. Wir konzentrieren uns auf Produkte mit nachgewiesenen Ergebnissen, sauberen Inhaltsstoffen und ausgezeichneten Kundenbewertungen in den Bereichen Anti-Aging, Hautpflege-Routinen, Make-up-Essentials und Beauty-Geräte."
+    },
+    "faq3": {
+      "question": "Wie kuratieren Sie Reiseausrüstung und -erfahrungen?",
+      "answer": "Unsere Reiseexperten testen und bewerten Gepäck, Reisezubehör, Buchungsplattformen und Reiseerfahrungen. Wir arbeiten mit vertrauenswürdigen Reise-Marken zusammen, um Ihnen exklusive Angebote für alles von Luxusunterkünften bis hin zu essentieller Reiseausrüstung für moderne Entdecker zu bieten."
+    },
+    "faq4": {
+      "question": "Welche Wellness- und Lifestyle-Produkte bieten Sie an?",
+      "answer": "Wir spezialisieren uns auf Fitnessgeräte, Nahrungsergänzungsmittel, Achtsamkeitsprodukte, Wohnaccessoires und Smart-Gadgets. Unsere Wellness-Kategorie konzentriert sich auf wissenschaftlich untermauerte Produkte, die geistige Klarheit, körperliche Stärke und allgemeines Wohlbefinden für einen ausgewogenen Lebensstil verbessern."
+    },
+    "faq5": {
+      "question": "Woher weiß ich, ob eine Produktempfehlung echt ist?",
+      "answer": "Jedes Produkt, das wir präsentieren, durchläuft strenge Tests durch unser Expertenteam. Wir empfehlen nur Produkte, an die wir wirklich glauben und die wir selbst verwenden würden. Unsere Affiliate-Partnerschaften beeinflussen niemals unsere ehrlichen Bewertungen und Bewertungen."
+    },
+    "faq6": {
+      "question": "Bieten Sie exklusive Angebote über Ihre Affiliate-Partnerschaften an?",
+      "answer": "Ja! Wir verhandeln exklusive Rabatte, frühen Zugang zu Verkäufen und spezielle Pakete mit unseren Markenpartnern. Abonnenten erhalten zuerst Zugang zu diesen Premium-Angeboten in allen unseren Lifestyle-Kategorien."
+    },
+    "readyStart": "Bereit, Ihre Reise zu beginnen?",
+    "joinThousands": "Treten Sie Tausenden zufriedener Kunden bei, die VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen. Entdecken Sie Produkte, die Ihre tägliche Routine verwandeln werden.",
+    "exploreProducts": "Produkte erkunden",
+    "partnerWithUs": "Partner werden",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "subject": "Betreff",
+      "message": "Ihre Nachricht",
+      "send": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
     }
   },
-
-  // Auth
-  auth: {
-    signIn: 'Anmelden',
-    signUp: 'Registrieren',
-    signOut: 'Abmelden',
-    email: 'E-Mail',
-    password: 'Passwort',
-    confirmPassword: 'Passwort bestätigen',
-    forgotPassword: 'Passwort vergessen?',
-    noAccount: 'Noch kein Konto?',
-    hasAccount: 'Bereits ein Konto?',
-    signInSuccess: 'Erfolgreich angemeldet!',
-    signUpSuccess: 'Konto erfolgreich erstellt!',
-    signOutSuccess: 'Erfolgreich abgemeldet!',
-    invalidCredentials: 'Ungültige E-Mail oder Passwort',
-    weakPassword: 'Passwort sollte mindestens 6 Zeichen haben',
-    emailInUse: 'E-Mail bereits in Verwendung',
-    adminLogin: 'Admin-Anmeldung',
-    username: 'Benutzername'
+  "common": {
+    "loading": "Lädt...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "save": "Speichern",
+    "back": "Zurück",
+    "next": "Weiter",
+    "previous": "Vorherige",
+    "close": "Schließen",
+    "search": "Suchen",
+    "filter": "Filter",
+    "sort": "Sortieren",
+    "clear": "Löschen",
+    "apply": "Anwenden",
+    "reset": "Zurücksetzen",
+    "selectLanguage": "Sprache auswählen"
   },
-
-  // Admin Dashboard
-  admin: {
-    dashboard: 'Admin-Dashboard',
-    products: 'Produkte',
-    addProduct: 'Neues Produkt hinzufügen',
-    editProduct: 'Produkt bearbeiten',
-    deleteProduct: 'Produkt löschen',
-    confirmDelete: 'Sind Sie sicher, dass Sie dieses Produkt löschen möchten?',
-    productDeleted: 'Produkt erfolgreich gelöscht',
-    productUpdated: 'Produkt erfolgreich aktualisiert',
-    productCreated: 'Produkt erfolgreich erstellt',
-    form: {
-      name: 'Produktname',
-      description: 'Beschreibung',
-      shortDescription: 'Kurzbeschreibung',
-      price: 'Preis',
-      originalPrice: 'Originalpreis',
-      category: 'Kategorie',
-      imageUrl: 'Bild-URL',
-      affiliateUrl: 'Affiliate-URL',
-      tags: 'Tags (kommagetrennt)',
-      features: 'Eigenschaften (kommagetrennt)',
-      rating: 'Bewertung',
-      reviewsCount: 'Anzahl Bewertungen',
-      isActive: 'Aktiv',
-      isFeatured: 'Empfohlen',
-      save: 'Produkt speichern',
-      cancel: 'Abbrechen'
-    }
+  "footer": {
+    "description": "Entdecken Sie Produkte, die zu Ihrem einzigartigen Lebensstil passen.",
+    "quickLinks": "Schnelllinks",
+    "categories": "Kategorien",
+    "support": "Support",
+    "privacy": "Datenschutz",
+    "terms": "Nutzungsbedingungen",
+    "copyright": "© 2024 VibeNiche. Alle Rechte vorbehalten."
   },
-
-  // Common
-  common: {
-    loading: 'Lädt...',
-    error: 'Fehler',
-    success: 'Erfolg',
-    cancel: 'Abbrechen',
-    confirm: 'Bestätigen',
-    delete: 'Löschen',
-    edit: 'Bearbeiten',
-    save: 'Speichern',
-    back: 'Zurück',
-    next: 'Weiter',
-    previous: 'Vorherige',
-    close: 'Schließen',
-    search: 'Suchen',
-    filter: 'Filter',
-    sort: 'Sortieren',
-    clear: 'Löschen',
-    apply: 'Anwenden',
-    reset: 'Zurücksetzen',
-    selectLanguage: 'Sprache auswählen'
+  "testimonials": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Entdecken Sie, warum Tausende von Kunden VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen"
   },
-
-  // Footer
-  footer: {
-    description: 'Entdecken Sie Produkte, die zu Ihrem einzigartigen Lebensstil passen.',
-    quickLinks: 'Schnelllinks',
-    categories: 'Kategorien',
-    support: 'Support',
-    privacy: 'Datenschutz',
-    terms: 'Nutzungsbedingungen',
-    copyright: '© 2024 VibeNiche. Alle Rechte vorbehalten.'
+  "notFound": {
+    "title": "404",
+    "subtitle": "Hoppla! Seite nicht gefunden",
+    "description": "Die Seite, die Sie suchen, wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.",
+    "goHome": "Zur Startseite"
   },
-
-  // Testimonials
-  testimonials: {
-    title: 'Was unsere Kunden sagen',
-    subtitle: 'Entdecken Sie, warum Tausende von Kunden VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen'
+  "travel": {
+    "title": "Reise-Essentials",
+    "subtitle": "Premium-Reiseausrüstung und Zubehör für den modernen Entdecker und Digitalnomaden",
+    "exploreGear": "Reiseausrüstung Erkunden",
+    "premiumGear": "Premium Reiseausrüstung",
+    "everythingNeeded": "Alles was Sie für Ihr nächstes Abenteuer brauchen",
+    "searchPlaceholder": "Reiseprodukte suchen...",
+    "whyChoose": "Warum Unsere Reise-Kollektion Wählen?",
+    "investInAdventure": "Investieren Sie in Ihre Abenteuer mit langlebiger, innovativer Ausrüstung für moderne Reisende",
+    "luggageEssentials": "Gepäck und Taschen",
+    "luggageDesc": "Premium-Gepäck, Rucksäcke und Reisetaschen, die jeder Reise standhalten.",
+    "techGear": "Technik und Gadgets",
+    "techGearDesc": "Wesentliche Technik-Zubehör und Gadgets, um unterwegs verbunden und organisiert zu bleiben.",
+    "comfortItems": "Komfort und Wellness",
+    "comfortDesc": "Reisekomfort-Essentials, um jede Reise angenehmer und entspannender zu gestalten."
   },
-
-  // 404 Page
-  notFound: {
-    title: '404',
-    subtitle: 'Hoppla! Seite nicht gefunden',
-    description: 'Die Seite, die Sie suchen, wurde möglicherweise entfernt, umbenannt oder ist vorübergehend nicht verfügbar.',
-    goHome: 'Zur Startseite'
+  "beauty": {
+    "title": "Beauty-Essentials",
+    "subtitle": "Entdecken Sie Premium-Hautpflege, Make-up und Beauty-Tools, kuratiert für den modernen Lebensstil",
+    "shopBeauty": "Beauty Einkaufen",
+    "premiumProducts": "Premium Beauty-Produkte",
+    "curatedCollection": "Kuratierte Sammlung hochwertiger Beauty-Essentials",
+    "searchPlaceholder": "Beauty-Produkte suchen...",
+    "whyChoose": "Warum Unsere Beauty-Kollektion Wählen?",
+    "investInBeauty": "Investieren Sie in Ihre Beauty-Routine mit wissenschaftlich untermauerten Produkten und Expertenempfehlungen",
+    "skincareEssentials": "Hautpflege-Essentials",
+    "skincareDesc": "Premium-Hautpflegeprodukte für gesunde, strahlende Haut, die den ganzen Tag anhält.",
+    "makeupMustHaves": "Make-up-Must-Haves",
+    "makeupDesc": "Professionelle Make-up-Tools und Kosmetika für makellose Anwendung.",
+    "beautyTools": "Beauty-Tools",
+    "beautyToolsDesc": "Hochwertige Pinsel, Geräte und Accessoires für professionelle Ergebnisse zu Hause."
+  },
+  "wellness": {
+    "title": "Wellness & Fitness",
+    "subtitle": "Verwandeln Sie Ihre Gesundheit und Ihr Wohlbefinden mit Premium-Wellness-Produkten und Achtsamkeits-Essentials",
+    "startJourney": "Beginnen Sie Ihre Wellness-Reise",
+    "whyChoose": "Warum Unsere Reise-Kollektion Wählen?",
+    "investInHealth": "Investieren Sie in Ihre Gesundheit und Ihr Glück mit wissenschaftlich untermauerten Wellness-Produkten",
+    "mentalClarity": "Mentale Klarheit",
+    "mentalClarityDesc": "Verbessern Sie den Fokus, reduzieren Sie Stress und steigern Sie die kognitive Leistung durch achtsame Praktiken.",
+    "physicalStrength": "Körperliche Stärke",
+    "physicalStrengthDesc": "Bauen Sie Muskeln auf, steigern Sie die Flexibilität und steigern Sie die Energieniveaus mit den richtigen Fitness-Tools.",
+    "innerPeace": "Innerer Frieden",
+    "innerPeaceDesc": "Finden Sie Balance und Ruhe durch Meditation, Aromatherapie und achtsames Leben.",
+    "essentials": "Wellness-Essentials",
+    "curatedProducts": "Kuratierte Produkte für Geist, Körper und Seele",
+    "searchPlaceholder": "Wellness-Produkte suchen..."
+  },
+  "advice": {
+    "title": "Expertenrat",
+    "subtitle": "Kuratierte Weisheit und umsetzbare Erkenntnisse von Branchenexperten und Vordenkern",
+    "exploreGuidance": "Expertenführung Erkunden",
+    "areasOfExpertise": "Fachbereiche",
+    "professionalGuidance": "Professionelle Führung in mehreren Bereichen",
+    "decisionMaking": "Entscheidungsfindung",
+    "decisionMakingDesc": "Expertenführung für wichtige Lebensentscheidungen",
+    "problemSolving": "Problemlösung",
+    "problemSolvingDesc": "Kreative Lösungen für alltägliche Herausforderungen",
+    "goalAchievement": "Zielerreichung",
+    "goalAchievementDesc": "Strategische Planung für persönlichen Erfolg",
+    "growthMindset": "Wachstumsmentalität",
+    "growthMindsetDesc": "Persönliche Entwicklung und kontinuierliche Verbesserung",
+    "expertRecommendations": "Expertenempfehlungen",
+    "curatedAdvice": "Sorgfältig kuratierte Ratschläge und Ressourcen von vertrauenswürdigen Experten",
+    "searchPlaceholder": "Ratschläge und Ressourcen suchen...",
+    "loadingResources": "Ratschlag-Ressourcen werden geladen...",
+    "noResourcesFound": "Keine Ratschlag-Ressourcen gefunden, die Ihrer Suche entsprechen.",
+    "tryAdjustingSearch": "Versuchen Sie, Ihre Suchbegriffe anzupassen oder erkunden Sie unsere Expertenkategorien oben."
   }
 };

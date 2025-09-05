@@ -1,256 +1,404 @@
 export default {
-  // Navigation
-  nav: {
-    home: '홈',
-    about: '회사 소개',
-    beauty: '뷰티',
-    travel: '여행',
-    wellness: '웰니스',
-    advice: '조언',
-    contact: '연락처',
-    admin: '관리자',
-    signedInAs: '로그인 중'
+  "nav": {
+    "home": "홈",
+    "about": "회사 소개",
+    "beauty": "뷰티",
+    "travel": "여행",
+    "wellness": "웰니스",
+    "advice": "조언",
+    "contact": "연락처",
+    "admin": "관리자",
+    "signedInAs": "로그인 중"
   },
-
-  // Hero Section
-  hero: {
-    title: '당신의 완벽한 바이브를 발견하세요',
-    subtitle: '당신만의 독특한 라이프스타일에 맞는 엄선된 경험과 제품',
-    exploreButton: '카테고리 탐색',
-    learnMoreButton: '더 알아보기',
-    ourStoryButton: '우리의 이야기'
+  "hero": {
+    "title": "당신의 완벽한 바이브를 발견하세요",
+    "subtitle": "당신만의 독특한 라이프스타일에 맞는 엄선된 경험과 제품",
+    "exploreButton": "카테고리 탐색",
+    "learnMoreButton": "더 알아보기",
+    "ourStoryButton": "우리의 이야기"
   },
-
-  // Home Page
-  home: {
-    exploreCategories: '카테고리 탐색',
-    discoverCurated: '엄선된 마켓플레이스에서 당신의 이상적인 라이프스타일 제품을 발견하세요',
-    
-    beauty: {
-      title: '뷰티 & 스킨케어',
-      description: '일상 루틴을 위한 프리미엄 뷰티 제품과 스킨케어 필수품'
+  "home": {
+    "exploreCategories": "카테고리 탐색",
+    "discoverCurated": "엄선된 마켓플레이스에서 당신의 이상적인 라이프스타일 제품을 발견하세요",
+    "beauty": {
+      "title": "뷰티 & 스킨케어",
+      "description": "일상 루틴을 위한 프리미엄 뷰티 제품과 스킨케어 필수품"
     },
-    travel: {
-      title: '여행 & 모험',
-      description: '다음 모험을 위한 필수 장비와 액세서리'
+    "travel": {
+      "title": "여행 & 모험",
+      "description": "다음 모험을 위한 필수 장비와 액세서리"
     },
-    wellness: {
-      title: '웰니스 & 건강',
-      description: '당신의 웰니스 여정을 지원하는 제품과 도구'
+    "wellness": {
+      "title": "웰니스 & 건강",
+      "description": "당신의 웰니스 여정을 지원하는 제품과 도구"
     },
-    lifestyle: {
-      title: '라이프스타일',
-      description: '당신의 일상을 향상시키는 프리미엄 라이프스타일 제품'
+    "lifestyle": {
+      "title": "라이프스타일",
+      "description": "당신의 일상을 향상시키는 프리미엄 라이프스타일 제품"
     },
-
-    liveMetrics: '실시간 지표',
-    trustedBy: '신뢰받고 있습니다',
-    thousands: '수천 명에게',
-    realMetrics: '우리의 실제 지표로 증명된',
-    happyCustomers: '만족한 고객',
-    growingDaily: '매일 증가',
-    thisMonth: '이번 달',
-    satisfactionRate: '만족도',
-    trustRating: '신뢰도',
-    basedOnReviews: '리뷰 기반',
-    premiumProducts: '프리미엄 제품',
-    supportAvailable: '지원 가능',
-    affiliateRewards: '제휴 보상',
-    countriesServed: '서비스 제공 국가',
-    uptimeGuarantee: '가동 시간 보장',
-    verifiedExcellence: '검증된 우수성',
-    whyTrustUs: '우리를 신뢰하는 이유',
-    certifiedPartnerships: '인증된 파트너십과 검증된 품질 보장',
-    certified: '인증됨',
-    verifiedPartner: '검증된 파트너',
-    officialMember: '공식 회원',
-    secure: '보안',
-    securePlatform: '보안 플랫폼',
-    sslEncrypted: 'SSL 암호화',
-    premium: '프리미엄',
-    premiumBrands: '프리미엄 브랜드',
-    exclusivePartnerships: '독점 파트너십',
-    verified: '검증됨',
-    realReviews: '실제 리뷰',
-    authenticFeedback: '진정한 피드백',
-    featuredProducts: '추천 제품',
-    handPicked: '엄선된 제품으로 당신의 삶을 변화시키세요'
+    "liveMetrics": "실시간 지표",
+    "trustedBy": "신뢰받고 있습니다",
+    "thousands": "수천 명에게",
+    "realMetrics": "우리의 실제 지표로 증명된",
+    "happyCustomers": "만족한 고객",
+    "growingDaily": "매일 증가",
+    "thisMonth": "이번 달",
+    "satisfactionRate": "만족도",
+    "trustRating": "신뢰도",
+    "basedOnReviews": "리뷰 기반",
+    "premiumProducts": "프리미엄 제품",
+    "supportAvailable": "지원 가능",
+    "affiliateRewards": "제휴 보상",
+    "countriesServed": "서비스 제공 국가",
+    "uptimeGuarantee": "가동 시간 보장",
+    "verifiedExcellence": "검증된 우수성",
+    "whyTrustUs": "우리를 신뢰하는 이유",
+    "certifiedPartnerships": "인증된 파트너십과 검증된 품질 보장",
+    "certified": "인증됨",
+    "verifiedPartner": "검증된 파트너",
+    "officialMember": "공식 회원",
+    "secure": "보안",
+    "securePlatform": "보안 플랫폼",
+    "sslEncrypted": "SSL 암호화",
+    "premium": "프리미엄",
+    "premiumBrands": "프리미엄 브랜드",
+    "exclusivePartnerships": "독점 파트너십",
+    "verified": "검증됨",
+    "realReviews": "실제 리뷰",
+    "authenticFeedback": "진정한 피드백",
+    "featuredProducts": "추천 제품",
+    "handPicked": "엄선된 제품으로 당신의 삶을 변화시키세요"
   },
-
-  // Categories
-  categories: {
-    beauty: {
-      title: '뷰티 & 스킨케어',
-      description: '일상 루틴을 위한 프리미엄 뷰티 제품과 스킨케어 필수품',
-      subtitle: '당신의 자연스러운 아름다움을 강화하세요'
+  "categories": {
+    "beauty": {
+      "title": "뷰티 & 스킨케어",
+      "description": "일상 루틴을 위한 프리미엄 뷰티 제품과 스킨케어 필수품",
+      "subtitle": "당신의 자연스러운 아름다움을 강화하세요"
     },
-    travel: {
-      title: '여행 & 모험',
-      description: '다음 모험을 위한 필수 장비와 액세서리',
-      subtitle: '스타일리시하게 세계를 탐험하세요'
+    "travel": {
+      "title": "여행 & 모험",
+      "description": "다음 모험을 위한 필수 장비와 액세서리",
+      "subtitle": "스타일리시하게 세계를 탐험하세요"
     },
-    wellness: {
-      title: '웰니스 & 건강',
-      description: '당신의 웰니스 여정을 지원하는 제품과 도구',
-      subtitle: '당신의 웰빙을 돌보세요'
+    "wellness": {
+      "title": "웰니스 & 건강",
+      "description": "당신의 웰니스 여정을 지원하는 제품과 도구",
+      "subtitle": "당신의 웰빙을 돌보세요"
     },
-    advice: {
-      title: '전문가 조언',
-      description: '업계 전문가들의 전문적인 통찰과 추천',
-      subtitle: '최고의 전문가들로부터 배우세요'
+    "advice": {
+      "title": "전문가 조언",
+      "description": "업계 전문가들의 전문적인 통찰과 추천",
+      "subtitle": "최고의 전문가들로부터 배우세요"
     }
   },
-
-  // Product Card
-  product: {
-    viewDetails: '상세보기',
-    buyNow: '지금 구매',
-    rating: '평점',
-    reviews: '리뷰',
-    features: '특징',
-    originalPrice: '정가',
-    currentPrice: '현재 가격',
-    addToCart: '장바구니에 추가',
-    outOfStock: '품절'
+  "product": {
+    "viewDetails": "상세보기",
+    "buyNow": "지금 구매",
+    "rating": "평점",
+    "reviews": "리뷰",
+    "features": "특징",
+    "originalPrice": "정가",
+    "currentPrice": "현재 가격",
+    "addToCart": "장바구니에 추가",
+    "outOfStock": "품절"
   },
-
-  // About Page
-  about: {
-    title: 'VibeNiche 소개',
-    subtitle: '뛰어난 제품과 경험을 발견하는 당신의 신뢰할 수 있는 동반자',
-    mission: {
-      title: '우리의 사명',
-      description: '모든 사람이 자신의 라이프스타일에 진정으로 공명하는 제품을 찾을 자격이 있다고 믿습니다. 우리의 사명은 뷰티, 여행, 웰니스, 라이프스타일 제품의 최고의 선택을 큐레이션하는 것입니다.'
-    },
-    story: {
-      title: '우리의 이야기',
-      description: '품질과 진정성에 대한 열정으로 설립된 VibeNiche는 안목 있는 개인들이 자신의 가치와 일치하는 제품을 발견할 수 있는 플랫폼을 만들고자 하는 열망에서 탄생했습니다.'
-    },
-    team: {
-      title: '우리 팀',
-      description: '우리 팀은 최고의 추천과 통찰을 제공하는 데 전념하는 업계 전문가, 제품 큐레이터, 라이프스타일 애호가들로 구성되어 있습니다.'
+  "auth": {
+    "signIn": "로그인",
+    "signUp": "회원가입",
+    "signOut": "로그아웃",
+    "email": "이메일",
+    "password": "비밀번호",
+    "confirmPassword": "비밀번호 확인",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "signInSuccess": "성공적으로 로그인되었습니다!",
+    "signUpSuccess": "계정이 성공적으로 생성되었습니다!",
+    "signOutSuccess": "성공적으로 로그아웃되었습니다!",
+    "invalidCredentials": "잘못된 이메일 또는 비밀번호",
+    "weakPassword": "비밀번호는 최소 6자 이상이어야 합니다",
+    "emailInUse": "이미 사용 중인 이메일",
+    "adminLogin": "관리자 로그인",
+    "username": "사용자명"
+  },
+  "admin": {
+    "dashboard": "관리자 대시보드",
+    "products": "제품",
+    "addProduct": "새 제품 추가",
+    "editProduct": "제품 편집",
+    "deleteProduct": "제품 삭제",
+    "confirmDelete": "이 제품을 삭제하시겠습니까?",
+    "productDeleted": "제품이 성공적으로 삭제되었습니다",
+    "productUpdated": "제품이 성공적으로 업데이트되었습니다",
+    "productCreated": "제품이 성공적으로 생성되었습니다",
+    "form": {
+      "name": "제품명",
+      "description": "설명",
+      "shortDescription": "간단한 설명",
+      "price": "가격",
+      "originalPrice": "정가",
+      "category": "카테고리",
+      "imageUrl": "이미지 URL",
+      "affiliateUrl": "제휴 URL",
+      "tags": "태그 (쉼표로 구분)",
+      "features": "특징 (쉼표로 구분)",
+      "rating": "평점",
+      "reviewsCount": "리뷰 수",
+      "isActive": "활성",
+      "isFeatured": "추천",
+      "save": "제품 저장",
+      "cancel": "취소"
     }
   },
-
-  // Contact Page
-  contact: {
-    title: '연락처',
-    subtitle: '우리 팀과 연락하세요',
-    form: {
-      name: '이름',
-      email: '이메일',
-      subject: '제목',
-      message: '메시지',
-      send: '메시지 보내기',
-      sending: '전송 중...',
-      success: '메시지가 성공적으로 전송되었습니다!',
-      error: '메시지 전송에 실패했습니다. 다시 시도해 주세요.'
+  "common": {
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "cancel": "취소",
+    "confirm": "확인",
+    "delete": "삭제",
+    "edit": "편집",
+    "save": "저장",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전",
+    "close": "닫기",
+    "search": "검색",
+    "filter": "필터",
+    "sort": "정렬",
+    "clear": "지우기",
+    "apply": "적용",
+    "reset": "재설정",
+    "selectLanguage": "언어 선택"
+  },
+  "footer": {
+    "description": "당신의 독특한 라이프스타일에 맞는 제품을 발견하세요.",
+    "quickLinks": "빠른 링크",
+    "categories": "카테고리",
+    "support": "지원",
+    "privacy": "개인정보처리방침",
+    "terms": "서비스 약관",
+    "copyright": "© 2024 VibeNiche. 모든 권리 보유."
+  },
+  "about": {
+    "title": "VibeNiche 소개",
+    "subtitle": "우리는 단순한 제휴 마켓플레이스가 아닙니다. 우리는 라이프스타일 큐레이터, 트렌드 발견자, 그리고 평범한 순간을 특별한 경험으로 바꾸는 제품으로 여러분을 연결하는 꿈의 실현자입니다.",
+    "originStory": "우리의 기원 스토리",
+    "bornFromPassion": "열정에서 태어난",
+    "simpleFrustration": "모든 것은 하나의 간단한 좌절감으로 시작되었습니다: 무수한 제품들을 끝없이 스크롤하며, 무엇이 정말 효과적인지 확신할 수 없었습니다. 우리는 약속을 정말로 지키는 프리미엄 라이프스타일 필수품을 찾는 더 나은 방법이 있어야 한다고 믿었습니다.",
+    "vibeNicheBorn": "그래서 VibeNiche가 탄생했습니다 — 뷰티 애호가, 웰니스 추구자, 여행 애호가들이 투명하고 정직한 제휴 추천을 통해 엄선된 고품질 제품을 발견할 수 있는 신뢰할 수 있는 목적지입니다.",
+    "todayProud": "오늘날 우리는 꿈꾸는 사람들과 프리미엄 브랜드 사이의 다리가 되는 것을 자랑스럽게 생각하며, 의미 있는 연결과 올바르게 수행된 제휴 마케팅을 통해 성장하는 커뮤니티와 신뢰할 수 있는 파트너들에게 진정한 가치를 창조하고 있습니다.",
+    "founded": "설립",
+    "customers": "고객",
+    "brandPartners": "브랜드 파트너",
+    "verifiedQuality": "검증된 품질",
+    "everyProductTested": "모든 제품 테스트 완료",
+    "ourValues": "우리의 가치",
+    "principlesGuide": "우리가 내리는 모든 결정과 맺는 모든 파트너십을 이끄는 원칙",
+    "authenticConnections": "진정한 연결",
+    "genuineRelationships": "우리는 정직한 추천을 통해 브랜드와 고객과의 진정한 관계를 구축하는 것을 믿습니다.",
+    "qualityFirst": "품질 우선",
+    "rigorousStandards": "우리가 소개하는 모든 제품은 우수성과 고객 만족도에 대한 우리의 엄격한 기준을 충족합니다.",
+    "innovationDriven": "혁신 주도",
+    "stayAhead": "우리는 트렌드의 앞서가며 라이프스타일 혁신의 최신 최고를 제공합니다.",
+    "globalImpact": "글로벌 임팩트",
+    "connectsWorldwide": "우리의 플랫폼은 전 세계의 라이프스타일 애호가들을 사랑할 프리미엄 브랜드와 연결합니다.",
+    "ourJourney": "우리의 여정",
+    "keyMilestones": "제휴 마케팅을 혁신하려는 우리의 사명에서 중요한 이정표",
+    "vibeNicheFounded": "VibeNiche 설립",
+    "startedVision": "제휴 마케팅을 혁신하려는 비전으로 시작",
+    "communityMilestone": "50K+ 커뮤니티",
+    "firstMajor": "만족한 고객의 첫 번째 주요 이정표 달성",
+    "premiumPartnerships": "프리미엄 파트너십",
+    "exclusiveRelationships": "최고 라이프스타일 브랜드와의 독점적 관계 구축",
+    "globalExpansion": "글로벌 확장",
+    "expandingReach": "전 세계 라이프스타일 애호가들에게 서비스를 제공하기 위한 우리의 범위 확장",
+    "joinMission": "우리의 사명에 참여",
+    "bePartCommunity": "진정성, 품질, 의미 있는 연결을 중시하는 커뮤니티의 일원이 되세요. 오늘 당신의 다음 좋아하는 제품을 발견하세요.",
+    "contactUs": "문의하기",
+    "curatingPremium": "진정한 제휴 파트너십을 통한 프리미엄 라이프스타일 경험 큐레이션.",
+    "team": {
+      "sarah": {
+        "name": "Sarah Johnson",
+        "role": "창립자 & CEO",
+        "quote": "라이프스타일 꿈꾸는 사람들과 프리미엄 브랜드 사이의 다리 구축."
+      },
+      "marcus": {
+        "name": "Marcus Chen",
+        "role": "파트너십 책임자",
+        "quote": "진정한 가치를 창조하는 관계의 큐레이션."
+      },
+      "elena": {
+        "name": "Elena Rodriguez",
+        "role": "크리에이티브 디렉터",
+        "quote": "디자인은 영혼에게 말하는 언어입니다."
+      }
+    }
+  },
+  "contact": {
+    "title": "VibeNiche와 연결",
+    "subtitle": "최고의 라이프스타일 제품을 발견하는 당신의 신뢰할 수 있는 파트너. 우리는 큐레이션된 우수성으로 당신의 최고의 삶을 사는 것을 도와드립니다.",
+    "emailUs": "이메일 보내기",
+    "support247": "24/7 지원",
+    "alwaysAvailable": "항상 이용 가능",
+    "roundTheClock": "24시간 지원",
+    "telegram": "Telegram",
+    "pinterest": "Pinterest",
+    "callNow": "지금 전화",
+    "happyCustomersCount": "50,000+",
+    "happyCustomers": "만족한 고객",
+    "productsCurated": "2,500+",
+    "productsLabel": "큐레이션된 제품",
+    "yearsOfTrust": "9+",
+    "yearsLabel": "신뢰의 년수",
+    "customerSatisfaction": "98%",
+    "satisfactionLabel": "고객 만족도",
+    "getInTouch": "연락하기",
+    "chooseBestMethod": "당신에게 가장 적합한 방법을 선택하세요. 우리의 제품이나 서비스에 대한 질문에 도움을 드립니다.",
+    "emailAddress": "hello@vibeniche.com",
+    "emailReply": "24시간 내에 답변드립니다",
+    "phoneNumber": "+1 (555) 123-4567",
+    "phoneHours": "월-금 9AM-6PM EST",
+    "visitAddress": "123 Lifestyle Avenue",
+    "cityState": "New York, NY 10001",
+    "businessHours": "영업 시간",
+    "mondayFriday": "월요일 - 금요일",
+    "workingHours": "9:00 AM - 6:00 PM EST",
+    "aboutVibeNiche": "VibeNiche 소개",
+    "foundedDescription": "2016년에 설립된 VibeNiche는 라이프스타일 우수성의 당신의 신뢰할 수 있는 큐레이터입니다. 우리는 뷰티, 여행, 웰니스, 라이프스타일 카테고리에서 최고의 제품을 발견하고 공유하는 데 특화되어 있습니다.",
+    "teamExperts": "우리의 전문가 팀은 품질, 혁신, 가치에 대한 우리의 높은 기준을 충족하도록 각 제품을 신중하게 선택합니다. 우리는 모든 사람이 일상생활을 향상시키는 제품에 접근할 자격이 있다고 믿습니다.",
+    "lifestyle": "라이프스타일",
+    "customerSupport": "고객 지원",
+    "dedicatedSupport": "도움이 필요하신가요? 우리가 도와드립니다. 우리의 지원 팀은 항상 이메일로 이용 가능하며, 당신의 경험이 중요하기 때문에 매번 빠르고 명확하며 배려심 있는 지원을 제공하는 것을 보장합니다.",
+    "averageResponse": "평균 응답 시간: 2시간 이내",
+    "positiveRatings": "고객 만족도: 98% 긍정적 평가",
+    "multiLanguage": "다국어 지원 이용 가능",
+    "followJourney": "우리의 여정을 따라가기",
+    "stayConnected": "연결을 유지하고 최신 제품, 팁, 라이프스타일 영감을 발견하세요",
+    "followUs": "팔로우하세요",
+    "instagram": "Instagram",
+    "twitter": "Twitter",
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "faq": "자주 묻는 질문",
+    "quickAnswers": "우리의 제품과 서비스에 대한 일반적인 질문에 대한 빠른 답변",
+    "faq1": {
+      "question": "제휴 마케팅이 무엇이며 VibeNiche는 어떻게 작동하나요?",
+      "answer": "VibeNiche는 최고의 라이프스타일 제품으로 당신을 연결하는 프리미엄 제휴 마케팅 플랫폼입니다. 우리는 큐레이션된 추천을 통해 구매할 때 수수료를 받아 정직한 리뷰를 제공하고 당신에게 비용 없이 플랫폼을 유지할 수 있게 합니다."
     },
-    info: {
-      email: '이메일 보내기',
-      phone: '전화하기',
-      address: '방문하기',
-      hours: '영업 시간'
+    "faq2": {
+      "question": "어떤 뷰티 제품과 브랜드를 추천하나요?",
+      "answer": "우리의 뷰티 카테고리는 최고 등급 브랜드의 프리미엄 스킨케어, 메이크업, 뷰티 도구를 특징으로 합니다. 우리는 입증된 결과, 깨끗한 성분, 안티에이징, 스킨케어 루틴, 메이크업 필수품, 뷰티 기기에 걸친 우수한 고객 리뷰를 가진 제품에 집중합니다."
+    },
+    "faq3": {
+      "question": "여행 장비와 경험을 어떻게 큐레이션하나요?",
+      "answer": "우리의 여행 전문가들은 수하물, 여행 액세서리, 예약 플랫폼, 여행 경험을 테스트하고 리뷰합니다. 우리는 신뢰할 수 있는 여행 브랜드와 파트너십을 맺어 고급 숙박 시설부터 현대 탐험가를 위한 필수 여행 장비까지 모든 것에 대한 독점 거래를 제공합니다."
+    },
+    "faq4": {
+      "question": "어떤 웰니스와 라이프스타일 제품을 제공하나요?",
+      "answer": "우리는 피트니스 장비, 영양 보충제, 마음챙김 제품, 홈 데코, 스마트 가젯에 특화되어 있습니다. 우리의 웰니스 카테고리는 균형 잡힌 라이프스타일을 위해 정신적 명료함, 신체적 힘, 전반적인 웰빙을 향상시키는 과학적으로 뒷받침된 제품에 집중합니다."
+    },
+    "faq5": {
+      "question": "제품 추천이 진짜인지 어떻게 알 수 있나요?",
+      "answer": "우리가 소개하는 모든 제품은 우리의 전문가 팀에 의한 엄격한 테스트를 거칩니다. 우리는 정말로 믿고 우리 자신이 사용할 제품만 추천합니다. 우리의 제휴 파트너십은 우리의 정직한 리뷰와 평가에 영향을 주지 않습니다."
+    },
+    "faq6": {
+      "question": "제휴 파트너십을 통해 독점 거래를 제공하나요?",
+      "answer": "네! 우리는 브랜드 파트너들과 독점 할인, 세일 조기 접근, 특별 번들을 협상합니다. 구독자는 모든 라이프스타일 카테고리에서 이러한 프리미엄 거래에 우선 접근할 수 있습니다."
+    },
+    "readyStart": "여정을 시작할 준비가 되셨나요?",
+    "joinThousands": "라이프스타일 요구에 VibeNiche를 신뢰하는 수천 명의 만족한 고객에 참여하세요. 당신의 일상 루틴을 변화시킬 제품을 발견하세요.",
+    "exploreProducts": "제품 탐색",
+    "partnerWithUs": "우리와 파트너가 되기",
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "subject": "제목",
+      "message": "메시지",
+      "send": "메시지 보내기",
+      "sending": "전송 중...",
+      "success": "메시지가 성공적으로 전송되었습니다!",
+      "error": "메시지 전송에 실패했습니다. 다시 시도해 주세요."
     }
   },
-
-  // Auth
-  auth: {
-    signIn: '로그인',
-    signUp: '회원가입',
-    signOut: '로그아웃',
-    email: '이메일',
-    password: '비밀번호',
-    confirmPassword: '비밀번호 확인',
-    forgotPassword: '비밀번호를 잊으셨나요?',
-    noAccount: '계정이 없으신가요?',
-    hasAccount: '이미 계정이 있으신가요?',
-    signInSuccess: '성공적으로 로그인되었습니다!',
-    signUpSuccess: '계정이 성공적으로 생성되었습니다!',
-    signOutSuccess: '성공적으로 로그아웃되었습니다!',
-    invalidCredentials: '잘못된 이메일 또는 비밀번호',
-    weakPassword: '비밀번호는 최소 6자 이상이어야 합니다',
-    emailInUse: '이미 사용 중인 이메일',
-    adminLogin: '관리자 로그인',
-    username: '사용자명'
+  "testimonials": {
+    "title": "고객 후기",
+    "subtitle": "수천 명의 고객이 라이프스타일 니즈를 위해 VibeNiche를 신뢰하는 이유를 알아보세요"
   },
-
-  // Admin Dashboard
-  admin: {
-    dashboard: '관리자 대시보드',
-    products: '제품',
-    addProduct: '새 제품 추가',
-    editProduct: '제품 편집',
-    deleteProduct: '제품 삭제',
-    confirmDelete: '이 제품을 삭제하시겠습니까?',
-    productDeleted: '제품이 성공적으로 삭제되었습니다',
-    productUpdated: '제품이 성공적으로 업데이트되었습니다',
-    productCreated: '제품이 성공적으로 생성되었습니다',
-    form: {
-      name: '제품명',
-      description: '설명',
-      shortDescription: '간단한 설명',
-      price: '가격',
-      originalPrice: '정가',
-      category: '카테고리',
-      imageUrl: '이미지 URL',
-      affiliateUrl: '제휴 URL',
-      tags: '태그 (쉼표로 구분)',
-      features: '특징 (쉼표로 구분)',
-      rating: '평점',
-      reviewsCount: '리뷰 수',
-      isActive: '활성',
-      isFeatured: '추천',
-      save: '제품 저장',
-      cancel: '취소'
-    }
+  "notFound": {
+    "title": "404",
+    "subtitle": "앗! 페이지를 찾을 수 없습니다",
+    "description": "찾고 계신 페이지가 제거되었거나 이름이 변경되었거나 일시적으로 사용할 수 없을 수 있습니다.",
+    "goHome": "홈으로 가기"
   },
-
-  // Common
-  common: {
-    loading: '로딩 중...',
-    error: '오류',
-    success: '성공',
-    cancel: '취소',
-    confirm: '확인',
-    delete: '삭제',
-    edit: '편집',
-    save: '저장',
-    back: '뒤로',
-    next: '다음',
-    previous: '이전',
-    close: '닫기',
-    search: '검색',
-    filter: '필터',
-    sort: '정렬',
-    clear: '지우기',
-    apply: '적용',
-    reset: '재설정',
-    selectLanguage: '언어 선택'
+  "travel": {
+    "title": "여행 필수품",
+    "subtitle": "현대의 탐험가와 디지털 노마드를 위한 프리미엄 여행 장비 및 액세서리",
+    "exploreGear": "여행 장비 탐색",
+    "premiumGear": "프리미엄 여행 장비",
+    "everythingNeeded": "다음 모험에 필요한 모든 것",
+    "searchPlaceholder": "여행 제품 검색...",
+    "whyChoose": "왜 우리의 여행 컬렉션을 선택해야 할까요?",
+    "investInAdventure": "현대 여행자를 위해 설계된 내구성 있고 혁신적인 장비로 모험에 투자하세요",
+    "luggageEssentials": "수하물과 가방",
+    "luggageDesc": "어떤 여행에도 견딜 수 있는 프리미엄 수하물, 백팩 및 여행 가방.",
+    "techGear": "테크와 가젯",
+    "techGearDesc": "이동 중 연결과 정리를 유지하기 위한 필수 테크 액세서리와 가젯.",
+    "comfortItems": "편안함과 웰니스",
+    "comfortDesc": "모든 여행을 더 즐겁고 편안하게 만드는 여행 편안함 필수품."
   },
-
-  // Footer
-  footer: {
-    description: '당신의 독특한 라이프스타일에 맞는 제품을 발견하세요.',
-    quickLinks: '빠른 링크',
-    categories: '카테고리',
-    support: '지원',
-    privacy: '개인정보처리방침',
-    terms: '서비스 약관',
-    copyright: '© 2024 VibeNiche. 모든 권리 보유.'
+  "beauty": {
+    "title": "뷰티 필수품",
+    "subtitle": "현대적인 라이프스타일을 위해 큐레이션된 프리미엄 스킨케어, 메이크업, 뷰티 도구를 발견하세요",
+    "shopBeauty": "뷰티 쇼핑",
+    "premiumProducts": "프리미엄 뷰티 제품",
+    "curatedCollection": "고품질 뷰티 필수품의 큐레이션된 컬렉션",
+    "searchPlaceholder": "뷰티 제품 검색...",
+    "whyChoose": "왜 우리의 뷰티 컬렉션을 선택해야 할까요?",
+    "investInBeauty": "과학적으로 입증된 제품과 전문가 추천으로 뷰티 루틴에 투자하세요",
+    "skincareEssentials": "스킨케어 필수품",
+    "skincareDesc": "하루 종일 지속되는 건강하고 빛나는 피부를 위한 프리미엄 스킨케어 제품.",
+    "makeupMustHaves": "메이크업 필수 아이템",
+    "makeupDesc": "완벽한 적용을 위한 전문가급 메이크업 도구와 화장품.",
+    "beautyTools": "뷰티 도구",
+    "beautyToolsDesc": "집에서 전문적인 결과를 얻기 위한 고품질 브러시, 기기 및 액세서리."
   },
-
-  // Testimonials
-  testimonials: {
-    title: '고객 후기',
-    subtitle: '수천 명의 고객이 라이프스타일 니즈를 위해 VibeNiche를 신뢰하는 이유를 알아보세요'
+  "wellness": {
+    "title": "웰니스 & 피트니스",
+    "subtitle": "프리미엄 웰니스 제품과 마음챙김 생활 필수품으로 건강과 웰빙을 변화시키세요",
+    "startJourney": "웰니스 여정 시작하기",
+    "whyChoose": "왜 우리의 여행 컬렉션을 선택해야 할까요?",
+    "investInHealth": "과학적으로 뒷받침된 웰니스 제품으로 건강과 행복에 투자하세요",
+    "mentalClarity": "정신적 명료함",
+    "mentalClarityDesc": "마음챙김 실천을 통해 집중력을 향상시키고, 스트레스를 줄이며, 인지 성능을 향상시킵니다.",
+    "physicalStrength": "신체적 강도",
+    "physicalStrengthDesc": "올바른 피트니스 도구로 근육을 구축하고, 유연성을 높이며, 에너지 수준을 높입니다.",
+    "innerPeace": "내적 평화",
+    "innerPeaceDesc": "명상, 아로마테라피, 마음챙김 생활을 통해 균형과 평온을 찾으세요.",
+    "essentials": "웰니스 필수품",
+    "curatedProducts": "마음, 몸, 영혼을 위한 큐레이션된 제품",
+    "searchPlaceholder": "웰니스 제품 검색..."
   },
-
-  // 404 Page
-  notFound: {
-    title: '404',
-    subtitle: '앗! 페이지를 찾을 수 없습니다',
-    description: '찾고 계신 페이지가 제거되었거나 이름이 변경되었거나 일시적으로 사용할 수 없을 수 있습니다.',
-    goHome: '홈으로 가기'
+  "advice": {
+    "title": "전문가 조언",
+    "subtitle": "업계 전문가와 사상 리더들의 큐레이션된 지혜와 실행 가능한 통찰력",
+    "exploreGuidance": "전문가 가이드 탐색",
+    "areasOfExpertise": "전문 분야",
+    "professionalGuidance": "여러 분야에 걸친 전문적인 가이드",
+    "decisionMaking": "의사결정",
+    "decisionMakingDesc": "인생의 중요한 선택에 대한 전문가 가이드",
+    "problemSolving": "문제 해결",
+    "problemSolvingDesc": "일상적인 도전에 대한 창의적인 해결책",
+    "goalAchievement": "목표 달성",
+    "goalAchievementDesc": "개인적 성공을 위한 전략적 계획",
+    "growthMindset": "성장 마인드셋",
+    "growthMindsetDesc": "개인적 발전과 지속적인 개선",
+    "expertRecommendations": "전문가 추천",
+    "curatedAdvice": "신뢰할 수 있는 전문가들의 신중하게 큐레이션된 조언과 리소스",
+    "searchPlaceholder": "조언과 리소스 검색...",
+    "loadingResources": "조언 리소스 로딩 중...",
+    "noResourcesFound": "검색과 일치하는 조언 리소스를 찾을 수 없습니다.",
+    "tryAdjustingSearch": "검색어를 조정하거나 위의 전문가 카테고리를 탐색해 보세요."
   }
 };

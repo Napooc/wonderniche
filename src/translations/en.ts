@@ -206,7 +206,24 @@ export default {
     joinMission: 'Join Our Mission',
     bePartCommunity: 'Be part of a community that values authenticity, quality, and meaningful connections. Discover your next favorite product today.',
     contactUs: 'Contact Us',
-    curatingPremium: 'Curating premium lifestyle experiences through authentic affiliate partnerships.'
+    curatingPremium: 'Curating premium lifestyle experiences through authentic affiliate partnerships.',
+    team: {
+      sarah: {
+        name: 'Sarah Johnson',
+        role: 'Founder & CEO',
+        quote: 'Building bridges between lifestyle dreamers and premium brands.'
+      },
+      marcus: {
+        name: 'Marcus Chen',
+        role: 'Head of Partnerships',
+        quote: 'Curating relationships that create authentic value.'
+      },
+      elena: {
+        name: 'Elena Rodriguez',
+        role: 'Creative Director',
+        quote: 'Design is the language that speaks to the soul.'
+      }
+    }
   },
 
   // Categories
@@ -268,6 +285,11 @@ export default {
     title: 'Connect With VibeNiche',
     subtitle: 'Your trusted partner in discovering the finest lifestyle products. We\'re here to help you live your best life with curated excellence.',
     emailUs: 'Email Us',
+    support247: '24/7 Support',
+    alwaysAvailable: 'Always Available',
+    roundTheClock: 'Round-the-clock assistance',
+    telegram: 'Telegram',
+    pinterest: 'Pinterest',
     callNow: 'Call Now',
     happyCustomersCount: '50,000+',
     happyCustomers: 'Happy Customers',
@@ -291,13 +313,15 @@ export default {
     aboutVibeNiche: 'About VibeNiche',
     foundedDescription: 'Founded in 2016, VibeNiche has been your trusted curator of lifestyle excellence. We specialize in discovering and sharing the finest products across beauty, travel, wellness, and lifestyle categories.',
     teamExperts: 'Our team of experts carefully selects each product to ensure it meets our high standards for quality, innovation, and value. We believe everyone deserves access to products that enhance their daily life.',
+    lifestyle: 'Lifestyle',
     customerSupport: 'Customer Support',
-    dedicatedSupport: 'Our dedicated support team is here to help you with any questions, concerns, or feedback you may have. We pride ourselves on providing exceptional customer service and quick response times.',
+    dedicatedSupport: 'Need help? We\'ve got you. Our support team is always available via email, making sure you get quick, clear, and caring assistance every time — because your experience matters.',
     averageResponse: 'Average response time: Under 2 hours',
     positiveRatings: 'Customer satisfaction: 98% positive ratings',
     multiLanguage: 'Multi-language support available',
     followJourney: 'Follow Our Journey',
     stayConnected: 'Stay connected and discover the latest products, tips, and lifestyle inspiration',
+    followUs: 'Follow us',
     instagram: 'Instagram',
     twitter: 'Twitter',
     facebook: 'Facebook',
@@ -305,6 +329,30 @@ export default {
     youtube: 'YouTube',
     faq: 'Frequently Asked Questions',
     quickAnswers: 'Quick answers to common questions about our products and services',
+    faq1: {
+      question: 'What is affiliate marketing and how does VibeNiche work?',
+      answer: 'VibeNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you.'
+    },
+    faq2: {
+      question: 'What beauty products and brands do you recommend?',
+      answer: 'Our beauty category features premium skincare, makeup, and beauty tools from top-rated brands. We focus on products with proven results, clean ingredients, and excellent customer reviews across anti-aging, skincare routines, makeup essentials, and beauty devices.'
+    },
+    faq3: {
+      question: 'How do you curate travel gear and experiences?',
+      answer: 'Our travel experts test and review luggage, travel accessories, booking platforms, and travel experiences. We partner with trusted travel brands to bring you exclusive deals on everything from luxury accommodations to essential travel gear for modern explorers.'
+    },
+    faq4: {
+      question: 'What wellness and lifestyle products do you feature?',
+      answer: 'We specialize in fitness equipment, nutrition supplements, mindfulness products, home decor, and smart gadgets. Our wellness category focuses on scientifically-backed products that enhance mental clarity, physical strength, and overall wellbeing for a balanced lifestyle.'
+    },
+    faq5: {
+      question: 'How do I know if a product recommendation is genuine?',
+      answer: 'Every product we feature goes through rigorous testing by our expert team. We only recommend products we genuinely believe in and would use ourselves. Our affiliate partnerships never influence our honest reviews and ratings.'
+    },
+    faq6: {
+      question: 'Do you offer exclusive deals through your affiliate partnerships?',
+      answer: 'Yes! We negotiate exclusive discounts, early access to sales, and special bundles with our brand partners. Subscribers get first access to these premium deals across all our lifestyle categories.'
+    },
     trackOrder: 'How do I track my order?',
     trackAnswer: 'Once your order is processed, you\'ll receive a tracking number via email. You can use this to monitor your package\'s progress on the carrier\'s website.',
     returnPolicy: 'What\'s your return policy?',
@@ -394,6 +442,83 @@ export default {
     }
   },
 
+  // Travel Page
+  travel: {
+    title: 'Travel Essentials',
+    subtitle: 'Premium travel gear and accessories for the modern explorer and digital nomad',
+    exploreGear: 'Explore Travel Gear',
+    premiumGear: 'Premium Travel Gear',
+    everythingNeeded: 'Everything you need for your next adventure',
+    searchPlaceholder: 'Search travel products...',
+    whyChoose: 'Why Choose Our Travel Collection?',
+    investInAdventure: 'Invest in your adventures with durable, innovative gear designed for modern travelers',
+    luggageEssentials: 'Luggage & Bags',
+    luggageDesc: 'Premium luggage, backpacks, and travel bags built to withstand any journey.',
+    techGear: 'Tech & Gadgets',
+    techGearDesc: 'Essential tech accessories and gadgets to stay connected and organized on the go.',
+    comfortItems: 'Comfort & Wellness',
+    comfortDesc: 'Travel comfort essentials to make every journey more enjoyable and relaxing.'
+  },
+
+  // Beauty Page
+  beauty: {
+    title: 'Beauty Essentials',
+    subtitle: 'Discover premium skincare, makeup, and beauty tools curated for the modern lifestyle',
+    shopBeauty: 'Shop Beauty',
+    premiumProducts: 'Premium Beauty Products',
+    curatedCollection: 'Curated collection of high-quality beauty essentials',
+    searchPlaceholder: 'Search beauty products...',
+    whyChoose: 'Why Choose Our Beauty Collection?',
+    investInBeauty: 'Invest in your beauty routine with scientifically-backed products and expert recommendations',
+    skincareEssentials: 'Skincare Essentials',
+    skincareDesc: 'Premium skincare products for healthy, glowing skin that lasts all day.',
+    makeupMustHaves: 'Makeup Must-Haves',
+    makeupDesc: 'Professional-grade makeup tools and cosmetics for flawless application.',
+    beautyTools: 'Beauty Tools',
+    beautyToolsDesc: 'High-quality brushes, devices, and accessories for professional results at home.'
+  },
+
+  // Wellness Page
+  wellness: {
+    title: 'Wellness & Fitness',
+    subtitle: 'Transform your health and wellbeing with premium wellness products and mindful living essentials',
+    startJourney: 'Start Your Wellness Journey',
+    whyChoose: 'Why Choose Wellness?',
+    investInHealth: 'Invest in your health and happiness with scientifically-backed wellness products',
+    mentalClarity: 'Mental Clarity',
+    mentalClarityDesc: 'Improve focus, reduce stress, and enhance cognitive performance through mindful practices.',
+    physicalStrength: 'Physical Strength',
+    physicalStrengthDesc: 'Build muscle, increase flexibility, and boost energy levels with the right fitness tools.',
+    innerPeace: 'Inner Peace',
+    innerPeaceDesc: 'Find balance and tranquility through meditation, aromatherapy, and mindful living.',
+    essentials: 'Wellness Essentials',
+    curatedProducts: 'Curated products for your mind, body, and soul',
+    searchPlaceholder: 'Search wellness products...'
+  },
+
+  // Advice Page
+  advice: {
+    title: 'Expert Advice',
+    subtitle: 'Curated wisdom and actionable insights from industry experts and thought leaders',
+    exploreGuidance: 'Explore Expert Guidance',
+    areasOfExpertise: 'Areas of Expertise',
+    professionalGuidance: 'Professional guidance across multiple domains',
+    decisionMaking: 'Decision Making',
+    decisionMakingDesc: 'Expert guidance for life\'s important choices',
+    problemSolving: 'Problem Solving',
+    problemSolvingDesc: 'Creative solutions to everyday challenges',
+    goalAchievement: 'Goal Achievement',
+    goalAchievementDesc: 'Strategic planning for personal success',
+    growthMindset: 'Growth Mindset',
+    growthMindsetDesc: 'Personal development and continuous improvement',
+    expertRecommendations: 'Expert Recommendations',
+    curatedAdvice: 'Carefully curated advice and resources from trusted experts',
+    searchPlaceholder: 'Search advice and resources...',
+    loadingResources: 'Loading advice resources...',
+    noResourcesFound: 'No advice resources found matching your search.',
+    tryAdjustingSearch: 'Try adjusting your search terms or explore our expert categories above.'
+  },
+
   // Common
   common: {
     loading: 'Loading...',
@@ -416,7 +541,8 @@ export default {
     apply: 'Apply',
     reset: 'Reset',
     selectLanguage: 'Select Language',
-    noResults: 'No products found matching your search.'
+    noResults: 'No products found matching your search.',
+    noProductsFound: 'No products found matching your search.'
   },
 
   // Footer

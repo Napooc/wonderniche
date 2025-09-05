@@ -448,11 +448,11 @@ if (product) {
                 {formData.image_url && (
                   <div className="space-y-2">
                     <Label>Preview</Label>
-                    <div className="relative w-32 h-32 border border-border rounded-lg overflow-hidden">
+                    <div className="relative w-32 h-32 border border-border rounded-xl overflow-hidden bg-gradient-to-br from-card/50 to-card/30">
                       <img
                         src={formData.image_url}
                         alt="Product preview"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover rounded-xl"
                         onError={(e) => {
                           e.currentTarget.src = 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=300&h=300&fit=crop';
                         }}

@@ -156,12 +156,12 @@ const ProductDetail = () => {
             <div className="order-1 lg:order-1">
               {/* Main Image */}
               <div className="relative group">
-                <div className="rounded-2xl sm:rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-xl sm:shadow-2xl">
-                  <div className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] relative">
+                <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-xl sm:shadow-2xl border border-border/20">
+                  <div className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] relative bg-gradient-to-br from-card/50 to-card/30 rounded-3xl overflow-hidden">
                     <img 
                       src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop'} 
                       alt={product.name} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 rounded-3xl" 
                       onError={e => {
                         e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop';
                       }} 

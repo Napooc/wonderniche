@@ -71,11 +71,11 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
           {/* Image Gallery */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/5 to-secondary/5">
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border/20">
               <img
                 src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop'}
                 alt={product.name}
-                className="w-full h-96 object-cover transition-transform duration-300 hover:scale-105"
+                className="w-full h-96 object-cover transition-transform duration-300 hover:scale-102 rounded-3xl"
                 onError={(e) => {
                   e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop';
                 }}
