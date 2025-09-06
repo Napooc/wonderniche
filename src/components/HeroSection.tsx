@@ -12,7 +12,7 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
-  const images = [hero1, hero2, hero3];
+  const images = [hero2, hero1, hero3];
   const fullText = t('hero.title');
 
   // Typing animation
@@ -29,11 +29,13 @@ const HeroSection = () => {
 
   // Image rotation
   useEffect(() => {
-    const interval = setInterval(() => {
+    // First image (hero2) stays for 12 seconds, others for 8 seconds
+    const timeout = setTimeout(() => {
       setCurrentImage(prev => (prev + 1) % images.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+    }, currentImage === 0 ? 12000 : 8000);
+    
+    return () => clearTimeout(timeout);
+  }, [currentImage, images.length]);
 
   // Floating particles
   const particles = Array.from({
