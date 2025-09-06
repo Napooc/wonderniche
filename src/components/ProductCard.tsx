@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Star, ExternalLink, Heart, Share2 } from 'lucide-react';
+import { Star, ExternalLink, Heart, Share2, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { toast } from 'sonner';
 interface ProductCardProps {
   id: string;
   title: string;
@@ -15,6 +16,7 @@ interface ProductCardProps {
   discount?: string;
 }
 const ProductCard = ({
+  id,
   title,
   description,
   rating,
@@ -27,8 +29,40 @@ const ProductCard = ({
 }: ProductCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorited, setIsFavorited] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
   const handleAffiliateClick = () => {
     window.open(affiliateUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleCopyLink = async (e: React.MouseEvent) => {
+    e.preventDefault(); // Prevent default behavior
+    e.stopPropagation(); // Prevent card click
+    const productUrl = `${window.location.origin}/product/${id}`;
+    
+    try {
+      await navigator.clipboard.writeText(productUrl);
+      setIsCopied(true);
+      toast.success("Link copied to clipboard!", {
+        description: "Product link has been copied successfully.",
+        duration: 2000,
+      });
+      setTimeout(() => setIsCopied(false), 2000); // Reset after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy link:', err);
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = productUrl;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setIsCopied(true);
+      toast.success("Link copied to clipboard!", {
+        description: "Product link has been copied successfully.",
+        duration: 2000,
+      });
+      setTimeout(() => setIsCopied(false), 2000);
+    }
   };
   const renderStars = (rating: number) => {
     return Array.from({
@@ -59,8 +93,20 @@ const ProductCard = ({
 
         {/* Action Buttons */}
         <div className={`absolute top-4 right-4 flex flex-col gap-2 transition-all duration-300 ${isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'}`}>
-          
-          
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            className="w-10 h-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background/90 border border-border/20"
+            onClick={handleCopyLink}
+            title={isCopied ? "Link copied!" : "Copy product link"}
+          >
+            {isCopied ? (
+              <Check className="w-4 h-4 text-green-500" />
+            ) : (
+              <Copy className="w-4 h-4" />
+            )}
+          </Button>
         </div>
       </div>
 
