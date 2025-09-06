@@ -56,8 +56,8 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-white hover:text-yellow-300 transition-all duration-300 relative group ${
-                  location.pathname === item.href ? 'text-yellow-300' : ''
+                className={`text-foreground hover:text-primary transition-all duration-300 relative group ${
+                  location.pathname === item.href ? 'text-primary' : ''
                 }`}
               >
                 {item.name}
