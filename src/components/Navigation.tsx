@@ -36,7 +36,9 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled ? 'glass py-3' : 'py-6'
+    }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -54,8 +56,8 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-primary hover:text-primary-glow transition-all duration-300 relative group font-medium ${
-                  location.pathname === item.href ? 'text-primary-glow' : ''
+                className={`text-foreground hover:text-primary transition-all duration-300 relative group ${
+                  location.pathname === item.href ? 'text-primary' : ''
                 }`}
               >
                 {item.name}
@@ -71,12 +73,12 @@ const Navigation = () => {
               <div className="flex items-center space-x-4">
                 <Link 
                   to="/admin"
-                  className="text-primary hover:text-primary-glow transition-colors flex items-center space-x-1"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center space-x-1"
                 >
                   <Settings className="w-4 h-4" />
                   <span className="hidden lg:inline">Admin</span>
                 </Link>
-                <span className="text-sm text-primary hidden lg:inline">
+                <span className="text-sm text-muted-foreground hidden lg:inline">
                   {user?.username}
                 </span>
               </div>
@@ -89,7 +91,7 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="md:hidden text-primary hover:text-primary-glow"
+                className="md:hidden text-foreground hover:text-primary"
               >
                 <Menu size={24} />
               </Button>
