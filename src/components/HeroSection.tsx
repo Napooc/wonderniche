@@ -11,9 +11,17 @@ const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
+  const [textKey, setTextKey] = useState(0); // Force re-render when text changes
 
   const images = [hero1, hero2, hero3];
   const fullText = t('hero.title');
+
+  // Reset typing animation when language/text changes
+  useEffect(() => {
+    setDisplayText('');
+    setIsTyping(true);
+    setTextKey(prev => prev + 1);
+  }, [fullText]);
 
   // Typing animation
   useEffect(() => {
@@ -25,7 +33,7 @@ const HeroSection = () => {
     } else if (displayText.length === fullText.length) {
       setIsTyping(false);
     }
-  }, [displayText, isTyping, fullText]);
+  }, [displayText, isTyping, fullText, textKey]);
 
   // Image rotation
   useEffect(() => {
