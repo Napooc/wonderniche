@@ -12,7 +12,11 @@ const Privacy: React.FC = () => {
   const { t } = useTranslation();
   const { openModal } = useCookieConsent();
 
-  const lastUpdated = new Date().toLocaleDateString('ar-MA');
+  const lastUpdated = new Date().toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  });
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
