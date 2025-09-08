@@ -7,19 +7,15 @@ import { Badge } from '@/components/ui/badge';
 import { useTranslation } from '@/contexts/TranslationContext';
 import { useCookieConsent } from '@/contexts/CookieConsentContext';
 import Navigation from '@/components/Navigation';
-
 const Privacy: React.FC = () => {
-  const { t } = useTranslation();
-  const { openModal } = useCookieConsent();
-
-  const lastUpdated = new Date().toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit'
-  });
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+  const {
+    t
+  } = useTranslation();
+  const {
+    openModal
+  } = useCookieConsent();
+  const lastUpdated = new Date().toLocaleDateString('ar-MA');
+  return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       <Navigation />
       
       <main className="pt-20 pb-16">
@@ -200,7 +196,7 @@ const Privacy: React.FC = () => {
                   <MapPin className="h-5 w-5 text-primary" />
                   <div>
                     <p className="font-medium">{t('privacy.contact.address')}</p>
-                    <p className="text-sm text-muted-foreground">مقر الشركة</p>
+                    
                   </div>
                 </div>
               </div>
@@ -220,8 +216,6 @@ const Privacy: React.FC = () => {
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Privacy;
