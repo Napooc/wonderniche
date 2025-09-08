@@ -470,10 +470,10 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4 text-card-foreground">{t('home.company')}</h4>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#about" className="hover:text-primary transition-colors">{t('nav.about')}</a></li>
-                <li><a href="#contact" className="hover:text-primary transition-colors">{t('nav.contact')}</a></li>
-                <li><a href="#privacy" className="hover:text-primary transition-colors">Privacy Policy</a></li>
-                <li><a href="#terms" className="hover:text-primary transition-colors">Terms of Service</a></li>
+                <li><Link to="/about" className="hover:text-primary transition-colors">{t('nav.about')}</Link></li>
+                <li><Link to="/contact" className="hover:text-primary transition-colors">{t('nav.contact')}</Link></li>
+                <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+                <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               </ul>
             </div>
 

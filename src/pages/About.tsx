@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
@@ -298,9 +299,16 @@ const About = () => {
               <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeNiche Logo" className="h-8 w-auto" />
               <span className="text-xl font-bold gradient-text">VibeNiche</span>
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-muted-foreground mb-4">
               {t('about.curatingPremium')}
             </p>
+            <div className="flex justify-center space-x-4 text-sm text-muted-foreground">
+              <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <span>•</span>
+              <Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+              <span>•</span>
+              <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
+            </div>
           </div>
         </div>
       </footer>
