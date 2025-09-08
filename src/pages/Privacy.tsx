@@ -191,29 +191,12 @@ const Privacy: React.FC = () => {
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-5 w-5 text-primary" />
-                  <div>
-                    <p className="font-medium">{t('privacy.contact.address')}</p>
-                    
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </Card>
 
           {/* CNDP Compliance Notice */}
-          <div className="mt-12 p-6 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg">
-            <div className="flex items-center gap-3 mb-3">
-              <Shield className="h-6 w-6 text-primary" />
-              <h3 className="text-lg font-semibold">الامتثال للجنة الوطنية لمراقبة حماية المعلومات الشخصية (CNDP)</h3>
-            </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              نحن ملتزمون بالامتثال الكامل لقوانين حماية البيانات المغربية وتوجيهات اللجنة الوطنية لمراقبة حماية المعلومات الشخصية. 
-              يحق لك الوصول إلى بياناتك الشخصية وتصحيحها وحذفها، كما يمكنك سحب موافقتك في أي وقت دون أي تأثير على شرعية المعالجة السابقة.
-            </p>
-          </div>
+          
         </div>
       </main>
     </div>;
