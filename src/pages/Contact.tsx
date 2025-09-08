@@ -162,7 +162,7 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 justify-items-center justify-center mx-auto max-w-4xl">
+          <div className="flex flex-wrap justify-center gap-6 mb-16 max-w-4xl mx-auto">
             {contactInfo.map((info, index) => {
             const IconComponent = info.icon;
             return <Card key={index} className={`glass-card p-6 text-center group hover:scale-105 cursor-pointer transition-all duration-300 reveal-up stagger-${index + 1}`} onClick={() => info.action && window.open(info.action, '_blank')}>
