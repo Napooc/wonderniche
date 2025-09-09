@@ -18,7 +18,7 @@ const Privacy: React.FC = () => {
   return <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
       <Navigation />
       
-      <main className="pt-24 pb-8 sm:pt-20 sm:pb-16">
+      <main className="pt-32 pb-8 sm:pt-28 sm:pb-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           {/* Header */}
           <div className="text-center mb-8 sm:mb-12">
