@@ -129,43 +129,43 @@ export const CookieSettingsModal: React.FC = () => {
     cookies: CookieInfo[];
     isEssential?: boolean;
   }) => (
-    <div className="space-y-4 p-4 border rounded-lg">
-      <div className="flex items-start justify-between">
-        <div className="flex items-start gap-3">
-          <Icon className="h-5 w-5 mt-0.5 text-primary" />
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-1">
-              <h4 className="font-medium">{title}</h4>
+    <div className="space-y-3 sm:space-y-4 p-3 sm:p-4 border rounded-lg">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 sm:gap-4">
+        <div className="flex items-start gap-2 sm:gap-3 flex-1 min-w-0">
+          <Icon className="h-4 w-4 sm:h-5 sm:w-5 mt-0.5 text-primary flex-shrink-0" />
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2">
+              <h4 className="font-medium text-sm sm:text-base">{title}</h4>
               {isEssential && (
-                <Badge variant="outline" className="text-xs">
+                <Badge variant="outline" className="text-xs w-fit">
                   {t('cookies.modal.essential.alwaysOn')}
                 </Badge>
               )}
             </div>
-            <p className="text-sm text-muted-foreground mb-3">{description}</p>
+            <p className="text-xs sm:text-sm text-muted-foreground mb-3">{description}</p>
             
             {/* Cookie Details */}
             <div className="space-y-2">
               {cookies.map((cookie, index) => (
-                <div key={`${category}-${index}`} className="text-xs bg-muted/50 p-2 rounded">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="font-mono font-medium">{cookie.name}</span>
-                    <Badge variant="secondary" className="text-xs">
+                <div key={`${category}-${index}`} className="text-xs bg-muted/50 p-2 sm:p-3 rounded">
+                  <div className="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-1 xs:gap-2 mb-2">
+                    <span className="font-mono font-medium text-xs break-all">{cookie.name}</span>
+                    <Badge variant="secondary" className="text-xs w-fit">
                       {cookie.type}
                     </Badge>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-1 text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <Globe className="h-3 w-3" />
-                      {cookie.provider}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-muted-foreground">
+                    <div className="flex items-center gap-1 min-w-0">
+                      <Globe className="h-3 w-3 flex-shrink-0" />
+                      <span className="truncate">{cookie.provider}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-3 w-3" />
-                      {cookie.expiry}
+                    <div className="flex items-center gap-1 min-w-0">
+                      <Clock className="h-3 w-3 flex-shrink-0" />
+                      <span className="truncate">{cookie.expiry}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Info className="h-3 w-3" />
-                      {cookie.purpose}
+                    <div className="flex items-center gap-1 min-w-0">
+                      <Info className="h-3 w-3 flex-shrink-0" />
+                      <span className="truncate">{cookie.purpose}</span>
                     </div>
                   </div>
                 </div>
@@ -173,16 +173,19 @@ export const CookieSettingsModal: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center space-x-2">
-          <Switch
-            id={category}
-            checked={enabled}
-            onCheckedChange={onToggle}
-            disabled={isEssential}
-          />
-          <Label htmlFor={category} className="sr-only">
-            {title}
-          </Label>
+        <div className="flex items-center justify-between sm:justify-end">
+          <span className="text-sm font-medium sm:hidden">{enabled ? 'Enabled' : 'Disabled'}</span>
+          <div className="flex items-center space-x-2">
+            <Switch
+              id={category}
+              checked={enabled}
+              onCheckedChange={onToggle}
+              disabled={isEssential}
+            />
+            <Label htmlFor={category} className="sr-only">
+              {title}
+            </Label>
+          </div>
         </div>
       </div>
     </div>
@@ -190,20 +193,20 @@ export const CookieSettingsModal: React.FC = () => {
 
   return (
     <Dialog open={showModal} onOpenChange={closeModal}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <Settings className="h-5 w-5" />
+      <DialogContent className="w-[95vw] max-w-4xl h-[95vh] max-h-[95vh] overflow-hidden flex flex-col p-4 sm:p-6">
+        <DialogHeader className="flex-shrink-0 pb-2 sm:pb-4">
+          <DialogTitle className="flex items-center gap-2 text-base sm:text-lg">
+            <Settings className="h-4 w-4 sm:h-5 sm:w-5" />
             {t('cookies.modal.title')}
           </DialogTitle>
         </DialogHeader>
         
-        <div className="space-y-6">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex-1 overflow-y-auto space-y-4 sm:space-y-6 pr-2">
+          <p className="text-xs sm:text-sm text-muted-foreground">
             {t('cookies.modal.description')}
           </p>
           
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <CookieCategory
               category="essential"
               title={t('cookies.modal.essential.title')}
@@ -246,19 +249,32 @@ export const CookieSettingsModal: React.FC = () => {
             />
           </div>
           
-          <Separator />
+          <Separator className="my-4 sm:my-6" />
           
-          <div className="flex flex-col sm:flex-row justify-between gap-3">
-            <Button variant="outline" onClick={closeModal}>
-              {t('cookies.modal.close')}
-            </Button>
-            <div className="flex gap-2">
-              <Button variant="outline" onClick={handleSave}>
-                {t('cookies.modal.savePreferences')}
+          <div className="flex flex-col gap-3 pb-2">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
+              <Button 
+                variant="outline" 
+                onClick={closeModal} 
+                className="w-full sm:w-auto text-sm"
+              >
+                {t('cookies.modal.close')}
               </Button>
-              <Button onClick={handleAcceptSelected}>
-                {t('cookies.modal.acceptSelected')}
-              </Button>
+              <div className="flex flex-col xs:flex-row gap-2 sm:gap-3 sm:ml-auto">
+                <Button 
+                  variant="outline" 
+                  onClick={handleSave}
+                  className="w-full xs:w-auto text-sm"
+                >
+                  {t('cookies.modal.savePreferences')}
+                </Button>
+                <Button 
+                  onClick={handleAcceptSelected}
+                  className="w-full xs:w-auto text-sm"
+                >
+                  {t('cookies.modal.acceptSelected')}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
