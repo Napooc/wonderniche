@@ -88,7 +88,7 @@ const CategoryHero = ({ title, subtitle, images, ctaText = "Explore Products", o
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
 
