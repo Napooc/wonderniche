@@ -16,7 +16,7 @@ const SEOComponent = ({
   description, 
   keywords, 
   canonicalUrl, 
-  ogImage = "https://wonderniche.com/og-image.jpg",
+  ogImage = "https://vibeniche.com/og-image.jpg",
   structuredData,
   locale = "en",
   alternateUrls = {}

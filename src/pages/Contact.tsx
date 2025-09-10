@@ -28,7 +28,7 @@ const Contact = () => {
     title: t('contact.emailUs'),
     details: t('contact.emailAddress'),
     subtitle: t('contact.emailReply'),
-    action: 'mailto:hello@wonderniche.com'
+    action: 'mailto:hello@vibeniche.com'
   }, {
     icon: Clock,
     title: t('contact.support247'),
@@ -112,7 +112,7 @@ const Contact = () => {
               {t('contact.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:hello@wonderniche.com'}>
+              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:hello@vibeniche.com'}>
                 <Mail className="w-5 h-5 mr-2" />
                 {t('contact.emailUs')}
               </Button>
@@ -303,7 +303,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:hello@wonderniche.com?subject=Partnership Inquiry'}>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:hello@vibeniche.com?subject=Partnership Inquiry'}>
                 {t('contact.partnerWithUs')}
               </Button>
             </div>
