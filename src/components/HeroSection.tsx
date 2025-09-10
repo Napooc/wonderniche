@@ -5,9 +5,10 @@ import { useTranslation } from '@/contexts/TranslationContext';
 import hero1 from '@/assets/hero-1.jpg';
 import hero2 from '@/assets/hero-2.jpg';
 import hero3 from '@/assets/hero-3.jpg';
-
 const HeroSection = () => {
-  const { t } = useTranslation();
+  const {
+    t
+  } = useTranslation();
   const [currentImage, setCurrentImage] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
@@ -38,45 +39,28 @@ const HeroSection = () => {
   // Image rotation
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
+      setCurrentImage(prev => (prev + 1) % images.length);
     }, 8000);
     return () => clearInterval(interval);
   }, [images.length]);
 
   // Floating particles
-  const particles = Array.from({ length: 20 }, (_, i) => (
-    <div
-      key={i}
-      className="particle"
-      style={{
-        left: `${Math.random() * 100}%`,
-        width: `${Math.random() * 4 + 2}px`,
-        height: `${Math.random() * 4 + 2}px`,
-        animationDelay: `${Math.random() * 8}s`,
-        animationDuration: `${8 + Math.random() * 4}s`
-      }}
-    />
-  ));
-
-  return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  const particles = Array.from({
+    length: 20
+  }, (_, i) => <div key={i} className="particle" style={{
+    left: `${Math.random() * 100}%`,
+    width: `${Math.random() * 4 + 2}px`,
+    height: `${Math.random() * 4 + 2}px`,
+    animationDelay: `${Math.random() * 8}s`,
+    animationDuration: `${8 + Math.random() * 4}s`
+  }} />);
+  return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Images with Smooth Transitions */}
       <div className="absolute inset-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-2000 ${
-              index === currentImage ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            <img
-              src={image}
-              alt={`Hero ${index + 1}`}
-              className="w-full h-full object-cover"
-            />
+        {images.map((image, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-2000 ${index === currentImage ? 'opacity-100' : 'opacity-0'}`}>
+            <img src={image} alt={`Hero ${index + 1}`} className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
-          </div>
-        ))}
+          </div>)}
       </div>
 
       {/* Floating Particles */}
@@ -96,19 +80,15 @@ const HeroSection = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed animate-fade-in text-amber-50">
             {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
-            <Button 
-              size="lg" 
-              className="btn-premium text-lg px-8 py-4 rounded-full"
-              onClick={() => {
-                window.location.href = '/about#born-from-passion';
-              }}
-            >
+            <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => {
+            window.location.href = '/about#born-from-passion';
+          }}>
               {t('hero.ourStoryButton')}
             </Button>
           </div>
@@ -122,10 +102,12 @@ const HeroSection = () => {
 
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-primary/20 blur-xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/20 blur-xl animate-float" style={{ animationDelay: '-2s' }} />
-      <div className="absolute top-1/2 left-5 w-16 h-16 rounded-full bg-primary-glow/30 blur-lg animate-float" style={{ animationDelay: '-4s' }} />
-    </section>
-  );
+      <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-accent/20 blur-xl animate-float" style={{
+      animationDelay: '-2s'
+    }} />
+      <div className="absolute top-1/2 left-5 w-16 h-16 rounded-full bg-primary-glow/30 blur-lg animate-float" style={{
+      animationDelay: '-4s'
+    }} />
+    </section>;
 };
-
 export default HeroSection;
