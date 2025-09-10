@@ -1,10 +1,10 @@
 // Global SEO configurations and structured data
 
 export const generateTravelSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://vibeniche.com';
+  const baseUrl = 'https://wonderniche.com';
   
   return {
-    title: "Premium Travel Gear & Accessories 2024 | VibeNiche - Worldwide Delivery",
+    title: "Premium Travel Gear & Accessories 2024 | WonderNiche - Worldwide Delivery",
     description: "Discover premium travel essentials, luggage, and accessories for modern explorers. Curated collection with worldwide shipping. Shop the best travel gear from top brands.",
     keywords: "travel gear, premium luggage, travel accessories, backpacks, travel essentials, digital nomad gear, worldwide shipping, travel products 2024",
     canonicalUrl: `${baseUrl}/${locale === 'en' ? '' : locale + '/'}travel`,
@@ -28,7 +28,7 @@ export const generateTravelSEO = (locale: string = 'en') => {
       "url": `${baseUrl}/travel`,
       "publisher": {
         "@type": "Organization",
-        "name": "VibeNiche",
+        "name": "WonderNiche",
         "url": baseUrl,
         "logo": {
           "@type": "ImageObject",
@@ -56,10 +56,10 @@ export const generateTravelSEO = (locale: string = 'en') => {
 };
 
 export const generateBeautySEO = (locale: string = 'en') => {
-  const baseUrl = 'https://vibeniche.com';
+  const baseUrl = 'https://wonderniche.com';
   
   return {
-    title: "Premium Beauty Products & Skincare 2024 | VibeNiche - Global Beauty Hub",
+    title: "Premium Beauty Products & Skincare 2024 | WonderNiche - Global Beauty Hub",
     description: "Shop premium beauty products, skincare, and cosmetics from top international brands. Curated collection with worldwide shipping. Discover the latest beauty trends.",
     keywords: "premium beauty products, skincare, cosmetics, makeup, beauty tools, anti-aging, organic skincare, luxury beauty, worldwide shipping, beauty 2024",
     canonicalUrl: `${baseUrl}/${locale === 'en' ? '' : locale + '/'}beauty`,
@@ -83,7 +83,7 @@ export const generateBeautySEO = (locale: string = 'en') => {
       "url": `${baseUrl}/beauty`,
       "publisher": {
         "@type": "Organization",
-        "name": "VibeNiche",
+        "name": "WonderNiche",
         "url": baseUrl
       },
       "mainEntity": {
@@ -107,10 +107,10 @@ export const generateBeautySEO = (locale: string = 'en') => {
 };
 
 export const generateWellnessSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://vibeniche.com';
+  const baseUrl = 'https://wonderniche.com';
   
   return {
-    title: "Wellness & Fitness Products 2024 | VibeNiche - Global Wellness Store",
+    title: "Wellness & Fitness Products 2024 | WonderNiche - Global Wellness Store",
     description: "Transform your health with premium wellness and fitness products. Curated collection of supplements, fitness gear, and mindfulness tools. Worldwide delivery available.",
     keywords: "wellness products, fitness equipment, health supplements, mindfulness tools, yoga accessories, meditation, fitness gear, healthy lifestyle, wellness 2024",
     canonicalUrl: `${baseUrl}/${locale === 'en' ? '' : locale + '/'}wellness`,
@@ -134,7 +134,7 @@ export const generateWellnessSEO = (locale: string = 'en') => {
       "url": `${baseUrl}/wellness`,
       "publisher": {
         "@type": "Organization",
-        "name": "VibeNiche",
+        "name": "WonderNiche",
         "url": baseUrl
       },
       "mainEntity": {
@@ -158,10 +158,10 @@ export const generateWellnessSEO = (locale: string = 'en') => {
 };
 
 export const generateAdviceSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://vibeniche.com';
+  const baseUrl = 'https://wonderniche.com';
   
   return {
-    title: "Expert Advice & Lifestyle Tips 2024 | VibeNiche - Global Knowledge Hub",
+    title: "Expert Advice & Lifestyle Tips 2024 | WonderNiche - Global Knowledge Hub",
     description: "Get expert advice on lifestyle, productivity, wellness, and personal development. Curated insights from industry leaders worldwide. Transform your life today.",
     keywords: "expert advice, lifestyle tips, personal development, productivity, self-improvement, life coaching, success strategies, wisdom, advice 2024",
     canonicalUrl: `${baseUrl}/${locale === 'en' ? '' : locale + '/'}advice`,
@@ -185,7 +185,7 @@ export const generateAdviceSEO = (locale: string = 'en') => {
       "url": `${baseUrl}/advice`,
       "publisher": {
         "@type": "Organization",
-        "name": "VibeNiche",
+        "name": "WonderNiche",
         "url": baseUrl
       },
       "mainEntity": {
@@ -209,10 +209,10 @@ export const generateAdviceSEO = (locale: string = 'en') => {
 };
 
 export const generateHomeSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://vibeniche.com';
+  const baseUrl = 'https://wonderniche.com';
   
   return {
-    title: "VibeNiche - Premium Lifestyle Products Worldwide | Travel, Beauty, Wellness & Advice",
+    title: "WonderNiche - Premium Lifestyle Products Worldwide | Travel, Beauty, Wellness & Advice",
     description: "Discover premium lifestyle products from around the world. Curated collection of travel gear, beauty products, wellness essentials, and expert advice. Global shipping available.",
     keywords: "premium lifestyle products, travel gear, beauty products, wellness, expert advice, curated marketplace, worldwide shipping, luxury lifestyle, modern living",
     canonicalUrl: `${baseUrl}/${locale === 'en' ? '' : locale}`,
@@ -231,7 +231,7 @@ export const generateHomeSEO = (locale: string = 'en') => {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "VibeNiche",
+      "name": "WonderNiche",
       "description": "Premium lifestyle products marketplace with worldwide delivery",
       "url": baseUrl,
       "potentialAction": {
@@ -241,16 +241,16 @@ export const generateHomeSEO = (locale: string = 'en') => {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "VibeNiche",
+        "name": "WonderNiche",
         "url": baseUrl,
         "logo": {
           "@type": "ImageObject",
           "url": `${baseUrl}/logo.png`
         },
         "sameAs": [
-          "https://twitter.com/vibeniche",
-          "https://facebook.com/vibeniche",
-          "https://instagram.com/vibeniche"
+          "https://twitter.com/wonderniche",
+          "https://facebook.com/wonderniche",
+          "https://instagram.com/wonderniche"
         ]
       }
     }

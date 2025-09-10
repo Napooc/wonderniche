@@ -11,7 +11,7 @@ export default {
     "signedInAs": "Connecté en tant que"
   },
   "hero": {
-    "title": "VibeNiche - Marketplace Premium d'Affiliation de Style de Vie",
+    "title": "WonderNiche - Marketplace Premium d'Affiliation de Style de Vie",
     "subtitle": "Votre partenaire d'affiliation de confiance pour des produits de style de vie premium. Nous vous connectons avec des marques exclusives dans la Beauté, le Voyage, le Bien-être et le Style de vie - gagnant grâce à des recommandations authentiques que vous adorerez.",
     "exploreButton": "Explorer Maintenant",
     "learnMoreButton": "Voir l'Histoire",
@@ -69,9 +69,9 @@ export default {
     "featuredProducts": "Produits en Vedette",
     "handPicked": "Produits premium soigneusement sélectionnés qui définissent le style de vie moderne",
     "whatUsersSay": "Ce que Disent Nos Utilisateurs",
-    "joinThousands": "Rejoignez des milliers d'utilisateurs satisfaits qui ont transformé leur style de vie avec VibeNiche",
-    "travelerTestimonial": "En tant que voyageur fréquent, j'ai besoin de produits qui fonctionnent. Les recommandations de voyage de VibeNiche sont exactes, et les animations fluides rendent la navigation pure joie. Je recommande vivement!",
-    "beautyTestimonial": "VibeNiche a complètement transformé ma routine de style de vie. Les produits sélectionnés sont incroyables et l'expérience visuelle est absolument époustouflante. J'ai découvert tant de marques étonnantes!",
+    "joinThousands": "Rejoignez des milliers d'utilisateurs satisfaits qui ont transformé leur style de vie avec WonderNiche",
+    "travelerTestimonial": "En tant que voyageur fréquent, j'ai besoin de produits qui fonctionnent. Les recommandations de voyage de WonderNiche sont exactes, et les animations fluides rendent la navigation pure joie. Je recommande vivement!",
+    "beautyTestimonial": "WonderNiche a complètement transformé ma routine de style de vie. Les produits sélectionnés sont incroyables et l'expérience visuelle est absolument époustouflante. J'ai découvert tant de marques étonnantes!",
     "wellnessTestimonial": "La section bien-être est mon incontournable pour découvrir de nouveaux produits. Le design moderne et l'expérience utilisateur fluide donnent l'impression de parcourir un magazine de luxe.",
     "techTestimonial": "Impressionné par l'attention aux détails et le design moderne. Le site se charge rapidement, a l'air magnifique, et les recommandations de produits sont toujours pertinentes. Excellent travail!",
     "stayInLoop": "Restez dans la Boucle",
@@ -82,7 +82,7 @@ export default {
     "categories": "Catégories",
     "company": "Entreprise",
     "connect": "Se Connecter",
-    "allRights": "© 2025 VibeNiche. Tous droits réservés. Ce site contient des liens d'affiliation."
+    "allRights": "© 2025 WonderNiche. Tous droits réservés. Ce site contient des liens d'affiliation."
   },
   "cookies": {
     "banner": {
@@ -128,7 +128,7 @@ export default {
     "lastUpdated": "Dernière mise à jour : {{date}}",
     "introduction": {
       "title": "Introduction",
-      "content": "Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles lors de l'utilisation du site web VibeNiche, en conformité avec les réglementations de protection des données et les meilleures pratiques."
+      "content": "Cette politique explique comment nous collectons, utilisons et protégeons vos informations personnelles lors de l'utilisation du site web WonderNiche, en conformité avec les réglementations de protection des données et les meilleures pratiques."
     },
     "cookies": {
       "title": "Cookies",
@@ -151,22 +151,22 @@ export default {
     "rights": {
       "title": "Vos droits",
       "content": "Vous avez le droit d'accéder, de corriger et de supprimer vos données personnelles. Vous pouvez également retirer votre consentement à tout moment.",
-      "contact": "Pour les demandes relatives aux données, contactez-nous à : privacy@vibeniche.com"
+      "contact": "Pour les demandes relatives aux données, contactez-nous à : privacy@wonderniche.com"
     },
     "contact": {
       "title": "Nous contacter",
       "dpo": "Délégué à la protection des données",
-      "email": "privacy@vibeniche.com",
+      "email": "privacy@wonderniche.com",
       "address": "Casablanca, Maroc"
     }
   },
   "about": {
-    "title": "À propos de VibeNiche",
+    "title": "À propos de WonderNiche",
     "subtitle": "Nous ne sommes pas qu'un simple marketplace d'affiliation. Nous sommes des curateurs de style de vie, des découvreurs de tendances et des facilitateurs de rêves qui vous connectent avec des produits qui transforment les moments ordinaires en expériences extraordinaires.",
     "originStory": "Notre Histoire d'Origine",
     "bornFromPassion": "Né de la Passion",
     "simpleFrustration": "Tout a commencé par une simple frustration : des heures interminables à faire défiler d'innombrables produits, sans jamais savoir ce qui tient vraiment ses promesses. Nous pensions qu'il devait y avoir une meilleure façon.",
-    "vibeNicheBorn": "VibeNiche est né de la vision de créer un espace authentique où les passionnés de style de vie pourraient découvrir des produits vraiment incroyables grâce à des partenariats d'affiliation transparents et honnêtes.",
+    "wonderNicheBorn": "WonderNiche est né de la vision de créer un espace authentique où les passionnés de style de vie pourraient découvrir des produits vraiment incroyables grâce à des partenariats d'affiliation transparents et honnêtes.",
     "todayProud": "Aujourd'hui, nous sommes fiers d'être le pont entre les rêveurs et les marques premium, créant de la valeur pour notre communauté et nos partenaires grâce à des connexions significatives.",
     "founded": "Fondé",
     "customers": "Clients",
@@ -185,7 +185,7 @@ export default {
     "connectsWorldwide": "Notre plateforme connecte les passionnés de style de vie du monde entier avec les marques premium qu'ils adoreront.",
     "ourJourney": "Notre Parcours",
     "keyMilestones": "Étapes clés de notre mission pour révolutionner le marketing d'affiliation",
-    "vibeNicheFounded": "VibeNiche Fondé",
+    "wonderNicheFounded": "WonderNiche Fondé",
     "startedVision": "Commencé avec une vision pour révolutionner le marketing d'affiliation",
     "communityMilestone": "Communauté de 50K+",
     "firstMajor": "Atteint notre première étape majeure de clients satisfaits",
@@ -268,7 +268,7 @@ export default {
     }
   },
   "contact": {
-    "title": "Connectez-vous avec VibeNiche",
+    "title": "Connectez-vous avec WonderNiche",
     "subtitle": "Votre partenaire de confiance pour découvrir les meilleurs produits de style de vie. Nous sommes là pour vous aider à vivre votre meilleure vie avec l'excellence sélectionnée.",
     "emailUs": "Écrivez-nous",
     "support247": "Support 24/7",
@@ -285,7 +285,7 @@ export default {
     "satisfactionLabel": "Satisfaction Client",
     "getInTouch": "Entrer en Contact",
     "chooseBestMethod": "Choisissez la méthode qui vous convient le mieux. Nous sommes là pour vous aider avec toutes questions sur nos produits ou services.",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "hello@wonderniche.com",
     "emailReply": "Nous répondons sous 24 heures",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "Lun-Ven 9h-18h EST",
@@ -294,8 +294,8 @@ export default {
     "businessHours": "Heures d'Ouverture",
     "mondayFriday": "Lundi - Vendredi",
     "workingHours": "9:00 - 18:00 EST",
-    "aboutVibeNiche": "À propos de VibeNiche",
-    "foundedDescription": "Fondé en 2016, VibeNiche est votre curateur de confiance d'excellence lifestyle. Nous nous spécialisons dans la découverte et le partage des meilleurs produits dans les catégories beauté, voyage, bien-être et style de vie.",
+    "aboutWonderNiche": "À propos de WonderNiche",
+    "foundedDescription": "Fondé en 2016, WonderNiche est votre curateur de confiance d'excellence lifestyle. Nous nous spécialisons dans la découverte et le partage des meilleurs produits dans les catégories beauté, voyage, bien-être et style de vie.",
     "teamExperts": "Notre équipe d'experts sélectionne soigneusement chaque produit pour s'assurer qu'il répond à nos standards élevés de qualité, d'innovation et de valeur. Nous croyons que chacun mérite l'accès à des produits qui améliorent sa vie quotidienne.",
     "lifestyle": "Style de Vie",
     "customerSupport": "Support Client",
@@ -316,8 +316,8 @@ export default {
     "faq": "Questions Fréquemment Posées",
     "quickAnswers": "Réponses rapides aux questions courantes sur nos produits et services",
     "faq1": {
-      "question": "Qu'est-ce que le marketing d'affiliation et comment fonctionne VibeNiche ?",
-      "answer": "VibeNiche est une plateforme de marketing d'affiliation premium qui vous connecte avec les meilleurs produits de style de vie. Nous gagnons des commissions lorsque vous achetez via nos recommandations sélectionnées, nous permettant de fournir des avis honnêtes et de maintenir notre plateforme sans frais pour vous."
+      "question": "Qu'est-ce que le marketing d'affiliation et comment fonctionne WonderNiche ?",
+      "answer": "WonderNiche est une plateforme de marketing d'affiliation premium qui vous connecte avec les meilleurs produits de style de vie. Nous gagnons des commissions lorsque vous achetez via nos recommandations sélectionnées, nous permettant de fournir des avis honnêtes et de maintenir notre plateforme sans frais pour vous."
     },
     "faq2": {
       "question": "Quels produits de beauté et marques recommandez-vous ?",
@@ -340,7 +340,7 @@ export default {
       "answer": "Oui ! Nous négocions des remises exclusives, un accès anticipé aux ventes et des lots spéciaux avec nos partenaires de marque. Les abonnés obtiennent un accès prioritaire à ces offres premium dans toutes nos catégories de style de vie."
     },
     "readyStart": "Prêt à Commencer Votre Parcours ?",
-    "joinThousands": "Rejoignez des milliers de clients satisfaits qui font confiance à VibeNiche pour leurs besoins de style de vie. Découvrez des produits qui transformeront votre routine quotidienne.",
+    "joinThousands": "Rejoignez des milliers de clients satisfaits qui font confiance à WonderNiche pour leurs besoins de style de vie. Découvrez des produits qui transformeront votre routine quotidienne.",
     "exploreProducts": "Explorer les Produits",
     "partnerWithUs": "Partenariat avec Nous",
     "form": {
@@ -441,11 +441,11 @@ export default {
     "support": "Support",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions d'Utilisation",
-    "copyright": "© 2024 VibeNiche. Tous droits réservés."
+    "copyright": "© 2024 WonderNiche. Tous droits réservés."
   },
   "testimonials": {
     "title": "Ce que Disent Nos Clients",
-    "subtitle": "Découvrez pourquoi des milliers de clients font confiance à VibeNiche pour leurs besoins de style de vie"
+    "subtitle": "Découvrez pourquoi des milliers de clients font confiance à WonderNiche pour leurs besoins de style de vie"
   },
   "notFound": {
     "title": "404",

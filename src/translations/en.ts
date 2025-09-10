@@ -14,7 +14,7 @@ export default {
 
   // Hero Section
   hero: {
-    title: 'VibeNiche - Premium Affiliate Lifestyle Marketplace',
+    title: 'WonderNiche - Premium Affiliate Lifestyle Marketplace',
     subtitle: 'Your trusted affiliate partner for premium lifestyle products. We connect you with exclusive brands across Beauty, Travel, Wellness & Lifestyle - earning through authentic recommendations you\'ll love.',
     exploreButton: 'Explore Now',
     learnMoreButton: 'Watch Story',
@@ -74,9 +74,9 @@ export default {
     featuredProducts: 'Featured Products',
     handPicked: 'Hand-picked premium products that define modern lifestyle',
     whatUsersSay: 'What Our Users Say',
-    joinThousands: 'Join thousands of satisfied users who have transformed their lifestyle with VibeNiche',
-    travelerTestimonial: 'As a frequent traveler, I need products that work. VibeNiche\'s travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!',
-    beautyTestimonial: 'VibeNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I\'ve discovered so many amazing brands!',
+    joinThousands: 'Join thousands of satisfied users who have transformed their lifestyle with WonderNiche',
+    travelerTestimonial: 'As a frequent traveler, I need products that work. WonderNiche\'s travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!',
+    beautyTestimonial: 'WonderNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I\'ve discovered so many amazing brands!',
     wellnessTestimonial: 'The wellness section is my go-to for discovering new products. The modern design and smooth user experience make it feel like browsing through a luxury magazine.',
     techTestimonial: 'Impressed by the attention to detail and modern design. The site loads fast, looks beautiful, and the product recommendations are always relevant. Great work!',
     stayInLoop: 'Stay in the Loop',
@@ -87,7 +87,7 @@ export default {
     categories: 'Categories',
     company: 'Company',
     connect: 'Connect',
-    allRights: '© 2025 VibeNiche. All rights reserved. This site contains affiliate links.'
+    allRights: '© 2025 WonderNiche. All rights reserved. This site contains affiliate links.'
   },
 
   // Cookie Consent
@@ -137,7 +137,7 @@ export default {
     lastUpdated: 'Last updated: {{date}}',
     introduction: {
       title: 'Introduction',
-      content: 'This policy explains how we collect, use, and protect your personal information when using the VibeNiche website, in compliance with data protection regulations and best practices.'
+      content: 'This policy explains how we collect, use, and protect your personal information when using the WonderNiche website, in compliance with data protection regulations and best practices.'
     },
     cookies: {
       title: 'Cookies',
@@ -160,23 +160,23 @@ export default {
     rights: {
       title: 'Your Rights',
       content: 'You have the right to access, correct, and delete your personal data. You can also withdraw your consent at any time.',
-      contact: 'For data inquiries, contact us at: privacy@vibeniche.com'
+      contact: 'For data inquiries, contact us at: privacy@wonderniche.com'
     },
     contact: {
       title: 'Contact Us',
       dpo: 'Data Protection Officer',
-      email: 'privacy@vibeniche.com',
+      email: 'privacy@wonderniche.com',
       address: 'Casablanca, Morocco'
     }
   },
 
   about: {
-    title: 'About VibeNiche',
+    title: 'About WonderNiche',
     subtitle: 'We\'re not just another affiliate marketplace. We\'re lifestyle curators, trend discoverers, and dream enablers connecting you with products that transform ordinary moments into extraordinary experiences.',
     originStory: 'Our Origin Story',
     bornFromPassion: 'Born from Passion',
     simpleFrustration: 'It started with a simple frustration: endless hours scrolling through countless products, never knowing what truly delivered on its promises. We believed there had to be a better way.',
-    vibeNicheBorn: 'VibeNiche was born from the vision of creating an authentic space where lifestyle enthusiasts could discover genuinely amazing products through transparent, honest affiliate partnerships.',
+    wonderNicheBorn: 'WonderNiche was born from the vision of creating an authentic space where lifestyle enthusiasts could discover genuinely amazing products through transparent, honest affiliate partnerships.',
     todayProud: 'Today, we\'re proud to be the bridge between dreamers and premium brands, creating value for both our community and our partners through meaningful connections.',
     founded: 'Founded',
     customers: 'Customers',
@@ -195,7 +195,7 @@ export default {
     connectsWorldwide: 'Our platform connects lifestyle enthusiasts worldwide with premium brands they\'ll love.',
     ourJourney: 'Our Journey',
     keyMilestones: 'Key milestones in our mission to revolutionize affiliate marketing',
-    vibeNicheFounded: 'VibeNiche Founded',
+    wonderNicheFounded: 'WonderNiche Founded',
     startedVision: 'Started with a vision to revolutionize affiliate marketing',
     communityMilestone: '50K+ Community',
     firstMajor: 'Reached our first major milestone of happy customers',
@@ -282,7 +282,7 @@ export default {
 
   // Contact Page
   contact: {
-    title: 'Connect With VibeNiche',
+    title: 'Connect With WonderNiche',
     subtitle: 'Your trusted partner in discovering the finest lifestyle products. We\'re here to help you live your best life with curated excellence.',
     emailUs: 'Email Us',
     support247: '24/7 Support',
@@ -301,7 +301,7 @@ export default {
     satisfactionLabel: 'Customer Satisfaction',
     getInTouch: 'Get in Touch',
     chooseBestMethod: 'Choose the method that works best for you. We\'re here to help with any questions about our products or services.',
-    emailAddress: 'hello@vibeniche.com',
+    emailAddress: 'hello@wonderniche.com',
     emailReply: 'We reply within 24 hours',
     phoneNumber: '+1 (555) 123-4567',
     phoneHours: 'Mon-Fri 9AM-6PM EST',
@@ -310,8 +310,8 @@ export default {
     businessHours: 'Business Hours',
     mondayFriday: 'Monday - Friday',
     workingHours: '9:00 AM - 6:00 PM EST',
-    aboutVibeNiche: 'About VibeNiche',
-    foundedDescription: 'Founded in 2016, VibeNiche has been your trusted curator of lifestyle excellence. We specialize in discovering and sharing the finest products across beauty, travel, wellness, and lifestyle categories.',
+    aboutWonderNiche: 'About WonderNiche',
+    foundedDescription: 'Founded in 2016, WonderNiche has been your trusted curator of lifestyle excellence. We specialize in discovering and sharing the finest products across beauty, travel, wellness, and lifestyle categories.',
     teamExperts: 'Our team of experts carefully selects each product to ensure it meets our high standards for quality, innovation, and value. We believe everyone deserves access to products that enhance their daily life.',
     lifestyle: 'Lifestyle',
     customerSupport: 'Customer Support',
@@ -330,8 +330,8 @@ export default {
     faq: 'Frequently Asked Questions',
     quickAnswers: 'Quick answers to common questions about our products and services',
     faq1: {
-      question: 'What is affiliate marketing and how does VibeNiche work?',
-      answer: 'VibeNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you.'
+      question: 'What is affiliate marketing and how does WonderNiche work?',
+      answer: 'WonderNiche is a premium affiliate marketing platform that connects you with the best lifestyle products. We earn commissions when you purchase through our curated recommendations, allowing us to provide honest reviews and maintain our platform at no cost to you.'
     },
     faq2: {
       question: 'What beauty products and brands do you recommend?',
@@ -360,9 +360,9 @@ export default {
     international: 'Do you ship internationally?',
     internationalAnswer: 'Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties.',
     affiliate: 'How can I become an affiliate partner?',
-    affiliateAnswer: 'We\'re always looking for passionate partners! Email us at hello@vibeniche.com with \'Affiliate Partnership\' in the subject line, and we\'ll send you our partnership details.',
+    affiliateAnswer: 'We\'re always looking for passionate partners! Email us at hello@wonderniche.com with \'Affiliate Partnership\' in the subject line, and we\'ll send you our partnership details.',
     readyStart: 'Ready to Start Your Journey?',
-    joinThousands: 'Join thousands of satisfied customers who trust VibeNiche for their lifestyle needs. Discover products that will transform your daily routine.',
+    joinThousands: 'Join thousands of satisfied customers who trust WonderNiche for their lifestyle needs. Discover products that will transform your daily routine.',
     exploreProducts: 'Explore Products',
     partnerWithUs: 'Partner With Us',
     form: {
@@ -553,13 +553,13 @@ export default {
     support: 'Support',
     privacy: 'Privacy Policy',
     terms: 'Terms of Service',
-    copyright: '© 2024 VibeNiche. All rights reserved.'
+    copyright: '© 2024 WonderNiche. All rights reserved.'
   },
 
   // Testimonials
   testimonials: {
     title: 'What Our Customers Say',
-    subtitle: 'Discover why thousands of customers trust VibeNiche for their lifestyle needs'
+    subtitle: 'Discover why thousands of customers trust WonderNiche for their lifestyle needs'
   },
 
   // 404 Page
