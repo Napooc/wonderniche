@@ -56,7 +56,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-foreground hover:text-primary transition-all duration-300 relative group ${
+                className={`${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary transition-all duration-300 relative group ${
                   location.pathname === item.href ? 'text-primary' : ''
                 }`}
               >
@@ -91,7 +91,7 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className="md:hidden text-foreground hover:text-primary"
+                className={`md:hidden ${scrolled ? 'text-foreground' : 'text-white'} hover:text-primary`}
               >
                 <Menu size={24} />
               </Button>
