@@ -1,7 +1,7 @@
 export default {
   "nav": {
     "home": "Início",
-    "about": "Sobre",
+    "about": "Sobre", 
     "beauty": "Beleza",
     "travel": "Viagem",
     "wellness": "Bem-estar",
@@ -11,8 +11,8 @@ export default {
     "signedInAs": "Conectado como"
   },
   "hero": {
-    "title": "Descubra Sua Vibe Perfeita",
-    "subtitle": "Experiências e produtos selecionados que combinam com seu estilo de vida único",
+    "title": "WonderNiche - Marketplace Premium de Estilo de Vida Afiliado",
+    "subtitle": "Seu parceiro afiliado confiável para produtos premium de estilo de vida. Conectamos você com marcas exclusivas em Beleza, Viagem, Bem-estar e Estilo de Vida - ganhando através de recomendações autênticas que você vai adorar.",
     "exploreButton": "Explorar Categorias",
     "learnMoreButton": "Saiba Mais",
     "ourStoryButton": "Nossa História"
@@ -25,7 +25,7 @@ export default {
       "description": "Produtos de beleza premium e essenciais de cuidados para sua rotina diária"
     },
     "travel": {
-      "title": "Viagem e Aventura",
+      "title": "Viagem e Aventura", 
       "description": "Equipamentos essenciais e acessórios para sua próxima aventura"
     },
     "wellness": {
@@ -67,7 +67,9 @@ export default {
     "realReviews": "Avaliações Reais",
     "authenticFeedback": "Feedback Autêntico",
     "featuredProducts": "Produtos em Destaque",
-    "handPicked": "Produtos selecionados à mão que transformarão sua vida"
+    "handPicked": "Produtos selecionados à mão que transformarão sua vida",
+    "whatUsersSay": "O que Nossos Usuários Dizem",
+    "joinThousands": "Junte-se a milhares de usuários satisfeitos que transformaram seu estilo de vida com WonderNiche"
   },
   "categories": {
     "beauty": {
@@ -178,15 +180,15 @@ export default {
     "support": "Suporte",
     "privacy": "Política de Privacidade",
     "terms": "Termos de Serviço",
-    "copyright": "© 2024 VibeNiche. Todos os direitos reservados."
+    "copyright": "© 2024 WonderNiche. Todos os direitos reservados."
   },
   "about": {
-    "title": "Sobre VibeNiche",
+    "title": "Sobre WonderNiche",
     "subtitle": "Não somos apenas outro marketplace de afiliados. Somos curadores de estilo de vida, descobridores de tendências e facilitadores de sonhos que conectam você com produtos que transformam momentos comuns em experiências extraordinárias.",
     "originStory": "Nossa História de Origem",
     "bornFromPassion": "Nascido da Paixão",
     "simpleFrustration": "Tudo começou com uma simples frustração: rolar infinitamente através de inúmeros produtos, incerto sobre o que realmente funciona. Sabíamos que tinha que haver uma maneira melhor de encontrar essenciais de estilo de vida premium que realmente cumprissem suas promessas.",
-    "vibeNicheBorn": "É por isso que VibeNiche nasceu — um destino confiável onde amantes de beleza, buscadores de bem-estar e entusiastas de viagem podem descobrir produtos de alta qualidade cuidadosamente selecionados através de recomendações de afiliados transparentes e honestas.",
+    "wonderNicheBorn": "É por isso que WonderNiche nasceu — um destino confiável onde amantes de beleza, buscadores de bem-estar e entusiastas de viagem podem descobrir produtos de alta qualidade cuidadosamente selecionados através de recomendações de afiliados transparentes e honestas.",
     "todayProud": "Hoje, estamos orgulhosos de ser a ponte entre sonhadores e marcas premium, criando valor genuíno para nossa comunidade crescente e parceiros confiáveis através de conexões significativas e marketing de afiliados bem feito.",
     "founded": "Fundado",
     "customers": "Clientes",
@@ -205,7 +207,7 @@ export default {
     "connectsWorldwide": "Nossa plataforma conecta entusiastas de estilo de vida em todo o mundo com marcas premium que eles vão adorar.",
     "ourJourney": "Nossa Jornada",
     "keyMilestones": "Marcos importantes em nossa missão de revolucionar o marketing de afiliados",
-    "vibeNicheFounded": "VibeNiche Fundado",
+    "wonderNicheFounded": "WonderNiche Fundado",
     "startedVision": "Começou com uma visão de revolucionar o marketing de afiliados",
     "communityMilestone": "Comunidade 50K+",
     "firstMajor": "Atingimos nosso primeiro marco importante de clientes satisfeitos",
@@ -236,7 +238,7 @@ export default {
     }
   },
   "contact": {
-    "title": "Conecte-se com VibeNiche",
+    "title": "Conecte-se com WonderNiche",
     "subtitle": "Seu parceiro confiável na descoberta dos melhores produtos de estilo de vida. Estamos aqui para ajudá-lo a viver sua melhor vida com excelência curada.",
     "emailUs": "Envie um Email",
     "support247": "Suporte 24/7",
@@ -255,7 +257,7 @@ export default {
     "satisfactionLabel": "Satisfação do Cliente",
     "getInTouch": "Entre em Contato",
     "chooseBestMethod": "Escolha o método que funciona melhor para você. Estamos aqui para ajudar com qualquer pergunta sobre nossos produtos ou serviços.",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "hello@wonderniche.com",
     "emailReply": "Respondemos em 24 horas",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "Seg-Sex 9AM-6PM EST",
@@ -264,8 +266,8 @@ export default {
     "businessHours": "Horário Comercial",
     "mondayFriday": "Segunda - Sexta",
     "workingHours": "9:00 AM - 6:00 PM EST",
-    "aboutVibeNiche": "Sobre VibeNiche",
-    "foundedDescription": "Fundado em 2016, VibeNiche tem sido seu curador confiável de excelência em estilo de vida. Especializamo-nos em descobrir e compartilhar os melhores produtos nas categorias de beleza, viagem, bem-estar e estilo de vida.",
+    "aboutWonderNiche": "Sobre WonderNiche",
+    "foundedDescription": "Fundado em 2016, WonderNiche tem sido seu curador confiável de excelência em estilo de vida. Especializamo-nos em descobrir e compartilhar os melhores produtos nas categorias de beleza, viagem, bem-estar e estilo de vida.",
     "teamExperts": "Nossa equipe de especialistas seleciona cuidadosamente cada produto para garantir que atenda aos nossos altos padrões de qualidade, inovação e valor. Acreditamos que todos merecem acesso a produtos que melhorem sua vida diária.",
     "lifestyle": "Estilo de Vida",
     "customerSupport": "Suporte ao Cliente",
@@ -284,8 +286,8 @@ export default {
     "faq": "Perguntas Frequentes",
     "quickAnswers": "Respostas rápidas para perguntas comuns sobre nossos produtos e serviços",
     "faq1": {
-      "question": "O que é marketing de afiliados e como o VibeNiche funciona?",
-      "answer": "VibeNiche é uma plataforma de marketing de afiliados premium que conecta você com os melhores produtos de estilo de vida. Ganhamos comissões quando você compra através de nossas recomendações curadas, permitindo-nos fornecer avaliações honestas e manter nossa plataforma sem custo para você."
+      "question": "O que é marketing de afiliados e como o WonderNiche funciona?",
+      "answer": "WonderNiche é uma plataforma de marketing de afiliados premium que conecta você com os melhores produtos de estilo de vida. Ganhamos comissões quando você compra através de nossas recomendações curadas, permitindo-nos fornecer avaliações honestas e manter nossa plataforma sem custo para você."
     },
     "faq2": {
       "question": "Quais produtos de beleza e marcas você recomenda?",
@@ -308,7 +310,7 @@ export default {
       "answer": "Sim! Negociamos descontos exclusivos, acesso antecipado a vendas e pacotes especiais com nossos parceiros de marca. Assinantes obtêm acesso prioritário a essas ofertas premium em todas as nossas categorias de estilo de vida."
     },
     "readyStart": "Pronto para Começar Sua Jornada?",
-    "joinThousands": "Junte-se a milhares de clientes satisfeitos que confiam no VibeNiche para suas necessidades de estilo de vida. Descubra produtos que transformarão sua rotina diária.",
+    "joinThousands": "Junte-se a milhares de clientes satisfeitos que confiam no WonderNiche para suas necessidades de estilo de vida. Descubra produtos que transformarão sua rotina diária.",
     "exploreProducts": "Explorar Produtos",
     "partnerWithUs": "Seja Nosso Parceiro",
     "form": {
@@ -324,7 +326,7 @@ export default {
   },
   "testimonials": {
     "title": "O Que Nossos Clientes Dizem",
-    "subtitle": "Descubra por que milhares de clientes confiam na VibeNiche para suas necessidades de estilo de vida"
+    "subtitle": "Descubra por que milhares de clientes confiam na WonderNiche para suas necessidades de estilo de vida"
   },
   "notFound": {
     "title": "404",
@@ -351,54 +353,49 @@ export default {
   "beauty": {
     "title": "Essenciais de Beleza",
     "subtitle": "Descubra cuidados com a pele premium, maquiagem e ferramentas de beleza curadas para o estilo de vida moderno",
-    "shopBeauty": "Comprar Beleza",
-    "premiumProducts": "Produtos de Beleza Premium",
-    "curatedCollection": "Coleção curada de essenciais de beleza de alta qualidade",
+    "exploreBeauty": "Explorar Colecção de Beleza",
+    "premiumBeauty": "Beleza Premium",
+    "transformRoutine": "Transforme sua rotina de beleza",
     "searchPlaceholder": "Pesquisar produtos de beleza...",
     "whyChoose": "Por Que Escolher Nossa Coleção de Beleza?",
-    "investInBeauty": "Invista na sua rotina de beleza com produtos cientificamente comprovados e recomendações de especialistas",
-    "skincareEssentials": "Essenciais de Cuidados",
-    "skincareDesc": "Produtos de cuidados premium para uma pele saudável e radiante que dura o dia todo.",
-    "makeupMustHaves": "Indispensáveis de Maquiagem",
-    "makeupDesc": "Ferramentas de maquiagem e cosméticos de nível profissional para aplicação perfeita.",
-    "beautyTools": "Ferramentas de Beleza",
-    "beautyToolsDesc": "Pincéis, dispositivos e acessórios de alta qualidade para resultados profissionais em casa."
+    "investInSelf": "Invista em si mesmo com produtos de beleza premium que oferecem resultados reais",
+    "skincare": "Cuidados com a Pele",
+    "skincareDesc": "Rotinas de cuidados com a pele cientificamente apoiadas com ingredientes premium e resultados comprovados.",
+    "makeup": "Maquiagem",
+    "makeupDesc": "Cosméticos de alta qualidade e ferramentas que realçam sua beleza natural com acabamentos impecáveis.",
+    "wellness": "Bem-estar da Beleza",
+    "wellnessDesc": "Soluções holísticas de beleza que nutrem sua pele de dentro para fora."
   },
   "wellness": {
-    "title": "Bem-estar e Fitness",
-    "subtitle": "Transforme sua saúde e bem-estar com produtos de bem-estar premium e essenciais de vida consciente",
-    "startJourney": "Comece Sua Jornada de Bem-estar",
-    "whyChoose": "Por Que Escolher Nossa Coleção de Viagem?",
-    "investInHealth": "Invista em sua saúde e felicidade com produtos de bem-estar respaldados cientificamente",
-    "mentalClarity": "Clareza Mental",
-    "mentalClarityDesc": "Melhore o foco, reduza o estresse e aprimore o desempenho cognitivo através de práticas conscientes.",
-    "physicalStrength": "Força Física",
-    "physicalStrengthDesc": "Construa músculos, aumente a flexibilidade e impulsione os níveis de energia com as ferramentas de fitness certas.",
-    "innerPeace": "Paz Interior",
-    "innerPeaceDesc": "Encontre equilíbrio e tranquilidade através da meditação, aromaterapia e vida consciente.",
-    "essentials": "Essenciais de Bem-estar",
-    "curatedProducts": "Produtos curados para sua mente, corpo e alma",
-    "searchPlaceholder": "Pesquisar produtos de bem-estar..."
+    "title": "Essenciais de Bem-estar",
+    "subtitle": "Transforme sua saúde com produtos premium de bem-estar e fitness curados para o bem-estar holístico",
+    "exploreWellness": "Explorar Coleção de Bem-estar",
+    "premiumWellness": "Bem-estar Premium",
+    "transformHealth": "Transforme sua saúde e bem-estar",
+    "searchPlaceholder": "Pesquisar produtos de bem-estar...",
+    "whyChoose": "Por Que Escolher Nossa Coleção de Bem-estar?",
+    "investInHealth": "Invista na sua saúde com produtos cientificamente apoiados que suportam o bem-estar holístico",
+    "fitness": "Fitness e Movimento",
+    "fitnessDesc": "Equipamento de fitness de qualidade profissional e acessórios para otimizar sua rotina de exercícios.",
+    "nutrition": "Nutrição e Suplementos",
+    "nutritionDesc": "Suplementos premium e produtos nutricionais para apoiar seus objetivos de saúde.",
+    "mindfulness": "Atenção Plena e Recuperação",
+    "mindfulnessDesc": "Ferramentas e produtos para melhorar a clareza mental, o sono e o bem-estar geral."
   },
   "advice": {
     "title": "Conselhos de Especialistas",
-    "subtitle": "Sabedoria curada e insights acionáveis de especialistas da indústria e líderes de pensamento",
-    "exploreGuidance": "Explorar Orientação de Especialistas",
-    "areasOfExpertise": "Áreas de Especialização",
-    "professionalGuidance": "Orientação profissional em múltiplos domínios",
-    "decisionMaking": "Tomada de Decisão",
-    "decisionMakingDesc": "Orientação de especialistas para escolhas importantes da vida",
-    "problemSolving": "Resolução de Problemas",
-    "problemSolvingDesc": "Soluções criativas para desafios cotidianos",
-    "goalAchievement": "Conquista de Objetivos",
-    "goalAchievementDesc": "Planejamento estratégico para sucesso pessoal",
-    "growthMindset": "Mentalidade de Crescimento",
-    "growthMindsetDesc": "Desenvolvimento pessoal e melhoria contínua",
-    "expertRecommendations": "Recomendações de Especialistas",
-    "curatedAdvice": "Conselhos e recursos cuidadosamente curados por especialistas confiáveis",
-    "searchPlaceholder": "Pesquisar conselhos e recursos...",
-    "loadingResources": "Carregando recursos de conselhos...",
-    "noResourcesFound": "Nenhum recurso de conselhos encontrado correspondendo à sua pesquisa.",
-    "tryAdjustingSearch": "Tente ajustar seus termos de pesquisa ou explore nossas categorias de especialistas acima."
+    "subtitle": "Obtenha conselhos especializados sobre estilo de vida, produtividade, bem-estar e desenvolvimento pessoal",
+    "exploreAdvice": "Explorar Conselhos de Especialistas",
+    "expertGuidance": "Orientação Especializada",
+    "transformLife": "Transforme sua vida com sabedoria curada",
+    "searchPlaceholder": "Pesquisar conselhos...",
+    "whyChoose": "Por Que Escolher Nossos Conselhos de Especialistas?",
+    "learnFromBest": "Aprenda com líderes da indústria e especialistas com experiência comprovada em seus campos",
+    "productivity": "Produtividade e Sucesso",
+    "productivityDesc": "Estratégias e técnicas comprovadas para otimizar sua produtividade e alcançar seus objetivos.",
+    "lifestyle": "Estilo de Vida e Bem-estar",
+    "lifestyleDesc": "Conselhos holísticos para criar um estilo de vida equilibrado e gratificante.",
+    "personal": "Desenvolvimento Pessoal",
+    "personalDesc": "Orientação para crescimento pessoal, construção de confiança e desenvolvimento de habilidades."
   }
 };

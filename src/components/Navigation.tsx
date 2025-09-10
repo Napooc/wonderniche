@@ -47,8 +47,8 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
-              alt="VibeNiche Logo" 
+              src="/lovable-uploads/054f7cfb-dcc2-44ae-adde-ae4cf282a86b.png" 
+              alt="WonderNiche Logo" 
               className="h-24 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
@@ -102,8 +102,8 @@ const Navigation = () => {
             <SheetContent side="right" className="glass-card w-80 max-w-[90vw]">
               <div className="flex items-center space-x-3 mb-8">
                 <img 
-                  src="/lovable-uploads/3e265e91-4f05-4564-9470-0de4e6039156.png" 
-                  alt="VibeNiche Logo" 
+                  src="/lovable-uploads/054f7cfb-dcc2-44ae-adde-ae4cf282a86b.png" 
+                  alt="WonderNiche Logo" 
                   className="h-16 w-auto"
                 />
               </div>
