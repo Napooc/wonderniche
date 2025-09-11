@@ -6,7 +6,7 @@ import { create, verify, getNumericDate } from "https://deno.land/x/djwt@v3.0.1/
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-admin-reset-token',
   'Access-Control-Allow-Methods': 'POST, OPTIONS',
   'Access-Control-Max-Age': '86400',
 };
@@ -373,6 +373,66 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
         console.error('Token verification failed:', error);
         return new Response(JSON.stringify({ valid: false }), {
           status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+    } else if (action === 'reset_admin') {
+      // Securely reset admin credentials (requires secret header)
+      const provided = req.headers.get('x-admin-reset-token') || '';
+      const expected = Deno.env.get('ADMIN_RESET_TOKEN') || '';
+      if (!expected || provided !== expected) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      if (!username || !password) {
+        return new Response(JSON.stringify({ error: 'Missing username or password' }), {
+          status: 400,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      try {
+        const hashedPassword = await hashPasswordPBKDF2(password);
+
+        // Delete all existing admin users
+        const { error: delError } = await supabase
+          .from('admin_users')
+          .delete()
+          .neq('id', '00000000-0000-0000-0000-000000000000');
+
+        if (delError) {
+          console.error('Error deleting existing admin users:', delError);
+          return new Response(JSON.stringify({ error: 'Failed to remove existing admins' }), {
+            status: 500,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        // Insert the single new admin user
+        const { data: newUser, error: insError } = await supabase
+          .from('admin_users')
+          .insert([{ username, password_hash: hashedPassword }])
+          .select('id, username')
+          .single();
+
+        if (insError) {
+          console.error('Error inserting new admin user:', insError);
+          return new Response(JSON.stringify({ error: 'Failed to create admin user' }), {
+            status: 500,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ success: true, user: newUser }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        console.error('Unexpected error during admin reset:', e);
+        return new Response(JSON.stringify({ error: 'Internal error' }), {
+          status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
