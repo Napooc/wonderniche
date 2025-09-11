@@ -436,6 +436,70 @@ console.log(`Admin auth request: ${action} for user: ${username}`);
           headers: { ...corsHeaders, 'Content-Type': 'application/json' },
         });
       }
+    } else if (action === 'reset_admin_from_secrets') {
+      // Reset admin using credentials from Supabase secrets (no credentials over network)
+      const provided = req.headers.get('x-admin-reset-token') || '';
+      const expected = Deno.env.get('ADMIN_RESET_TOKEN') || '';
+      if (!expected || provided !== expected) {
+        return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+          status: 401,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+
+      const secretUsername = (Deno.env.get('ADMIN_INITIAL_USERNAME') || '').trim();
+      const secretPassword = Deno.env.get('ADMIN_INITIAL_PASSWORD') || '';
+      if (!secretUsername || !secretPassword) {
+        console.error('Missing ADMIN_INITIAL_USERNAME or ADMIN_INITIAL_PASSWORD secret');
+        return new Response(JSON.stringify({ error: 'Server not configured' }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
+      if (secretPassword.length < 12) {
+        console.warn('Provided ADMIN_INITIAL_PASSWORD is shorter than recommended length');
+      }
+
+      try {
+        const hashedPassword = await hashPasswordPBKDF2(secretPassword);
+
+        const { error: delError } = await supabase
+          .from('admin_users')
+          .delete()
+          .neq('id', '00000000-0000-0000-0000-000000000000');
+
+        if (delError) {
+          console.error('Error deleting existing admin users:', delError);
+          return new Response(JSON.stringify({ error: 'Failed to remove existing admins' }), {
+            status: 500,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        const { data: newUser, error: insError } = await supabase
+          .from('admin_users')
+          .insert([{ username: secretUsername, password_hash: hashedPassword }])
+          .select('id, username')
+          .single();
+
+        if (insError) {
+          console.error('Error inserting new admin user:', insError);
+          return new Response(JSON.stringify({ error: 'Failed to create admin user' }), {
+            status: 500,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+          });
+        }
+
+        return new Response(JSON.stringify({ success: true, user: newUser }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      } catch (e) {
+        console.error('Unexpected error during admin reset from secrets:', e);
+        return new Response(JSON.stringify({ error: 'Internal error' }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+        });
+      }
     } else if (action === 'create_product') {
       try {
         await verifyAdminTokenFromReq(req, body);
