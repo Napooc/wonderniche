@@ -11,7 +11,7 @@ export default {
     "signedInAs": "Angemeldet als"
   },
   "hero": {
-    "title": "VibeNiche - Premium Affiliate Lifestyle Marktplatz",
+    "title": "WonderNiche - Premium Affiliate Lifestyle Marktplatz",
     "subtitle": "Ihr vertrauenswürdiger Affiliate-Partner für Premium-Lifestyle-Produkte. Wir verbinden Sie mit exklusiven Marken aus den Bereichen Beauty, Travel, Wellness & Lifestyle - durch authentische Empfehlungen, die Sie lieben werden.",
     "exploreButton": "Jetzt erkunden",
     "learnMoreButton": "Story ansehen",
@@ -69,7 +69,7 @@ export default {
     "featuredProducts": "Empfohlene Produkte",
     "handPicked": "Handverlesene Premium-Produkte, die den modernen Lifestyle definieren",
     "whatUsersSay": "Was unsere Nutzer sagen",
-    "joinThousands": "Schließen Sie sich Tausenden zufriedener Nutzer an, die ihren Lifestyle mit VibeNiche transformiert haben",
+    "joinThousands": "Schließen Sie sich Tausenden zufriedener Nutzer an, die ihren Lifestyle mit WonderNiche transformiert haben",
     "stayInLoop": "Bleiben Sie auf dem Laufenden",
     "exclusiveAccess": "Erhalten Sie exklusiven Zugang zu neuen Produkten, Angeboten und Lifestyle-Tipps",
     "enterEmail": "Geben Sie Ihre E-Mail ein",
@@ -78,7 +78,7 @@ export default {
     "categories": "Kategorien",
     "company": "Unternehmen",
     "connect": "Verbinden",
-    "allRights": "© 2025 VibeNiche. Alle Rechte vorbehalten. Diese Seite enthält Affiliate-Links."
+    "allRights": "© 2025 WonderNiche. Alle Rechte vorbehalten. Diese Seite enthält Affiliate-Links."
   },
   "categories": {
     "beauty": {
@@ -162,12 +162,12 @@ export default {
     }
   },
   "about": {
-    "title": "Über VibeNiche",
+    "title": "Über WonderNiche",
     "subtitle": "Wir sind nicht nur ein weiterer Affiliate-Marktplatz. Wir sind Lifestyle-Kuratoren, Trend-Entdecker und Traum-Enabler, die Sie mit Produkten verbinden, die gewöhnliche Momente in außergewöhnliche Erfahrungen verwandeln.",
     "originStory": "Unsere Ursprungsgeschichte",
     "bornFromPassion": "Aus Leidenschaft geboren",
     "simpleFrustration": "Es begann mit einer einfachen Frustration: endloses Scrollen durch unzählige Produkte, unsicher, was wirklich funktioniert. Wir wussten, dass es einen besseren Weg geben musste, Premium-Lifestyle-Essentials zu finden, die ihre Versprechen wirklich einhalten.",
-    "vibeNicheBorn": "Deshalb wurde VibeNiche geboren — ein vertrauenswürdiges Ziel, wo Beauty-Liebhaber, Wellness-Suchende und Reise-Enthusiasten handverlesene, hochwertige Produkte durch transparente, ehrliche Affiliate-Empfehlungen entdecken können.",
+    "wonderNicheBorn": "Deshalb wurde WonderNiche geboren — ein vertrauenswürdiges Ziel, wo Beauty-Liebhaber, Wellness-Suchende und Reise-Enthusiasten handverlesene, hochwertige Produkte durch transparente, ehrliche Affiliate-Empfehlungen entdecken können.",
     "todayProud": "Heute sind wir stolz darauf, die Brücke zwischen Träumern und Premium-Marken zu sein und echten Wert für unsere wachsende Community und vertrauenswürdige Partner durch bedeutungsvolle Verbindungen und richtig gemachtes Affiliate-Marketing zu schaffen.",
     "founded": "Gegründet",
     "customers": "Kunden",
@@ -186,7 +186,7 @@ export default {
     "connectsWorldwide": "Unsere Plattform verbindet Lifestyle-Enthusiasten weltweit mit Premium-Marken, die sie lieben werden.",
     "ourJourney": "Unsere Reise",
     "keyMilestones": "Wichtige Meilensteine in unserer Mission, das Affiliate-Marketing zu revolutionieren",
-    "vibeNicheFounded": "VibeNiche gegründet",
+    "wonderNicheFounded": "WonderNiche gegründet",
     "startedVision": "Begonnen mit einer Vision, das Affiliate-Marketing zu revolutionieren",
     "communityMilestone": "50K+ Community",
     "firstMajor": "Unseren ersten großen Meilenstein zufriedener Kunden erreicht",
@@ -217,7 +217,7 @@ export default {
     }
   },
   "contact": {
-    "title": "Verbinden Sie sich mit VibeNiche",
+    "title": "Verbinden Sie sich mit WonderNiche",
     "subtitle": "Ihr vertrauenswürdiger Partner bei der Entdeckung der besten Lifestyle-Produkte. Wir sind hier, um Ihnen zu helfen, Ihr bestes Leben mit kuratierter Exzellenz zu leben.",
     "emailUs": "E-Mail senden",
     "support247": "24/7 Support",
@@ -236,7 +236,7 @@ export default {
     "satisfactionLabel": "Kundenzufriedenheit",
     "getInTouch": "Kontakt aufnehmen",
     "chooseBestMethod": "Wählen Sie die Methode, die für Sie am besten funktioniert. Wir sind hier, um bei Fragen zu unseren Produkten oder Dienstleistungen zu helfen.",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "hello@wonderniche.com",
     "emailReply": "Wir antworten innerhalb von 24 Stunden",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "Mo-Fr 9-18 Uhr EST",
@@ -245,8 +245,8 @@ export default {
     "businessHours": "Geschäftszeiten",
     "mondayFriday": "Montag - Freitag",
     "workingHours": "9:00 - 18:00 EST",
-    "aboutVibeNiche": "Über VibeNiche",
-    "foundedDescription": "Gegründet im Jahr 2016, ist VibeNiche Ihr vertrauenswürdiger Kurator für Lifestyle-Exzellenz. Wir spezialisieren uns darauf, die besten Produkte in den Kategorien Beauty, Reisen, Wellness und Lifestyle zu entdecken und zu teilen.",
+    "aboutWonderNiche": "Über WonderNiche",
+    "foundedDescription": "Gegründet im Jahr 2016, ist WonderNiche Ihr vertrauenswürdiger Kurator für Lifestyle-Exzellenz. Wir spezialisieren uns darauf, die besten Produkte in den Kategorien Beauty, Reisen, Wellness und Lifestyle zu entdecken und zu teilen.",
     "teamExperts": "Unser Expertenteam wählt sorgfältig jedes Produkt aus, um sicherzustellen, dass es unseren hohen Standards für Qualität, Innovation und Wert entspricht. Wir glauben, dass jeder Zugang zu Produkten verdient, die sein tägliches Leben verbessern.",
     "lifestyle": "Lifestyle",
     "customerSupport": "Kundensupport",
@@ -265,8 +265,8 @@ export default {
     "faq": "Häufig gestellte Fragen",
     "quickAnswers": "Schnelle Antworten auf häufige Fragen zu unseren Produkten und Dienstleistungen",
     "faq1": {
-      "question": "Was ist Affiliate-Marketing und wie funktioniert VibeNiche?",
-      "answer": "VibeNiche ist eine Premium-Affiliate-Marketing-Plattform, die Sie mit den besten Lifestyle-Produkten verbindet. Wir verdienen Provisionen, wenn Sie über unsere kuratierten Empfehlungen kaufen, was es uns ermöglicht, ehrliche Bewertungen zu liefern und unsere Plattform ohne Kosten für Sie zu betreiben."
+      "question": "Was ist Affiliate-Marketing und wie funktioniert WonderNiche?",
+      "answer": "WonderNiche ist eine Premium-Affiliate-Marketing-Plattform, die Sie mit den besten Lifestyle-Produkten verbindet. Wir verdienen Provisionen, wenn Sie über unsere kuratierten Empfehlungen kaufen, was es uns ermöglicht, ehrliche Bewertungen zu liefern und unsere Plattform ohne Kosten für Sie zu betreiben."
     },
     "faq2": {
       "question": "Welche Beauty-Produkte und Marken empfehlen Sie?",
@@ -289,7 +289,7 @@ export default {
       "answer": "Ja! Wir verhandeln exklusive Rabatte, frühen Zugang zu Verkäufen und spezielle Pakete mit unseren Markenpartnern. Abonnenten erhalten zuerst Zugang zu diesen Premium-Angeboten in allen unseren Lifestyle-Kategorien."
     },
     "readyStart": "Bereit, Ihre Reise zu beginnen?",
-    "joinThousands": "Treten Sie Tausenden zufriedener Kunden bei, die VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen. Entdecken Sie Produkte, die Ihre tägliche Routine verwandeln werden.",
+    "joinThousands": "Treten Sie Tausenden zufriedener Kunden bei, die WonderNiche für ihre Lifestyle-Bedürfnisse vertrauen. Entdecken Sie Produkte, die Ihre tägliche Routine verwandeln werden.",
     "exploreProducts": "Produkte erkunden",
     "partnerWithUs": "Partner werden",
     "form": {
@@ -331,11 +331,11 @@ export default {
     "support": "Support",
     "privacy": "Datenschutz",
     "terms": "Nutzungsbedingungen",
-    "copyright": "© 2024 VibeNiche. Alle Rechte vorbehalten."
+    "copyright": "© 2024 WonderNiche. Alle Rechte vorbehalten."
   },
   "testimonials": {
     "title": "Was unsere Kunden sagen",
-    "subtitle": "Entdecken Sie, warum Tausende von Kunden VibeNiche für ihre Lifestyle-Bedürfnisse vertrauen"
+    "subtitle": "Entdecken Sie, warum Tausende von Kunden WonderNiche für ihre Lifestyle-Bedürfnisse vertrauen"
   },
   "notFound": {
     "title": "404",

@@ -17,7 +17,7 @@ Allow: /contact
 Allow: /privacy
 
 # Sitemap location
-Sitemap: https://vibeniche.com/sitemap.xml
+Sitemap: https://wonderniche.com/sitemap.xml
 
 # Crawl delay for respectful crawling
 Crawl-delay: 1
