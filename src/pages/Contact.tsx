@@ -183,7 +183,7 @@ const Contact = () => {
             <Card className="glass-card p-8 reveal-up">
               <div className="flex items-center mb-6">
                 <Globe className="w-8 h-8 text-primary mr-3" />
-                <h3 className="text-2xl font-bold">{t('contact.aboutVibeWonder')}</h3>
+                <h3 className="text-2xl font-bold">{t('contact.aboutWonderNiche')}</h3>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
