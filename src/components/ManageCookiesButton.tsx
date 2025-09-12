@@ -10,7 +10,7 @@ export const ManageCookiesButton: React.FC = () => {
 
   const getLastUpdated = () => {
     try {
-      const logs = localStorage.getItem('vibewonder_consent_logs');
+      const logs = localStorage.getItem('wonderniche_consent_logs');
       if (logs) {
         const parsedLogs = JSON.parse(logs);
         const lastLog = parsedLogs[parsedLogs.length - 1];

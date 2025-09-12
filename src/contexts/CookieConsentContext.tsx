@@ -39,8 +39,8 @@ export const useCookieConsent = () => {
   return context;
 };
 
-const CONSENT_STORAGE_KEY = 'vibewonder_cookie_consent';
-const CONSENT_LOG_KEY = 'vibewonder_consent_logs';
+const CONSENT_STORAGE_KEY = 'wonderniche_cookie_consent';
+const CONSENT_LOG_KEY = 'wonderniche_consent_logs';
 
 const defaultConsent: CookieConsent = {
   essential: true, // Always true, cannot be disabled

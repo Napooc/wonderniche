@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
       role: "Beauty Enthusiast",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      text: "VibeWonder has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I've discovered so many amazing brands!",
+      text: "WonderNiche has completely transformed my lifestyle routine. The curated products are incredible and the visual experience is absolutely stunning. I've discovered so many amazing brands!",
       highlight: "Transformed my lifestyle routine"
     },
     {
@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
       role: "Travel Blogger",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      text: "As a frequent traveler, I need products that work. VibeWonder's travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!",
+      text: "As a frequent traveler, I need products that work. WonderNiche's travel recommendations are spot-on, and the smooth animations make browsing a pure joy. Highly recommend!",
       highlight: "Travel recommendations are spot-on"
     },
     {
@@ -72,7 +72,7 @@ const TestimonialsSection = () => {
             What Our Users Say
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of satisfied users who have transformed their lifestyle with VibeWonder
+            Join thousands of satisfied users who have transformed their lifestyle with WonderNiche
           </p>
         </div>
 

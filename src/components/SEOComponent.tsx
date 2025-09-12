@@ -28,7 +28,7 @@ const SEOComponent = ({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="VibeWonder" />
+      <meta name="author" content="WonderNiche" />
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="language" content={locale} />
       <link rel="canonical" href={canonicalUrl} />
@@ -42,7 +42,7 @@ const SEOComponent = ({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content={locale.replace('-', '_')} />
-      <meta property="og:site_name" content="VibeWonder" />
+      <meta property="og:site_name" content="WonderNiche" />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
@@ -50,8 +50,8 @@ const SEOComponent = ({
       <meta property="twitter:title" content={title} />
       <meta property="twitter:description" content={description} />
       <meta property="twitter:image" content={ogImage} />
-      <meta property="twitter:site" content="@vibewonder" />
-      <meta property="twitter:creator" content="@vibewonder" />
+      <meta property="twitter:site" content="@wonderniche" />
+      <meta property="twitter:creator" content="@wonderniche" />
 
       {/* Alternate URLs for different languages */}
       {Object.entries(alternateUrls).map(([lang, url]) => (
@@ -63,7 +63,7 @@ const SEOComponent = ({
       <meta name="msapplication-TileColor" content="#C4923A" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="VibeWonder" />
+      <meta name="apple-mobile-web-app-title" content="WonderNiche" />
       <meta name="format-detection" content="telephone=no" />
 
       {/* Structured Data */}

@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "우리의 플랫폼은 전 세계의 라이프스타일 애호가들을 사랑할 프리미엄 브랜드와 연결합니다.",
     "ourJourney": "우리의 여정",
     "keyMilestones": "제휴 마케팅을 혁신하려는 우리의 사명에서 중요한 이정표",
-    "vibeNicheFounded": "VibeWonder 설립",
+    "wonderNicheFounded": "WonderNiche 설립",
     "startedVision": "제휴 마케팅을 혁신하려는 비전으로 시작",
     "communityMilestone": "50K+ 커뮤니티",
     "firstMajor": "만족한 고객의 첫 번째 주요 이정표 달성",
@@ -236,7 +236,7 @@ export default {
     }
   },
   "contact": {
-    "title": "VibeWonder와 연결",
+    "title": "WonderNiche와 연결",
     "subtitle": "최고의 라이프스타일 제품을 발견하는 당신의 신뢰할 수 있는 파트너. 우리는 큐레이션된 우수성으로 당신의 최고의 삶을 사는 것을 도와드립니다.",
     "emailUs": "이메일 보내기",
     "support247": "24/7 지원",
@@ -307,7 +307,7 @@ export default {
       "answer": "네! 우리는 브랜드 파트너들과 독점 할인, 세일 조기 접근, 특별 번들을 협상합니다. 구독자는 모든 라이프스타일 카테고리에서 이러한 프리미엄 거래에 우선 접근할 수 있습니다."
     },
     "readyStart": "여정을 시작할 준비가 되셨나요?",
-    "joinThousands": "라이프스타일 요구에 VibeWonder를 신뢰하는 수천 명의 만족한 고객에 참여하세요. 당신의 일상 루틴을 변화시킬 제품을 발견하세요.",
+    "joinThousands": "라이프스타일 요구에 WonderNiche를 신뢰하는 수천 명의 만족한 고객에 참여하세요. 당신의 일상 루틴을 변화시킬 제품을 발견하세요.",
     "exploreProducts": "제품 탐색",
     "partnerWithUs": "우리와 파트너가 되기",
     "form": {
@@ -323,7 +323,7 @@ export default {
   },
   "testimonials": {
     "title": "고객 후기",
-    "subtitle": "수천 명의 고객이 라이프스타일 니즈를 위해 VibeWonder를 신뢰하는 이유를 알아보세요"
+    "subtitle": "수천 명의 고객이 라이프스타일 니즈를 위해 WonderNiche를 신뢰하는 이유를 알아보세요"
   },
   "notFound": {
     "title": "404",

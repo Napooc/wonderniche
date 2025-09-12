@@ -178,15 +178,15 @@ export default {
     "support": "支持",
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "copyright": "© 2024 VibeWonder. 保留所有权利。"
+    "copyright": "© 2024 WonderNiche. 保留所有权利。"
   },
   "about": {
-    "title": "关于VibeWonder",
+    "title": "关于WonderNiche",
     "subtitle": "我们不仅仅是另一个联盟营销市场。我们是生活方式策展人、趋势发现者和梦想实现者，将您与将平凡时刻转化为非凡体验的产品连接起来。",
     "originStory": "我们的起源故事",
     "bornFromPassion": "源于激情",
     "simpleFrustration": "一切都始于一个简单的挫折：无休止地滚动浏览无数产品，不确定什么真正有效。我们知道一定有更好的方法来找到真正兑现承诺的优质生活方式必需品。",
-    "vibeNicheBorn": "这就是VibeWonder诞生的原因 — 一个值得信赖的目的地，美容爱好者、健康追求者和旅行爱好者可以通过透明、诚实的联盟推荐发现精心挑选的高品质产品。",
+    "wonderNicheBorn": "这就是WonderNiche诞生的原因 — 一个值得信赖的目的地，美容爱好者、健康追求者和旅行爱好者可以通过透明、诚实的联盟推荐发现精心挑选的高品质产品。",
     "todayProud": "今天，我们很自豪成为梦想家与优质品牌之间的桥梁，通过有意义的联系和正确执行的联盟营销为我们的成长社区和值得信赖的合作伙伴创造真正的价值。",
     "founded": "成立",
     "customers": "客户",
@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "我们的平台将全球的生活方式爱好者与他们喜爱的优质品牌连接起来。",
     "ourJourney": "我们的旅程",
     "keyMilestones": "我们革命化联盟营销使命中的关键里程碑",
-    "vibeNicheFounded": "VibeWonder成立",
+    "wonderNicheFounded": "WonderNiche成立",
     "startedVision": "以革命化联盟营销的愿景开始",
     "communityMilestone": "50K+社区",
     "firstMajor": "达到满意客户的第一个重要里程碑",
@@ -236,7 +236,7 @@ export default {
     }
   },
   "contact": {
-    "title": "与VibeWonder联系",
+    "title": "与WonderNiche联系",
     "subtitle": "您发现最佳生活方式产品的值得信赖的合作伙伴。我们在这里帮助您以策划的卓越性过上最好的生活。",
     "emailUs": "发送邮件",
     "support247": "24/7支持",
@@ -263,8 +263,8 @@ export default {
     "businessHours": "营业时间",
     "mondayFriday": "周一 - 周五",
     "workingHours": "9:00 AM - 6:00 PM EST",
-    "aboutVibeWonder": "关于VibeWonder",
-    "foundedDescription": "成立于2016年，VibeWonder一直是您值得信赖的生活方式卓越策展人。我们专注于发现和分享美容、旅行、健康和生活方式类别中的最佳产品。",
+    "aboutWonderNiche": "关于WonderNiche",
+    "foundedDescription": "成立于2016年，WonderNiche一直是您值得信赖的生活方式卓越策展人。我们专注于发现和分享美容、旅行、健康和生活方式类别中的最佳产品。",
     "teamExperts": "我们的专家团队精心选择每个产品，确保它符合我们对质量、创新和价值的严格标准。我们相信每个人都应该获得能够改善日常生活的产品。",
     "lifestyle": "生活方式",
     "customerSupport": "客户支持",

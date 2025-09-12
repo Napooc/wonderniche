@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "我們的平台將全球的生活方式愛好者與他們喜愛的優質品牌連接起來。",
     "ourJourney": "我們的旅程",
     "keyMilestones": "我們革命化聯盟行銷使命中的關鍵里程碑",
-    "vibeNicheFounded": "VibeWonder成立",
+    "wonderNicheFounded": "WonderNiche成立",
     "startedVision": "以革命化聯盟行銷的願景開始",
     "communityMilestone": "50K+社區",
     "firstMajor": "達到滿意客戶的第一個重要里程碑",

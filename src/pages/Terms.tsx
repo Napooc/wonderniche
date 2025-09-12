@@ -54,7 +54,7 @@ const Terms: React.FC = () => {
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">Acceptance of Terms</h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                  By using VibeWonder, you acknowledge that you have read, understood, and agree to be bound by these Terms. 
+                  By using WonderNiche, you acknowledge that you have read, understood, and agree to be bound by these Terms. 
                   If you do not agree to these Terms, please do not use our services.
                 </p>
                 <div className="bg-blue-50 dark:bg-blue-950/30 p-3 sm:p-4 rounded-lg">
@@ -78,7 +78,7 @@ const Terms: React.FC = () => {
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">Description of Service</h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                  VibeWonder is a curated platform that helps you discover premium products across beauty, travel, 
+                  WonderNiche is a curated platform that helps you discover premium products across beauty, travel, 
                   wellness, and lifestyle categories. Our services include:
                 </p>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 sm:gap-4">
@@ -118,7 +118,7 @@ const Terms: React.FC = () => {
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">User Responsibilities</h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                  As a user of VibeWonder, you agree to:
+                  As a user of WonderNiche, you agree to:
                 </p>
                 <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
                   <li className="flex items-start gap-2 sm:gap-3">
@@ -149,7 +149,7 @@ const Terms: React.FC = () => {
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">Purchases and Payments</h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                  VibeWonder may redirect you to third-party vendors for purchases. When making purchases:
+                  WonderNiche may redirect you to third-party vendors for purchases. When making purchases:
                 </p>
                 <div className="space-y-2 sm:space-y-3">
                   <div className="flex items-start gap-2 sm:gap-3">
@@ -162,7 +162,7 @@ const Terms: React.FC = () => {
                   </div>
                   <div className="flex items-start gap-2 sm:gap-3">
                     <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-sm sm:text-base text-muted-foreground">VibeWonder may earn commissions from qualifying purchases</span>
+                    <span className="text-sm sm:text-base text-muted-foreground">WonderNiche may earn commissions from qualifying purchases</span>
                   </div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ const Terms: React.FC = () => {
               <div>
                 <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-3 sm:mb-4">Limitation of Liability</h2>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
-                  VibeWonder provides information and recommendations on an "as is" basis. We make no warranties 
+                  WonderNiche provides information and recommendations on an "as is" basis. We make no warranties 
                   about the accuracy, completeness, or suitability of the information provided.
                 </p>
                 <div className="bg-yellow-50 dark:bg-yellow-950/30 p-3 sm:p-4 rounded-lg">
@@ -185,7 +185,7 @@ const Terms: React.FC = () => {
                     <span className="text-xs sm:text-sm font-medium text-yellow-700 dark:text-yellow-300">Disclaimer</span>
                   </div>
                   <p className="text-xs sm:text-sm text-yellow-600 dark:text-yellow-400">
-                    VibeWonder shall not be liable for any direct, indirect, incidental, or consequential damages 
+                    WonderNiche shall not be liable for any direct, indirect, incidental, or consequential damages 
                     arising from your use of our services or products purchased through our platform.
                   </p>
                 </div>
@@ -207,7 +207,7 @@ const Terms: React.FC = () => {
                     <span className="font-medium">Email:</span> info@wonderniche.com
                   </p>
                   <p className="text-xs sm:text-sm">
-                    <span className="font-medium">Company:</span> VibeWonder
+                    <span className="font-medium">Company:</span> WonderNiche
                   </p>
                 </div>
               </div>
@@ -220,7 +220,7 @@ const Terms: React.FC = () => {
           <div className="text-center text-xs sm:text-sm text-muted-foreground px-2">
             <p>
               These Terms of Service are effective as of {lastUpdated}. 
-              VibeWonder reserves the right to update these terms at any time.
+              WonderNiche reserves the right to update these terms at any time.
             </p>
           </div>
         </div>

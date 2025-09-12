@@ -62,7 +62,7 @@ const About = () => {
   }];
   const milestones = [{
     year: "2016",
-    event: t('about.vibeNicheFounded'),
+    event: t('about.wonderNicheFounded'),
     description: t('about.startedVision')
   }, {
     year: "2023",
@@ -98,7 +98,7 @@ const About = () => {
             {/* Logo Integration */}
             <div className="flex justify-center mb-8">
               <div className="glass-card p-6 rounded-3xl">
-                <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeWonder Logo" className="h-20 w-auto mx-auto animate-pulse" />
+                <img src="/lovable-uploads/0234c9d7-4173-4733-ba24-291b13595244.png" alt="WonderNiche Logo" className="h-20 w-auto mx-auto animate-pulse" />
               </div>
             </div>
             
@@ -132,7 +132,7 @@ const About = () => {
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>{t('about.simpleFrustration')}</p>
                 <p>
-                  {t('about.vibeNicheBorn')}
+                  {t('about.wonderNicheBorn')}
                 </p>
                 <p>
                   {t('about.todayProud')}
