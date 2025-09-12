@@ -16,7 +16,7 @@ const LanguagePicker = () => {
   };
   return <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
-        <Button variant="ghost" size="sm" className="text-foreground hover:text-primary flex items-center space-x-2 px-3 md:px-3 bg-violet-600 hover:bg-violet-500">
+        <Button variant="ghost" size="sm" className="flex items-center space-x-2 px-3 md:px-3 bg-violet-600 hover:bg-violet-500 text-yellow-400">
           <Globe className="w-4 h-4" />
           <span className="text-sm">{languages[currentLanguage].flag}</span>
           <span className="hidden lg:inline text-sm">{languages[currentLanguage].name}</span>
