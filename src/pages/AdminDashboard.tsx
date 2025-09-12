@@ -152,7 +152,7 @@ const handleSignOut = async () => {
           description: "Please sign in again to continue",
           variant: "destructive"
         });
-        navigate('/auth');
+        navigate('/secure-auth');
         return;
       }
       
@@ -164,7 +164,7 @@ const handleSignOut = async () => {
           description: "Please sign in again to continue",
           variant: "destructive"
         });
-        navigate('/auth');
+        navigate('/secure-auth');
         return;
       }
 

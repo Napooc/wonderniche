@@ -89,16 +89,34 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
     // Check for existing admin session
     const checkAdminSession = async () => {
       try {
+        const tokenData = sessionStorage.getItem('adminToken');
+        if (!tokenData) {
+          return;
+        }
+        const { token, expiry } = JSON.parse(tokenData);
+        if (!token || Date.now() > expiry) {
+          sessionStorage.removeItem('adminToken');
+          return;
+        }
+
         const { data, error } = await supabase.functions.invoke('admin-auth', {
-          body: { action: 'verify' }
+          body: { action: 'verify', token }
         });
 
-        if (!error && data?.user) {
-          setUser(data.user);
+        if (!error && data?.valid && data?.user) {
+          const adminUser = {
+            id: data.user.id,
+            username: data.user.username,
+            email: ''
+          };
+          setUser(adminUser);
           setUserRole('admin');
+        } else {
+          sessionStorage.removeItem('adminToken');
         }
       } catch (error) {
         console.error('Session check failed:', error);
+        sessionStorage.removeItem('adminToken');
       } finally {
         setLoading(false);
       }
@@ -140,11 +158,21 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
       const adminUser = {
         id: data.user.id,
         username: data.user.username,
-        email: data.user.email
+        email: ''
       };
       
       setUser(adminUser);
       setUserRole('admin');
+
+      // Persist admin token for this session (24h)
+      try {
+        sessionStorage.setItem('adminToken', JSON.stringify({
+          token: data.token,
+          expiry: Date.now() + 24 * 60 * 60 * 1000
+        }));
+      } catch (e) {
+        console.warn('Failed to persist admin token', e);
+      }
 
       await logAuditEvent('admin_login_success', { 
         username,
@@ -173,6 +201,11 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
       await supabase.functions.invoke('admin-auth', {
         body: { action: 'logout' }
       });
+
+      // Remove persisted token
+      try {
+        sessionStorage.removeItem('adminToken');
+      } catch {}
 
       // Clear local state
       setUser(null);
