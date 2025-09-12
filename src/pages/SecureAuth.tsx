@@ -17,7 +17,7 @@ export default function SecureAuth() {
   const [showPassword, setShowPassword] = useState(false);
   
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: ''
   });
 
@@ -34,10 +34,10 @@ export default function SecureAuth() {
   };
 
   const validateForm = () => {
-    if (!formData.email || !formData.password) {
+    if (!formData.username || !formData.password) {
       toast({
         title: 'Validation Error',
-        description: 'Email and password are required.',
+        description: 'Username and password are required.',
         variant: 'destructive'
       });
       return false;
@@ -54,7 +54,7 @@ export default function SecureAuth() {
     setIsLoading(true);
     
     try {
-      const { error } = await signIn(formData.email, formData.password);
+      const { error } = await signIn(formData.username, formData.password);
       
       if (error) {
         throw new Error(error);
@@ -117,13 +117,13 @@ export default function SecureAuth() {
           <CardContent>
             <form onSubmit={handleSignIn} className="space-y-4 mt-0">
               <div className="space-y-2">
-                <Label htmlFor="signin-email">Email</Label>
+                <Label htmlFor="signin-username">Username</Label>
                 <Input
-                  id="signin-email"
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={formData.email}
+                  id="signin-username"
+                  name="username"
+                  type="text"
+                  placeholder="Enter your username"
+                  value={formData.username}
                   onChange={handleInputChange}
                   required
                   className="bg-input border-border"

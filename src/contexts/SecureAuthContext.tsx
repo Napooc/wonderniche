@@ -3,11 +3,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { User, Session } from '@supabase/supabase-js';
 
 interface SecureAuthContextType {
-  user: User | null;
-  session: Session | null;
+  user: { id: string; username: string; email: string } | null;
   userRole: 'admin' | 'user' | null;
-  signIn: (email: string, password: string) => Promise<{ error: string | null }>;
-  signUp: (email: string, password: string, options?: { displayName?: string }) => Promise<{ error: string | null }>;
+  signIn: (username: string, password: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<{ error: string | null }>;
   loading: boolean;
   isAdmin: boolean;
@@ -16,8 +14,7 @@ interface SecureAuthContextType {
 const SecureAuthContext = createContext<SecureAuthContextType | undefined>(undefined);
 
 export function SecureAuthProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
+  const [user, setUser] = useState<{ id: string; username: string; email: string } | null>(null);
   const [userRole, setUserRole] = useState<'admin' | 'user' | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -89,84 +86,75 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
 
   // Initialize auth state
   useEffect(() => {
-    // Set up auth state listener FIRST
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
-        setSession(session);
-        setUser(session?.user ?? null);
-        
-        if (session?.user) {
-          // Defer role fetching to avoid potential auth state conflicts
-          setTimeout(() => {
-            fetchUserRole(session.user.id);
-          }, 0);
-          
-          // Log auth events
-          if (event === 'SIGNED_IN') {
-            setTimeout(() => {
-              logAuditEvent('user_signin', { 
-                event, 
-                user_id: session.user.id,
-                email: session.user.email 
-              });
-            }, 0);
-          }
-        } else {
-          setUserRole(null);
-          if (event === 'SIGNED_OUT') {
-            setTimeout(() => {
-              logAuditEvent('user_signout', { event });
-            }, 0);
-          }
+    // Check for existing admin session
+    const checkAdminSession = async () => {
+      try {
+        const { data, error } = await supabase.functions.invoke('admin-auth', {
+          body: { action: 'verify' }
+        });
+
+        if (!error && data?.user) {
+          setUser(data.user);
+          setUserRole('admin');
         }
-        
+      } catch (error) {
+        console.error('Session check failed:', error);
+      } finally {
         setLoading(false);
       }
-    );
+    };
 
-    // THEN check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      
-      if (session?.user) {
-        fetchUserRole(session.user.id);
-      }
-      
-      setLoading(false);
-    });
-
-    return () => subscription.unsubscribe();
+    checkAdminSession();
   }, []);
 
-  const signIn = async (email: string, password: string) => {
+  const signIn = async (username: string, password: string) => {
     try {
       setLoading(true);
       
       // Rate limiting check
-      const canProceed = await checkRateLimit('login', email);
+      const canProceed = await checkRateLimit('admin_login', username);
       if (!canProceed) {
         return { error: 'Too many login attempts. Please try again later.' };
       }
 
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password
+      const { data, error } = await supabase.functions.invoke('admin-auth', {
+        body: { 
+          action: 'login',
+          username,
+          password,
+          ip: await getClientIP(),
+          userAgent: navigator.userAgent
+        }
       });
 
-      if (error) {
-        await logAuditEvent('login_failed', { 
-          email, 
-          error: error.message,
+      if (error || !data?.success) {
+        await logAuditEvent('admin_login_failed', { 
+          username, 
+          error: error?.message || data?.error,
           timestamp: new Date().toISOString()
         });
-        return { error: error.message };
+        return { error: data?.error || error?.message || 'Invalid credentials' };
       }
+
+      // Set admin user session
+      const adminUser = {
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email
+      };
+      
+      setUser(adminUser);
+      setUserRole('admin');
+
+      await logAuditEvent('admin_login_success', { 
+        username,
+        timestamp: new Date().toISOString()
+      });
 
       return { error: null };
     } catch (error: any) {
-      await logAuditEvent('login_error', { 
-        email, 
+      await logAuditEvent('admin_login_error', { 
+        username, 
         error: error.message,
         timestamp: new Date().toISOString()
       });
@@ -176,70 +164,23 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
-  const signUp = async (email: string, password: string, options?: { displayName?: string }) => {
-    try {
-      setLoading(true);
-      
-      // Rate limiting check
-      const canProceed = await checkRateLimit('signup', email);
-      if (!canProceed) {
-        return { error: 'Too many signup attempts. Please try again later.' };
-      }
-
-      const redirectUrl = `${window.location.origin}/`;
-      
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: redirectUrl,
-          data: {
-            display_name: options?.displayName || email.split('@')[0]
-          }
-        }
-      });
-
-      if (error) {
-        await logAuditEvent('signup_failed', { 
-          email, 
-          error: error.message,
-          timestamp: new Date().toISOString()
-        });
-        return { error: error.message };
-      }
-
-      await logAuditEvent('signup_success', { 
-        email,
-        timestamp: new Date().toISOString()
-      });
-
-      return { error: null };
-    } catch (error: any) {
-      await logAuditEvent('signup_error', { 
-        email, 
-        error: error.message,
-        timestamp: new Date().toISOString()
-      });
-      return { error: error.message || 'Registration failed' };
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const signOut = async () => {
     try {
       setLoading(true);
       
-      const { error } = await supabase.auth.signOut();
-      
-      if (error) {
-        return { error: error.message };
-      }
+      // Clear admin session
+      await supabase.functions.invoke('admin-auth', {
+        body: { action: 'logout' }
+      });
 
       // Clear local state
       setUser(null);
-      setSession(null);
       setUserRole(null);
+
+      await logAuditEvent('admin_logout', { 
+        timestamp: new Date().toISOString()
+      });
 
       return { error: null };
     } catch (error: any) {
@@ -254,10 +195,8 @@ export function SecureAuthProvider({ children }: { children: ReactNode }) {
   return (
     <SecureAuthContext.Provider value={{
       user,
-      session,
       userRole,
       signIn,
-      signUp,
       signOut,
       loading,
       isAdmin

@@ -82,7 +82,7 @@ const Navigation = () => {
                   <span className="hidden lg:inline">Admin</span>
                 </Link>
                 <span className="text-sm text-muted-foreground hidden lg:inline">
-                  {user?.email}
+                  {user?.username}
                 </span>
               </div>
             )}
@@ -143,7 +143,7 @@ const Navigation = () => {
                       </Link>
                     )}
                     <div className="text-sm text-muted-foreground px-4 py-2">
-                      Signed in as {user?.email}
+                      Signed in as {user?.username}
                     </div>
                   </div>
                 )}
