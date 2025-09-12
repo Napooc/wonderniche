@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider } from "@/contexts/AuthContext";
+import { SecureAuthProvider } from "@/contexts/SecureAuthContext";
 import { TranslationProvider } from "@/contexts/TranslationContext";
 import { CookieConsentProvider } from '@/contexts/CookieConsentContext';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner';
@@ -18,6 +19,7 @@ import Wellness from "./pages/Wellness";
 import Advice from "./pages/Advice";
 import Contact from "./pages/Contact";
 import Auth from "./pages/Auth";
+import SecureAuth from "./pages/SecureAuth";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import AdminDashboard from "./pages/AdminDashboard";
@@ -29,10 +31,11 @@ const queryClient = new QueryClient();
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
-      <TranslationProvider>
-        <CookieConsentProvider>
-          <AuthProvider>
-            <TooltipProvider>
+        <TranslationProvider>
+          <CookieConsentProvider>
+            <AuthProvider>
+              <SecureAuthProvider>
+                <TooltipProvider>
             <Toaster />
             <Sonner />
             <BrowserRouter>
@@ -46,6 +49,7 @@ const App = () => (
                 <Route path="/advice" element={<Advice />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/auth" element={<Auth />} />
+                <Route path="/secure-auth" element={<SecureAuth />} />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/product/:id" element={<ProductDetail />} />
                 <Route path="/privacy" element={<Privacy />} />
@@ -57,9 +61,10 @@ const App = () => (
               <CookieSettingsModal />
             </BrowserRouter>
             </TooltipProvider>
-          </AuthProvider>
-        </CookieConsentProvider>
-      </TranslationProvider>
+              </SecureAuthProvider>
+            </AuthProvider>
+          </CookieConsentProvider>
+        </TranslationProvider>
     </QueryClientProvider>
   </HelmetProvider>
 );

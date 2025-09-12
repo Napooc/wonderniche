@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '@/contexts/AuthContext';
+import { useSecureAuth } from '@/contexts/SecureAuthContext';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -18,9 +18,11 @@ import {
   Eye,
   Edit,
   Trash2,
-  Search
+  Search,
+  Shield
 } from 'lucide-react';
 import ProductForm from '@/components/admin/ProductForm';
+import SecurityDashboard from '@/components/security/SecurityDashboard';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Input } from '@/components/ui/input';
 
@@ -46,7 +48,7 @@ interface Category {
 
 export default function AdminDashboard() {
   // All hooks must be called before any conditional logic or early returns
-  const { user, signOut, userRole } = useAuth();
+  const { user, signOut, isAdmin, userRole } = useSecureAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
@@ -96,10 +98,10 @@ export default function AdminDashboard() {
 
   // Redirect if not authenticated or not admin
   if (!user) {
-    return <Navigate to="/auth" replace />;
+    return <Navigate to="/secure-auth" replace />;
   }
 
-  if (userRole !== 'admin') {
+  if (!isAdmin) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <Card className="glass-card p-8 text-center">
@@ -266,7 +268,7 @@ const handleSignOut = async () => {
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-muted-foreground">
-                Welcome, {user?.username}
+                Welcome, {user?.email?.split('@')[0] || 'Admin'}
               </span>
               <Button
                 variant="outline"
@@ -328,9 +330,13 @@ const handleSignOut = async () => {
 
         {/* Main Content */}
         <Tabs defaultValue="products" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 lg:w-96">
+          <TabsList className="grid w-full grid-cols-3 lg:w-[500px]">
             <TabsTrigger value="products">Products</TabsTrigger>
             <TabsTrigger value="categories">Categories</TabsTrigger>
+            <TabsTrigger value="security">
+              <Shield className="w-4 h-4 mr-2" />
+              Security
+            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="products" className="space-y-6">
@@ -437,6 +443,14 @@ const handleSignOut = async () => {
                 ))}
               </div>
             </Card>
+          </TabsContent>
+
+          <TabsContent value="security">
+            <SecurityDashboard />
+          </TabsContent>
+
+          <TabsContent value="security">
+            <SecurityDashboard />
           </TabsContent>
 
         </Tabs>
