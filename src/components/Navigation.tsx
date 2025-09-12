@@ -40,7 +40,7 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled || isProductPage ? 'glass py-3' : 'py-6'
+      scrolled || !isHomePage ? 'glass py-3' : 'py-6'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
@@ -59,7 +59,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`${scrolled || isProductPage ? 'text-foreground' : 'text-white'} hover:text-primary transition-all duration-300 relative group ${
+                className={`${scrolled || !isHomePage ? 'text-foreground' : 'text-white'} hover:text-primary transition-all duration-300 relative group ${
                   location.pathname === item.href ? 'text-primary' : ''
                 }`}
               >
@@ -94,7 +94,7 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                className={`md:hidden ${scrolled || isProductPage ? 'text-foreground' : 'text-white'} hover:text-primary`}
+                className={`md:hidden ${scrolled || !isHomePage ? 'text-foreground' : 'text-white'} hover:text-primary`}
               >
                 <Menu size={24} />
               </Button>
