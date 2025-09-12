@@ -3,7 +3,7 @@ import Navigation from '@/components/Navigation';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useTranslation } from '@/contexts/TranslationContext';
-import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Send, Hash } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Globe, MessageCircle, Users, Award, Shield, Heart, Hash } from 'lucide-react';
 const Contact = () => {
   const { t } = useTranslation();
   
@@ -28,7 +28,7 @@ const Contact = () => {
     title: t('contact.emailUs'),
     details: t('contact.emailAddress'),
     subtitle: t('contact.emailReply'),
-    action: 'mailto:hello@wonderniche.com'
+    action: 'mailto:info@wonderniche.com'
   }, {
     icon: Clock,
     title: t('contact.support247'),
@@ -37,13 +37,9 @@ const Contact = () => {
     action: null
   }];
   const socialLinks = [{
-    icon: Send,
-    name: t('contact.telegram'),
-    url: 'https://t.me/+212701420239'
-  }, {
     icon: 'pinterest',
     name: t('contact.pinterest'),
-    url: 'https://www.pinterest.com/0l62gi2tbmb12b65d34zwbc4hpz6bh/?actingBusinessId=886576014053114714'
+    url: 'https://www.pinterest.com/09kk7c443mtcjbobzv4evm2w6kv3mt/'
   }];
   const companyStats = [{
     icon: Users,
@@ -112,7 +108,7 @@ const Contact = () => {
               {t('contact.subtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:hello@wonderniche.com'}>
+              <Button size="lg" className="btn-premium text-lg px-8 py-4 rounded-full" onClick={() => window.location.href = 'mailto:info@wonderniche.com'}>
                 <Mail className="w-5 h-5 mr-2" />
                 {t('contact.emailUs')}
               </Button>
@@ -187,7 +183,7 @@ const Contact = () => {
             <Card className="glass-card p-8 reveal-up">
               <div className="flex items-center mb-6">
                 <Globe className="w-8 h-8 text-primary mr-3" />
-                <h3 className="text-2xl font-bold">{t('contact.aboutVibeNiche')}</h3>
+                <h3 className="text-2xl font-bold">{t('contact.aboutVibeWonder')}</h3>
               </div>
               <div className="space-y-4 text-muted-foreground">
                 <p>
@@ -303,7 +299,7 @@ const Contact = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               
-              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:hello@wonderniche.com?subject=Partnership Inquiry'}>
+              <Button variant="outline" size="lg" className="text-lg px-8 py-4 rounded-full border-primary/20 hover:border-primary/40" onClick={() => window.location.href = 'mailto:info@wonderniche.com?subject=Partnership Inquiry'}>
                 {t('contact.partnerWithUs')}
               </Button>
             </div>

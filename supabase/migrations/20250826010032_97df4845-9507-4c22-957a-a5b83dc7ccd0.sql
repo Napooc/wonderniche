@@ -19,7 +19,7 @@ USING (auth.uid() IS NOT NULL);
 -- Insert the default admin user (you'll need to update the password hash)
 -- This is a placeholder - the edge function will handle password hashing
 INSERT INTO public.admin_users (username, password_hash) 
-VALUES ('vibeniche_admin', 'placeholder_hash');
+VALUES ('vibewonder_admin', 'placeholder_hash');
 
 -- Create function to update timestamps
 CREATE TRIGGER update_admin_users_updated_at

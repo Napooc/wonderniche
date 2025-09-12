@@ -151,12 +151,12 @@ export default {
     "rights": {
       "title": "Vos droits",
       "content": "Vous avez le droit d'accéder, de corriger et de supprimer vos données personnelles. Vous pouvez également retirer votre consentement à tout moment.",
-      "contact": "Pour les demandes relatives aux données, contactez-nous à : privacy@wonderniche.com"
+      "contact": "Pour les demandes relatives aux données, contactez-nous à : info@wonderniche.com"
     },
     "contact": {
       "title": "Nous contacter",
       "dpo": "Délégué à la protection des données",
-      "email": "privacy@wonderniche.com",
+      "email": "info@wonderniche.com",
       "address": "Casablanca, Maroc"
     }
   },
@@ -285,7 +285,7 @@ export default {
     "satisfactionLabel": "Satisfaction Client",
     "getInTouch": "Entrer en Contact",
     "chooseBestMethod": "Choisissez la méthode qui vous convient le mieux. Nous sommes là pour vous aider avec toutes questions sur nos produits ou services.",
-    "emailAddress": "hello@wonderniche.com",
+    "emailAddress": "info@wonderniche.com",
     "emailReply": "Nous répondons sous 24 heures",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "Lun-Ven 9h-18h EST",
@@ -311,7 +311,6 @@ export default {
     "facebook": "Facebook",
     "linkedin": "LinkedIn",
     "youtube": "YouTube",
-    "telegram": "Telegram",
     "pinterest": "Pinterest",
     "faq": "Questions Fréquemment Posées",
     "quickAnswers": "Réponses rapides aux questions courantes sur nos produits et services",

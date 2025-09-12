@@ -20,15 +20,15 @@ interface CookieInfo {
 const cookieDetails: Record<string, CookieInfo[]> = {
   essential: [
     {
-      name: 'vibeniche_session',
-      provider: 'VibeNiche',
+      name: 'vibewonder_session',
+      provider: 'VibeWonder',
       purpose: 'Session management and security',
       expiry: 'Session',
       type: 'HTTP'
     },
     {
-      name: 'vibeniche_cookie_consent',
-      provider: 'VibeNiche',
+      name: 'vibewonder_cookie_consent',
+      provider: 'VibeWonder',
       purpose: 'Remember cookie preferences',
       expiry: '1 year',
       type: 'LocalStorage'
@@ -69,14 +69,14 @@ const cookieDetails: Record<string, CookieInfo[]> = {
   preferences: [
     {
       name: 'preferred-language',
-      provider: 'VibeNiche',
+      provider: 'VibeWonder',
       purpose: 'Remember language preference',
       expiry: '1 year',
       type: 'LocalStorage'
     },
     {
       name: 'theme-preference',
-      provider: 'VibeNiche',
+      provider: 'VibeWonder',
       purpose: 'Remember dark/light mode',
       expiry: '1 year',
       type: 'LocalStorage'

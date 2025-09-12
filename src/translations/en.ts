@@ -160,12 +160,12 @@ export default {
     rights: {
       title: 'Your Rights',
       content: 'You have the right to access, correct, and delete your personal data. You can also withdraw your consent at any time.',
-      contact: 'For data inquiries, contact us at: privacy@wonderniche.com'
+      contact: 'For data inquiries, contact us at: info@wonderniche.com'
     },
     contact: {
       title: 'Contact Us',
       dpo: 'Data Protection Officer',
-      email: 'privacy@wonderniche.com',
+      email: 'info@wonderniche.com',
       address: 'Casablanca, Morocco'
     }
   },
@@ -288,7 +288,6 @@ export default {
     support247: '24/7 Support',
     alwaysAvailable: 'Always Available',
     roundTheClock: 'Round-the-clock assistance',
-    telegram: 'Telegram',
     pinterest: 'Pinterest',
     callNow: 'Call Now',
     happyCustomersCount: '50,000+',
@@ -301,7 +300,7 @@ export default {
     satisfactionLabel: 'Customer Satisfaction',
     getInTouch: 'Get in Touch',
     chooseBestMethod: 'Choose the method that works best for you. We\'re here to help with any questions about our products or services.',
-    emailAddress: 'hello@wonderniche.com',
+    emailAddress: 'info@wonderniche.com',
     emailReply: 'We reply within 24 hours',
     phoneNumber: '+1 (555) 123-4567',
     phoneHours: 'Mon-Fri 9AM-6PM EST',
@@ -360,7 +359,7 @@ export default {
     international: 'Do you ship internationally?',
     internationalAnswer: 'Currently, we ship to most countries worldwide. Shipping costs and delivery times vary by location. International orders may be subject to customs duties.',
     affiliate: 'How can I become an affiliate partner?',
-    affiliateAnswer: 'We\'re always looking for passionate partners! Email us at hello@wonderniche.com with \'Affiliate Partnership\' in the subject line, and we\'ll send you our partnership details.',
+    affiliateAnswer: 'We\'re always looking for passionate partners! Email us at info@wonderniche.com with \'Affiliate Partnership\' in the subject line, and we\'ll send you our partnership details.',
     readyStart: 'Ready to Start Your Journey?',
     joinThousands: 'Join thousands of satisfied customers who trust WonderNiche for their lifestyle needs. Discover products that will transform your daily routine.',
     exploreProducts: 'Explore Products',

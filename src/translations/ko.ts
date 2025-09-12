@@ -178,15 +178,15 @@ export default {
     "support": "지원",
     "privacy": "개인정보처리방침",
     "terms": "서비스 약관",
-    "copyright": "© 2024 VibeNiche. 모든 권리 보유."
+    "copyright": "© 2024 VibeWonder. 모든 권리 보유."
   },
   "about": {
-    "title": "VibeNiche 소개",
+    "title": "VibeWonder 소개",
     "subtitle": "우리는 단순한 제휴 마켓플레이스가 아닙니다. 우리는 라이프스타일 큐레이터, 트렌드 발견자, 그리고 평범한 순간을 특별한 경험으로 바꾸는 제품으로 여러분을 연결하는 꿈의 실현자입니다.",
     "originStory": "우리의 기원 스토리",
     "bornFromPassion": "열정에서 태어난",
     "simpleFrustration": "모든 것은 하나의 간단한 좌절감으로 시작되었습니다: 무수한 제품들을 끝없이 스크롤하며, 무엇이 정말 효과적인지 확신할 수 없었습니다. 우리는 약속을 정말로 지키는 프리미엄 라이프스타일 필수품을 찾는 더 나은 방법이 있어야 한다고 믿었습니다.",
-    "vibeNicheBorn": "그래서 VibeNiche가 탄생했습니다 — 뷰티 애호가, 웰니스 추구자, 여행 애호가들이 투명하고 정직한 제휴 추천을 통해 엄선된 고품질 제품을 발견할 수 있는 신뢰할 수 있는 목적지입니다.",
+    "vibeNicheBorn": "그래서 VibeWonder가 탄생했습니다 — 뷰티 애호가, 웰니스 추구자, 여행 애호가들이 투명하고 정직한 제휴 추천을 통해 엄선된 고품질 제품을 발견할 수 있는 신뢰할 수 있는 목적지입니다.",
     "todayProud": "오늘날 우리는 꿈꾸는 사람들과 프리미엄 브랜드 사이의 다리가 되는 것을 자랑스럽게 생각하며, 의미 있는 연결과 올바르게 수행된 제휴 마케팅을 통해 성장하는 커뮤니티와 신뢰할 수 있는 파트너들에게 진정한 가치를 창조하고 있습니다.",
     "founded": "설립",
     "customers": "고객",
@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "우리의 플랫폼은 전 세계의 라이프스타일 애호가들을 사랑할 프리미엄 브랜드와 연결합니다.",
     "ourJourney": "우리의 여정",
     "keyMilestones": "제휴 마케팅을 혁신하려는 우리의 사명에서 중요한 이정표",
-    "vibeNicheFounded": "VibeNiche 설립",
+    "vibeNicheFounded": "VibeWonder 설립",
     "startedVision": "제휴 마케팅을 혁신하려는 비전으로 시작",
     "communityMilestone": "50K+ 커뮤니티",
     "firstMajor": "만족한 고객의 첫 번째 주요 이정표 달성",
@@ -236,13 +236,12 @@ export default {
     }
   },
   "contact": {
-    "title": "VibeNiche와 연결",
+    "title": "VibeWonder와 연결",
     "subtitle": "최고의 라이프스타일 제품을 발견하는 당신의 신뢰할 수 있는 파트너. 우리는 큐레이션된 우수성으로 당신의 최고의 삶을 사는 것을 도와드립니다.",
     "emailUs": "이메일 보내기",
     "support247": "24/7 지원",
     "alwaysAvailable": "항상 이용 가능",
     "roundTheClock": "24시간 지원",
-    "telegram": "Telegram",
     "pinterest": "Pinterest",
     "callNow": "지금 전화",
     "happyCustomersCount": "50,000+",
@@ -255,7 +254,7 @@ export default {
     "satisfactionLabel": "고객 만족도",
     "getInTouch": "연락하기",
     "chooseBestMethod": "당신에게 가장 적합한 방법을 선택하세요. 우리의 제품이나 서비스에 대한 질문에 도움을 드립니다.",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "info@wonderniche.com",
     "emailReply": "24시간 내에 답변드립니다",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "월-금 9AM-6PM EST",
@@ -264,8 +263,8 @@ export default {
     "businessHours": "영업 시간",
     "mondayFriday": "월요일 - 금요일",
     "workingHours": "9:00 AM - 6:00 PM EST",
-    "aboutVibeNiche": "VibeNiche 소개",
-    "foundedDescription": "2016년에 설립된 VibeNiche는 라이프스타일 우수성의 당신의 신뢰할 수 있는 큐레이터입니다. 우리는 뷰티, 여행, 웰니스, 라이프스타일 카테고리에서 최고의 제품을 발견하고 공유하는 데 특화되어 있습니다.",
+    "aboutVibeWonder": "VibeWonder 소개",
+    "foundedDescription": "2016년에 설립된 VibeWonder는 라이프스타일 우수성의 당신의 신뢰할 수 있는 큐레이터입니다. 우리는 뷰티, 여행, 웰니스, 라이프스타일 카테고리에서 최고의 제품을 발견하고 공유하는 데 특화되어 있습니다.",
     "teamExperts": "우리의 전문가 팀은 품질, 혁신, 가치에 대한 우리의 높은 기준을 충족하도록 각 제품을 신중하게 선택합니다. 우리는 모든 사람이 일상생활을 향상시키는 제품에 접근할 자격이 있다고 믿습니다.",
     "lifestyle": "라이프스타일",
     "customerSupport": "고객 지원",
@@ -284,8 +283,8 @@ export default {
     "faq": "자주 묻는 질문",
     "quickAnswers": "우리의 제품과 서비스에 대한 일반적인 질문에 대한 빠른 답변",
     "faq1": {
-      "question": "제휴 마케팅이 무엇이며 VibeNiche는 어떻게 작동하나요?",
-      "answer": "VibeNiche는 최고의 라이프스타일 제품으로 당신을 연결하는 프리미엄 제휴 마케팅 플랫폼입니다. 우리는 큐레이션된 추천을 통해 구매할 때 수수료를 받아 정직한 리뷰를 제공하고 당신에게 비용 없이 플랫폼을 유지할 수 있게 합니다."
+      "question": "제휴 마케팅이 무엇이며 VibeWonder는 어떻게 작동하나요?",
+      "answer": "VibeWonder는 최고의 라이프스타일 제품으로 당신을 연결하는 프리미엄 제휴 마케팅 플랫폼입니다. 우리는 큐레이션된 추천을 통해 구매할 때 수수료를 받아 정직한 리뷰를 제공하고 당신에게 비용 없이 플랫폼을 유지할 수 있게 합니다."
     },
     "faq2": {
       "question": "어떤 뷰티 제품과 브랜드를 추천하나요?",
@@ -308,7 +307,7 @@ export default {
       "answer": "네! 우리는 브랜드 파트너들과 독점 할인, 세일 조기 접근, 특별 번들을 협상합니다. 구독자는 모든 라이프스타일 카테고리에서 이러한 프리미엄 거래에 우선 접근할 수 있습니다."
     },
     "readyStart": "여정을 시작할 준비가 되셨나요?",
-    "joinThousands": "라이프스타일 요구에 VibeNiche를 신뢰하는 수천 명의 만족한 고객에 참여하세요. 당신의 일상 루틴을 변화시킬 제품을 발견하세요.",
+    "joinThousands": "라이프스타일 요구에 VibeWonder를 신뢰하는 수천 명의 만족한 고객에 참여하세요. 당신의 일상 루틴을 변화시킬 제품을 발견하세요.",
     "exploreProducts": "제품 탐색",
     "partnerWithUs": "우리와 파트너가 되기",
     "form": {
@@ -324,7 +323,7 @@ export default {
   },
   "testimonials": {
     "title": "고객 후기",
-    "subtitle": "수천 명의 고객이 라이프스타일 니즈를 위해 VibeNiche를 신뢰하는 이유를 알아보세요"
+    "subtitle": "수천 명의 고객이 라이프스타일 니즈를 위해 VibeWonder를 신뢰하는 이유를 알아보세요"
   },
   "notFound": {
     "title": "404",

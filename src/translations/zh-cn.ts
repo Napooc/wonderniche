@@ -178,15 +178,15 @@ export default {
     "support": "支持",
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "copyright": "© 2024 VibeNiche. 保留所有权利。"
+    "copyright": "© 2024 VibeWonder. 保留所有权利。"
   },
   "about": {
-    "title": "关于VibeNiche",
+    "title": "关于VibeWonder",
     "subtitle": "我们不仅仅是另一个联盟营销市场。我们是生活方式策展人、趋势发现者和梦想实现者，将您与将平凡时刻转化为非凡体验的产品连接起来。",
     "originStory": "我们的起源故事",
     "bornFromPassion": "源于激情",
     "simpleFrustration": "一切都始于一个简单的挫折：无休止地滚动浏览无数产品，不确定什么真正有效。我们知道一定有更好的方法来找到真正兑现承诺的优质生活方式必需品。",
-    "vibeNicheBorn": "这就是VibeNiche诞生的原因 — 一个值得信赖的目的地，美容爱好者、健康追求者和旅行爱好者可以通过透明、诚实的联盟推荐发现精心挑选的高品质产品。",
+    "vibeNicheBorn": "这就是VibeWonder诞生的原因 — 一个值得信赖的目的地，美容爱好者、健康追求者和旅行爱好者可以通过透明、诚实的联盟推荐发现精心挑选的高品质产品。",
     "todayProud": "今天，我们很自豪成为梦想家与优质品牌之间的桥梁，通过有意义的联系和正确执行的联盟营销为我们的成长社区和值得信赖的合作伙伴创造真正的价值。",
     "founded": "成立",
     "customers": "客户",
@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "我们的平台将全球的生活方式爱好者与他们喜爱的优质品牌连接起来。",
     "ourJourney": "我们的旅程",
     "keyMilestones": "我们革命化联盟营销使命中的关键里程碑",
-    "vibeNicheFounded": "VibeNiche成立",
+    "vibeNicheFounded": "VibeWonder成立",
     "startedVision": "以革命化联盟营销的愿景开始",
     "communityMilestone": "50K+社区",
     "firstMajor": "达到满意客户的第一个重要里程碑",
@@ -236,13 +236,12 @@ export default {
     }
   },
   "contact": {
-    "title": "与VibeNiche联系",
+    "title": "与VibeWonder联系",
     "subtitle": "您发现最佳生活方式产品的值得信赖的合作伙伴。我们在这里帮助您以策划的卓越性过上最好的生活。",
     "emailUs": "发送邮件",
     "support247": "24/7支持",
     "alwaysAvailable": "始终可用",
     "roundTheClock": "全天候协助",
-    "telegram": "Telegram",
     "pinterest": "Pinterest",
     "callNow": "立即致电",
     "happyCustomersCount": "50,000+",
@@ -255,7 +254,7 @@ export default {
     "satisfactionLabel": "客户满意度",
     "getInTouch": "取得联系",
     "chooseBestMethod": "选择最适合您的方法。我们在这里帮助您解决有关我们产品或服务的任何问题。",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "info@wonderniche.com",
     "emailReply": "我们在24小时内回复",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "周一至周五 9AM-6PM EST",
@@ -264,8 +263,8 @@ export default {
     "businessHours": "营业时间",
     "mondayFriday": "周一 - 周五",
     "workingHours": "9:00 AM - 6:00 PM EST",
-    "aboutVibeNiche": "关于VibeNiche",
-    "foundedDescription": "成立于2016年，VibeNiche一直是您值得信赖的生活方式卓越策展人。我们专注于发现和分享美容、旅行、健康和生活方式类别中的最佳产品。",
+    "aboutVibeWonder": "关于VibeWonder",
+    "foundedDescription": "成立于2016年，VibeWonder一直是您值得信赖的生活方式卓越策展人。我们专注于发现和分享美容、旅行、健康和生活方式类别中的最佳产品。",
     "teamExperts": "我们的专家团队精心选择每个产品，确保它符合我们对质量、创新和价值的严格标准。我们相信每个人都应该获得能够改善日常生活的产品。",
     "lifestyle": "生活方式",
     "customerSupport": "客户支持",
@@ -284,8 +283,8 @@ export default {
     "faq": "常见问题",
     "quickAnswers": "关于我们产品和服务的常见问题的快速答案",
     "faq1": {
-      "question": "什么是联盟营销，VibeNiche如何运作？",
-      "answer": "VibeNiche是一个优质的联盟营销平台，将您与最佳生活方式产品连接起来。当您通过我们的策划推荐购买时，我们获得佣金，使我们能够提供诚实的评论并免费为您维护我们的平台。"
+      "question": "什么是联盟营销，VibeWonder如何运作？",
+      "answer": "VibeWonder是一个优质的联盟营销平台，将您与最佳生活方式产品连接起来。当您通过我们的策划推荐购买时，我们获得佣金，使我们能够提供诚实的评论并免费为您维护我们的平台。"
     },
     "faq2": {
       "question": "您推荐哪些美容产品和品牌？",
@@ -308,7 +307,7 @@ export default {
       "answer": "是的！我们与品牌合作伙伴协商独家折扣、销售早期访问和特别套装。订阅者可以优先访问我们所有生活方式类别的这些优质优惠。"
     },
     "readyStart": "准备开始您的旅程了吗？",
-    "joinThousands": "加入数千名满意客户，他们信任VibeNiche满足他们的生活方式需求。发现将改变您日常生活的产品。",
+    "joinThousands": "加入数千名满意客户，他们信任VibeWonder满足他们的生活方式需求。发现将改变您日常生活的产品。",
     "exploreProducts": "探索产品",
     "partnerWithUs": "与我们合作",
     "form": {
@@ -324,7 +323,7 @@ export default {
   },
   "testimonials": {
     "title": "客户评价",
-    "subtitle": "了解为什么成千上万的客户信任VibeNiche满足他们的生活方式需求"
+    "subtitle": "了解为什么成千上万的客户信任VibeWonder满足他们的生活方式需求"
   },
   "notFound": {
     "title": "404",

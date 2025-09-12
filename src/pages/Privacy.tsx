@@ -178,7 +178,7 @@ const Privacy: React.FC = () => {
                   <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-sm sm:text-base font-medium">{t('privacy.contact.dpo')}</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">VibeNiche</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">VibeWonder</p>
                   </div>
                 </div>
                 

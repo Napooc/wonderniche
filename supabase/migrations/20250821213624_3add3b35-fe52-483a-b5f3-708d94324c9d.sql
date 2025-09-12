@@ -183,7 +183,7 @@ BEGIN
   );
   
   -- Assign admin role if it's the first user or specific email
-  IF NEW.email = 'admin@vibeniche.com' THEN
+  IF NEW.email = 'admin@wonderniche.com' THEN
     INSERT INTO public.user_roles (user_id, role)
     VALUES (NEW.id, 'admin');
   ELSE

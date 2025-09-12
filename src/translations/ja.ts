@@ -178,15 +178,15 @@ export default {
     "support": "サポート",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
-    "copyright": "© 2024 VibeNiche. すべての権利予約済み。"
+    "copyright": "© 2024 VibeWonder. すべての権利予約済み。"
   },
   "about": {
-    "title": "VibeNicheについて",
+    "title": "VibeWonderについて",
     "subtitle": "私たちは単なるアフィリエイトマーケットプレイスではありません。私たちはライフスタイルキュレーター、トレンド発見者、そして普通の瞬間を特別な体験に変える製品であなたを繋ぐ夢の実現者です。",
     "originStory": "私たちの起源ストーリー",
     "bornFromPassion": "情熱から生まれた",
     "simpleFrustration": "すべては一つのシンプルな不満から始まりました：無数の製品を延々とスクロールし、何が本当に効果的かわからない。私たちは、約束を本当に果たすプレミアムライフスタイル必需品を見つけるより良い方法があるはずだと信じていました。",
-    "vibeNicheBorn": "だからこそVibeNicheが生まれました — 美容愛好家、ウェルネス探求者、旅行愛好家が透明で誠実なアフィリエイト推奨を通じて、厳選された高品質製品を発見できる信頼できる目的地です。",
+    "vibeNicheBorn": "だからこそVibeWonderが生まれました — 美容愛好家、ウェルネス探求者、旅行愛好家が透明で誠実なアフィリエイト推奨を通じて、厳選された高品質製品を発見できる信頼できる目的地です。",
     "todayProud": "今日、私たちは夢見る人とプレミアムブランドの架け橋となることを誇りに思っており、意味のあるつながりと正しく行われたアフィリエイトマーケティングを通じて、成長するコミュニティと信頼できるパートナーに真の価値を創造しています。",
     "founded": "設立",
     "customers": "顧客",
@@ -205,7 +205,7 @@ export default {
     "connectsWorldwide": "私たちのプラットフォームは、世界中のライフスタイル愛好家を愛するプレミアムブランドと繋げます。",
     "ourJourney": "私たちの旅路",
     "keyMilestones": "アフィリエイトマーケティングを革命化する私たちの使命における重要なマイルストーン",
-    "vibeNicheFounded": "VibeNiche設立",
+    "vibeNicheFounded": "VibeWonder設立",
     "startedVision": "アフィリエイトマーケティングを革命化するビジョンで始まりました",
     "communityMilestone": "50K+コミュニティ",
     "firstMajor": "満足した顧客の最初の主要マイルストーンに到達",
@@ -236,13 +236,12 @@ export default {
     }
   },
   "contact": {
-    "title": "VibeNicheとつながる",
+    "title": "VibeWonderとつながる",
     "subtitle": "最高のライフスタイル製品を発見するあなたの信頼できるパートナー。私たちは厳選された卓越性であなたの最高の人生を生きるお手伝いをします。",
     "emailUs": "メール送信",
     "support247": "24/7サポート",
     "alwaysAvailable": "常時利用可能",
     "roundTheClock": "24時間サポート",
-    "telegram": "Telegram",
     "pinterest": "Pinterest",
     "callNow": "今すぐ電話",
     "happyCustomersCount": "50,000+",
@@ -255,7 +254,7 @@ export default {
     "satisfactionLabel": "顧客満足度",
     "getInTouch": "お問い合わせ",
     "chooseBestMethod": "あなたに最適な方法を選択してください。私たちの製品やサービスについてのご質問にお手伝いします。",
-    "emailAddress": "hello@vibeniche.com",
+    "emailAddress": "info@wonderniche.com",
     "emailReply": "24時間以内に返信いたします",
     "phoneNumber": "+1 (555) 123-4567",
     "phoneHours": "月-金 9AM-6PM EST",
@@ -264,8 +263,8 @@ export default {
     "businessHours": "営業時間",
     "mondayFriday": "月曜日 - 金曜日",
     "workingHours": "9:00 AM - 6:00 PM EST",
-    "aboutVibeNiche": "VibeNicheについて",
-    "foundedDescription": "2016年に設立されたVibeNicheは、ライフスタイル卓越性のあなたの信頼できるキュレーターです。私たちは美容、旅行、ウェルネス、ライフスタイルカテゴリーで最高の製品を発見し共有することに特化しています。",
+    "aboutVibeWonder": "VibeWonderについて",
+    "foundedDescription": "2016年に設立されたVibeWonderは、ライフスタイル卓越性のあなたの信頼できるキュレーターです。私たちは美容、旅行、ウェルネス、ライフスタイルカテゴリーで最高の製品を発見し共有することに特化しています。",
     "teamExperts": "私たちの専門家チームは、品質、イノベーション、価値の高い基準を満たすよう、各製品を慎重に選択します。私たちは、誰もが日常生活を向上させる製品にアクセスする資格があると信じています。",
     "lifestyle": "ライフスタイル",
     "customerSupport": "カスタマーサポート",
@@ -284,8 +283,8 @@ export default {
     "faq": "よくある質問",
     "quickAnswers": "私たちの製品やサービスに関する一般的な質問への迅速な回答",
     "faq1": {
-      "question": "アフィリエイトマーケティングとは何ですか、VibeNicheはどのように機能しますか？",
-      "answer": "VibeNicheは、最高のライフスタイル製品であなたを繋ぐプレミアムアフィリエイトマーケティングプラットフォームです。私たちは厳選された推奨を通じて購入する際にコミッションを獲得し、誠実なレビューを提供し、あなたにコストをかけずにプラットフォームを維持することを可能にします。"
+      "question": "アフィリエイトマーケティングとは何ですか、VibeWonderはどのように機能しますか？",
+      "answer": "VibeWonderは、最高のライフスタイル製品であなたを繋ぐプレミアムアフィリエイトマーケティングプラットフォームです。私たちは厳選された推奨を通じて購入する際にコミッションを獲得し、誠実なレビューを提供し、あなたにコストをかけずにプラットフォームを維持することを可能にします。"
     },
     "faq2": {
       "question": "どのような美容製品やブランドを推奨していますか？",
@@ -308,7 +307,7 @@ export default {
       "answer": "はい！私たちはブランドパートナーとの独占割引、セールへの早期アクセス、特別バンドルを交渉します。購読者は、すべてのライフスタイルカテゴリーでこれらのプレミアム取引に最初にアクセスできます。"
     },
     "readyStart": "あなたの旅路を始める準備はできましたか？",
-    "joinThousands": "ライフスタイルニーズにVibeNicheを信頼する何千もの満足した顧客に参加してください。あなたの日常ルーティンを変える製品を発見してください。",
+    "joinThousands": "ライフスタイルニーズにVibeWonderを信頼する何千もの満足した顧客に参加してください。あなたの日常ルーティンを変える製品を発見してください。",
     "exploreProducts": "製品を探索",
     "partnerWithUs": "私たちとパートナーになる",
     "form": {
@@ -324,7 +323,7 @@ export default {
   },
   "testimonials": {
     "title": "お客様の声",
-    "subtitle": "何千人ものお客様がVibeNicheをライフスタイルニーズで信頼している理由を発見してください"
+    "subtitle": "何千人ものお客様がVibeWonderをライフスタイルニーズで信頼している理由を発見してください"
   },
   "notFound": {
     "title": "404",
