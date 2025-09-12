@@ -28,8 +28,8 @@ const Navigation = () => {
   const navItems = [
     { name: t('nav.home'), href: '/' },
     { name: t('nav.about'), href: '/about' },
-    { name: t('nav.beauty'), href: '/beauty' },
     { name: t('nav.travel'), href: '/travel' },
+    { name: t('nav.beauty'), href: '/beauty' },
     { name: t('nav.wellness'), href: '/wellness' },
     { name: t('nav.advice'), href: '/advice' },
     { name: t('nav.contact'), href: '/contact' }
