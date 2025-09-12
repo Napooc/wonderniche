@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { useAuth } from '@/contexts/AuthContext';
+import { useSecureAuth } from '@/contexts/SecureAuthContext';
 import { useTranslation } from '@/contexts/TranslationContext';
 import LanguagePicker from '@/components/LanguagePicker';
 import MobileLanguagePicker from '@/components/MobileLanguagePicker';
@@ -12,7 +12,7 @@ const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { user, userRole } = useAuth();
+  const { user, isAdmin } = useSecureAuth();
   const { t } = useTranslation();
 
   
@@ -72,7 +72,7 @@ const Navigation = () => {
           {/* Desktop Auth and Admin Links */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguagePicker />
-            {(user && userRole === 'admin') && (
+            {(user && isAdmin) && (
               <div className="flex items-center space-x-4">
                 <Link 
                   to="/admin"
@@ -82,7 +82,7 @@ const Navigation = () => {
                   <span className="hidden lg:inline">Admin</span>
                 </Link>
                 <span className="text-sm text-muted-foreground hidden lg:inline">
-                  {user?.username}
+                  {user?.email}
                 </span>
               </div>
             )}
@@ -132,7 +132,7 @@ const Navigation = () => {
                 
                 {user && (
                   <div className="space-y-4">
-                    {userRole === 'admin' && (
+                    {isAdmin && (
                       <Link 
                         to="/admin"
                         onClick={() => setIsOpen(false)}
@@ -143,7 +143,7 @@ const Navigation = () => {
                       </Link>
                     )}
                     <div className="text-sm text-muted-foreground px-4 py-2">
-                      Signed in as {user?.username}
+                      Signed in as {user?.email}
                     </div>
                   </div>
                 )}
