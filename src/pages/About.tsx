@@ -296,8 +296,8 @@ const About = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center">
             <div className="flex justify-center items-center space-x-3 mb-4">
-              <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeWonder Logo" className="h-8 w-auto" />
-              <span className="text-xl font-bold gradient-text">VibeWonder</span>
+              <img src="/lovable-uploads/0234c9d7-4173-4733-ba24-291b13595244.png" alt="WonderNiche Logo" className="h-10 w-auto" />
+              <span className="text-xl font-bold gradient-text">WonderNiche</span>
             </div>
             <p className="text-muted-foreground mb-4">
               {t('about.curatingPremium')}

@@ -447,9 +447,9 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
-                <img src="/lovable-uploads/5f3da360-a14f-4461-a422-f31e7978ecc0.png" alt="VibeWonder Logo" className="h-10 w-auto" />
+                <img src="/lovable-uploads/0234c9d7-4173-4733-ba24-291b13595244.png" alt="WonderNiche Logo" className="h-12 w-auto" />
                 <span className="text-xl font-bold gradient-text">
-                  VibeWonder
+                  WonderNiche
                 </span>
               </div>
               <p className="text-muted-foreground">

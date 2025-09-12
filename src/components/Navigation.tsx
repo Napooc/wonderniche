@@ -47,14 +47,14 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <img 
-              src="/lovable-uploads/054f7cfb-dcc2-44ae-adde-ae4cf282a86b.png" 
+              src="/lovable-uploads/0234c9d7-4173-4733-ba24-291b13595244.png" 
               alt="WonderNiche Logo" 
-              className="h-24 w-auto transition-transform duration-300 group-hover:scale-105"
+              className="h-16 w-auto transition-transform duration-300 group-hover:scale-105"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-12">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -102,9 +102,9 @@ const Navigation = () => {
             <SheetContent side="right" className="glass-card w-80 max-w-[90vw]">
               <div className="flex items-center space-x-3 mb-8">
                 <img 
-                  src="/lovable-uploads/054f7cfb-dcc2-44ae-adde-ae4cf282a86b.png" 
+                  src="/lovable-uploads/0234c9d7-4173-4733-ba24-291b13595244.png" 
                   alt="WonderNiche Logo" 
-                  className="h-16 w-auto"
+                  className="h-12 w-auto"
                 />
               </div>
 
