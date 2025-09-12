@@ -128,7 +128,7 @@ const TestimonialsSection = () => {
                   </Avatar>
                   <div>
                     <p className="font-medium text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-primary">{testimonial.role}</p>
+                    
                   </div>
                 </div>
               </div>
