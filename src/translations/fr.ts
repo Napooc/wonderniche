@@ -139,13 +139,18 @@ export default {
       "types": {
         "title": "Types de cookies que nous utilisons",
         "essential": "Essentiels : Requis pour le fonctionnement du site web",
+        "essentialLabel": "Essentiels",
         "analytics": "Analyse : Pour comprendre l'utilisation du site web",
+        "analyticsLabel": "Analyse",
         "marketing": "Marketing : Pour la publicité personnalisée",
-        "preferences": "Préférences : Pour se souvenir de vos choix"
+        "marketingLabel": "Marketing",
+        "preferences": "Préférences : Pour se souvenir de vos choix",
+        "preferencesLabel": "Préférences"
       },
       "manage": {
         "title": "Gestion des cookies",
-        "content": "Vous pouvez gérer vos préférences de cookies à tout moment en cliquant sur le bouton \"Gérer les cookies\" en bas de la page."
+        "content": "Vous pouvez gérer vos préférences de cookies à tout moment en cliquant sur le bouton \"Gérer les cookies\" en bas de la page.",
+        "button": "Gérer les cookies"
       }
     },
     "rights": {
@@ -157,6 +162,7 @@ export default {
       "title": "Nous contacter",
       "dpo": "Délégué à la protection des données",
       "email": "info@wonderniche.com",
+      "emailDescription": "Pour les demandes relatives aux données",
       "address": "Casablanca, Maroc"
     }
   },

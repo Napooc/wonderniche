@@ -173,6 +173,49 @@ export default {
     "reset": "Redefinir",
     "selectLanguage": "Selecionar Idioma"
   },
+  "privacy": {
+    "title": "Política de Privacidade e Cookies",
+    "lastUpdated": "Última atualização: {{date}}",
+    "introduction": {
+      "title": "Introdução",
+      "content": "Esta política explica como coletamos, usamos e protegemos suas informações pessoais ao usar o site WonderNiche, em conformidade com regulamentações de proteção de dados e melhores práticas."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "whatAre": {
+        "title": "O que são Cookies?",
+        "content": "Cookies são pequenos arquivos de texto colocados em seu dispositivo quando você visita nosso site. Eles nos ajudam a fornecer uma experiência melhor e mais personalizada."
+      },
+      "types": {
+        "title": "Tipos de Cookies que Usamos",
+        "essential": "Essenciais: Necessários para funcionalidade do site",
+        "essentialLabel": "Essenciais",
+        "analytics": "Analíticos: Para entender o uso do site",
+        "analyticsLabel": "Analíticos",
+        "marketing": "Marketing: Para publicidade personalizada",
+        "marketingLabel": "Marketing",
+        "preferences": "Preferências: Para lembrar suas escolhas",
+        "preferencesLabel": "Preferências"
+      },
+      "manage": {
+        "title": "Gerenciamento de Cookies",
+        "content": "Você pode gerenciar suas preferências de cookies a qualquer momento clicando no botão \"Gerenciar Cookies\" na parte inferior da página.",
+        "button": "Gerenciar Cookies"
+      }
+    },
+    "rights": {
+      "title": "Seus Direitos",
+      "content": "Você tem o direito de acessar, corrigir e excluir seus dados pessoais. Você também pode retirar seu consentimento a qualquer momento.",
+      "contact": "Para consultas sobre dados, entre em contato conosco em: info@wonderniche.com"
+    },
+    "contact": {
+      "title": "Entre em Contato",
+      "dpo": "Encarregado de Proteção de Dados",
+      "email": "info@wonderniche.com",
+      "emailDescription": "Para consultas sobre dados",
+      "address": "Casablanca, Marrocos"
+    }
+  },
   "footer": {
     "description": "Descubra produtos que combinam com seu estilo de vida único.",
     "quickLinks": "Links Rápidos",

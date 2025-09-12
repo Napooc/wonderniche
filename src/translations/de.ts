@@ -323,6 +323,49 @@ export default {
     "reset": "Zurücksetzen",
     "selectLanguage": "Sprache auswählen"
   },
+  "privacy": {
+    "title": "Datenschutz & Cookie-Richtlinie",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "introduction": {
+      "title": "Einführung",
+      "content": "Diese Richtlinie erklärt, wie wir Ihre persönlichen Informationen beim Verwenden der WonderNiche-Website sammeln, verwenden und schützen, in Übereinstimmung mit Datenschutzbestimmungen und bewährten Praktiken."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "whatAre": {
+        "title": "Was sind Cookies?",
+        "content": "Cookies sind kleine Textdateien, die auf Ihrem Gerät platziert werden, wenn Sie unsere Website besuchen. Sie helfen uns, eine bessere und personalisiertere Erfahrung zu bieten."
+      },
+      "types": {
+        "title": "Arten von Cookies, die wir verwenden",
+        "essential": "Wesentlich: Erforderlich für Website-Funktionalität",
+        "essentialLabel": "Wesentlich",
+        "analytics": "Analytik: Um die Website-Nutzung zu verstehen",
+        "analyticsLabel": "Analytik",
+        "marketing": "Marketing: Für personalisierte Werbung",
+        "marketingLabel": "Marketing",
+        "preferences": "Präferenzen: Um sich an Ihre Entscheidungen zu erinnern",
+        "preferencesLabel": "Präferenzen"
+      },
+      "manage": {
+        "title": "Cookie-Verwaltung",
+        "content": "Sie können Ihre Cookie-Präferenzen jederzeit verwalten, indem Sie auf die Schaltfläche \"Cookies verwalten\" am Ende der Seite klicken.",
+        "button": "Cookies verwalten"
+      }
+    },
+    "rights": {
+      "title": "Ihre Rechte",
+      "content": "Sie haben das Recht, auf Ihre persönlichen Daten zuzugreifen, sie zu korrigieren und zu löschen. Sie können Ihre Einwilligung auch jederzeit widerrufen.",
+      "contact": "Für Datenanfragen kontaktieren Sie uns unter: info@wonderniche.com"
+    },
+    "contact": {
+      "title": "Kontaktieren Sie uns",
+      "dpo": "Datenschutzbeauftragter",
+      "email": "info@wonderniche.com",
+      "emailDescription": "Für Datenanfragen",
+      "address": "Casablanca, Marokko"
+    }
+  },
   "footer": {
     "description": "Entdecken Sie Produkte, die zu Ihrem einzigartigen Lebensstil passen.",
     "quickLinks": "Schnelllinks",

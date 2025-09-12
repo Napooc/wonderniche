@@ -81,9 +81,9 @@ const Privacy: React.FC = () => {
                 <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-green-50 dark:bg-green-950/30 rounded-lg">
                   <Shield className="h-4 w-4 sm:h-5 sm:w-5 text-green-600 mt-1 flex-shrink-0" />
                   <div>
-                    <Badge variant="outline" className="mb-2 bg-green-100 text-green-700 text-xs sm:text-sm">
-                      أساسية
-                    </Badge>
+                     <Badge variant="outline" className="mb-2 bg-green-100 text-green-700 text-xs sm:text-sm">
+                       {t('privacy.cookies.types.essentialLabel')}
+                     </Badge>
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {t('privacy.cookies.types.essential')}
                     </p>
@@ -93,9 +93,9 @@ const Privacy: React.FC = () => {
                 <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-blue-50 dark:bg-blue-950/30 rounded-lg">
                   <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600 mt-1 flex-shrink-0" />
                   <div>
-                    <Badge variant="outline" className="mb-2 bg-blue-100 text-blue-700 text-xs sm:text-sm">
-                      تحليلات
-                    </Badge>
+                     <Badge variant="outline" className="mb-2 bg-blue-100 text-blue-700 text-xs sm:text-sm">
+                       {t('privacy.cookies.types.analyticsLabel')}
+                     </Badge>
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {t('privacy.cookies.types.analytics')}
                     </p>
@@ -105,9 +105,9 @@ const Privacy: React.FC = () => {
                 <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-purple-50 dark:bg-purple-950/30 rounded-lg">
                   <Target className="h-4 w-4 sm:h-5 sm:w-5 text-purple-600 mt-1 flex-shrink-0" />
                   <div>
-                    <Badge variant="outline" className="mb-2 bg-purple-100 text-purple-700 text-xs sm:text-sm">
-                      تسويق
-                    </Badge>
+                     <Badge variant="outline" className="mb-2 bg-purple-100 text-purple-700 text-xs sm:text-sm">
+                       {t('privacy.cookies.types.marketingLabel')}
+                     </Badge>
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {t('privacy.cookies.types.marketing')}
                     </p>
@@ -117,9 +117,9 @@ const Privacy: React.FC = () => {
                 <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 bg-orange-50 dark:bg-orange-950/30 rounded-lg">
                   <Sliders className="h-4 w-4 sm:h-5 sm:w-5 text-orange-600 mt-1 flex-shrink-0" />
                   <div>
-                    <Badge variant="outline" className="mb-2 bg-orange-100 text-orange-700 text-xs sm:text-sm">
-                      تفضيلات
-                    </Badge>
+                     <Badge variant="outline" className="mb-2 bg-orange-100 text-orange-700 text-xs sm:text-sm">
+                       {t('privacy.cookies.types.preferencesLabel')}
+                     </Badge>
                     <p className="text-xs sm:text-sm text-muted-foreground">
                       {t('privacy.cookies.types.preferences')}
                     </p>
@@ -136,10 +136,10 @@ const Privacy: React.FC = () => {
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-3 sm:mb-4">
                 {t('privacy.cookies.manage.content')}
               </p>
-              <Button onClick={openModal} className="flex items-center gap-2 text-sm sm:text-base">
-                <Cookie className="h-3 w-3 sm:h-4 sm:w-4" />
-                إدارة ملفات تعريف الارتباط
-              </Button>
+               <Button onClick={openModal} className="flex items-center gap-2 text-sm sm:text-base">
+                 <Cookie className="h-3 w-3 sm:h-4 sm:w-4" />
+                 {t('privacy.cookies.manage.button')}
+               </Button>
             </div>
           </Card>
 
@@ -184,10 +184,10 @@ const Privacy: React.FC = () => {
                 
                 <div className="flex items-start gap-2 sm:gap-3">
                   <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-primary mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="text-sm sm:text-base font-medium">{t('privacy.contact.email')}</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">للاستفسارات حول البيانات</p>
-                  </div>
+                   <div>
+                     <p className="text-sm sm:text-base font-medium">{t('privacy.contact.email')}</p>
+                     <p className="text-xs sm:text-sm text-muted-foreground">{t('privacy.contact.emailDescription')}</p>
+                   </div>
                 </div>
               </div>
             </div>

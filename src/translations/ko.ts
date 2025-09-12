@@ -399,5 +399,48 @@ export default {
     "loadingResources": "조언 리소스 로딩 중...",
     "noResourcesFound": "검색과 일치하는 조언 리소스를 찾을 수 없습니다.",
     "tryAdjustingSearch": "검색어를 조정하거나 위의 전문가 카테고리를 탐색해 보세요."
+  },
+  "privacy": {
+    "title": "개인정보 보호 및 쿠키 정책",
+    "lastUpdated": "최종 업데이트: {{date}}",
+    "introduction": {
+      "title": "소개",
+      "content": "이 정책은 데이터 보호 규정 및 모범 사례에 따라 WonderNiche 웹사이트를 사용할 때 개인정보를 수집, 사용 및 보호하는 방법을 설명합니다."
+    },
+    "cookies": {
+      "title": "쿠키",
+      "whatAre": {
+        "title": "쿠키란 무엇입니까?",
+        "content": "쿠키는 당사 웹사이트를 방문할 때 고객님의 기기에 저장되는 작은 텍스트 파일입니다. 더 나은 개인화된 경험을 제공하는 데 도움이 됩니다."
+      },
+      "types": {
+        "title": "사용하는 쿠키 유형",
+        "essential": "필수: 웹사이트 기능에 필요",
+        "essentialLabel": "필수",
+        "analytics": "분석: 웹사이트 사용을 이해하기 위해",
+        "analyticsLabel": "분석",
+        "marketing": "마케팅: 개인화된 광고를 위해",
+        "marketingLabel": "마케팅",
+        "preferences": "환경설정: 고객님의 선택을 기억하기 위해",
+        "preferencesLabel": "환경설정"
+      },
+      "manage": {
+        "title": "쿠키 관리",
+        "content": "페이지 하단의 \"쿠키 관리\" 버튼을 클릭하여 언제든지 쿠키 설정을 관리할 수 있습니다.",
+        "button": "쿠키 관리"
+      }
+    },
+    "rights": {
+      "title": "고객님의 권리",
+      "content": "고객님은 개인 데이터에 액세스하고, 수정하고, 삭제할 권리가 있습니다. 또한 언제든지 동의를 철회할 수 있습니다.",
+      "contact": "데이터 문의는 info@wonderniche.com 으로 연락해 주세요"
+    },
+    "contact": {
+      "title": "문의하기",
+      "dpo": "데이터 보호 책임자",
+      "email": "info@wonderniche.com",
+      "emailDescription": "데이터 문의",
+      "address": "카사블랑카, 모로코"
+    }
   }
 };

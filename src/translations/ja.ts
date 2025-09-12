@@ -399,5 +399,48 @@ export default {
     "loadingResources": "アドバイスリソースを読み込み中...",
     "noResourcesFound": "検索に一致するアドバイスリソースが見つかりません。",
     "tryAdjustingSearch": "検索用語を調整するか、上記の専門家カテゴリを探索してみてください。"
+  },
+  "privacy": {
+    "title": "プライバシー・Cookieポリシー",
+    "lastUpdated": "最終更新日: {{date}}",
+    "introduction": {
+      "title": "はじめに",
+      "content": "このポリシーは、データ保護規制とベストプラクティスに従って、WonderNicheウェブサイトを使用する際に個人情報を収集、使用、保護する方法について説明します。"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "whatAre": {
+        "title": "Cookieとは何ですか？",
+        "content": "Cookieは、当社のウェブサイトを訪問した際にお客様のデバイスに配置される小さなテキストファイルです。より良い、よりパーソナライズされた体験を提供するのに役立ちます。"
+      },
+      "types": {
+        "title": "使用するCookieの種類",
+        "essential": "必須: ウェブサイトの機能に必要",
+        "essentialLabel": "必須",
+        "analytics": "分析: ウェブサイトの使用状況を理解するため",
+        "analyticsLabel": "分析",
+        "marketing": "マーケティング: パーソナライズされた広告のため",
+        "marketingLabel": "マーケティング",
+        "preferences": "設定: お客様の選択を記憶するため",
+        "preferencesLabel": "設定"
+      },
+      "manage": {
+        "title": "Cookieの管理",
+        "content": "ページ下部の「Cookieを管理」ボタンをクリックして、いつでもCookie設定を管理できます。",
+        "button": "Cookieを管理"
+      }
+    },
+    "rights": {
+      "title": "お客様の権利",
+      "content": "お客様には、個人データにアクセスし、修正し、削除する権利があります。また、いつでも同意を撤回することができます。",
+      "contact": "データに関するお問い合わせは、info@wonderniche.com までご連絡ください"
+    },
+    "contact": {
+      "title": "お問い合わせ",
+      "dpo": "データ保護責任者",
+      "email": "info@wonderniche.com",
+      "emailDescription": "データに関するお問い合わせ",
+      "address": "カサブランカ、モロッコ"
+    }
   }
 };

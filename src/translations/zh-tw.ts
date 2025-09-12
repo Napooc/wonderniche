@@ -399,5 +399,48 @@ export default {
     "loadingResources": "正在載入建議資源...",
     "noResourcesFound": "未找到與您的搜尋匹配的建議資源。",
     "tryAdjustingSearch": "嘗試調整您的搜尋詞或探索上面的專家類別。"
+  },
+  "privacy": {
+    "title": "隱私和Cookie政策",
+    "lastUpdated": "最後更新: {{date}}",
+    "introduction": {
+      "title": "簡介",
+      "content": "本政策說明了我們在您使用WonderNiche網站時如何收集、使用和保護您的個人資料，符合資料保護法規和最佳實務。"
+    },
+    "cookies": {
+      "title": "Cookies",
+      "whatAre": {
+        "title": "什麼是Cookies？",
+        "content": "Cookies是您造訪我們網站時放置在您裝置上的小型文字檔案。它們幫助我們提供更好、更個人化的體驗。"
+      },
+      "types": {
+        "title": "我們使用的Cookie類型",
+        "essential": "必需: 網站功能所需",
+        "essentialLabel": "必需",
+        "analytics": "分析: 了解網站使用情況",
+        "analyticsLabel": "分析",
+        "marketing": "行銷: 用於個人化廣告",
+        "marketingLabel": "行銷",
+        "preferences": "偏好: 記住您的選擇",
+        "preferencesLabel": "偏好"
+      },
+      "manage": {
+        "title": "管理Cookies",
+        "content": "您可以隨時透過點擊頁面底部的\"管理Cookies\"按鈕來管理您的Cookie偏好。",
+        "button": "管理Cookies"
+      }
+    },
+    "rights": {
+      "title": "您的權利",
+      "content": "您有權存取、更正和刪除您的個人資料。您也可以隨時撤回您的同意。",
+      "contact": "如有資料查詢，請聯繫我們：info@wonderniche.com"
+    },
+    "contact": {
+      "title": "聯繫我們",
+      "dpo": "資料保護專員",
+      "email": "info@wonderniche.com",
+      "emailDescription": "資料查詢",
+      "address": "卡薩布蘭卡，摩洛哥"
+    }
   }
 };
