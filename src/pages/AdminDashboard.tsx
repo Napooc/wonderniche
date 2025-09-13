@@ -330,13 +330,8 @@ const handleSignOut = async () => {
 
         {/* Main Content */}
         <Tabs defaultValue="products" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-[500px]">
+          <TabsList className="grid w-full grid-cols-1 lg:w-[200px]">
             <TabsTrigger value="products">Products</TabsTrigger>
-            <TabsTrigger value="categories">Categories</TabsTrigger>
-            <TabsTrigger value="security">
-              <Shield className="w-4 h-4 mr-2" />
-              Security
-            </TabsTrigger>
           </TabsList>
 
           <TabsContent value="products" className="space-y-6">
@@ -431,27 +426,6 @@ const handleSignOut = async () => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="categories">
-            <Card className="glass-card p-6">
-              <h2 className="text-xl font-semibold mb-4">Categories</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {categories.map((category) => (
-                  <Card key={category.id} className="p-4">
-                    <h3 className="font-semibold">{category.name}</h3>
-                    <p className="text-sm text-muted-foreground">/{category.slug}</p>
-                  </Card>
-                ))}
-              </div>
-            </Card>
-          </TabsContent>
-
-          <TabsContent value="security">
-            <SecurityDashboard />
-          </TabsContent>
-
-          <TabsContent value="security">
-            <SecurityDashboard />
-          </TabsContent>
 
         </Tabs>
       </div>
