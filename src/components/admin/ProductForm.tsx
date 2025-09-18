@@ -66,9 +66,9 @@ const [formData, setFormData] = useState({
 });
 
   const ensureAdminSession = (action: 'upload images' | 'save products') => {
-    const isAdmin = !!user && userRole === 'admin';
-    if (!isAdmin) {
-      console.warn(`[ProductForm] Blocked attempt to ${action} without admin session`, { user, userRole });
+    // Check if admin token exists in sessionStorage
+    const tokenData = sessionStorage.getItem('adminToken');
+    if (!tokenData) {
       toast({
         title: 'Sign in required',
         description: 'Please sign in as admin to perform this action.',
@@ -76,6 +76,18 @@ const [formData, setFormData] = useState({
       });
       return false;
     }
+    
+    const { token, expiry } = JSON.parse(tokenData);
+    if (Date.now() > expiry) {
+      sessionStorage.removeItem('adminToken');
+      toast({
+        title: 'Session expired',
+        description: 'Please sign in again to continue.',
+        variant: 'destructive',
+      });
+      return false;
+    }
+    
     return true;
   };
 
