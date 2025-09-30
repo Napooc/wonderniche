@@ -1,7 +1,7 @@
 // Global SEO configurations and structured data
 
 export const generateTravelSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://wonderniche.com';
+  const baseUrl = 'https://www.wonderniche.com';
   
   return {
     title: "Premium Travel Gear & Accessories 2024 | WonderNiche - Worldwide Delivery",
@@ -56,7 +56,7 @@ export const generateTravelSEO = (locale: string = 'en') => {
 };
 
 export const generateBeautySEO = (locale: string = 'en') => {
-  const baseUrl = 'https://wonderniche.com';
+  const baseUrl = 'https://www.wonderniche.com';
   
   return {
     title: "Premium Beauty Products & Skincare 2024 | WonderNiche - Global Beauty Hub",
@@ -107,7 +107,7 @@ export const generateBeautySEO = (locale: string = 'en') => {
 };
 
 export const generateWellnessSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://wonderniche.com';
+  const baseUrl = 'https://www.wonderniche.com';
   
   return {
     title: "Wellness & Fitness Products 2024 | WonderNiche - Global Wellness Store",
@@ -158,7 +158,7 @@ export const generateWellnessSEO = (locale: string = 'en') => {
 };
 
 export const generateAdviceSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://wonderniche.com';
+  const baseUrl = 'https://www.wonderniche.com';
   
   return {
     title: "Expert Advice & Lifestyle Tips 2024 | WonderNiche - Global Knowledge Hub",
@@ -209,7 +209,7 @@ export const generateAdviceSEO = (locale: string = 'en') => {
 };
 
 export const generateHomeSEO = (locale: string = 'en') => {
-  const baseUrl = 'https://wonderniche.com';
+  const baseUrl = 'https://www.wonderniche.com';
   
   return {
     title: "WonderNiche - Premium Lifestyle Products Worldwide | Travel, Beauty, Wellness & Advice",
