@@ -82,10 +82,6 @@ const ProductCard = ({
           alt={title}
           className={`transition-all duration-700 rounded-t-3xl ${isHovered ? 'scale-105' : 'scale-100'}`}
           skeletonClassName="rounded-t-3xl"
-          widths={[320, 480, 640, 768, 1024]}
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          placeholder="blur"
-          fetchPriority="auto"
         />
         
         {/* Overlay */}

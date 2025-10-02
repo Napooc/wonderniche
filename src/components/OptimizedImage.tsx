@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
-import { getOptimizedUrl, generateSrcSet, isImageCached, cacheImage } from '@/lib/image';
 
 interface OptimizedImageProps {
   src: string;
@@ -9,12 +8,6 @@ interface OptimizedImageProps {
   className?: string;
   skeletonClassName?: string;
   priority?: boolean;
-  widths?: number[];
-  sizes?: string;
-  quality?: number;
-  format?: 'webp' | 'jpeg' | 'png';
-  fetchPriority?: 'high' | 'low' | 'auto';
-  placeholder?: 'blur' | 'skeleton';
   onLoad?: () => void;
   onError?: () => void;
 }
@@ -25,26 +18,13 @@ export const OptimizedImage = ({
   className,
   skeletonClassName,
   priority = false,
-  widths = [320, 640, 1024, 1280],
-  sizes = '100vw',
-  quality = 75,
-  format = 'webp',
-  fetchPriority = 'auto',
-  placeholder = 'skeleton',
   onLoad,
   onError,
 }: OptimizedImageProps) => {
-  const wasAlreadyLoaded = isImageCached(src);
-  const [isLoading, setIsLoading] = useState(!wasAlreadyLoaded);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [isInView, setIsInView] = useState(priority);
-  const [retryCount, setRetryCount] = useState(0);
   const imgRef = useRef<HTMLDivElement>(null);
-
-  // Generate optimized URLs
-  const optimizedSrc = getOptimizedUrl(src, { width: widths[widths.length - 1], quality, format });
-  const srcSet = generateSrcSet(src, widths, { quality, format });
-  const blurSrc = placeholder === 'blur' ? getOptimizedUrl(src, { width: 24, quality: 10, format: 'jpeg' }) : undefined;
 
   // Intersection Observer for lazy loading
   useEffect(() => {
@@ -73,16 +53,10 @@ export const OptimizedImage = ({
 
   const handleLoad = () => {
     setIsLoading(false);
-    cacheImage(src);
     onLoad?.();
   };
 
   const handleError = () => {
-    // Retry once with original src if transformed URL fails
-    if (retryCount === 0) {
-      setRetryCount(1);
-      return;
-    }
     setIsLoading(false);
     setHasError(true);
     onError?.();
@@ -90,18 +64,8 @@ export const OptimizedImage = ({
 
   return (
     <div ref={imgRef} className={cn('relative overflow-hidden', className)}>
-      {/* Blur placeholder */}
-      {placeholder === 'blur' && blurSrc && isLoading && (
-        <img
-          src={blurSrc}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover blur-lg scale-110 z-0"
-        />
-      )}
-
       {/* Skeleton loader */}
-      {placeholder === 'skeleton' && isLoading && (
+      {isLoading && (
         <Skeleton 
           className={cn(
             'absolute inset-0 z-10',
@@ -132,28 +96,19 @@ export const OptimizedImage = ({
         </div>
       ) : (
         isInView && (
-          <picture>
-            <source
-              type="image/webp"
-              srcSet={srcSet}
-              sizes={sizes}
-            />
-            <img
-              src={retryCount > 0 ? src : optimizedSrc}
-              alt={alt}
-              loading={priority ? 'eager' : 'lazy'}
-              decoding="async"
-              fetchPriority={fetchPriority}
-              onLoad={handleLoad}
-              onError={handleError}
-              sizes={sizes}
-              className={cn(
-                'w-full h-full object-cover transition-opacity duration-500',
-                isLoading ? 'opacity-0' : 'opacity-100',
-                className
-              )}
-            />
-          </picture>
+          <img
+            src={src}
+            alt={alt}
+            loading={priority ? 'eager' : 'lazy'}
+            decoding="async"
+            onLoad={handleLoad}
+            onError={handleError}
+            className={cn(
+              'w-full h-full object-cover transition-opacity duration-500',
+              isLoading ? 'opacity-0' : 'opacity-100',
+              className
+            )}
+          />
         )
       )}
     </div>
