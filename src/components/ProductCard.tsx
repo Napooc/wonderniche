@@ -3,6 +3,7 @@ import { Star, ExternalLink, Heart, Share2, Copy, Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
+import { OptimizedImage } from '@/components/OptimizedImage';
 interface ProductCardProps {
   id: string;
   title: string;
@@ -76,7 +77,12 @@ const ProductCard = ({
   >
       {/* Image Container */}
       <div className="relative overflow-hidden flex-shrink-0 h-48 sm:h-56 lg:h-64 bg-gradient-to-br from-card/50 to-card/30 rounded-t-3xl border-b border-border/10">
-        <img src={image} alt={title} className={`w-full h-full object-cover transition-all duration-700 rounded-t-3xl ${isHovered ? 'scale-102' : 'scale-100'}`} />
+        <OptimizedImage 
+          src={image} 
+          alt={title}
+          className={`transition-all duration-700 rounded-t-3xl ${isHovered ? 'scale-105' : 'scale-100'}`}
+          skeletonClassName="rounded-t-3xl"
+        />
         
         {/* Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />

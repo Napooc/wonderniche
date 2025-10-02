@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { Star, Heart, Share2, ShoppingCart, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Truck, Shield, RotateCcw, Check, Info } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { OptimizedImage } from '@/components/OptimizedImage';
 const ProductDetail = () => {
   const {
     id
@@ -158,13 +159,12 @@ const ProductDetail = () => {
               <div className="relative group">
                 <div className="rounded-3xl overflow-hidden bg-gradient-to-br from-card to-card/50 shadow-xl sm:shadow-2xl border border-border/20">
                   <div className="w-full aspect-[4/3] sm:aspect-[3/2] lg:aspect-[4/3] relative bg-gradient-to-br from-card/50 to-card/30 rounded-3xl overflow-hidden">
-                    <img 
+                    <OptimizedImage
                       src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop'} 
-                      alt={product.name} 
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-102 rounded-3xl" 
-                      onError={e => {
-                        e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop';
-                      }} 
+                      alt={product.name}
+                      className="absolute inset-0 transition-transform duration-500 group-hover:scale-105 rounded-3xl"
+                      skeletonClassName="rounded-3xl"
+                      priority={true}
                     />
                     
                     {/* Gradient overlay for better badge/text visibility */}
