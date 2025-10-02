@@ -3,6 +3,7 @@ import { X, Star, Heart, Share2, ShoppingCart, ExternalLink, Truck, Shield, Rota
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { OptimizedImage } from '@/components/OptimizedImage';
 
 interface ProductDetailModalProps {
   product: {
@@ -72,13 +73,13 @@ const ProductDetailModal = ({ product, isOpen, onClose }: ProductDetailModalProp
           <div className="space-y-4">
             {/* Main Image */}
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-border/20">
-              <img
+              <OptimizedImage
                 src={product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop'}
                 alt={product.name}
-                className="w-full h-96 object-cover transition-transform duration-300 hover:scale-102 rounded-3xl"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=600&fit=crop';
-                }}
+                className="w-full h-96 transition-transform duration-300 hover:scale-102 rounded-3xl"
+                widths={[400, 600, 800]}
+                sizes="90vw"
+                placeholder="blur"
               />
               
               {/* Badges */}

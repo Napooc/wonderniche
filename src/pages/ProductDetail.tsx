@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { supabase } from '@/integrations/supabase/client';
 import Navigation from '@/components/Navigation';
 import { Button } from '@/components/ui/button';
@@ -8,6 +9,7 @@ import { Card } from '@/components/ui/card';
 import { Star, Heart, Share2, ShoppingCart, ExternalLink, ArrowLeft, ChevronLeft, ChevronRight, Truck, Shield, RotateCcw, Check, Info } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { OptimizedImage } from '@/components/OptimizedImage';
+import { getOptimizedUrl } from '@/lib/image';
 const ProductDetail = () => {
   const {
     id
@@ -132,7 +134,17 @@ const ProductDetail = () => {
         </div>
       </div>;
   }
-  return <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/50">
+
+  // Preload LCP image for faster rendering
+  const lcpImageUrl = getOptimizedUrl(
+    product.image_url || 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800&h=800&fit=crop',
+    { width: 1024, quality: 75, format: 'webp' }
+  );
+  return <>
+    <Helmet>
+      <link rel="preload" as="image" href={lcpImageUrl} fetchPriority="high" />
+    </Helmet>
+    <div className="min-h-screen bg-gradient-to-br from-background via-background to-background/50">
       <Navigation />
       
       {/* Hero Section */}
@@ -165,6 +177,10 @@ const ProductDetail = () => {
                       className="absolute inset-0 transition-transform duration-500 group-hover:scale-105 rounded-3xl"
                       skeletonClassName="rounded-3xl"
                       priority={true}
+                      widths={[640, 1024, 1280, 1600, 1920]}
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      fetchPriority="high"
+                      placeholder="blur"
                     />
                     
                     {/* Gradient overlay for better badge/text visibility */}
@@ -331,6 +347,7 @@ const ProductDetail = () => {
         </div>
       </section>
 
-    </div>;
+    </div>
+  </>;
 };
 export default ProductDetail;
