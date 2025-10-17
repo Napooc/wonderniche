@@ -1,153 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <!-- Homepage -->
-  <url>
-    <loc>https://www.wonderniche.com/</loc>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/en.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/" />
-  </url>
-
-  <!-- About Page -->
-  <url>
-    <loc>https://www.wonderniche.com/about</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/fr.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/about" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/about" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/about" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/about" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/about" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/about" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/about" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/about" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/about" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/about" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/about" />
-  </url>
-
-  <!-- Travel Category -->
-  <url>
-    <loc>https://www.wonderniche.com/travel</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/de.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/travel" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/travel" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/travel" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/travel" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/travel" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/travel" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/travel" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/travel" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/travel" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/travel" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/travel" />
-  </url>
-
-  <!-- Beauty Category -->
-  <url>
-    <loc>https://www.wonderniche.com/beauty</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/es.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/beauty" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/beauty" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/beauty" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/beauty" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/beauty" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/beauty" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/beauty" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/beauty" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/beauty" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/beauty" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/beauty" />
-  </url>
-
-  <!-- Wellness Category -->
-  <url>
-    <loc>https://www.wonderniche.com/wellness</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/pt.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/wellness" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/wellness" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/wellness" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/wellness" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/wellness" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/wellness" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/wellness" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/wellness" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/wellness" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/wellness" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/wellness" />
-  </url>
-
-  <!-- Advice Category -->
-  <url>
-    <loc>https://www.wonderniche.com/advice</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/ja.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/advice" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/advice" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/advice" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/advice" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/advice" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/advice" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/advice" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/advice" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/advice" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/advice" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/advice" />
-  </url>
-
-  <!-- Contact Page -->
-  <url>
-    <loc>https://www.wonderniche.com/contact</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/ko.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.wonderniche.com/contact" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://www.wonderniche.com/fr/contact" />
-    <xhtml:link rel="alternate" hreflang="de" href="https://www.wonderniche.com/de/contact" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.wonderniche.com/es/contact" />
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.wonderniche.com/pt/contact" />
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.wonderniche.com/ja/contact" />
-    <xhtml:link rel="alternate" hreflang="ko" href="https://www.wonderniche.com/ko/contact" />
-    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.wonderniche.com/zh-cn/contact" />
-    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://www.wonderniche.com/zh-tw/contact" />
-    <xhtml:link rel="alternate" hreflang="ru" href="https://www.wonderniche.com/ru/contact" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.wonderniche.com/contact" />
-  </url>
-
-  <!-- Privacy Policy -->
-  <url>
-    <loc>https://www.wonderniche.com/privacy</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/zh-cn.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <!-- Terms of Service -->
-  <url>
-    <loc>https://www.wonderniche.com/terms</loc>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/zh-tw.xml</loc>
     <lastmod>2025-10-17</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-</urlset>
+  </sitemap>
+  <sitemap>
+    <loc>https://www.wonderniche.com/sitemaps/ru.xml</loc>
+    <lastmod>2025-10-17</lastmod>
+  </sitemap>
+</sitemapindex>
